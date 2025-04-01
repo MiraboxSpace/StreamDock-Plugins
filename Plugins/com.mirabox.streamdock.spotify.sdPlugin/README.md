@@ -2,6 +2,19 @@
 
 This is a StreamDock plugin for controlling Spotify.
 
+## Requirements
+
+This is a plugin that uses the software's built-in node module, so it has certain requirements for the version of the StreamDock software.
+
+> [!TIP]
+> **Windows**
+> - Requires software version `3.10.188.226` or higher
+> - Node.js module built-in from version `3.10.188.226` (version 20.8.1)
+>
+> **Mac**
+> - Version `3.10.189.0313` is not built-in yet
+> - Please wait for subsequent version updates
+
 ## Configuration Instructions
 
 ### 1. Get Spotify API credentials
@@ -55,20 +68,31 @@ This is a StreamDock plugin for controlling Spotify.
 ### 3. Notes
 
    - A `Spotify Premium` account is required to use the playback control function
+
    - If you encounter authorization problems, please check whether the `Redirect URI` is set correctly
+
    - You need to complete the authorization process when using it for the first time
+
    - If you need to re-authorize, you can click the "Logout" button on the settings interface
 
 ## Function list
 
    - Play/pause control
+
    - Previous/next song switch
+
    - Volume control (including mute)
+
    - Playback device switch
+
    - Add/remove favorite songs
+
    - Playlist control
+
    - Loop/shuffle mode switch
+
    - Song information display
+
    - URI Direct Play
 
 ## Support
