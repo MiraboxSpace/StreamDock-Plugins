@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="images/logo.png" height="128">
+  <img src="Images/logo.png" height="128">
   <h1 align="center">StreamDock Plugins</h1>
 </p>
 
