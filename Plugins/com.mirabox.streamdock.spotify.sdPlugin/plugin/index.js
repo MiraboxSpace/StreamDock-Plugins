@@ -373,12 +373,13 @@ plugin.changedevice = new Actions({
                 });
             }
         } catch (error) {
-            log.error('获取播放列表失败:', error);
             if (error.statusCode === 401) {
                 await refreshAccessToken();
                 this._propertyInspectorDidAppear({ context });
             } else if (error.code === "ECONNRESET") {
                 this._propertyInspectorDidAppear({ context });
+            } else {
+                log.error('获取播放列表失败:', error);
             }
         }
     },
@@ -444,9 +445,9 @@ plugin.likesong = new Actions({
         } catch (error) {
             if (error.statusCode === 401) {
                 await refreshAccessToken();
-                this.updateLikeState({ context, payload });
+                this.updateLikeState(context);
             } else if (error.code === "ECONNRESET") {
-                this.updateLikeState({ context, payload });
+                this.updateLikeState(context);
             } else {
                 log.error('获取喜欢状态失败:', error);
             }
@@ -938,7 +939,6 @@ plugin.repeat = new Actions({
 
             plugin.showOk(context);
         } catch (error) {
-            log.error('设置循环模式失败:', error);
             plugin.showAlert(context);
 
             if (error.statusCode === 401) {
@@ -946,6 +946,8 @@ plugin.repeat = new Actions({
                 this.keyUp({ context, payload });
             } else if (error.code === "ECONNRESET") {
                 this.keyUp({ context, payload });
+            } else {
+                log.error('设置循环模式失败:', error);
             }
         }
     },
@@ -968,9 +970,9 @@ plugin.repeat = new Actions({
         } catch (error) {
             if (error.statusCode === 401) {
                 await refreshAccessToken();
-                this.updateRepeatState({ context, payload });
+                this.updateRepeatState(context);
             } else if (error.code === "ECONNRESET") {
-                this.updateRepeatState({ context, payload });
+                this.updateRepeatState(context);
             } else {
                 log.error('获取循环状态失败:', error);
             }
@@ -1134,7 +1136,7 @@ plugin.volumeup = new Actions({
                     plugin.setTitle(context, "Too Many Request\nRetry After: " + secondsToHHMM(playbackState.retryAfter));
                     return;
                 }
-                if (playbackState.body.device) {
+                if (playbackState.body?.device) {
                     const currentVolume = playbackState.body.device.volume_percent;
                     if (this.data[context].show) {
                         this.flag && plugin.setTitle(context, currentVolume);
@@ -1160,14 +1162,12 @@ plugin.volumeup = new Actions({
             // 开始持续增加音量
             this.longPressTimer[context] = setInterval(async () => {
                 try {
-                    log.info('持续增加音量----------------');
                     const playbackState = await getCachedPlaybackState();
                     if ("retryAfter" in playbackState) {
                         plugin.setTitle(context, "Too Many Request\nRetry After: " + secondsToHHMM(playbackState.retryAfter));
                         return;
                     }
-                    log.info('当前音量：', playbackState.body.device?.volume_percent);
-                    if (playbackState.body.device) {
+                    if (playbackState.body?.device) {
                         const currentVolume = playbackState.body.device.volume_percent;
                         const newVolume = Math.min(100, currentVolume + (this.data[context].step || 10));
                         await spotifyApi.setVolume(newVolume);
@@ -1189,7 +1189,6 @@ plugin.volumeup = new Actions({
         }, 500);
     },
     async keyUp({ context, payload }) {
-        log.info("音量加抬起", this.longPressTimer[context]);
         // 先清除长按的 `setTimeout`，避免定时器还没启动就抬起
         if (this.timeoutId[context]) {
             clearTimeout(this.timeoutId[context]);
@@ -1197,7 +1196,6 @@ plugin.volumeup = new Actions({
         }
         // 清除长按定时器
         if (this.longPressTimer[context]) {
-            log.info('长按结束======================');
             clearInterval(this.longPressTimer[context]);
             this.longPressTimer[context] = null;
         }
@@ -1227,7 +1225,7 @@ plugin.volumeup = new Actions({
                 return;
             }
 
-            if (playbackState.body.device) {
+            if (playbackState.body?.device) {
                 const currentVolume = playbackState.body.device?.volume_percent;
                 log.info("当前音量:", currentVolume);
                 log.info("当前音量:", playbackState.body.device);
@@ -1280,7 +1278,7 @@ plugin.volumedown = new Actions({
                     plugin.setTitle(context, "Too Many Request\nRetry After: " + secondsToHHMM(playbackState.retryAfter));
                     return;
                 }
-                if (playbackState.body.device) {
+                if (playbackState.body?.device) {
                     const currentVolume = playbackState.body.device.volume_percent;
                     if (this.data[context].show) {
                         this.flag && plugin.setTitle(context, currentVolume);
@@ -1332,7 +1330,7 @@ plugin.volumedown = new Actions({
                 return;
             }
 
-            if (playbackState.body.device) {
+            if (playbackState.body?.device) {
                 const currentVolume = playbackState.body.device?.volume_percent;
                 const newVolume = Math.max(0, currentVolume - (this.data[context].step || 10));
 
@@ -1378,7 +1376,7 @@ plugin.volumedown = new Actions({
                         return;
                     }
                     log.info('当前音量：', playbackState.body.device?.volume_percent);
-                    if (playbackState.body.device) {
+                    if (playbackState.body?.device) {
                         const currentVolume = playbackState.body.device.volume_percent;
                         const newVolume = Math.max(0, currentVolume - (this.data[context].step || 10));
                         await spotifyApi.setVolume(newVolume);
@@ -1419,7 +1417,7 @@ plugin.volumeset = new Actions({
                     plugin.setTitle(context, "Too Many Request\nRetry After: " + secondsToHHMM(playbackState.retryAfter));
                     return;
                 }
-                if (playbackState.body.device) {
+                if (playbackState.body?.device) {
                     // log.info(playbackState.body);
 
                     const currentVolume = playbackState.body.device.volume_percent;
@@ -1523,7 +1521,7 @@ plugin.mute = new Actions({
                 return;
             }
 
-            const currentVolume = playbackState.body.device.volume_percent;
+            const currentVolume = playbackState.body?.device.volume_percent;
             if (currentVolume !== undefined) {
                 if (currentVolume === 0) {
                     // 当前是静音状态，恢复到上一次的音量
@@ -1773,7 +1771,7 @@ plugin.volumecontrol = new Actions({
                 return;
             }
 
-            const currentVolume = playbackState.body.device.volume_percent;
+            const currentVolume = playbackState.body?.device.volume_percent;
             if (currentVolume !== undefined) {
                 const step = this.data[context]?.step || 10;
                 const newVolume = Math.max(0, Math.min(100,
@@ -1803,7 +1801,7 @@ plugin.volumecontrol = new Actions({
                 return;
             }
 
-            const currentVolume = playbackState.body.device.volume_percent;
+            const currentVolume = playbackState.body?.device.volume_percent;
             if (currentVolume !== undefined) {
                 if (currentVolume === 0) {
                     // 恢复音量
