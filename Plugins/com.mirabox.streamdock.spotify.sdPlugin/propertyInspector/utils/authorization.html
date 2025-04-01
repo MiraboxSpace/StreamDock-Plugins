@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spotify Setup</title>
+    <style>
+        :root {
+            color: white;
+        }
+
+        body {
+            margin: 0;
+            padding: 20px;
+            background-color: #2c2c2c;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+        }
+
+        .main {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .logo-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 20px;
+            margin: 20px 0;
+        }
+
+        .logo {
+            width: 40px;
+            height: 40px;
+        }
+
+        .connector {
+            width: 30px;
+            height: 2px;
+            background: #666;
+            margin: 0 5px;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .header h1 {
+            font-size: 24px;
+            margin: 0;
+        }
+
+        .content {
+            background: #333;
+            padding: 30px;
+            border-radius: 8px;
+        }
+
+        .description {
+            color: #ccc;
+            margin-bottom: 20px;
+            line-height: 1.5;
+        }
+
+        .link {
+            color: #1DB954;
+            cursor: pointer;
+            text-decoration: underline;
+        }
+
+        .input-group {
+            margin-bottom: 20px;
+        }
+
+        input {
+            width: 100%;
+            padding: 12px;
+            background: #3d3d3d;
+            border: 1px solid #4a4a4a;
+            border-radius: 4px;
+            color: white;
+            margin-bottom: 10px;
+            box-sizing: border-box;
+        }
+
+        input:focus {
+            border-color: #1DB954;
+            outline: none;
+        }
+
+        .button-group {
+            display: flex;
+            gap: 10px;
+            margin-top: 30px;
+        }
+
+        .button {
+            flex: 1;
+            padding: 12px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-weight: 500;
+            text-align: center;
+        }
+
+        .button:hover {
+            filter: brightness(1.2);
+            transition: filter 0.3s ease;
+        }
+
+        .button-primary {
+            background: #1DB954;
+            color: white;
+        }
+
+        .button-secondary {
+            background: #3d3d3d;
+            color: white;
+        }
+
+        .error-message {
+            color: #ff4444;
+            font-size: 14px;
+            margin-top: 10px;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="main">
+        <div class="logo-container">
+            <svg class="logo" viewBox="0 0 24 24" fill="#1DB954">
+                <path
+                    d="M12 0C5.4 0 0 5.4 0 12s5.4 12 12 12 12-5.4 12-12S18.66 0 12 0zm5.521 17.34c-.24.359-.66.48-1.021.24-2.82-1.74-6.36-2.101-10.561-1.141-.418.122-.779-.179-.899-.539-.12-.421.18-.78.54-.9 4.56-1.021 8.52-.6 11.64 1.32.42.18.479.659.301 1.02zm1.44-3.3c-.301.42-.841.6-1.262.3-3.239-1.98-8.159-2.58-11.939-1.38-.479.12-1.02-.12-1.14-.6-.12-.48.12-1.021.6-1.141C9.6 9.9 15 10.561 18.72 12.84c.361.181.54.78.241 1.2zm.12-3.36C15.24 8.4 8.82 8.16 5.16 9.301c-.6.179-1.2-.181-1.38-.721-.18-.601.18-1.2.72-1.381 4.26-1.26 11.28-1.02 15.721 1.621.539.3.719 1.02.419 1.56-.299.421-1.02.599-1.559.3z" />
+            </svg>
+            <div class="connector"></div>
+            <svg class="logo" viewBox="0 0 24 24" fill="#191414">
+                <image xmlns="http://www.w3.org/2000/svg" id="image0" width="24" height="24" x="0" y="0"
+                    xmlns:xlink="http://www.w3.org/1999/xlink"
+                    xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAH4AAAB+CAMAAADV/VW6AAAAIGNIUk0AAHolAACAgwAA+f8AAIDp AAB1MAAA6mAAADqYAAAXb5JfxUYAAAKjUExURf///xKW2xKW2xKW2xKW2xKW2xKW2xKW2xKW2xKW 2xKW2xKW2xKW2xKW2xKW2xKW2xKW2xKW2xKW2xKW2xKW2xKW2xKW2xKW2xKW2xKW2xKW2xKW2xKW 2xKW2xKW2xKW2xKW2xKW2xKW2xKW2xKW2xKW2xKW2xKW2xKW2xKW2xKW2xKW2xKW2xKW2xKW2xKW 2xKW2xKW2xKW2xKW2xKW2xKW2xKW2xKW2xKW2xKW2xKW2xKW2xKW2xKW2xKW2xKW2xKW2xKW2xKW 2xKW2xKW2xKW2xKW2xKW2xKW2xKW2xKW2xKW2xKW2xKW2xKW2xKW2xKW2xKW2xKW2xKW2xKW2xKW 2xKW2xKW2xKW2xKW2xKW2xKW2xKW2xKW2xKW2xKW2xKW2xKW2xKW2xKW2xKW2xKW2xKW2xKW2xKW 2xKW2xKW2xKW2xKW2xKW2xKW2xKW2xKW2xKW2xKW2xKW2xKW2xKW2xKW2xKW2xKW2xKW2xKW2xKW 2xKW2xKW2xKW2xKW2xKW2xKW2xKW2xKW2xKW2xKW2xKW2xKW2xKW2xKW2xKW2xKW2xKW2xKW2xKW 2xKW2xKW2xKW2xKW2xKW2xKW2xKW2xKW2xKW2xKW2xKW2xKW2xKW2xKW2xKW2xKW2xKW2xKW2xKW 2xKW2xKW2xKW2xKW2xKW2xKW2xKW2xKW2xKW2xKW2xKW2xKW2xKW2xKW2xKW2xKW2xKW2xKW2xKW 2xKW2xKW2xKW2xKW2xKW2xKW2xKW2xKW2xKW2xKW2xKW2xKW2xKW2xKW2xKW2xKW2xKW2xKW2xKW 2xKW2xKW2xKW2xKW2xKW2xKW2xKW2xKW2xKW2xKW2xKW2xKW2xKW2xKW2xKW2xKW2xKW2xKW2xKW 2xKW2xKW2xKW2xKW2xKW2////1a8LQIAAADfdFJOUwAADERtdFAgVcvfggeAtRCGtA1FYWxYNRhL T0gXhbYPBNn68Ls+FI39+96LErOd9VcdzsgZtwP2N7q4ATLyqlJUeRykDqPHqTvDqPk6hIFMkgnF QymVrEmrKPyUCPhCSnyhxJ8l5p7+AmXq7ckbzfTvLBWM6YgtTU5GRxF/WtLiC3F2BZOlL74umcyt ZIpu7KA8I91yarLoWSaxg33Ph7/xZzh7kLBc0HoKcGY2wWtoBiSuaZsw1NGn03gnQBYhMUFR7sBe 5T3C3Kbnvfea2m/KflMz63ca4yLWYo6Y8zQuF0abAAAAAWJLR0QAiAUdSAAAAAlwSFlzAAALEwAA CxMBAJqcGAAAAAd0SU1FB+kDGAMmIjtqmdMAAAVWSURBVGje7Zv7WxRVGMfnIKDgyrIUWhAXSREs QEWUWEIhwoAStygEl4RC2oAIiIBCwdjyGmGagGTSVe0iGZaiZRSmmd2s7GK386+E4Z45s3PmfUdq nvV5nO9P/PDh++HMDnsuOytJZq6eECPiN8U/IHDqvz/6QD8tiI4neLrFJ/oZ9HJCrD7Qh1IWW5hY b73uen91wmfOUrfdcGNghDqBkTdp2KMol+gYgTzWf3YcFebmOXOVZfHzghOEZOL8W25F7ZQmhans lmSqnZQFfNnCRQCauhi88hNJ8x7/kgAKZWm6XGa5DUQzLF5ye5Qa8h5/5u1gJ82S65bBJF0OX/mJ eL3+2UhncA6ruwNBk+2KsYeKKVsur78T6eSufh6CRi9Bx34pIbx/BdIZdxcrzEfQJE5vj9LmbNz1 L0A6C++elD4KAkPCDNaHwqR8/xmiv4diaJiBemTsl5JhNUy/ErePw34G6YviqJ6sshiid9yry04L 7zNEX5xA9eV+Q/SROu30AUP0JXr1qw3Rl5bp1K8xRO/UeeuVP2jMP97aRF16g/7xCKnQY7887Rvx pjuDoonONXDKQf2GTjmoP83YCZeQ6SDox5YbWUjnJBdb0Pj5xX4l0pki77QeQlDlUlPTz41dksKR ztnxrBBbaD+sWGhrTftpVn6hXbUO7qyW+5bD5COBRBnh+G3KbY7rUbCzpliuc2SAaJqD4P4Q1SZ3 HlBZu5avy6kD0KDHCEH90eotrrSg/vGyBEESGwoalXVNT9QkJgjR5iebCEH9NtEGX3K1tLa1qtL2 VI66z/p0RKsALWkn4qxXjD1XgkP+93D3v9bhipF6+fpHx/jkYG1DR/m4vHPlRuITPdk45ZmuDRNH L77QczH1/0nvcseq47aL0FhhVE534LMFzwlSUJHu3bipYnN9kDqL5mRv8UYjt6ZuE6Dbtj+vmPKk Fu3jupRu5VndC7WaaI+/gszdAcwOL3L2nbugaaySX0K8BM54uznS2QuRfcXM7occbfXLnY3wCWTN Hr1/KB1gd0ARsiXLd7LOl2GS7pUv/SsImunR70PAmlJWOoigvS4PWfoqgr7m0V/BShfbO9rYffI6 QtK9Hr0h6/x0TP+GqTf1pt7Um3pTb+pN/bWh9/Fa700EbNjE9BkI+hbT61/p7kfAA35MfxBBDzLy 7VSYLGvx6JsGYfId1kmq+kCyjzuBfBcuHXCzXdZ7DRB4yCF3kiGw832OPDwAkbs+4PaYRcAec1h5 tHdEe/zrjihI64fan+SmfqTYYecEHDp6TJCjI9NcRJnirhWpHSrweN7qEx97keST7qR6ATpY3e9U HTA4hCGiWATgYSHpcgpQtwSEGBwJjqk39deUvn3PTnWqTgp+/9P+8CF1drcKPkoZ3e8vQj/zetdx fT7YNyZK86kv3MrGxiyNc8XE0/tilOiZLzWO4crPDtl5+ypgcvgql6+cew5Av1ZcgP5vAPRb2R7b DU5jydy7/snvQLSSs6engOj3TB9RCII0Uu7sgkluVWgfgdHmxR79MAzSEbnzPIL+wNCFpxH0R4++ AwHz2Gzm7kHQHUz/E/bwzAm9+vNO3forWOlWePTHELBO1l9A0Mms8029qTf1pt7Um3pTb+qvHn2P br3+xdZxBAxy6B69/GRhJvag8s8efR0Cbmb7DDv2rGY20//SiaBtHv16BJSPKgnyWOfSTBmthtFf 4z363y6C4Hz5SVHSfgBE18gk2VILor/Lm7xZ0Et6QfF9wNGzADqs2I2WjAHoH/wGe/RUuQZWln+G KDL1z04x+9fFAK9v4/3de078JY2xoJmSGd/nHwbFQiouohAVAAAAJXRFWHRkYXRlOmNyZWF0ZQAy MDI1LTAzLTI0VDAzOjM4OjM0KzAwOjAwqXGiEAAAACV0RVh0ZGF0ZTptb2RpZnkAMjAyNS0wMy0y NFQwMzozODozNCswMDowMNgsGqwAAAAodEVYdGRhdGU6dGltZXN0YW1wADIwMjUtMDMtMjRUMDM6 Mzg6MzQrMDA6MDCPOTtzAAAAAElFTkSuQmCC" />
+            </svg>
+        </div>
+
+        <hr />
+
+        <div class="header">
+            <h1>Client ID and Secret</h1>
+        </div>
+
+        <div class="content">
+            <div class="description">We need you to provide the 'Client Id' and 'Client Secret' of your Spotify account. Please <span class="link" id="open">Click here</span></div>
+
+            <div class="input-group">
+                <input type="text" id="clientId" placeholder="Client ID" required>
+                <input type="password" id="clientSecret" placeholder="Client Secret" required>
+            </div>
+
+            <div class="button-group">
+                <div class="button button-primary" id="authorizeBtn">Authorization</div>
+                <div class="button button-secondary" id="cancelBtn">Cancel</div>
+            </div>
+
+            <div class="error-message" id="errorMessage"></div>
+        </div>
+    </div>
+
+    <script>
+        let $websocket = window.opener.$websocket;
+        const clientId = document.querySelector("#clientId");
+        const clientSecret = document.querySelector("#clientSecret");
+        const errorMessage = document.querySelector("#errorMessage");
+        $lang = window.opener.$lang;
+
+        document.querySelector("#authorizeBtn").addEventListener('click', (e) => {
+            if (clientId.value && clientSecret.value) {
+                $websocket.openUrl(`http://127.0.0.1:26433/authorization?clientId=${clientId.value}&clientSecret=${clientSecret.value}`);
+                window.close();
+            } else {
+                errorMessage.textContent = $lang["Please fill in Client ID and Client Secret"];
+            }
+        });
+
+        document.querySelector("#open").addEventListener('click', () => {
+            $websocket.openUrl('https://github.com/MiraboxSpace/StreamDock-Plugins/tree/main/Plugins/com.mirabox.streamdock.spotify.sdPlugin#readme');
+        });
+
+        document.querySelector("#cancelBtn").addEventListener('click', () => {
+            window.close();
+        });
+
+        const main = document.querySelector('.main');
+        const walker = document.createTreeWalker(main, NodeFilter.SHOW_TEXT, (e) => {
+            return e.data.trim() && NodeFilter.FILTER_ACCEPT;
+        });
+        while (walker.nextNode()) {
+            walker.currentNode.data = $lang[walker.currentNode.data];
+        }
+        const translate = item => {
+            if (item.placeholder?.trim()) {
+                item.placeholder = $lang[item.placeholder];
+            }
+        };
+        document.querySelectorAll('input').forEach(translate);
+        document.querySelectorAll('textarea').forEach(translate);
+    </script>
+</body>
+
+</html>

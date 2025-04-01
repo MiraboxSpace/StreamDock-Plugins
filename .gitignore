@@ -1,0 +1,22 @@
+# VSCode
+**/.vscode/
+**/.vs/
+
+# Package files
+**/package-lock.json
+
+# Non-npm lockfiles
+**/pnpm-lock.yaml
+**/yarn.lock
+**/deno.lock
+**/bun.lockb
+**/bun.lock
+
+# Dependencies
+**/node_modules/
+
+# Build outputs
+**/build/
+**/dist/
+**/*.build/
+**/out/

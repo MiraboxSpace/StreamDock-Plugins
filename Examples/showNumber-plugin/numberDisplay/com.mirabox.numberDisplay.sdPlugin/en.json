@@ -1,0 +1,12 @@
+{
+  "Description": "Number Display",
+  "Name": "Number Display",
+  "Category": "Number Display",
+  "com.hotspot.streamdockcppsdk.demo.myaction1": {
+    "Name": "Number Display",
+    "Tooltip": "Number Display"
+  },
+  "Localization": {
+    "数字": "Number"
+  }
+}

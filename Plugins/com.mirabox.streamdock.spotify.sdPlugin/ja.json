@@ -1,0 +1,120 @@
+{
+  "Name": "Spotify",
+  "Description": "Spotifyをコントロール",
+  "Category": "Spotify",
+  "com.mirabox.streamdock.spotify.playpause": {
+    "Name": "再生/一時停止",
+    "Tooltip": "再生/一時停止"
+  },
+  "com.mirabox.streamdock.spotify.previous": {
+    "Name": "前の曲",
+    "Tooltip": "前の曲"
+  },
+  "com.mirabox.streamdock.spotify.next": {
+    "Name": "次の曲",
+    "Tooltip": "次の曲"
+  },
+  "com.mirabox.streamdock.spotify.changedevice": {
+    "Name": "再生デバイスを変更",
+    "Tooltip": "再生デバイスを変更"
+  },
+  "com.mirabox.streamdock.spotify.likesong": {
+    "Name": "お気に入りに追加",
+    "Tooltip": "お気に入りに追加"
+  },
+  "com.mirabox.streamdock.spotify.playuri": {
+    "Name": "URIで再生",
+    "Tooltip": "URIで再生"
+  },
+  "com.mirabox.streamdock.spotify.playplaylist": {
+    "Name": "プレイリストを再生",
+    "Tooltip": "プレイリストを再生"
+  },
+  "com.mirabox.streamdock.spotify.removeplaylistsong": {
+    "Name": "プレイリストから削除",
+    "Tooltip": "プレイリストから削除"
+  },
+  "com.mirabox.streamdock.spotify.addtoplaylist": {
+    "Name": "プレイリストに追加",
+    "Tooltip": "プレイリストに追加"
+  },
+  "com.mirabox.streamdock.spotify.repeat": {
+    "Name": "リピートモード",
+    "Tooltip": "リピートモード"
+  },
+  "com.mirabox.streamdock.spotify.shuffle": {
+    "Name": "シャッフルモード",
+    "Tooltip": "シャッフルモード"
+  },
+  "com.mirabox.streamdock.spotify.songinfo": {
+    "Name": "曲の情報",
+    "Tooltip": "曲の情報"
+  },
+  "com.mirabox.streamdock.spotify.volumeup": {
+    "Name": "音量アップ",
+    "Tooltip": "音量アップ"
+  },
+  "com.mirabox.streamdock.spotify.volumedown": {
+    "Name": "音量ダウン",
+    "Tooltip": "音量ダウン"
+  },
+  "com.mirabox.streamdock.spotify.volumeset": {
+    "Name": "音量設定",
+    "Tooltip": "音量設定"
+  },
+  "com.mirabox.streamdock.spotify.mute": {
+    "Name": "ミュート",
+    "Tooltip": "ミュート"
+  },
+  "com.mirabox.streamdock.spotify.previousornext": {
+    "Name": "前の曲<< | >>次の曲",
+    "Tooltip": "前の曲<< | >>次の曲"
+  },
+  "com.mirabox.streamdock.spotify.volumecontrol": {
+    "Name": "音量調節",
+    "Tooltip": "音量調節"
+  },
+  "Localization": {
+    "Please fill in Client ID and Client Secret": "Client IDとClient Secretを入力してください",
+    "Client ID": "Client ID",
+    "Client Secret": "Client Secret",
+    "Client ID and Secret": "Client ID and Secret",
+    "Authorization": "認証",
+    "Cancel": "キャンセル",
+    "We need you to provide the 'Client Id' and 'Client Secret' of your Spotify account. Please ": "SpotifyアカウントのClient IdとClient Secretを提供していただく必要があります。",
+    "Click here": "ここをクリック",
+    "Playback Device": "再生デバイス",
+    "Loading...": "読み込み中...",
+    "Time Display": "時間表示",
+    "Time Remaining": "残り時間",
+    "Time Elapsed": "経過時間",
+    "Show Title": "タイトルを表示",
+    "Display Format": "表示形式",
+    "Title": "タイトル",
+    "Title - Artist": "タイトル - アーティスト",
+    "Artist": "アーティスト",
+    "Artist - Title": "アーティスト - タイトル",
+    "Logout": "ログアウト",
+    "refresh": "デバイスを更新",
+    "Spotify URI": "Spotify URI",
+    "spotify:track:xxxxxxxxxxxxxxxxxxxx": "spotify:track:xxxxxxxxxxxxxxxxxxxx",
+    "Playback Option": "再生オプション",
+    "Play Now": "今すぐ再生",
+    "Add to Queue": "キューに追加",
+    "How to get Spotify URI?": "Spotify URIを取得する方法は？",
+    "Right-click a song in the Spotify app": "Spotifyアプリで曲を右クリック",
+    "Select \"Share\" > \"Copy Spotify URI\"": "\"共有\" > \"Spotify URIをコピー\"を選択",
+    "If you only see a 'Copy Song Link' option, press the ALT key on your keyboard": "'曲のリンクをコピー'オプションしか表示されない場合は、キーボードのALTキーを押してください",
+    "The format should be similar to: spotify:track:xxxxxxxxxxxxxxxxxxx": "形式は次のようになります：spotify:track:xxxxxxxxxxxxxxxxxxx",
+    "Optional: Add a timestamp #mm:ss to specify the start time": "オプション：開始時間を指定するためにタイムスタンプ #mm:ss を追加",
+    "Playlist": "プレイリスト",
+    "Show Cover": "カバーを表示",
+    "When the button is pressed, the content will be copied to clipboard according to the format selected above": "ボタンが押されると、上で選択した形式に従ってコンテンツがクリップボードにコピーされます",
+    "Format": "フォーマット",
+    "Track URI": "トラックURI",
+    "URL": "URL",
+    "Show Volume": "音量を表示",
+    "Volume": "音量",
+    "Step": "ステップ"
+  }
+}

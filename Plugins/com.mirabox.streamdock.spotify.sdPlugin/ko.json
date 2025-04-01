@@ -1,0 +1,120 @@
+{
+  "Name": "Spotify",
+  "Description": "Spotify 제어",
+  "Category": "Spotify",
+  "com.mirabox.streamdock.spotify.playpause": {
+    "Name": "재생/일시정지",
+    "Tooltip": "재생/일시정지"
+  },
+  "com.mirabox.streamdock.spotify.previous": {
+    "Name": "이전 곡",
+    "Tooltip": "이전 곡"
+  },
+  "com.mirabox.streamdock.spotify.next": {
+    "Name": "다음 곡",
+    "Tooltip": "다음 곡"
+  },
+  "com.mirabox.streamdock.spotify.changedevice": {
+    "Name": "재생 장치 변경",
+    "Tooltip": "재생 장치 변경"
+  },
+  "com.mirabox.streamdock.spotify.likesong": {
+    "Name": "좋아요에 추가",
+    "Tooltip": "좋아요에 추가"
+  },
+  "com.mirabox.streamdock.spotify.playuri": {
+    "Name": "URI로 재생",
+    "Tooltip": "URI로 재생"
+  },
+  "com.mirabox.streamdock.spotify.playplaylist": {
+    "Name": "재생목록 재생",
+    "Tooltip": "재생목록 재생"
+  },
+  "com.mirabox.streamdock.spotify.removeplaylistsong": {
+    "Name": "재생목록에서 삭제",
+    "Tooltip": "재생목록에서 삭제"
+  },
+  "com.mirabox.streamdock.spotify.addtoplaylist": {
+    "Name": "재생목록에 추가",
+    "Tooltip": "재생목록에 추가"
+  },
+  "com.mirabox.streamdock.spotify.repeat": {
+    "Name": "반복 모드",
+    "Tooltip": "반복 모드"
+  },
+  "com.mirabox.streamdock.spotify.shuffle": {
+    "Name": "셔플 모드",
+    "Tooltip": "셔플 모드"
+  },
+  "com.mirabox.streamdock.spotify.songinfo": {
+    "Name": "곡 정보",
+    "Tooltip": "곡 정보"
+  },
+  "com.mirabox.streamdock.spotify.volumeup": {
+    "Name": "볼륨 증가",
+    "Tooltip": "볼륨 증가"
+  },
+  "com.mirabox.streamdock.spotify.volumedown": {
+    "Name": "볼륨 감소",
+    "Tooltip": "볼륨 감소"
+  },
+  "com.mirabox.streamdock.spotify.volumeset": {
+    "Name": "볼륨 설정",
+    "Tooltip": "볼륨 설정"
+  },
+  "com.mirabox.streamdock.spotify.mute": {
+    "Name": "음소거",
+    "Tooltip": "음소거"
+  },
+  "com.mirabox.streamdock.spotify.previousornext": {
+    "Name": "이전 곡<< | >>다음 곡",
+    "Tooltip": "이전 곡<< | >>다음 곡"
+  },
+  "com.mirabox.streamdock.spotify.volumecontrol": {
+    "Name": "볼륨 조절",
+    "Tooltip": "볼륨 조절"
+  },
+  "Localization": {
+    "Please fill in Client ID and Client Secret": "Client ID와 Client Secret을 입력해주세요",
+    "Client ID": "Client ID",
+    "Client Secret": "Client Secret",
+    "Client ID and Secret": "Client ID 및 Secret",
+    "Authorization": "인증",
+    "Cancel": "취소",
+    "We need you to provide the 'Client Id' and 'Client Secret' of your Spotify account. Please ": "Spotify 계정의 'Client Id'와 'Client Secret'을 제공해 주셔야 합니다. ",
+    "Click here": "여기를 클릭하세요",
+    "Playback Device": "재생 장치",
+    "Loading...": "로딩 중...",
+    "Time Display": "시간 표시",
+    "Time Remaining": "남은 시간",
+    "Time Elapsed": "경과 시간",
+    "Show Title": "제목 표시",
+    "Display Format": "표시 형식",
+    "Title": "제목",
+    "Title - Artist": "제목 - 아티스트",
+    "Artist": "아티스트",
+    "Artist - Title": "아티스트 - 제목",
+    "Logout": "로그아웃",
+    "refresh": "장치 새로고침",
+    "Spotify URI": "Spotify URI",
+    "spotify:track:xxxxxxxxxxxxxxxxxxxx": "spotify:track:xxxxxxxxxxxxxxxxxxxx",
+    "Playback Option": "재생 옵션",
+    "Play Now": "지금 재생",
+    "Add to Queue": "대기열에 추가",
+    "How to get Spotify URI?": "Spotify URI를 얻는 방법은?",
+    "Right-click a song in the Spotify app": "Spotify 앱에서 곡을 우클릭",
+    "Select \"Share\" > \"Copy Spotify URI\"": "\"공유\" > \"Spotify URI 복사\"를 선택",
+    "If you only see a 'Copy Song Link' option, press the ALT key on your keyboard": "'곡 링크 복사' 옵션만 보이는 경우, 키보드의 ALT 키를 누르세요",
+    "The format should be similar to: spotify:track:xxxxxxxxxxxxxxxxxxx": "형식은 다음과 유사해야 합니다: spotify:track:xxxxxxxxxxxxxxxxxxx",
+    "Optional: Add a timestamp #mm:ss to specify the start time": "선택 사항: 시작 시간을 지정하려면 타임스탬프 #mm:ss를 추가하세요",
+    "Playlist": "재생목록",
+    "Show Cover": "커버 표시",
+    "When the button is pressed, the content will be copied to clipboard according to the format selected above": "버튼을 누르면 위에서 선택한 형식에 따라 내용이 클립보드에 복사됩니다",
+    "Format": "형식",
+    "Track URI": "트랙 URI",
+    "URL": "URL",
+    "Show Volume": "볼륨 표시",
+    "Volume": "볼륨",
+    "Step": "단계"
+  }
+}

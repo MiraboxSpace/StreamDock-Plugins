@@ -1,0 +1,21 @@
+{
+  "name": "nodeplugin",
+  "version": "1.0.0",
+  "author": "mirabox",
+  "main": "index.js",
+  "description": "以子进程的方式运行nodejs代码",
+  "scripts": {
+    "build": "ncc build index.js -m -o ./build && node autofile.js"
+  },
+  "license": "ISC",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.19.2",
+    "fs-extra": "^11.2.0",
+    "log4js": "^6.9.1",
+    "node-fetch": "^3.3.2",
+    "path": "^0.12.7",
+    "spotify-web-api-node": "^5.0.2",
+    "ws": "^8.14.2"
+  }
+}

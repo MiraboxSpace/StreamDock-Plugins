@@ -1,0 +1,43 @@
+{
+  "Actions": [
+    {
+      "Icon": "images/icon",
+      "Name": "数字展示",
+      "States": [
+        {
+          "FontSize": "12",
+          "TitleAlignment": "center",
+          "Image": "images/icon"
+        }
+      ],
+      "SupportedInMultiActions": false,
+      "Tooltip": "数字展示",
+      "UUID": "com.mirabox.numberDisplay.myaction1",
+      "PropertyInspectorPath": "action1/index.html"
+    }
+  ],
+  "SDKVersion": 1,
+  "Author": "Hotspot",
+  "Category": "数字展示",
+  "CategoryIcon": "images/icon",
+  "CodePath": "numberDisplay.exe",
+  "CodePathMac": "numberDisplay",
+  "CodePathWin": "numberDisplay.exe",
+  "Description": "数字展示",
+  "Name": "数字展示",
+  "Icon": "images/icon",
+  "Version": "1.0",
+  "OS": [
+    {
+      "Platform": "mac",
+      "MinimumVersion": "10.11"
+    },
+    {
+      "Platform": "windows",
+      "MinimumVersion": "10"
+    }
+  ],
+  "Software": {
+    "MinimumVersion": "2.9"
+  }
+}

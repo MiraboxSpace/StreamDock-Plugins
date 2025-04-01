@@ -1,0 +1,120 @@
+{
+  "Name": "Spotify",
+  "Description": "Control Spotify",
+  "Category": "Spotify",
+  "com.mirabox.streamdock.spotify.playpause": {
+    "Name": "Play/Pause",
+    "Tooltip": "Play/Pause"
+  },
+  "com.mirabox.streamdock.spotify.previous": {
+    "Name": "Previous",
+    "Tooltip": "Previous"
+  },
+  "com.mirabox.streamdock.spotify.next": {
+    "Name": "Next",
+    "Tooltip": "Next"
+  },
+  "com.mirabox.streamdock.spotify.changedevice": {
+    "Name": "Change Device",
+    "Tooltip": "Change Device"
+  },
+  "com.mirabox.streamdock.spotify.likesong": {
+    "Name": "Add to Liked",
+    "Tooltip": "Add to Liked"
+  },
+  "com.mirabox.streamdock.spotify.playuri": {
+    "Name": "Play by URI",
+    "Tooltip": "Play by URI"
+  },
+  "com.mirabox.streamdock.spotify.playplaylist": {
+    "Name": "Play Playlist",
+    "Tooltip": "Play Playlist"
+  },
+  "com.mirabox.streamdock.spotify.removeplaylistsong": {
+    "Name": "Remove from Playlist",
+    "Tooltip": "Remove from Playlist"
+  },
+  "com.mirabox.streamdock.spotify.addtoplaylist": {
+    "Name": "Add to Playlist",
+    "Tooltip": "Add to Playlist"
+  },
+  "com.mirabox.streamdock.spotify.repeat": {
+    "Name": "Repeat Mode",
+    "Tooltip": "Repeat Mode"
+  },
+  "com.mirabox.streamdock.spotify.shuffle": {
+    "Name": "Shuffle Mode",
+    "Tooltip": "Shuffle Mode"
+  },
+  "com.mirabox.streamdock.spotify.songinfo": {
+    "Name": "Song Info",
+    "Tooltip": "Song Info"
+  },
+  "com.mirabox.streamdock.spotify.volumeup": {
+    "Name": "Volume Up",
+    "Tooltip": "Volume Up"
+  },
+  "com.mirabox.streamdock.spotify.volumedown": {
+    "Name": "Volume Down",
+    "Tooltip": "Volume Down"
+  },
+  "com.mirabox.streamdock.spotify.volumeset": {
+    "Name": "Set Volume",
+    "Tooltip": "Set Volume"
+  },
+  "com.mirabox.streamdock.spotify.mute": {
+    "Name": "Mute",
+    "Tooltip": "Mute"
+  },
+  "com.mirabox.streamdock.spotify.previousornext": {
+    "Name": "Previous<< | >>Next",
+    "Tooltip": "Previous<< | >>Next"
+  },
+  "com.mirabox.streamdock.spotify.volumecontrol": {
+    "Name": "Volume Control",
+    "Tooltip": "Volume Control"
+  },
+  "Localization": {
+    "Please fill in Client ID and Client Secret": "Please fill in Client ID and Client Secret",
+    "Client ID": "Client ID",
+    "Client Secret": "Client Secret",
+    "Client ID and Secret": "Client ID and Secret",
+    "Authorization": "Authorization",
+    "Cancel": "Cancel",
+    "We need you to provide the 'Client Id' and 'Client Secret' of your Spotify account. Please ": "We need you to provide the 'Client Id' and 'Client Secret' of your Spotify account. Please ",
+    "Click here": "Click here",
+    "Playback Device": "Playback Device",
+    "Loading...": "Loading...",
+    "Time Display": "Time Display",
+    "Time Remaining": "Time Remaining",
+    "Time Elapsed": "Time Elapsed",
+    "Show Title": "Show Title",
+    "Display Format": "Display Format",
+    "Title": "Title",
+    "Title - Artist": "Title - Artist",
+    "Artist": "Artist",
+    "Artist - Title": "Artist - Title",
+    "Logout": "Logout",
+    "refresh": "Refresh Devices",
+    "Spotify URI": "Spotify URI",
+    "spotify:track:xxxxxxxxxxxxxxxxxxxx": "spotify:track:xxxxxxxxxxxxxxxxxxxx",
+    "Playback Option": "Playback Option",
+    "Play Now": "Play Now",
+    "Add to Queue": "Add to Queue",
+    "How to get Spotify URI?": "How to get Spotify URI?",
+    "Right-click a song in the Spotify app": "Right-click a song in the Spotify app",
+    "Select \"Share\" > \"Copy Spotify URI\"": "Select \"Share\" > \"Copy Spotify URI\"",
+    "If you only see a 'Copy Song Link' option, press the ALT key on your keyboard": "If you only see a 'Copy Song Link' option, press the ALT key on your keyboard",
+    "The format should be similar to: spotify:track:xxxxxxxxxxxxxxxxxxx": "The format should be similar to: spotify:track:xxxxxxxxxxxxxxxxxxx",
+    "Optional: Add a timestamp #mm:ss to specify the start time": "Optional: Add a timestamp #mm:ss to specify the start time",
+    "Playlist": "Playlist",
+    "Show Cover": "Show Cover",
+    "When the button is pressed, the content will be copied to clipboard according to the format selected above": "When the button is pressed, the content will be copied to clipboard according to the format selected above",
+    "Format": "Format",
+    "Track URI": "Track URI",
+    "URL": "URL",
+    "Show Volume": "Show Volume",
+    "Volume": "Volume",
+    "Step": "Step"
+  }
+}

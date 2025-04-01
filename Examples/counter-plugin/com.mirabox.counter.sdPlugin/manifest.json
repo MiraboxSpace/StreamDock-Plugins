@@ -1,0 +1,48 @@
+{
+  "Actions": [
+    {
+      "Icon": "static/icon",
+      "Name": "计数器",
+      "States": [
+        {
+          "FontSize": "12",
+          "TitleAlignment": "center",
+          "Image": "static/icon"
+        }
+      ],
+      "Controllers": [
+        "Keypad",
+        "Information",
+        "Knob"
+      ],
+      "UserTitleEnabled": true,
+      "SupportedInMultiActions": false,
+      "Tooltip": "行动说明",
+      "UUID": "com.mirabox.counter.action1",
+      "PropertyInspectorPath": "propertyInspector/action1/index.html"
+    }
+  ],
+  "SDKVersion": 1,
+  "Author": "MiraBox",
+  "Name": "计数器",
+  "Icon": "static/icon",
+  "CodePath": "plugin/index.html",
+  "Description": "插件描述",
+  "Category": "插件名称",
+  "CategoryIcon": "static/icon",
+  "Version": "1.0",
+  "URL": "http://video.hotspotek.com.cn/",
+  "OS": [
+    {
+      "Platform": "mac",
+      "MinimumVersion": "10.11"
+    },
+    {
+      "Platform": "windows",
+      "MinimumVersion": "7"
+    }
+  ],
+  "Software": {
+    "MinimumVersion": "2.9"
+  }
+}
