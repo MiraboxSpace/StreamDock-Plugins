@@ -1,0 +1,565 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DeepSeek Chat</title>
+  <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.11.1/styles/default.min.css">
+  <!-- 引入 layui.css -->
+  <link href="https://unpkg.com/layui@2.9.23/dist/css/layui.css" rel="stylesheet">
+  <!-- 引入 layui.js -->
+  <script src="https://unpkg.com/layui@2.9.23/dist/layui.js"></script>
+  <!-- <script src="./deepseek.js"></script> -->
+  <script>
+    ;(() => {
+    // 获取查询字符串部分
+  const queryString = window.location.search;
+
+  // 使用 URLSearchParams 来解析查询字符串
+  const urlParams = new URLSearchParams(queryString);
+
+  // 获取单个参数
+  const valueOfKey1 = urlParams.get('key1'); // 返回 'value1'
+
+  // 遍历所有参数
+  for (const [key, value] of urlParams) {
+    console.log(key, value);
+  }
+})()
+  </script>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f9;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    #app {
+      display: flex;
+      background: white;
+      border-radius: 8px;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+      width: 80vw;
+      max-width: 100%;
+      height: 80vh;
+      flex-direction: column;
+    }
+
+    .header {
+      background-color: #007bff;
+      color: white;
+      padding: 10px;
+      text-align: center;
+      border-top-left-radius: 8px;
+      border-top-right-radius: 8px;
+    }
+
+    .content {
+      height: 400px;
+      display: flex;
+      flex: 1;
+    }
+
+    .sidebar {
+      width: 200px;
+      border-right: 1px solid #ddd;
+      padding: 10px;
+      overflow-y: auto;
+    }
+
+    .sidebar .add-conversation {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 10px;
+      background-color: #007bff;
+      color: white;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+
+    .sidebar button:hover {
+      background-color: #0056b3;
+    }
+
+    .sidebar ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .sidebar ul li {
+      padding: 10px;
+      cursor: pointer;
+      border-radius: 4px;
+      margin-bottom: 5px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+    }
+
+    ul li span {
+      width: 200px;
+      white-space: nowrap;
+      /* 防止文本换行 */
+      overflow: hidden;
+      /* 隐藏超出部分 */
+      text-overflow: ellipsis;
+      /* 溢出时显示省略号 */
+      display: inline-block;
+    }
+
+    .sidebar ul li:hover {
+      background-color: #f0f0f0;
+    }
+
+    .sidebar ul li.active {
+      background-color: #007bff;
+      color: white;
+    }
+
+    .main {
+      position: relative;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      padding: 10px;
+      background-color: rgb(246, 247, 251);
+    }
+
+    .chat-container {
+      /* flex: 1; */
+      width: calc(100% - 20px);
+      height: 80%;
+      overflow-y: auto;
+      /* border: 1px solid #ddd; */
+      border-radius: 4px;
+      padding: 10px;
+      margin-bottom: 10px;
+    }
+
+    .message {
+      width: 100%;
+      margin-bottom: 20px;
+
+      box-sizing: border-box;
+    }
+
+    .message .head-image {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      border: 1px solid skyblue;
+      margin: 0 6px;
+    }
+
+    .message .value-box {
+      position: relative;
+      max-width: calc(100% - 150px);
+    }
+
+    .edit-message {
+      width: calc(100% - 150px);
+    }
+
+    .edit-message textarea {
+      width: 100%;
+    }
+
+    .message .ctrl-icon {
+      position: relative;
+      width: 30px;
+      height: 30px;
+      border-radius: 50%;
+      margin: 0 6px;
+
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+    }
+
+    .ctrl-icon i {
+      font-size: 30px;
+    }
+
+    .layui-icon-speaker {
+      position: absolute;
+      right: 0px;
+      bottom: 0px;
+      transform: translate(50%,50%);
+      font-size: 20px;
+      border-radius: 50%;
+      border: 1px solid skyblue;
+      background-color: pink;
+    }
+
+    
+    .user-box .ctrl-icon {
+      opacity: 0;
+    }
+    .user-box:hover .ctrl-icon {
+      opacity: 1;
+    }
+
+    .message.user-box {
+      display: flex;
+      flex-direction: row-reverse;
+      /* text-align: right; */
+      color: #007bff;
+    }
+
+    .message .user-text {
+      border: 1px solid skyblue;
+      border-radius: 6px;
+      padding: 8px;
+      background-color: rgb(224, 223, 255);
+    }
+
+    .message.assistant-box {
+      display: flex;      
+    }
+
+    .message .assistant-text {
+      /* width: 100%; */
+      color: #333;
+      border: 1px solid skyblue;
+      border-radius: 6px;
+      padding: 8px;
+      background-color: white;
+    }
+
+    .message.assistant-box .ctrl-icon {
+      opacity: 0;
+    }
+    .message.assistant-box:hover .ctrl-icon {
+      opacity: 1;
+    }
+    .input-container {
+      position: absolute;
+      width: calc(100% - 20px);
+      bottom: 10px;
+      display: flex;
+    }
+
+    .input-container input {
+      flex: 1;
+      padding: 10px;
+      border: 1px solid #ddd;
+      border-radius: 4px;
+      margin-right: 10px;
+    }
+
+    .input-container textarea {
+      flex: 1;
+      padding: 10px;
+      border: 1px solid #ddd;
+      border-radius: 4px;
+      margin-right: 10px;
+      resize: none;
+      max-height: 60px;
+      box-sizing: border-box;
+    }
+
+    .input-container button {
+      padding: 10px 20px;
+      background-color: #007bff;
+      color: white;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+
+    .input-container button:hover {
+      background-color: #0056b3;
+    }
+
+    .loading {
+      animation: spin 1s linear infinite;
+    }
+
+    @keyframes spin {
+      to {
+        transform: rotate(360deg);
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div id="app">
+    <!-- 标题栏 -->
+    <div class="header">
+      DeepSeek Chat
+    </div>
+
+    <!-- 内容区域 -->
+    <div class="content">
+      <!-- 左侧边栏 -->
+      <div class="sidebar" style="display: none;">
+        <button class="add-conversation" @click="newConversation">{{ i18n['newConversation'] }}</button>
+        <ul>
+          <li v-for="(conversation, index) in conversations" :key="index"
+            :class="{ active: currentConversationIndex === index }" @click="switchConversation(index)">
+            <span>{{ conversation.name || i18n['unNameed'] }}</span>
+            <button class="layui-btn layui-btn-sm layui-btn-danger layui-btn-radius"
+              @click.stop="deleteConversation(index)">
+              <!-- <i class="layui-icon layui-icon-delete"></i>{{ i18n['delete']}} -->
+              <i class="layui-icon layui-icon-delete" style="font-size: 20px;"></i>
+            </button>
+          </li>
+        </ul>
+      </div>
+
+      <!-- 右侧主界面 -->
+      <div class="main">
+        <div ref="chatbox" class="chat-container">
+          <div v-for="(msg, index) in currentMessages" :key="index" :class="['message', msg.role + '-box']">
+            <image class="head-image" src="https://ts1.tc.mm.bing.net/th/id/R-C.1b4741a997df6a064e35112c3b838272?rik=xUP%2fVx2W8WkOfw&riu=http%3a%2f%2fwww.kuaipng.com%2fUploads%2fpic%2fw%2f2023%2f06-20%2f142524%2fwater_142524_698_698_.png&ehk=s4Q%2bQRdM8lXctR2zga%2ffefaK3eOwEHNtrSyc%2bg9UuLQ%3d&risl=&pid=ImgRaw&r=0"></image>
+            <div v-if="msg.edit? msg.edit == false: true" :class="['value-box',msg.role + '-text']">
+              <div v-html="msg.content"></div>
+              <i v-if="msg.role == 'assistant'" class="layui-icon layui-icon-speaker"></i>
+            </div>
+            <div v-else class="edit-message" >
+              <textarea :id="'edit-value' + index" rows="5" :value="msg.content"></textarea>
+              <button @click="editMessage(index,false)">取消</button>
+              <button @click="editMessageSend(index)">发送</button>
+            </div>
+            <div class="ctrl-icon">
+              <i v-if="msg.role == 'user'" @click="editMessage(index,true)" class="layui-icon layui-icon-edit"></i>
+              <!-- <i v-if="msg.role == 'assistant'" class="layui-icon layui-icon-speaker"></i> -->
+            </div>
+          </div>
+        </div>
+        <div class="input-container">
+          <textarea v-model="inputMessage" @keyup.enter="sendMessage" :placeholder="i18n['typeYourMessage']"></textarea>
+          <button @click="sendMessage" :disabled="isLoading">
+            <!-- <span v-if="!isLoading"><i class="layui-icon layui-icon-release"></i>{{ i18n['send'] }}</span>
+            <span v-else><i class="layui-icon layui-icon-loading layui-anim layui-anim-rotate layui-anim-loop"></i> {{ i18n['loading'] }}</span> -->
+            <span v-if="!isLoading"><i class="layui-icon layui-icon-release"></i></span>
+            <span v-else><i
+                class="layui-icon layui-icon-loading layui-anim layui-anim-rotate layui-anim-loop"></i></span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const { createApp, ref, computed, onMounted, onUpdated } = Vue;
+    createApp({
+      setup() {
+        // 在组件更新后执行滚动到底部的操作
+        const chatbox = ref(null);
+        const scrollToBottom = () => {
+          if (chatbox.value) {
+            chatbox.value.scrollTop = chatbox.value.scrollHeight;
+          }
+        };
+        onUpdated(() => {
+          if(isLoading.value) {
+            scrollToBottom();
+          }
+        });
+
+        // 保存会话到localStorage
+        const setConversations = () => {
+          // localStorage.setItem('conversations', JSON.stringify(conversations.value));
+          window.opener.deepseekLink.linkSetData(JSON.stringify(conversations.value))
+        };
+        const getConversations = () => {
+          // 直接获取数据，不再需要 JSON.parse，因为 linkGetData 已经返回了对象/数组
+          let data = []
+          try {
+            data = JSON.parse(window.opener.deepseekLink.linkGetData());
+          } catch (error) {
+            data = []
+          }
+          console.log(typeof data)
+          // 确保返回值是一个数组，防止意外情况
+          return Array.isArray(data) ? data : [];
+        }
+
+        // 从localStorage获取会话历史
+        // const savedConversations = JSON.parse(localStorage.getItem('conversations')) || [];
+        const savedConversations = getConversations();
+        const conversations = ref(savedConversations);
+        const currentConversationIndex = ref(0);
+        const i18n = window.opener.deepseekLink.linkI18n
+        console.log(typeof conversations.value, conversations.value, currentConversationIndex.value)
+        // 当前会话的消息
+        const currentMessages = computed(() => {
+          // 如果没有对话，返回空数组并重置 currentConversationIndex
+          if (conversations.value.length === 0) {
+            currentConversationIndex.value = -1;
+            return [];
+          }
+
+          // 检查 currentConversationIndex 是否在有效范围内
+          const currentIndex = currentConversationIndex.value;
+          if (currentIndex >= 0 && currentIndex < conversations.value.length) {
+            return conversations.value[currentIndex].messages;
+          } else {
+            console.warn('Invalid conversation index:', currentIndex);
+
+            // 重置 currentConversationIndex 到第一个对话的索引
+            currentConversationIndex.value = 0;
+
+            // 返回第一个对话的消息列表
+            return conversations.value[0].messages;
+          }
+        });
+        // 输入消息
+        const inputMessage = ref('');
+        const isLoading = ref(false);
+
+        // 发送消息
+        const sendMessage = async () => {
+
+          if (inputMessage.value.trim() === '') return;
+
+            isLoading.value = true;
+            const userMessage = { role: 'user', content: inputMessage.value, edit: false };
+            currentMessages.value.push(userMessage);
+
+            const botMessage = ref({ role: 'assistant', content: '' });
+            // currentMessages.value.push(botMessage.value);
+            // 当没有会话时发送消息自动新建会话
+            if (!conversations.value.length || currentConversationIndex.value == -1) {
+              conversations.value.push({ messages: currentMessages.value, name: inputMessage.value });
+            }
+
+            inputMessage.value = '';
+
+          // isLoading.value = false;
+          // setConversations();
+          // return
+          try {
+            let result = await window.opener.deepseekLink.linkStreamingRequest(currentMessages.value)
+            currentMessages.value.push(botMessage.value);
+            //  if(!result[0]) {
+            //     // botMessage.content = result[1];
+            //  }
+            //  botMessage.content = window.opener.deepseekLink.linkMarked(result[1]);
+            let tempMessage = ''
+            for await (const chunk of result[1]) {
+              // 使用 "data:" 作为分隔符分割字符串
+              const splitData = chunk.split('data:').filter(chunk => chunk.trim() !== '');
+
+              // 清理并解析 JSON
+              const jsonObjects = splitData.map(chunk => {
+                const cleanChunk = chunk.trim();
+                try {
+                  // 尝试解析 JSON
+                  return JSON.parse(cleanChunk);
+                } catch (error) {
+                  console.error(`Failed to decode JSON: ${error.message}`);
+                  return null;
+                }
+              }).filter(obj => obj !== null); // 移除无法解析的部分
+
+              // 输出结果以验证
+              jsonObjects.forEach((chunk, index) => {
+                // console.log(`Object ${index + 1}:`);
+                // console.log(JSON.stringify(chunk, null, 2));
+                if (chunk.choices[0].delta.content) {
+                  tempMessage += chunk.choices[0].delta.content
+                  console.log(window.opener.deepseekLink.linkMarked(tempMessage))
+                  botMessage.value.content = window.opener.deepseekLink.linkMarked(tempMessage);
+                }
+              });
+            }
+          } catch (error) {
+            botMessage.value.content = error.message;
+          }
+          isLoading.value = false;
+          setConversations();
+        };
+
+        // 新建会话
+        const newConversation = () => {
+          const conversationName = prompt("Enter a name for the new conversation:");
+          if (!conversationName) {
+            return
+          }
+          // 检查是否已存在相同名称的对话
+          const isConversationNameExists = conversations.value.some((i) => {
+            return i.name === conversationName;
+          });
+
+          if (isConversationNameExists) {
+            alert('对话名称已存在，请选择另一个名称。');
+            return;
+          }
+          conversations.value.push({ messages: [], name: conversationName });
+          currentConversationIndex.value = conversations.value.length - 1;
+          setConversations();
+        };
+
+        // 切换会话
+        const switchConversation = (index) => {
+          currentConversationIndex.value = index;
+        };
+
+        // 删除会话
+        const deleteConversation = (index) => {
+          // if (conversations.value.length <= 1) return
+          conversations.value.splice(index, 1);
+          if (currentConversationIndex.value >= conversations.value.length) {
+            if (conversations.value.length == 0) {
+              currentConversationIndex.value = 0;
+            } else {
+              currentConversationIndex.value = conversations.value.length - 1;
+            }
+          }
+
+          setConversations();
+        };
+
+        // 页面加载时恢复会话
+        onMounted(() => {
+          setConversations(); // 初始化存储
+        });
+
+        const editMessage = (index, status) => {
+          currentMessages.value[index].edit = status
+        }
+
+        const editMessageSend = (index) => {
+          let ele = document.getElementById('edit-value' + index)
+          // alert(ele.value)
+          if(ele.value.trim() === '') return
+          currentMessages.value[index].edit = false
+          inputMessage.value = ele.value
+          sendMessage()
+        }
+
+        return {
+          conversations,
+          currentConversationIndex,
+          currentMessages,
+          inputMessage,
+          isLoading,
+          sendMessage,
+          newConversation,
+          switchConversation,
+          deleteConversation,
+          i18n,
+          chatbox,
+          editMessage,
+          editMessageSend
+        };
+      }
+    }).mount('#app');
+  </script>
+</body>
+
+</html>

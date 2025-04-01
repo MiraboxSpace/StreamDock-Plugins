@@ -1,0 +1,31 @@
+{
+  "name": "vue",
+  "type": "module",
+  "scripts": {
+    "dev": "node ./script/autofile.cjs dev && vite --host",
+    "build": "vite build && node ./script/autofile.cjs",
+    "format": "prettier . --write"
+  },
+  "dependencies": {
+    "highlight.js": "^11.11.1",
+    "lodash": "^4.17.21",
+    "marked": "^15.0.7",
+    "marked-highlight": "^2.2.1",
+    "openai": "^4.87.3",
+    "pinia": "^2.1.7",
+    "vue": "^3.4.21",
+    "vue-router": "4"
+  },
+  "devDependencies": {
+    "@types/node": "^20.11.10",
+    "@vicons/material": "^0.13.0",
+    "@vitejs/plugin-vue": "^5.0.4",
+    "fs-extra": "^11.2.0",
+    "naive-ui": "^2.38.1",
+    "prettier": "^3.2.5",
+    "sass": "^1.71.1",
+    "unplugin-auto-import": "^0.17.5",
+    "vite": "^5.1.5",
+    "vite-plugin-singlefile": "^2.0.1"
+  }
+}
