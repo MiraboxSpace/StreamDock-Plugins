@@ -1,0 +1,120 @@
+{
+  "Name": "Spotify",
+  "Description": "Управление Spotify",
+  "Category": "Spotify",
+  "com.mirabox.streamdock.spotify.playpause": {
+    "Name": "Воспроизведение/Пауза",
+    "Tooltip": "Воспроизведение/Пауза"
+  },
+  "com.mirabox.streamdock.spotify.previous": {
+    "Name": "Предыдущий",
+    "Tooltip": "Предыдущий"
+  },
+  "com.mirabox.streamdock.spotify.next": {
+    "Name": "Следующий",
+    "Tooltip": "Следующий"
+  },
+  "com.mirabox.streamdock.spotify.changedevice": {
+    "Name": "Сменить устройство",
+    "Tooltip": "Сменить устройство"
+  },
+  "com.mirabox.streamdock.spotify.likesong": {
+    "Name": "Добавить в избранное",
+    "Tooltip": "Добавить в избранное"
+  },
+  "com.mirabox.streamdock.spotify.playuri": {
+    "Name": "Воспроизвести по URI",
+    "Tooltip": "Воспроизвести по URI"
+  },
+  "com.mirabox.streamdock.spotify.playplaylist": {
+    "Name": "Воспроизвести плейлист",
+    "Tooltip": "Воспроизвести плейлист"
+  },
+  "com.mirabox.streamdock.spotify.removeplaylistsong": {
+    "Name": "Удалить из плейлиста",
+    "Tooltip": "Удалить из плейлиста"
+  },
+  "com.mirabox.streamdock.spotify.addtoplaylist": {
+    "Name": "Добавить в плейлист",
+    "Tooltip": "Добавить в плейлист"
+  },
+  "com.mirabox.streamdock.spotify.repeat": {
+    "Name": "Режим повтора",
+    "Tooltip": "Режим повтора"
+  },
+  "com.mirabox.streamdock.spotify.shuffle": {
+    "Name": "Режим перемешивания",
+    "Tooltip": "Режим перемешивания"
+  },
+  "com.mirabox.streamdock.spotify.songinfo": {
+    "Name": "Информация о песне",
+    "Tooltip": "Информация о песне"
+  },
+  "com.mirabox.streamdock.spotify.volumeup": {
+    "Name": "Увеличить громкость",
+    "Tooltip": "Увеличить громкость"
+  },
+  "com.mirabox.streamdock.spotify.volumedown": {
+    "Name": "Уменьшить громкость",
+    "Tooltip": "Уменьшить громкость"
+  },
+  "com.mirabox.streamdock.spotify.volumeset": {
+    "Name": "Установить громкость",
+    "Tooltip": "Установить громкость"
+  },
+  "com.mirabox.streamdock.spotify.mute": {
+    "Name": "Без звука",
+    "Tooltip": "Без звука"
+  },
+  "com.mirabox.streamdock.spotify.previousornext": {
+    "Name": "Предыдущий<< | >>Следующий",
+    "Tooltip": "Предыдущий<< | >>Следующий"
+  },
+  "com.mirabox.streamdock.spotify.volumecontrol": {
+    "Name": "Регулировка громкости",
+    "Tooltip": "Регулировка громкости"
+  },
+  "Localization": {
+    "Please fill in Client ID and Client Secret": "Пожалуйста, заполните Client ID и Client Secret",
+    "Client ID": "Client ID",
+    "Client Secret": "Client Secret",
+    "Client ID and Secret": "Client ID и Secret",
+    "Authorization": "Авторизация",
+    "Cancel": "Отмена",
+    "We need you to provide the 'Client Id' and 'Client Secret' of your Spotify account. Please ": "Нам нужно, чтобы вы предоставили 'Client Id' и 'Client Secret' вашей учетной записи Spotify. Пожалуйста ",
+    "Click here": "Нажмите здесь",
+    "Playback Device": "Устройство воспроизведения",
+    "Loading...": "Загрузка...",
+    "Time Display": "Отображение времени",
+    "Time Remaining": "Оставшееся время",
+    "Time Elapsed": "Прошедшее время",
+    "Show Title": "Показать название",
+    "Display Format": "Формат отображения",
+    "Title": "Название",
+    "Title - Artist": "Название - Исполнитель",
+    "Artist": "Исполнитель",
+    "Artist - Title": "Исполнитель - Название",
+    "Logout": "Выйти",
+    "refresh": "Обновить устройства",
+    "Spotify URI": "Spotify URI",
+    "spotify:track:xxxxxxxxxxxxxxxxxxxx": "spotify:track:xxxxxxxxxxxxxxxxxxxx",
+    "Playback Option": "Вариант воспроизведения",
+    "Play Now": "Воспроизвести сейчас",
+    "Add to Queue": "Добавить в очередь",
+    "How to get Spotify URI?": "Как получить Spotify URI?",
+    "Right-click a song in the Spotify app": "Щелкните правой кнопкой мыши на песне в приложении Spotify",
+    "Select \"Share\" > \"Copy Spotify URI\"": "Выберите \"Поделиться\" > \"Копировать Spotify URI\"",
+    "If you only see a 'Copy Song Link' option, press the ALT key on your keyboard": "Если вы видите только опцию 'Копировать ссылку на песню', нажмите клавишу ALT на клавиатуре",
+    "The format should be similar to: spotify:track:xxxxxxxxxxxxxxxxxxx": "Формат должен быть похож на: spotify:track:xxxxxxxxxxxxxxxxxxx",
+    "Optional: Add a timestamp #mm:ss to specify the start time": "Опционально: Добавьте временную метку #mm:ss, чтобы указать время начала",
+    "Playlist": "Плейлист",
+    "Show Cover": "Показать обложку",
+    "When the button is pressed, the content will be copied to clipboard according to the format selected above": "При нажатии кнопки содержимое будет скопировано в буфер обмена в соответствии с выбранным выше форматом",
+    "Format": "Формат",
+    "Track URI": "URI трека",
+    "URL": "URL",
+    "Show Volume": "Показать громкость",
+    "Volume": "Громкость",
+    "Step": "Шаг"
+  }
+}

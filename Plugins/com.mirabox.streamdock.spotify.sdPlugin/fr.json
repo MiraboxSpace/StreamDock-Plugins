@@ -1,0 +1,120 @@
+{
+  "Name": "Spotify",
+  "Description": "Contrôler Spotify",
+  "Category": "Spotify",
+  "com.mirabox.streamdock.spotify.playpause": {
+    "Name": "Lecture/Pause",
+    "Tooltip": "Lecture/Pause"
+  },
+  "com.mirabox.streamdock.spotify.previous": {
+    "Name": "Précédent",
+    "Tooltip": "Précédent"
+  },
+  "com.mirabox.streamdock.spotify.next": {
+    "Name": "Suivant",
+    "Tooltip": "Suivant"
+  },
+  "com.mirabox.streamdock.spotify.changedevice": {
+    "Name": "Changer d'appareil",
+    "Tooltip": "Changer d'appareil"
+  },
+  "com.mirabox.streamdock.spotify.likesong": {
+    "Name": "Ajouter aux favoris",
+    "Tooltip": "Ajouter aux favoris"
+  },
+  "com.mirabox.streamdock.spotify.playuri": {
+    "Name": "Lire par URI",
+    "Tooltip": "Lire par URI"
+  },
+  "com.mirabox.streamdock.spotify.playplaylist": {
+    "Name": "Lire la playlist",
+    "Tooltip": "Lire la playlist"
+  },
+  "com.mirabox.streamdock.spotify.removeplaylistsong": {
+    "Name": "Retirer de la playlist",
+    "Tooltip": "Retirer de la playlist"
+  },
+  "com.mirabox.streamdock.spotify.addtoplaylist": {
+    "Name": "Ajouter à la playlist",
+    "Tooltip": "Ajouter à la playlist"
+  },
+  "com.mirabox.streamdock.spotify.repeat": {
+    "Name": "Mode répétition",
+    "Tooltip": "Mode répétition"
+  },
+  "com.mirabox.streamdock.spotify.shuffle": {
+    "Name": "Mode aléatoire",
+    "Tooltip": "Mode aléatoire"
+  },
+  "com.mirabox.streamdock.spotify.songinfo": {
+    "Name": "Info du morceau",
+    "Tooltip": "Info du morceau"
+  },
+  "com.mirabox.streamdock.spotify.volumeup": {
+    "Name": "Augmenter volume",
+    "Tooltip": "Augmenter volume"
+  },
+  "com.mirabox.streamdock.spotify.volumedown": {
+    "Name": "Diminuer volume",
+    "Tooltip": "Diminuer volume"
+  },
+  "com.mirabox.streamdock.spotify.volumeset": {
+    "Name": "Régler volume",
+    "Tooltip": "Régler volume"
+  },
+  "com.mirabox.streamdock.spotify.mute": {
+    "Name": "Muet",
+    "Tooltip": "Muet"
+  },
+  "com.mirabox.streamdock.spotify.previousornext": {
+    "Name": "Précédent<< | >>Suivant",
+    "Tooltip": "Précédent<< | >>Suivant"
+  },
+  "com.mirabox.streamdock.spotify.volumecontrol": {
+    "Name": "Contrôle du volume",
+    "Tooltip": "Contrôle du volume"
+  },
+  "Localization": {
+    "Please fill in Client ID and Client Secret": "Veuillez remplir Client ID et Client Secret",
+    "Client ID": "Client ID",
+    "Client Secret": "Client Secret",
+    "Client ID and Secret": "Client ID et Secret",
+    "Authorization": "Autorisation",
+    "Cancel": "Annuler",
+    "We need you to provide the 'Client Id' and 'Client Secret' of your Spotify account. Please ": "Nous avons besoin que vous fournissiez le 'Client Id' et le 'Client Secret' de votre compte Spotify. Veuillez ",
+    "Click here": "Cliquez ici",
+    "Playback Device": "Appareil de lecture",
+    "Loading...": "Chargement...",
+    "Time Display": "Affichage du temps",
+    "Time Remaining": "Temps restant",
+    "Time Elapsed": "Temps écoulé",
+    "Show Title": "Afficher le titre",
+    "Display Format": "Format d'affichage",
+    "Title": "Titre",
+    "Title - Artist": "Titre - Artiste",
+    "Artist": "Artiste",
+    "Artist - Title": "Artiste - Titre",
+    "Logout": "Déconnexion",
+    "refresh": "Actualiser les appareils",
+    "Spotify URI": "Spotify URI",
+    "spotify:track:xxxxxxxxxxxxxxxxxxxx": "spotify:track:xxxxxxxxxxxxxxxxxxxx",
+    "Playback Option": "Option de lecture",
+    "Play Now": "Lire maintenant",
+    "Add to Queue": "Ajouter à la file d'attente",
+    "How to get Spotify URI?": "Comment obtenir l'URI Spotify ?",
+    "Right-click a song in the Spotify app": "Clic droit sur un morceau dans l'application Spotify",
+    "Select \"Share\" > \"Copy Spotify URI\"": "Sélectionnez \"Partager\" > \"Copier l'URI Spotify\"",
+    "If you only see a 'Copy Song Link' option, press the ALT key on your keyboard": "Si vous ne voyez que l'option 'Copier le lien du morceau', appuyez sur la touche ALT de votre clavier",
+    "The format should be similar to: spotify:track:xxxxxxxxxxxxxxxxxxx": "Le format doit être similaire à : spotify:track:xxxxxxxxxxxxxxxxxxx",
+    "Optional: Add a timestamp #mm:ss to specify the start time": "Optionnel : Ajoutez un horodatage #mm:ss pour spécifier l'heure de début",
+    "Playlist": "Playlist",
+    "Show Cover": "Afficher la pochette",
+    "When the button is pressed, the content will be copied to clipboard according to the format selected above": "Lorsque le bouton est pressé, le contenu sera copié dans le presse-papiers selon le format sélectionné ci-dessus",
+    "Format": "Format",
+    "Track URI": "URI du morceau",
+    "URL": "URL",
+    "Show Volume": "Afficher le volume",
+    "Volume": "Volume",
+    "Step": "Pas"
+  }
+}

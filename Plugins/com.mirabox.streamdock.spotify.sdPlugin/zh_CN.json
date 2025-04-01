@@ -1,0 +1,120 @@
+{
+  "Name": "Spotify",
+  "Description": "控制 Spotify",
+  "Category": "Spotify",
+  "com.mirabox.streamdock.spotify.playpause": {
+    "Name": "播放/暂停",
+    "Tooltip": "播放/暂停"
+  },
+  "com.mirabox.streamdock.spotify.previous": {
+    "Name": "上一首",
+    "Tooltip": "上一首"
+  },
+  "com.mirabox.streamdock.spotify.next": {
+    "Name": "下一首",
+    "Tooltip": "下一首"
+  },
+  "com.mirabox.streamdock.spotify.changedevice": {
+    "Name": "切换播放设备",
+    "Tooltip": "切换播放设备"
+  },
+  "com.mirabox.streamdock.spotify.likesong": {
+    "Name": "添加到喜欢",
+    "Tooltip": "添加到喜欢"
+  },
+  "com.mirabox.streamdock.spotify.playuri": {
+    "Name": "通过uri播放",
+    "Tooltip": "通过uri播放"
+  },
+  "com.mirabox.streamdock.spotify.playplaylist": {
+    "Name": "播放播放列表",
+    "Tooltip": "播放播放列表"
+  },
+  "com.mirabox.streamdock.spotify.removeplaylistsong": {
+    "Name": "从播放列表删除",
+    "Tooltip": "从播放列表删除"
+  },
+  "com.mirabox.streamdock.spotify.addtoplaylist": {
+    "Name": "添加到播放列表",
+    "Tooltip": "添加到播放列表"
+  },
+  "com.mirabox.streamdock.spotify.repeat": {
+    "Name": "循环模式",
+    "Tooltip": "循环模式"
+  },
+  "com.mirabox.streamdock.spotify.shuffle": {
+    "Name": "随机模式",
+    "Tooltip": "随机模式"
+  },
+  "com.mirabox.streamdock.spotify.songinfo": {
+    "Name": "歌曲信息",
+    "Tooltip": "歌曲信息"
+  },
+  "com.mirabox.streamdock.spotify.volumeup": {
+    "Name": "音量加",
+    "Tooltip": "音量加"
+  },
+  "com.mirabox.streamdock.spotify.volumedown": {
+    "Name": "音量减",
+    "Tooltip": "音量减"
+  },
+  "com.mirabox.streamdock.spotify.volumeset": {
+    "Name": "设置音量",
+    "Tooltip": "设置音量"
+  },
+  "com.mirabox.streamdock.spotify.mute": {
+    "Name": "静音",
+    "Tooltip": "静音"
+  },
+  "com.mirabox.streamdock.spotify.previousornext": {
+    "Name": "上一首<< | >>下一首",
+    "Tooltip": "上一首<< | >>下一首"
+  },
+  "com.mirabox.streamdock.spotify.volumecontrol": {
+    "Name": "音量调节",
+    "Tooltip": "音量调节"
+  },
+  "Localization": {
+    "Please fill in Client ID and Client Secret": "请填写 Client ID 和 Client Secret",
+    "Client ID": "Client ID",
+    "Client Secret": "Client Secret",
+    "Client ID and Secret": "Client ID and Secret",
+    "Authorization": "授权",
+    "Cancel": "取消",
+    "We need you to provide the 'Client Id' and 'Client Secret' of your Spotify account. Please ": "我们需要您提供您的 Spotify 账户的 'Client Id' 和 'Client Secret'。请",
+    "Click here": "点击这里",
+    "Playback Device": "播放设备",
+    "Loading...": "加载中...",
+    "Time Display": "时间显示",
+    "Time Remaining": "剩余时间",
+    "Time Elapsed": "已用时间",
+    "Show Title": "显示标题",
+    "Display Format": "显示格式",
+    "Title": "标题",
+    "Title - Artist": "标题 - 歌手",
+    "Artist": "歌手",
+    "Artist - Title": "歌手 - 标题",
+    "Logout": "注销",
+    "refresh": "刷新设备",
+    "Spotify URI": "Spotify URI",
+    "spotify:track:xxxxxxxxxxxxxxxxxxxx": "spotify:track:xxxxxxxxxxxxxxxxxxxx",
+    "Playback Option": "播放选项",
+    "Play Now": "立即播放",
+    "Add to Queue": "添加到队列",
+    "How to get Spotify URI?": "如何获取 Spotify URI?",
+    "Right-click a song in the Spotify app": "在 Spotify 应用中右键点击一首歌",
+    "Select \"Share\" > \"Copy Spotify URI\"": "选择 \"分享\" > \"复制 Spotify URI\"",
+    "If you only see a 'Copy Song Link' option, press the ALT key on your keyboard": "如果您只看到 \"复制歌曲链接\" 选项，请按下键盘上的 ALT 键",
+    "The format should be similar to: spotify:track:xxxxxxxxxxxxxxxxxxx": "格式应该类似于：spotify:track:xxxxxxxxxxxxxxxxxxx",
+    "Optional: Add a timestamp #mm:ss to specify the start time": "可选：添加一个时间戳 #mm:ss 以指定开始时间",
+    "Playlist": "歌单",
+    "Show Cover": "显示封面",
+    "When the button is pressed, the content will be copied to clipboard according to the format selected above": "当按钮被按下时，内容将会根据上面选择的格式复制到剪贴板中",
+    "Format": "Format",
+    "Track URI": "Track URI",
+    "URL": "URL",
+    "Show Volume": "显示音量",
+    "Volume": "音量",
+    "Step": "步长"
+  }
+}

@@ -1,0 +1,415 @@
+{
+  "Actions": [
+    {
+      "Icon": "static/icon/n1spotify_toggle_play_on_white@2x.png",
+      "Name": "播放/暂停",
+      "DisableAutomaticStates": true,
+      "States": [
+        {
+          "Image": "static/btn/btn_spotify_144_play_pause.png",
+          "TitleAlignment": "center",
+          "FontSize": "8"
+        }
+      ],
+      "Settings": {
+        "titleFormat": "title-artist",
+        "timeDisplay": "elapsed",
+        "showTitle": true
+      },
+      "Controllers": [],
+      "UserTitleEnabled": true,
+      "SupportedInMultiActions": true,
+      "Tooltip": "spotify operation",
+      "UUID": "com.mirabox.streamdock.spotify.playpause",
+      "PropertyInspectorPath": "propertyInspector/playpause/index.html"
+    },
+    {
+      "Icon": "static/icon/n1spotify_prev@2x.png",
+      "Name": "上一首",
+      "DisableAutomaticStates": true,
+      "States": [
+        {
+          "Image": "static/btn/btn_spotify_144_prev.png",
+          "TitleAlignment": "center"
+        }
+      ],
+      "Controllers": [],
+      "UserTitleEnabled": true,
+      "SupportedInMultiActions": true,
+      "Tooltip": "spotify operation",
+      "UUID": "com.mirabox.streamdock.spotify.previous",
+      "PropertyInspectorPath": "propertyInspector/previous/index.html"
+    },
+    {
+      "Icon": "static/icon/n1spotify_next@2x.png",
+      "Name": "下一首",
+      "DisableAutomaticStates": true,
+      "States": [
+        {
+          "Image": "static/btn/btn_spotify_144_next.png",
+          "TitleAlignment": "center"
+        }
+      ],
+      "Controllers": [],
+      "UserTitleEnabled": true,
+      "SupportedInMultiActions": true,
+      "Tooltip": "spotify operation",
+      "UUID": "com.mirabox.streamdock.spotify.next",
+      "PropertyInspectorPath": "propertyInspector/next/index.html"
+    },
+    {
+      "Icon": "static/icon/n1spotify_device@2x.png",
+      "Name": "切换播放设备",
+      "DisableAutomaticStates": true,
+      "States": [
+        {
+          "Image": "static/btn/btn_spotify_144_device.png",
+          "TitleAlignment": "center"
+        }
+      ],
+      "Controllers": [],
+      "UserTitleEnabled": true,
+      "SupportedInMultiActions": true,
+      "Tooltip": "spotify operation",
+      "UUID": "com.mirabox.streamdock.spotify.changedevice",
+      "PropertyInspectorPath": "propertyInspector/changedevice/index.html"
+    },
+    {
+      "Icon": "static/icon/n1spotify_like@2x.png",
+      "Name": "添加到喜欢",
+      "DisableAutomaticStates": true,
+      "States": [
+        {
+          "Image": "static/btn/btn_spotify_144_like.png",
+          "TitleAlignment": "center"
+        },
+        {
+          "Image": "static/btn/btn_spotify_144_unlike.png",
+          "TitleAlignment": "center"
+        }
+      ],
+      "Controllers": [],
+      "UserTitleEnabled": true,
+      "SupportedInMultiActions": true,
+      "Tooltip": "spotify operation",
+      "UUID": "com.mirabox.streamdock.spotify.likesong",
+      "PropertyInspectorPath": "propertyInspector/likesong/index.html"
+    },
+    {
+      "Icon": "static/icon/n1spotify_play@2x.png",
+      "Name": "通过uri播放",
+      "DisableAutomaticStates": true,
+      "States": [
+        {
+          "Image": "static/btn/btn_spotify_144_play.png",
+          "TitleAlignment": "center"
+        }
+      ],
+      "Settings": {
+        "playOption": "play"
+      },
+      "Controllers": [],
+      "UserTitleEnabled": true,
+      "SupportedInMultiActions": true,
+      "Tooltip": "spotify operation",
+      "UUID": "com.mirabox.streamdock.spotify.playuri",
+      "PropertyInspectorPath": "propertyInspector/playuri/index.html"
+    },
+    {
+      "Icon": "static/icon/n1spotify_toggle_play_playlist_on_white@2x.png",
+      "Name": "播放播放列表",
+      "DisableAutomaticStates": true,
+      "States": [
+        {
+          "Image": "static/btn/btn_spotify_144_play_playlist.png",
+          "TitleAlignment": "center"
+        }
+      ],
+      "Settings": {
+        "showCover": true
+      },
+      "Controllers": [],
+      "UserTitleEnabled": true,
+      "SupportedInMultiActions": true,
+      "Tooltip": "spotify operation",
+      "UUID": "com.mirabox.streamdock.spotify.playplaylist",
+      "PropertyInspectorPath": "propertyInspector/playplaylist/index.html"
+    },
+    {
+      "Icon": "static/icon/n1spotify_remove_from_playlist@2x.png",
+      "Name": "从播放列表删除",
+      "DisableAutomaticStates": true,
+      "States": [
+        {
+          "Image": "static/btn/btn_spotify_144_remove_from_playlist.png",
+          "TitleAlignment": "center"
+        }
+      ],
+      "Settings": {
+        "showCover": false
+      },
+      "Controllers": [],
+      "UserTitleEnabled": true,
+      "SupportedInMultiActions": true,
+      "Tooltip": "spotify operation",
+      "UUID": "com.mirabox.streamdock.spotify.removeplaylistsong",
+      "PropertyInspectorPath": "propertyInspector/removeplaylistsong/index.html"
+    },
+    {
+      "Icon": "static/icon/n1spotify_save_to_playlist@2x.png",
+      "Name": "添加到播放列表",
+      "DisableAutomaticStates": true,
+      "States": [
+        {
+          "Image": "static/btn/btn_spotify_144_save_to_playlist.png",
+          "TitleAlignment": "center"
+        }
+      ],
+      "Settings": {
+        "showCover": false
+      },
+      "Controllers": [],
+      "UserTitleEnabled": true,
+      "SupportedInMultiActions": true,
+      "Tooltip": "spotify operation",
+      "UUID": "com.mirabox.streamdock.spotify.addtoplaylist",
+      "PropertyInspectorPath": "propertyInspector/addtoplaylist/index.html"
+    },
+    {
+      "Icon": "static/icon/n1spotify_repeat@2x.png",
+      "Name": "循环模式",
+      "DisableAutomaticStates": true,
+      "States": [
+        {
+          "Image": "static/btn/btn_spotify_144_repeat_off.png",
+          "TitleAlignment": "center"
+        },
+        {
+          "Image": "static/btn/btn_spotify_144_repeat_context.png",
+          "TitleAlignment": "center"
+        },
+        {
+          "Image": "static/btn/btn_spotify_144_repeat_track.png",
+          "TitleAlignment": "center"
+        }
+      ],
+      "Settings": {},
+      "Controllers": [],
+      "UserTitleEnabled": true,
+      "SupportedInMultiActions": true,
+      "Tooltip": "spotify operation",
+      "UUID": "com.mirabox.streamdock.spotify.repeat",
+      "PropertyInspectorPath": "propertyInspector/repeat/index.html"
+    },
+    {
+      "Icon": "static/icon/n1spotify_toggle_shuffle_on_white@2x.png",
+      "Name": "随机模式",
+      "DisableAutomaticStates": true,
+      "States": [
+        {
+          "Image": "static/btn/btn_spotify_144_shuffle_off.png",
+          "TitleAlignment": "center"
+        },
+        {
+          "Image": "static/btn/btn_spotify_144_shuffle.png",
+          "TitleAlignment": "center"
+        }
+      ],
+      "Settings": {},
+      "Controllers": [],
+      "UserTitleEnabled": true,
+      "SupportedInMultiActions": true,
+      "Tooltip": "spotify operation",
+      "UUID": "com.mirabox.streamdock.spotify.shuffle",
+      "PropertyInspectorPath": "propertyInspector/shuffle/index.html"
+    },
+    {
+      "Icon": "static/icon/n1spotify_info@2x.png",
+      "Name": "歌曲信息",
+      "DisableAutomaticStates": true,
+      "States": [
+        {
+          "Image": "static/btn/btn_spotify_144_info.png",
+          "TitleAlignment": "center"
+        }
+      ],
+      "Settings": {
+        "mode": "title-artist"
+      },
+      "Controllers": [],
+      "UserTitleEnabled": true,
+      "SupportedInMultiActions": true,
+      "Tooltip": "spotify operation",
+      "UUID": "com.mirabox.streamdock.spotify.songinfo",
+      "PropertyInspectorPath": "propertyInspector/songinfo/index.html"
+    },
+    {
+      "Icon": "static/icon/n1spotify_volume_up@2x.png",
+      "Name": "音量加",
+      "DisableAutomaticStates": true,
+      "States": [
+        {
+          "Image": "static/btn/btn_spotify_144_volume_up.png",
+          "TitleAlignment": "center",
+          "FontSize": "8"
+        }
+      ],
+      "Settings": {
+        "step": 10,
+        "show": true
+      },
+      "Controllers": [],
+      "UserTitleEnabled": true,
+      "SupportedInMultiActions": true,
+      "Tooltip": "spotify operation",
+      "UUID": "com.mirabox.streamdock.spotify.volumeup",
+      "PropertyInspectorPath": "propertyInspector/volumeup/index.html"
+    },
+    {
+      "Icon": "static/icon/n1spotify_volume_down@2x.png",
+      "Name": "音量减",
+      "DisableAutomaticStates": true,
+      "States": [
+        {
+          "Image": "static/btn/btn_spotify_144_volume_down.png",
+          "TitleAlignment": "center",
+          "FontSize": "8"
+        }
+      ],
+      "Settings": {
+        "step": 10,
+        "show": true
+      },
+      "Controllers": [],
+      "UserTitleEnabled": true,
+      "SupportedInMultiActions": true,
+      "Tooltip": "spotify operation",
+      "UUID": "com.mirabox.streamdock.spotify.volumedown",
+      "PropertyInspectorPath": "propertyInspector/volumedown/index.html"
+    },
+    {
+      "Icon": "static/icon/n1spotify_volume_set@2x.png",
+      "Name": "设置音量",
+      "DisableAutomaticStates": true,
+      "States": [
+        {
+          "Image": "static/btn/btn_spotify_144_volume_set.png",
+          "TitleAlignment": "center",
+          "FontSize": "8"
+        }
+      ],
+      "Settings": {
+        "volume": 50,
+        "show": true
+      },
+      "Controllers": [],
+      "UserTitleEnabled": true,
+      "SupportedInMultiActions": true,
+      "Tooltip": "spotify operation",
+      "UUID": "com.mirabox.streamdock.spotify.volumeset",
+      "PropertyInspectorPath": "propertyInspector/volumeset/index.html"
+    },
+    {
+      "Icon": "static/icon/n1spotify_volume_mute@2x.png",
+      "Name": "静音",
+      "DisableAutomaticStates": true,
+      "States": [
+        {
+          "Image": "static/btn/btn_spotify_144_volume_set.png",
+          "TitleAlignment": "center"
+        },
+        {
+          "Image": "static/btn/btn_spotify_144_volume_mute.png",
+          "TitleAlignment": "center"
+        }
+      ],
+      "Settings": {
+        "show": true
+      },
+      "Controllers": [],
+      "UserTitleEnabled": true,
+      "SupportedInMultiActions": true,
+      "Tooltip": "spotify operation",
+      "UUID": "com.mirabox.streamdock.spotify.mute",
+      "PropertyInspectorPath": "propertyInspector/mute/index.html"
+    },
+    {
+      "Icon": "static/icon/n1spotify_144_prevornext.png",
+      "Name": "上一首<< | >>下一首",
+      "DisableAutomaticStates": true,
+      "States": [
+        {
+          "Image": "static/btn/btn_spotify_144_prevornext.png",
+          "TitleAlignment": "center"
+        }
+      ],
+      "Settings": {
+        "titleFormat": "title-artist",
+        "timeDisplay": "elapsed",
+        "showTitle": true
+      },
+      "Controllers": [
+        "Knob"
+      ],
+      "UserTitleEnabled": true,
+      "SupportedInMultiActions": true,
+      "Tooltip": "spotify operation",
+      "UUID": "com.mirabox.streamdock.spotify.previousornext",
+      "PropertyInspectorPath": "propertyInspector/previousornext/index.html"
+    },
+    {
+      "Icon": "static/icon/n1spotify_volume_set@2x.png",
+      "Name": "音量调节",
+      "DisableAutomaticStates": true,
+      "States": [
+        {
+          "Image": "static/btn/btn_spotify_144_volume_set.png",
+          "TitleAlignment": "center"
+        },
+        {
+          "Image": "static/btn/btn_spotify_144_volume_mute.png",
+          "TitleAlignment": "center"
+        }
+      ],
+      "Settings": {
+        "step": 10,
+        "show": true
+      },
+      "Controllers": [
+        "Knob"
+      ],
+      "UserTitleEnabled": true,
+      "SupportedInMultiActions": true,
+      "Tooltip": "spotify operation",
+      "UUID": "com.mirabox.streamdock.spotify.volumecontrol",
+      "PropertyInspectorPath": "propertyInspector/volumecontrol/index.html"
+    }
+  ],
+  "SDKVersion": 1,
+  "Author": "MiraBox",
+  "Name": "spotify",
+  "Icon": "static/icon/icon@2x.png",
+  "CodePathWin": "plugin/index.js",
+  "CodePathMac": "plugin/index.js",
+  "Description": "spotify operation",
+  "Category": "spotify",
+  "CategoryIcon": "static/icon/icon@2x.png",
+  "Version": "1.0.0",
+  "URL": "https://mirabox.key123.vip/home",
+  "OS": [
+    {
+      "Platform": "mac",
+      "MinimumVersion": "10.11"
+    },
+    {
+      "Platform": "windows",
+      "MinimumVersion": "7"
+    }
+  ],
+  "Software": {
+    "MinimumVersion": "3.10.188.226"
+  },
+  "Nodejs": {
+    "Version": "20"
+  }
+}
