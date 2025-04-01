@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DeepSeek</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 20px;
+      background-color: #2d2d2d;
+      /* 背景颜色改为深色 */
+      color: #e0e0e0;
+      /* 文字颜色改为浅灰色 */
+    }
+
+    h1 {
+      text-align: center;
+      margin-bottom: 30px;
+      color: #ffffff;
+      /* 标题文字颜色改为白色 */
+    }
+
+    .container {
+      min-width: 80%;
+      margin: 0 auto;
+      background-color: #4a4a4a;
+      /* 容器背景颜色改为较暗的灰色 */
+      padding: 30px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+      /* 阴影加深 */
+      border-radius: 8px;
+    }
+
+    .section {
+      margin-bottom: 30px;
+    }
+
+    h2 {
+      color: #ffffff;
+      /* 小标题文字颜色改为白色 */
+    }
+
+    p {
+      line-height: 1.6;
+    }
+
+    ol,
+    ul {
+      margin-left: 20px;
+    }
+
+    pre {
+      background-color: #333333;
+      /* 代码块背景颜色改为更深的灰色 */
+      padding: 15px;
+      border-radius: 5px;
+      overflow-x: auto;
+      white-space: pre-wrap;
+      word-wrap: break-word;
+      color: #e0e0e0;
+      /* 代码块文字颜色改为浅灰色 */
+    }
+
+    code {
+      background-color: #555555;
+      /* 行内代码背景颜色改为中等灰色 */
+      padding: 2px 4px;
+      border-radius: 3px;
+      color: #ffffff;
+      /* 行内代码文字颜色改为白色 */
+    }
+
+    .language-switch {
+      text-align: right;
+      margin-bottom: 20px;
+    }
+
+    .language-switch select {
+      border: 1px solid #666666;
+      /* 下拉框边框颜色改为更暗的灰色 */
+      padding: 10px 20px;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: border-color 0.3s ease;
+      background-color: #4a4a4a;
+      /* 下拉框背景颜色改为较暗的灰色 */
+      color: #e0e0e0;
+      /* 下拉框文字颜色改为浅灰色 */
+    }
+
+    .language-switch select:hover {
+      border-color: #999999;
+      /* 悬停时下拉框边框颜色加深 */
+    }
+
+    .more-info {
+      text-align: center;
+      margin-top: 30px;
+    }
+
+    .more-info a {
+      color: #007bff;
+      /* 链接文字颜色保持蓝色 */
+      text-decoration: none;
+      transition: color 0.3s ease, text-decoration 0.3s ease;
+      cursor: pointer;
+      position: relative;
+      display: inline-block;
+    }
+
+    .more-info a::after {
+      content: '';
+      position: absolute;
+      width: 100%;
+      height: 2px;
+      bottom: -2px;
+      left: 0;
+      background-color: #007bff;
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform 0.3s ease;
+    }
+
+    .more-info a:hover {
+      color: #0056b3;
+      /* 悬停时链接文字颜色加深 */
+    }
+
+    .more-info a:hover::after {
+      transform: scaleX(1);
+    }
+
+    .additional-info {
+      text-align: center;
+      margin-top: 20px;
+      color: #e0e0e0;
+      /* 额外信息文字颜色改为浅灰色 */
+    }
+
+    .additional-info a {
+      color: #007bff;
+      /* 链接文字颜色保持蓝色 */
+      text-decoration: none;
+      transition: color 0.3s ease, text-decoration 0.3s ease;
+      cursor: pointer;
+      position: relative;
+      display: inline-block;
+      margin-right: 10px;
+    }
+
+    .additional-info a::after {
+      content: '';
+      position: absolute;
+      width: 100%;
+      height: 2px;
+      bottom: -2px;
+      left: 0;
+      background-color: #007bff;
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform 0.3s ease;
+    }
+
+    .additional-info a:hover {
+      color: #0056b3;
+      /* 悬停时链接文字颜色加深 */
+    }
+
+    .additional-info a:hover::after {
+      transform: scaleX(1);
+    }
+
+    .section-img {
+      width: 100%;
+      display: flex;
+      justify-content: center;
+    }
+    .section-img img {
+        width: 80%;
+        height: auto;
+    }
+
+    .login a {
+      color: #007bff;
+      /* 链接文字颜色保持蓝色 */
+      text-decoration: none;
+      transition: color 0.3s ease, text-decoration 0.3s ease;
+      cursor: pointer;
+      position: relative;
+      display: inline-block;
+    }
+
+    .login a::after {
+      content: '';
+      position: absolute;
+      width: 100%;
+      height: 2px;
+      bottom: -2px;
+      left: 0;
+      background-color: #007bff;
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform 0.3s ease;
+    }
+
+    .login a:hover {
+      color: #0056b3;
+      /* 悬停时链接文字颜色加深 */
+    }
+
+    .login a:hover::after {
+      transform: scaleX(1);
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="container">
+    <div class="language-switch">
+      <select id="languageSelect" onchange="setLanguage(this.value)">
+        <option value="zh_CN">中文</option>
+        <option value="en">English</option>
+      </select>
+    </div>
+
+    <h1 id="title"></h1>
+    <div class="section">
+      <h2 id="section0_title"></h2>
+      <div class="login"><a id="login" onclick="openLink('login')"></a></div>
+      <div class="section-img">
+        <img id="section0_img" />
+      </div>
+
+    </div>
+
+    <div class="section">
+      <h2 id="section1_title"></h2>
+      <div class="section-img">
+        <img id="section1_img" />
+      </div>
+      <p id="section1_p1"></p>
+      <pre id="section1_pre"></pre>
+    </div>
+
+    <div class="section">
+      <h2 id="section2_title"></h2>
+      
+      <p id="section2_p1"></p>
+      <ul id="section2_ul"></ul>
+      <p id="section2_p3"></p>
+    </div>
+
+    <div class="section">
+      <h2 id="section3_title"></h2>
+      <div class="section-img">
+        <img id="section2_img" />
+      </div>
+      <div class="section-img">
+        <img id="section3_img" />
+      </div>
+      <p id="section3_p1"></p>
+      <ol id="section3_ol"></ol>
+    </div>
+
+    <div class="more-info">
+      <span id="more_info_text"></span>
+      <a id="more_info_url" onclick="openLink('more_info_url')"></a>
+    </div>
+
+    <div class="additional-info">
+      <span id="additional_info_text"></span>
+      <a id="third_party_api_1" onclick="openLink('third_party_api_1')"></a>
+      <a id="third_party_api_2" onclick="openLink('third_party_api_2')"></a>
+    </div>
+  </div>
+
+  <script>
+    const translations = {
+      zh_CN: {
+        title: "DeepSeek API 参数获取指南",
+        section0_title: '1.登录',
+        login_label: '登录地址',
+        login_url: 'https://platform.deepseek.com/sign_in',
+        img0: './images/Guidelines/1.png',
+        img1: './images/Guidelines/2.png',
+        img2: './images/Guidelines/3.png',
+        img3: './images/Guidelines/4.png',
+
+        section1_title: "2. 获取 baseUrl",
+        section1_p1: "<code>baseUrl</code> 是 DeepSeek API 的基础 URL 地址。",
+        section1_pre: "例如: https://api.deepseek.com",
+
+        section2_title: "3. 选择 model",
+        section2_p1: "<code>model</code> 是您希望使用的模型名称。",
+        section2_ul: [
+          "<code>deepseek-chat</code>(V3)",
+          "<code>deepseek-reasoner</code>(R1)"
+        ],
+
+        section2_p3: "根据您的需求选择合适的模型。",
+        section3_title: "4. 获取 apiKey",
+        section3_p1: "<code>apiKey</code> 是您访问 DeepSeek API 所需的身份验证密钥。",
+        section3_ol: [
+          "登录到您的 DeepSeek 开发者账户。",
+          "导航到“API 密钥”页面。",
+          "点击“生成新密钥”按钮。",
+          "复制生成的 API 密钥。"
+        ],
+        more_info_text: "更多详细信息请访问",
+        more_info_label: 'deepseek-docs',
+        more_info_url: "https://api-docs.deepseek.com/zh-cn/",
+        additional_info_text: "您也可以使用第三方 API。",
+        third_party_api_1_label: '火山引擎',
+        third_party_api_1_url: "https://www.volcengine.com/product/ark",
+      },
+      en: {
+        title: "DeepSeek API Parameter Retrieval Guide",
+        section0_title: '1.log in',
+        login_label: 'Login address',
+        login_url: 'https://platform.deepseek.com/sign_in',
+        img0: './images/Guidelines/1.png',
+        img1: './images/Guidelines/2.png',
+        img2: './images/Guidelines/3.png',
+        img3: './images/Guidelines/4.png',
+        section1_title: "2. Obtain baseUrl",
+        section1_p1: "<code>baseUrl</code> is the base URL for the DeepSeek API.",
+        section1_pre: "For example: https://api.deepseek.com",
+
+        section2_title: "3. Select model",
+        section2_p1: "<code>model</code> is the name of the model you wish to use.",
+        section2_ul: [
+          "<code>deepseek-chat</code>(V3)",
+          "<code>deepseek-reasoner</code>(R1)"
+        ],
+        section2_p3: "Select an appropriate model based on your needs.",
+
+        section3_title: "4. Obtain apiKey",
+        section3_p1: "<code>apiKey</code> is the authentication key required to access the DeepSeek API.",
+        section3_ol: [
+          "Log in to your DeepSeek developer account.",
+          "Navigate to the \"API Keys\" page.",
+          "Click the \"Generate New Key\" button.",
+          "Copy the generated API key."
+        ],
+        more_info_text: "More detailed information can be found at",
+        more_info_label: 'deepseek-docs',
+        more_info_url: "https://api-docs.deepseek.com/",
+        additional_info_text: "You can also use third-party APIs.",
+        third_party_api_1_label: 'volcengine',
+        third_party_api_1_url: "https://www.volcengine.com/product/ark"
+      }
+    };
+
+    function setLanguage(lang) {
+      document.documentElement.lang = lang;
+      document.getElementById('title').innerHTML = translations[lang].title;
+      document.getElementById('section0_title').innerHTML = translations[lang].section0_title;
+      document.getElementById('login').innerHTML = translations[lang].login_label;
+      document.getElementById('login').setAttribute('url', translations[lang].login_url);
+
+      document.getElementById('section0_img').src = translations[lang].img0;
+      document.getElementById('section1_img').src = translations[lang].img1;
+      document.getElementById('section2_img').src = translations[lang].img2;
+      document.getElementById('section3_img').src = translations[lang].img3;
+
+      document.getElementById('section1_title').innerHTML = translations[lang].section1_title;
+      document.getElementById('section1_p1').innerHTML = translations[lang].section1_p1;
+      document.getElementById('section1_pre').innerHTML = translations[lang].section1_pre;
+      document.getElementById('section2_title').innerHTML = translations[lang].section2_title;
+      document.getElementById('section2_p1').innerHTML = translations[lang].section2_p1;
+      document.getElementById('section2_ul').innerHTML = translations[lang].section2_ul.map(item => `<li>${item}</li>`).join('');
+      document.getElementById('section2_p3').innerHTML = translations[lang].section2_p3;
+      document.getElementById('section3_title').innerHTML = translations[lang].section3_title;
+      document.getElementById('section3_p1').innerHTML = translations[lang].section3_p1;
+      document.getElementById('section3_ol').innerHTML = translations[lang].section3_ol.map(item => `<li>${item}</li>`).join('');
+      document.getElementById('more_info_text').innerHTML = translations[lang].more_info_text;
+      document.getElementById('more_info_url').innerHTML = translations[lang].more_info_label;
+      document.getElementById('more_info_url').setAttribute('url', translations[lang].more_info_url);
+
+      document.getElementById('additional_info_text').innerHTML = translations[lang].additional_info_text;
+      document.getElementById('third_party_api_1').innerHTML = translations[lang].third_party_api_1_label;
+      document.getElementById('third_party_api_1').setAttribute('url', translations[lang].third_party_api_1_url);
+    }
+
+    function openLink(id) {
+      let url = document.getElementById(id).getAttribute('url');
+      window.opener.deepseekApp.openUrl(url);
+    }
+
+    // Set default language
+    setLanguage(window.opener.deepseekApp.i18n['type']);
+    // 设置默认选中的选项为 "English"
+    document.addEventListener('DOMContentLoaded', function () {
+      var selectElement = document.getElementById('languageSelect');
+      selectElement.value = window.opener.deepseekApp.i18n['type'];
+    });
+
+    console.log(window.opener.deepseekApp.i18n['type'])
+  </script>
+
+</body>
+
+</html>
