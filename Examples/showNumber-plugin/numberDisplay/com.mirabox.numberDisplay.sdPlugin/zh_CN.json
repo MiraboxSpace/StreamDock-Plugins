@@ -1,0 +1,12 @@
+{
+  "Description": "数字展示",
+  "Name": "数字展示",
+  "Category": "数字展示",
+  "com.hotspot.streamdockcppsdk.demo.myaction1": {
+    "Name": "数字展示",
+    "Tooltip": "数字展示"
+  },
+  "Localization": {
+    "数字": "数字"
+  }
+}
