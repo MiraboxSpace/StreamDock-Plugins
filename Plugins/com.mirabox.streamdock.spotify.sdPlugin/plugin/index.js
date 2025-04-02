@@ -204,12 +204,13 @@ plugin.playpause = new Actions({
                 });
             }
         } catch (error) {
-            log.error('获取播放列表失败:', error);
             if (error.statusCode === 401) {
                 await refreshAccessToken();
                 this._propertyInspectorDidAppear({ context });
             } else if (error.code === "ECONNRESET") {
                 this._propertyInspectorDidAppear({ context });
+            } else {
+                log.error('获取播放列表失败:', error);
             }
         }
     },
@@ -1703,12 +1704,13 @@ plugin.previousornext = new Actions({
                 });
             }
         } catch (error) {
-            log.error('获取播放列表失败:', error);
             if (error.statusCode === 401) {
                 await refreshAccessToken();
                 this._propertyInspectorDidAppear({ context });
             } else if (error.code === "ECONNRESET") {
                 this._propertyInspectorDidAppear({ context });
+            } else {
+                log.error('获取播放列表失败:', error);
             }
         }
     },
