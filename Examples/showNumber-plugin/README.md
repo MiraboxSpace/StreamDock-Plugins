@@ -13,6 +13,6 @@ The number display plugin is used to show the selected number.
 * Persistent settings (entered number)
 
 <figure style="text-align: center;">
-  <img src="/show.png" alt="Stream Dock" width="100%" />
+  <img src="./show.png" alt="Stream Dock" width="100%" />
   <figcaption>Number Display Example</figcaption>
 </figure>
