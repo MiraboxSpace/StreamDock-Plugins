@@ -13,6 +13,6 @@ The counter plugin is used to display the number of times a button is pressed. P
 * Persistent settings (number of button presses)
 
 <figure style="text-align: center;">
-  <img src="/counter.png" alt="Stream Dock" width="100%" />
+  <img src="./counter.png" alt="Stream Dock" width="100%" />
   <figcaption>Counter Example</figcaption>
 </figure>
