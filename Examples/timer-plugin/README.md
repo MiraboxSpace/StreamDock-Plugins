@@ -11,7 +11,7 @@ The timer plugin records time on a button press.
 * Cross-platform (macOS, Windows)
 
 <figure style="text-align: center;">
-  <img src="/timer.png" alt="Stream Dock" width="100%" />
+  <img src="./timer.png" alt="Stream Dock" width="100%" />
   <figcaption>Timer  Example</figcaption>
 </figure>
 
