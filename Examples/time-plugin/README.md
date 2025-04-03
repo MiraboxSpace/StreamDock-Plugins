@@ -11,6 +11,6 @@ The time plugin displays the time on a button and switches seconds when the butt
 * Cross-platform (macOS, Windows)
 
 <figure style="text-align: center;">
-  <img src="/time.png" alt="Stream Dock" width="100%" />
+  <img src="./time.png" alt="Stream Dock" width="100%" />
   <figcaption>Time Example</figcaption>
 </figure>
