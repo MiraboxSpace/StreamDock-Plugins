@@ -72,13 +72,13 @@ const keyDown = (e: KeyboardEvent) => {
 .content {
   position: relative;
   // max-width: calc(100% - 13vmin);
-  margin-top: 1vh;
+  // margin-top: 1vh;
   color: #FFFFFF;
   font-size: clamp(12px, 1.5vmin, 22px);
   .edit-not {
-    padding: 2vmin 4vmin;
+    padding: clamp(10px, 4vmin, 16px) clamp(16px, 6vmin, 18px);
     background-color: #9b9b9b;
-    border-radius: 1vw;
+    border-radius: clamp(6px,1vw,12px);
   }
   .edit-active {
     width: 100%;
@@ -86,8 +86,8 @@ const keyDown = (e: KeyboardEvent) => {
 }
 
 .head {
-  width: 6vmin;
-  height: 6vmin;
+  width: clamp(10px, 6vmin, 40px);
+  height: clamp(10px, 6vmin, 40px);
   background-color: white;
   border: 1px solid skyblue;
   border-radius: 50%;

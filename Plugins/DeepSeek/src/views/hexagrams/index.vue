@@ -197,6 +197,10 @@ onUpdated(() => {
 </script>
 
 <style scoped lang="scss">
+html,
+  body {
+    user-select: auto;
+  }
 .deepseek-index {
   color: #333;
   display: flex;

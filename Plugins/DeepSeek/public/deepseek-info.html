@@ -18,7 +18,7 @@
 
     h1 {
       text-align: center;
-      margin-bottom: 30px;
+      /* margin-bottom: 30px; */
       color: #ffffff;
       /* 标题文字颜色改为白色 */
     }
@@ -75,7 +75,7 @@
 
     .language-switch {
       text-align: right;
-      margin-bottom: 20px;
+      /* margin-bottom: 20px; */
     }
 
     .language-switch select {
@@ -98,7 +98,7 @@
 
     .more-info {
       text-align: center;
-      margin-top: 30px;
+      margin: 30px 0;
     }
 
     .more-info a {
@@ -135,7 +135,7 @@
 
     .additional-info {
       text-align: center;
-      margin-top: 20px;
+      margin: 20px 0;
       color: #e0e0e0;
       /* 额外信息文字颜色改为浅灰色 */
     }
@@ -176,11 +176,15 @@
     .section-img {
       width: 100%;
       display: flex;
+      flex-direction: column;
+      align-items: center;
       justify-content: center;
     }
+
     .section-img img {
-        width: 80%;
-        height: auto;
+      width: 80%;
+      height: auto;
+      margin: 6px 0;
     }
 
     .login a {
@@ -214,11 +218,46 @@
     .login a:hover::after {
       transform: scaleX(1);
     }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 20px 0;
+      font-size: 18px;
+      text-align: left;
+    }
+
+    th,
+    td {
+      padding: 12px;
+      border-bottom: 1px solid #ddd;
+    }
+
+    th {
+      /* background-color: #f4f4f4; */
+    }
+
+    /* tr:hover {
+            background-color: #f5f5f5;
+        } */
+    a {
+      color: #007BFF;
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    .step {
+      font-size: 22px;
+      font-weight: 500;
+      margin: 6px;
+    }
   </style>
 </head>
 
 <body>
-
   <div class="container">
     <div class="language-switch">
       <select id="languageSelect" onchange="setLanguage(this.value)">
@@ -226,49 +265,56 @@
         <option value="en">English</option>
       </select>
     </div>
-
     <h1 id="title"></h1>
-    <div class="section">
-      <h2 id="section0_title"></h2>
-      <div class="login"><a id="login" onclick="openLink('login')"></a></div>
-      <div class="section-img">
-        <img id="section0_img" />
+    <div style="width: 100%;height: 80vh;overflow-y: scroll;">
+      <div class="section">
+        <h2 id="section0_title"></h2>
+        <div class="login"><a id="login" onclick="openLink('login')"></a></div>
+        <div class="section-img">
+          <img id="section0_img" />
+        </div>
+
       </div>
 
-    </div>
-
-    <div class="section">
-      <h2 id="section1_title"></h2>
-      <div class="section-img">
-        <img id="section1_img" />
+      <div class="section">
+        <h2 id="section1_title"></h2>
+        <div class="section-img">
+          <img id="section1_img" />
+        </div>
+        <p id="section1_p1"></p>
+        <pre id="section1_pre"></pre>
       </div>
-      <p id="section1_p1"></p>
-      <pre id="section1_pre"></pre>
-    </div>
 
-    <div class="section">
-      <h2 id="section2_title"></h2>
-      
-      <p id="section2_p1"></p>
-      <ul id="section2_ul"></ul>
-      <p id="section2_p3"></p>
-    </div>
+      <div class="section">
+        <h2 id="section2_title"></h2>
 
-    <div class="section">
-      <h2 id="section3_title"></h2>
-      <div class="section-img">
-        <img id="section2_img" />
+        <p id="section2_p1"></p>
+        <ul id="section2_ul"></ul>
+        <p id="section2_p3"></p>
       </div>
-      <div class="section-img">
-        <img id="section3_img" />
-      </div>
-      <p id="section3_p1"></p>
-      <ol id="section3_ol"></ol>
-    </div>
 
-    <div class="more-info">
-      <span id="more_info_text"></span>
-      <a id="more_info_url" onclick="openLink('more_info_url')"></a>
+      <div class="section">
+        <h2 id="section3_title"></h2>
+        <div class="section-img">
+          <img id="section2_img" />
+        </div>
+        <div class="section-img">
+          <img id="section3_img" />
+        </div>
+        <p id="section3_p1"></p>
+        <ol id="section3_ol"></ol>
+      </div>
+
+      <div class="section">
+        <h2 id="section4_title"></h2>
+        <div id="section4_p1"></div>
+        <div id="error-codes"></div>
+      </div>
+
+      <div class="more-info">
+        <span id="more_info_text"></span>
+        <a id="more_info_url" onclick="openLink('more_info_url')"></a>
+      </div>
     </div>
 
     <div class="additional-info">
@@ -276,13 +322,17 @@
       <a id="third_party_api_1" onclick="openLink('third_party_api_1')"></a>
       <a id="third_party_api_2" onclick="openLink('third_party_api_2')"></a>
     </div>
+
+    <div style="width: 100%;height: 80vh;overflow-y: scroll;">
+      <div id="dy_api"></div>
+    </div>
   </div>
 
   <script>
     const translations = {
       zh_CN: {
         title: "DeepSeek API 参数获取指南",
-        section0_title: '1.登录',
+        section0_title: '1.deepseek官方登录',
         login_label: '登录地址',
         login_url: 'https://platform.deepseek.com/sign_in',
         img0: './images/Guidelines/1.png',
@@ -316,16 +366,20 @@
         additional_info_text: "您也可以使用第三方 API。",
         third_party_api_1_label: '火山引擎',
         third_party_api_1_url: "https://www.volcengine.com/product/ark",
+        section4_title: '5.错误码',
+        section4_p1: '您在调用 DeepSeek API 时，可能会遇到以下错误。这里列出了相关错误的原因及其解决方法。',
+        error_codes: `<table><thead><tr><th>错误码</th><th>描述</th></tr></thead><tbody><tr><td>400 - 格式错误</td><td><strong>原因</strong>：请求体格式错误 <br> <strong>解决方法</strong>：请根据错误信息提示修改请求体</td></tr><tr><td>401 - 认证失败</td><td><strong>原因</strong>：API key 错误，认证失败 <br> <strong>解决方法</strong>：请检查您的 API key 是否正确，如没有 API key，请先 <a id="createApi" onClick="openLink('createApi')" url="https://platform.deepseek.com/api_keys" target="_blank" rel="noopener noreferrer">创建 API key</a></td></tr><tr><td>402 - 余额不足</td><td><strong>原因</strong>：账号余额不足 <br> <strong>解决方法</strong>：请确认账户余额，并前往 <a id="payMoney" onClick="openLink('payMoney')" url="https://platform.deepseek.com//top_up" target="_blank" rel="noopener noreferrer">充值</a> 页面进行充值</td></tr><tr><td>422 - 参数错误</td><td><strong>原因</strong>：请求体参数错误 <br> <strong>解决方法</strong>：请根据错误信息提示修改相关参数</td></tr><tr><td>429 - 请求速率达到上限</td><td><strong>原因</strong>：请求速率（TPM 或 RPM）达到上限 <br> <strong>解决方法</strong>：请合理规划您的请求速率。</td></tr><tr><td>500 - 服务器故障</td><td><strong>原因</strong>：服务器内部故障 <br> <strong>解决方法</strong>：请等待后重试。若问题一直存在，请联系我们解决</td></tr><tr><td>503 - 服务器繁忙</td><td><strong>原因</strong>：服务器负载过高 <br> <strong>解决方法</strong>：请稍后重试您的请求</td></tr></tbody></table>`,
+        dy_api: `<div class="dy section"><h2 id="dy_login_title">1.火山登录</h2><div class="login"><a id="dy_login" url="https://console.volcengine.com/auth/login/" onclick="openLink('dy_login')">登录地址</a></div><div class="section-img"><img id="dy_login_img" src="./images/dyGuidelines/dy1.png"/></div></div><div class="dy section"><h2>2.前置操作</h2><div style="margin: 10px 16px;"><div class="step">step1: 进入火山方舟</div><div class="section-img"><img id="dy_login_img" src="./images/dyGuidelines/dy2.png"/></div><div class="step">step2: 进入开通管理</div><div class="section-img"><img id="dy_login_img" src="./images/dyGuidelines/dy3.png"/></div><div class="step">step3: 开通deepseek v3 和 r1</div><div class="section-img"><img id="dy_login_img" src="./images/dyGuidelines/dy4.png"/><img id="dy_login_img" src="./images/dyGuidelines/dy5.png"/><img id="dy_login_img" src="./images/dyGuidelines/dy6.png"/></div><div class="step">step4: 创建推理点</div><div class="section-img"><img id="dy_login_img" src="./images/dyGuidelines/dy7.png"/><img id="dy_login_img" src="./images/dyGuidelines/dy8.png"/><img id="dy_login_img" src="./images/dyGuidelines/dy9.png"/></div><div class="step">step5: 创建应用</div><div class="section-img"><img id="dy_login_img" src="./images/dyGuidelines/dy10.png"/><img id="dy_login_img" src="./images/dyGuidelines/dy11.png"/></div></div></div><div class="dy section"><h2>2.获取服务器地址和模型Id</h2><div class="section-img"><img id="dy_login_img" src="./images/dyGuidelines/dy12.png"/></div><h2>3.获取验证令牌</h2><div class="section-img"><img id="dy_login_img" src="./images/dyGuidelines/dy13.png"/></div></div>`
       },
       en: {
         title: "DeepSeek API Parameter Retrieval Guide",
-        section0_title: '1.log in',
+        section0_title: '1.deepseek log in',
         login_label: 'Login address',
         login_url: 'https://platform.deepseek.com/sign_in',
-        img0: './images/Guidelines/1.png',
-        img1: './images/Guidelines/2.png',
-        img2: './images/Guidelines/3.png',
-        img3: './images/Guidelines/4.png',
+        img0: './images/Guidelines/1-en.png',
+        img1: './images/Guidelines/2-en.png',
+        img2: './images/Guidelines/3-en.png',
+        img3: './images/Guidelines/4-en.png',
         section1_title: "2. Obtain baseUrl",
         section1_p1: "<code>baseUrl</code> is the base URL for the DeepSeek API.",
         section1_pre: "For example: https://api.deepseek.com",
@@ -351,7 +405,11 @@
         more_info_url: "https://api-docs.deepseek.com/",
         additional_info_text: "You can also use third-party APIs.",
         third_party_api_1_label: 'volcengine',
-        third_party_api_1_url: "https://www.volcengine.com/product/ark"
+        third_party_api_1_url: "https://www.volcengine.com/product/ark",
+        section4_title: '5.Error Codes',
+        section4_p1: 'When calling DeepSeek API, you may encounter errors. Here list the causes and solutions.',
+        error_codes: `<table><thead><tr><th>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;CODE&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</th><th>DESCRIPTION</th></tr></thead><tbody><tr><td>400&nbsp;-&nbsp;Invalid&nbsp;Format</td><td><strong>Cause</strong>: Invalid request body format. <br> <strong>Solution</strong>: Please modify your request body according to the hints in the error message. For more API format details, please refer to <a id="dad" onClick="openLink('dad')" url="https://api-docs.deepseek.com" target="_blank" rel="noopener noreferrer">DeepSeek API Docs.</a></td></tr><tr><td>401&nbsp;-&nbsp;Authentication&nbsp;Fails</td><td><strong>Cause</strong>: Authentication fails due to the wrong API key. <br> <strong>Solution</strong>: Please check your API key. If you don't have one, please <a id="createApi" onClick="openLink('createApi')" url="https://platform.deepseek.com/api_keys" target="_blank" rel="noopener noreferrer">create an API key</a> first.</td></tr><tr><td>402&nbsp;-&nbsp;Insufficient&nbsp;Balance</td><td><strong>Cause</strong>: You have run out of balance. <br> <strong>Solution</strong>: Please check your account's balance, and go to the <a id="payMoney" onClick="openLink('payMoney')" url="https://platform.deepseek.com/top_up" target="_blank" rel="noopener noreferrer">Top up</a> page to add funds.</td></tr><tr><td>422&nbsp;-&nbsp;Invalid&nbsp;Parameters</td><td><strong>Cause</strong>: Your request contains invalid parameters. <br> <strong>Solution</strong>: Please modify your request parameters according to the hints in the error message. For more API format details, please refer to <a id="dad" onClick="openLink('dad')" url="https://api-docs.deepseek.com" target="_blank" rel="noopener noreferrer">DeepSeek API Docs.</a></td></tr><tr><td>429&nbsp;-&nbsp;Rate&nbsp;Limit&nbsp;Reached</td><td><strong>Cause</strong>: You are sending requests too quickly. <br> <strong>Solution</strong>: Please pace your requests reasonably. We also advise users to temporarily switch to the APIs of alternative LLM service providers, like OpenAI.</td></tr><tr><td>500&nbsp;-&nbsp;Server&nbsp;Error</td><td><strong>Cause</strong>: Our server encounters an issue. <br> <strong>Solution</strong>: Please retry your request after a brief wait and contact us if the issue persists.</td></tr><tr><td>503&nbsp;-&nbsp;Server&nbsp;Overloaded</td><td><strong>Cause</strong>: The server is overloaded due to high traffic. <br> <strong>Solution</strong>: Please retry your request after a brief wait.</td></tr></tbody></table>`,
+        dy_api: `<div class="dy section"> <h2 id="dy_login_title">1.Volcano Login</h2> <div class="login"> <a id="dy_login" url="https://console.volcengine.com/auth/login/" onclick="openLink('dy_login')">Login Address</a> </div> <div class="section-img"> <img id="dy_login_img" src="./images/dyGuidelines/dy1-en.png" /> </div> </div> <div class="dy section"> <h2>2.Preparatory Operations</h2> <div style="margin: 10px 16px;"> <div class="step">Step 1: Enter Volcano Ark</div> <div class="section-img"> <img id="dy_login_img" src="./images/dyGuidelines/dy2-en.png" /> </div> <div class="step">Step 2: Enter Management Activation</div> <div class="section-img"> <img id="dy_login_img" src="./images/dyGuidelines/dy3-en.png" /> </div> <div class="step">Step 3: Activate deepseek v3 and r1</div> <div class="section-img"> <img id="dy_login_img" src="./images/dyGuidelines/dy4-en.png" /> <img id="dy_login_img" src="./images/dyGuidelines/dy5-en.png" /> <img id="dy_login_img" src="./images/dyGuidelines/dy6-en.png" /> </div> <div class="step">Step 4: Create Inference Point</div> <div class="section-img"> <img id="dy_login_img" src="./images/dyGuidelines/dy7-en.png" /> <img id="dy_login_img" src="./images/dyGuidelines/dy8-en.png" /> <img id="dy_login_img" src="./images/dyGuidelines/dy9-en.png" /> </div> <div class="step">Step 5: Create Application</div> <div class="section-img"> <img id="dy_login_img" src="./images/dyGuidelines/dy10-en.png" /> <img id="dy_login_img" src="./images/dyGuidelines/dy11-en.png" /> </div> </div> </div> <div class="dy section"> <h2>3.Get baseUrl and modelId</h2> <div class="section-img"> <img id="dy_login_img" src="./images/dyGuidelines/dy12-en.png" /> </div> <h2>4.Get appKey</h2> <div class="section-img"> <img id="dy_login_img" src="./images/dyGuidelines/dy13-en.png" /> </div> </div>`
       }
     };
 
@@ -384,6 +442,13 @@
       document.getElementById('additional_info_text').innerHTML = translations[lang].additional_info_text;
       document.getElementById('third_party_api_1').innerHTML = translations[lang].third_party_api_1_label;
       document.getElementById('third_party_api_1').setAttribute('url', translations[lang].third_party_api_1_url);
+
+      document.getElementById('section4_title').innerHTML = translations[lang].section4_title;
+      document.getElementById('section4_p1').innerHTML = translations[lang].section4_p1;
+      document.getElementById('error-codes').innerHTML = translations[lang].error_codes;
+
+      document.getElementById('dy_api').innerHTML = translations[lang].dy_api;
+
     }
 
     function openLink(id) {
@@ -391,15 +456,23 @@
       window.opener.deepseekApp.openUrl(url);
     }
 
-    // Set default language
-    setLanguage(window.opener.deepseekApp.i18n['type']);
-    // 设置默认选中的选项为 "English"
-    document.addEventListener('DOMContentLoaded', function () {
-      var selectElement = document.getElementById('languageSelect');
-      selectElement.value = window.opener.deepseekApp.i18n['type'];
-    });
+    try {
+      // Set default language
+      setLanguage(window.opener.deepseekApp.i18n['type']);
 
-    console.log(window.opener.deepseekApp.i18n['type'])
+      document.addEventListener('DOMContentLoaded', function () {
+        var selectElement = document.getElementById('languageSelect');
+        selectElement.value = window.opener.deepseekApp.i18n['type'];
+      });
+    } catch (error) {
+      // Set default language
+      setLanguage('en');
+
+      document.addEventListener('DOMContentLoaded', function () {
+        var selectElement = document.getElementById('languageSelect');
+        selectElement.value = 'en';
+      });
+    }
   </script>
 
 </body>

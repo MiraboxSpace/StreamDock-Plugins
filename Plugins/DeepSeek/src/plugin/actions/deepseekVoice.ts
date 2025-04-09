@@ -1,9 +1,9 @@
 import { usePluginStore, useWatchEvent } from '@/hooks/plugin';
 import { useEventStore } from '@/hooks/event';
 
-export default function(name: string) {
+export default function (name: string) {
   const ActionID = `${window.argv[3].plugin.uuid}.${name}`;
-  
+
   // 事件侦听器
   const plugin = usePluginStore();
   const eventStore = useEventStore();

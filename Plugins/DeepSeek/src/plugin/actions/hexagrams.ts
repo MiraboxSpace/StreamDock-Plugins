@@ -102,7 +102,7 @@ export default function (name: string) {
     })
 
     if (valueFlag) {
-      windowUtil.openCenteredWindow(context, `./index.html?appName=hexagramsApp&context=${context}`, 600, 400);
+      windowUtil.openCenteredWindow(context, `./index.html?appName=hexagramsApp&context=${context}`, 800, 550);
     } else {
       plugin.getAction(context).showAlert(context)
     }

@@ -187,7 +187,10 @@ provide('editMessageSend', editMessageSend)
 </script>
 
 <style scoped>
-
+html,
+  body {
+    user-select: auto;
+  }
 .deepseek-index {
   width: 100vw;
   height: 100vh;
@@ -203,7 +206,7 @@ provide('editMessageSend', editMessageSend)
 }
 
 .sidebar {
-  width: 20vw;
+  width: clamp(240px, 20vw, 300px);
   padding: 1vmin;
   overflow-y: scorll;
   background-color: #212327;
@@ -211,7 +214,8 @@ provide('editMessageSend', editMessageSend)
 
 .main {
   position: relative;
-  width: 80vw;
+  flex: 1;
+  /* width: 80vw; */
   height: 100%;
   padding: 1vmin;
   background-color: #2d2d2d;
