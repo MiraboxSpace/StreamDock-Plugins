@@ -29,5 +29,11 @@ export default defineConfig({
   },
   esbuild: {
     drop: ['console'], // 移除所有 console.* 调用
+  },
+  server: {
+    watch: {
+      // 包含 public 目录
+      ignored: ['!**/public/**']
+    }
   }
 });

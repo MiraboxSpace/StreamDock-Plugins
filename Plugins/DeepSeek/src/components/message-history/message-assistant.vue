@@ -41,23 +41,23 @@ onUpdated(() => {
   align-items: center;
   justify-content: center;
   width: clamp(10px, 6vmin, 40px);
-  height: 6vmin;
+  height: clamp(10px, 6vmin, 40px);
   background-color: white;
   border: 1px solid skyblue;
   border-radius: 50%;
   margin-right: 1vmin;
   :deep().n-image {
-    width: 4vmin;
-    height: 4vmin;
+    width: clamp(10px, 6vmin, 30px);
+    height: clamp(10px, 6vmin, 30px);
   }
 }
 .content {
   position: relative;
   max-width: calc(100% - 14vmin);
-  margin-top: 1vh;
-  padding: 2vmin 4vmin;
+  // margin-top: 1vh;
+  padding: clamp(10px, 4vmin, 16px) clamp(16px, 6vmin, 18px);
   background-color: #565656;
-  border-radius: 1vw;
+  border-radius: clamp(6px,1vw,12px);
   color: #FFFFFF;
   font-size: clamp(12px, 1.5vmin, 22px);
 }

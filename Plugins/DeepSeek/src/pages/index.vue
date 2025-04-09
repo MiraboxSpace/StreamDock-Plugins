@@ -54,7 +54,7 @@
   body {
     font-size: 9pt;
     color: #e6e6e6;
-    user-select: none;
+    user-select: auto;
     background-color: #2d2d2d;
     font-family: Arial, sans-serif;
   }

@@ -103,7 +103,7 @@ export default function (name: string) {
     })
 
     if (valueFlag) {
-      windowUtil.openCenteredWindow(context, `./index.html?appName=deepseekApp&context=${context}`, 1200, 800);
+      windowUtil.openCenteredWindow(context, `./index.html?appName=deepseekApp&context=${context}`, 800, 550);
     } else {
       plugin.getAction(context).showAlert(context)
     }
