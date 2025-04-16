@@ -1,0 +1,26 @@
+{
+  "name": "nodeplugin",
+  "version": "1.0.0",
+  "author": "mirabox",
+  "main": "index.js",
+  "description": "以子进程的方式运行nodejs代码",
+  "scripts": {
+    "build": "ncc build index.js -m -o ./build && node autofile.cjs"
+  },
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^1.6.8",
+    "cors": "^2.8.5",
+    "discord-rpc": "^4.0.1",
+    "express": "^4.19.2",
+    "fs-extra": "^11.2.0",
+    "get-proxy-settings": "^0.1.13",
+    "global-agent": "^3.0.0",
+    "https-proxy-agent": "^7.0.4",
+    "jimp": "^0.22.12",
+    "log4js": "^6.9.1",
+    "path": "^0.12.7",
+    "twemoji": "^14.0.2",
+    "ws": "^8.14.2"
+  }
+}

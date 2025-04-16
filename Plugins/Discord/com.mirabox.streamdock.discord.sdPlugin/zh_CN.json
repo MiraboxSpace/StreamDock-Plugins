@@ -1,0 +1,96 @@
+{
+  "Name": "Discord",
+  "Description": "控制 Discord",
+  "com.hotspot.streamdock.discord.deaf": {
+    "Name": "耳机静音",
+    "Tooltip": "耳机静音/解除静音"
+  },
+  "com.hotspot.streamdock.discord.mute": {
+    "Name": "麦克风静音",
+    "Tooltip": "麦克风静音/解除静音"
+  },
+  "com.hotspot.streamdock.discord.voicechannel": {
+    "Name": "语音通道",
+    "Tooltip": "加入语音通道"
+  },
+  "com.hotspot.streamdock.discord.textchannel": {
+    "Name": "文本通道",
+    "Tooltip": "加入文本通道"
+  },
+  "com.hotspot.streamdock.discord.pushtotalk": {
+    "Name": "按住静音",
+    "Tooltip": "按住静音"
+  },
+  "com.hotspot.streamdock.discord.pushtomute": {
+    "Name": "按住讲话",
+    "Tooltip": "按住讲话"
+  },
+  "com.hotspot.streamdock.discord.volumeControl": {
+    "Name": "音量控制",
+    "Tooltip": "控制音频设备音量"
+  },
+  "com.hotspot.streamdock.discord.notice": {
+    "Name": "通知",
+    "Tooltip": "获取通知"
+  },
+  "com.hotspot.streamdock.discord.setDevices": {
+    "Name": "设置音频设备",
+    "Tooltip": "设置音频设备"
+  },
+  "com.hotspot.streamdock.discord.userVolumeControl": {
+    "Name": "用户音量控制",
+    "Tooltip": "用户音量控制"
+  },
+  "com.hotspot.streamdock.discord.action1": {
+    "Name": "语音板",
+    "Tooltip": "语音板"
+  },
+  "com.hotspot.streamdock.discord.mutecontrol": {
+    "Name": "麦克风控制",
+    "Tooltip": "麦克风控制"
+  },
+  "com.hotspot.streamdock.discord.deafcontrol": {
+    "Name": "耳机控制",
+    "Tooltip": "耳机控制"
+  },
+  "Category": "Discord",
+  "Localization": {
+    "请启动Discord": "请启动Discord",
+    "请求授权": "请求授权",
+    "Logout": "注销",
+    "授权": "授权",
+    "服务器": "服务器",
+    "文本通道": "文本通道",
+    "设备": "设备",
+    "输入": "输入",
+    "输出": "输出",
+    "音量": "音量",
+    "语音通道": "语音通道",
+    "获取ID": "获取ID",
+    "用户": "用户",
+    "理想音量": "理想音量",
+    "调整单位": "调整单位",
+    "图标样式": "图标样式",
+    "静音类型": "静音类型",
+    "模式": "模式",
+    "设置": "设置",
+    "设置输入设备": "设置输入设备",
+    "设置输出设备": "设置输出设备",
+    "设置二者": "设置二者",
+    "调整": "调整",
+    "静音": "静音",
+    "动态垂直": "动态垂直",
+    "动态水平": "动态水平",
+    "静态": "静态",
+    "搜索": "搜索",
+    "25%": "25%",
+    "-25%": "-25%",
+    "取消静音": "取消静音",
+    "info": "服务端口由3002变为26432,请大家前往APP后台更改重定向url，给大家造成不便非常抱歉",
+    "View the tutorial": "查看使用教程",
+    "静音/取消静音": "静音/取消静音",
+    "连接次数过多请重新启动Discord": "连接次数过多请重新启动Discord",
+    "CLIENT ID": "CLIENT ID",
+    "https://discord.com/developers/applications": "https://discord.com/developers/applications"
+  }
+}

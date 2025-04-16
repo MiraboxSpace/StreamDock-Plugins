@@ -1,0 +1,96 @@
+{
+  "Name": "Discord",
+  "Description": "Control Discord",
+  "com.hotspot.streamdock.discord.deaf": {
+    "Name": "Deafen",
+    "Tooltip": "Toggle Deafen"
+  },
+  "com.hotspot.streamdock.discord.mute": {
+    "Name": "Mute",
+    "Tooltip": "Toggle Microphone Mute"
+  },
+  "com.hotspot.streamdock.discord.voicechannel": {
+    "Name": "Voice Channel",
+    "Tooltip": "Join a voice channel"
+  },
+  "com.hotspot.streamdock.discord.textchannel": {
+    "Name": "Text Channel",
+    "Tooltip": "Go to a text channel"
+  },
+  "com.hotspot.streamdock.discord.pushtotalk": {
+    "Name": "Push to Talk",
+    "Tooltip": "Press and hold to talk"
+  },
+  "com.hotspot.streamdock.discord.pushtomute": {
+    "Name": "Push to Mute",
+    "Tooltip": "Press and hold to mute"
+  },
+  "com.hotspot.streamdock.discord.volumeControl": {
+    "Name": "Volume Control",
+    "Tooltip": "Control the volume of audio devices"
+  },
+  "com.hotspot.streamdock.discord.notice": {
+    "Name": "Notice",
+    "Tooltip": "Get notified"
+  },
+  "com.hotspot.streamdock.discord.setDevices": {
+    "Name": "Set up your audio device",
+    "Tooltip": "Set up your audio device"
+  },
+  "com.hotspot.streamdock.discord.userVolumeControl": {
+    "Name": "User volume control",
+    "Tooltip": "User volume control"
+  },
+  "com.hotspot.streamdock.discord.action1": {
+    "Name": "Soundboard",
+    "Tooltip": "Soundboard"
+  },
+  "com.hotspot.streamdock.discord.mutecontrol": {
+    "Name": "Mute Control",
+    "Tooltip": "Mute Control"
+  },
+  "com.hotspot.streamdock.discord.deafcontrol": {
+    "Name": "Deaf Control",
+    "Tooltip": "Deaf Control"
+  },
+  "Category": "Discord",
+  "Localization": {
+    "请启动Discord": "Please start Discord",
+    "请求授权": "Request authorization",
+    "授权": "Authorization",
+    "服务器": "Server",
+    "文本通道": "Text Channel",
+    "设备": "Equipment",
+    "输入": "Input",
+    "输出": "Output",
+    "音量": "Volume",
+    "语音通道": "Voice Channel",
+    "获取ID": "Get ID",
+    "用户": "User",
+    "Logout": "Logout",
+    "理想音量": "Ideal volume",
+    "调整单位": "Adjust the unit",
+    "图标样式": "Icon style",
+    "静音类型": "Mute type",
+    "模式": "Mode",
+    "设置": "Set up",
+    "设置输入设备": "Set up the input device",
+    "设置输出设备": "Set up the output device",
+    "设置二者": "Set both",
+    "调整": "Adjust",
+    "静音": "Mute",
+    "动态垂直": "Dynamic vertical",
+    "动态水平": "Dynamic level",
+    "静态": "Static",
+    "搜索": "Search",
+    "取消静音": "Unmute",
+    "25%": "25%",
+    "-25%": "-25%",
+    "静音/取消静音": "Mute/unmute",
+    "连接次数过多请重新启动Discord": "Too many connections, please restart Discord",
+    "CLIENT ID": "CLIENT ID",
+    "info": "The service port has changed from 3002 to 26432. Please go to the APP backend to change the redirection URL. We are very sorry for the inconvenience caused to you.",
+    "View the tutorial": "View the tutorial",
+    "https://discord.com/developers/applications": "https://discord.com/developers/applications"
+  }
+}

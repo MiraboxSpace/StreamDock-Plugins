@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <title>Callback Page</title>
+  <style>
+    #box {
+      width: 100%;
+      display: flex;
+      justify-content: center;
+    }
+  </style>
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+</head>
+
+<body>
+  <div id="box">
+    <h2>授权成功(Authorization successful)</h2>
+  </div>
+  <script type="module">
+    console.log("进入callback");
+    // 提取重定向URL中的参数
+    const params = new URLSearchParams(window.location.hash.substring(1));
+    const access_token = params.get('access_token');
+    const token_type = params.get('token_type');
+    const expires_in = params.get('expires_in');
+    const scope = params.get('scope');
+    // console.log(access_token);
+    if(access_token==null){
+      document.querySelector('h2').innerText = '授权失败(Authorization failed):'+params.get('error_description');
+    }
+
+    let data = JSON.stringify({
+      'access_token': access_token,
+      'token_type': token_type,
+      'expires_in': expires_in,
+      'scope': scope
+    })
+
+    localStorage.setItem('oauth2_token', data);
+
+    axios.post('http://localhost:26432/data', data)
+      .then(res => {
+        console.log(res.data);
+      })
+
+  </script>
+</body>
+
+</html>
