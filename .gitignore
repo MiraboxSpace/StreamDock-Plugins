@@ -14,9 +14,21 @@
 
 # Dependencies
 **/node_modules/
+!Plugins/Discord/
+!Plugins/Discord/com.mirabox.streamdock.discord.sdPlugin/
+!Plugins/Discord/com.mirabox.streamdock.discord.sdPlugin/plugin/
+!Plugins/Discord/com.mirabox.streamdock.discord.sdPlugin/plugin/node_modules/
+!Plugins/Discord/com.mirabox.streamdock.discord.sdPlugin/plugin/node_modules/discord-rpc/
+!Plugins/Discord/com.mirabox.streamdock.discord.sdPlugin/plugin/node_modules/discord-rpc/** 
 
 # Build outputs
 **/build/
 **/dist/
 **/*.build/
 **/out/
+
+
+**/log/
+
+**/.gitignore
+**/log.txt

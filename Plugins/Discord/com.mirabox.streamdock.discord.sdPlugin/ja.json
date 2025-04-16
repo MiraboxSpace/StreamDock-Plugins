@@ -1,0 +1,96 @@
+{
+  "Name": "Discord",
+  "Description": "Discordをコントロール",
+  "com.hotspot.streamdock.discord.deaf": {
+    "Name": "スピーカーミュート",
+    "Tooltip": "スピーカーのミュート切り替え"
+  },
+  "com.hotspot.streamdock.discord.mute": {
+    "Name": "マイクミュート",
+    "Tooltip": "マイクのミュートを切り替え"
+  },
+  "com.hotspot.streamdock.discord.voicechannel": {
+    "Name": "ボイスチャンネル",
+    "Tooltip": "ボイスチャンネルに入る"
+  },
+  "com.hotspot.streamdock.discord.textchannel": {
+    "Name": "テキストチャンネル",
+    "Tooltip": "テキストチャンネルに移動"
+  },
+  "com.hotspot.streamdock.discord.pushtotalk": {
+    "Name": "押し続けるとミュートされます",
+    "Tooltip": "押し続けるとミュートされます"
+  },
+  "com.hotspot.streamdock.discord.pushtomute": {
+    "Name": "長押しして話す",
+    "Tooltip": "長押しして話す"
+  },
+  "com.hotspot.streamdock.discord.volumeControl": {
+    "Name": "デバイスの音量調整",
+    "Tooltip": "オーディオデバイスの音量をコントロールする"
+  },
+  "com.hotspot.streamdock.discord.notice": {
+    "Name": "通知",
+    "Tooltip": "最新の通知を表示する"
+  },
+  "com.hotspot.streamdock.discord.setDevices": {
+    "Name": "オーディオデバイス設定",
+    "Tooltip": "入力デバイスと出力デバイスを設定する"
+  },
+  "com.hotspot.streamdock.discord.userVolumeControl": {
+    "Name": "ユーザー音量設定",
+    "Tooltip": "通話中のユーザーの音量を調節する"
+  },
+  "com.hotspot.streamdock.discord.action1": {
+    "Name": "サウンドボード",
+    "Tooltip": "discordサウンドボードを再生する"
+  },
+  "com.hotspot.streamdock.discord.mutecontrol": {
+    "Name": "マイク制御",
+    "Tooltip": "マイク制御"
+  },
+  "com.hotspot.streamdock.discord.deafcontrol": {
+    "Name": "ヘッドセット制御",
+    "Tooltip": "ヘッドセット制御"
+  },
+  "Category": "Discord",
+  "Localization": {
+    "请启动Discord": "Discordを起動してください",
+    "请求授权": "承認の要求",
+    "授权": "認可",
+    "服务器": "サーバー",
+    "文本通道": "テキストチャンネル",
+    "设备": "音声",
+    "输入": "入力",
+    "输出": "出力",
+    "音量": "音量",
+    "语音通道": "音声チャネル",
+    "获取ID": "フェッチID",
+    "CLIENT ID": "CLIENT ID",
+    "用户": "ユーザー",
+    "Logout": "ログアウト",
+    "理想音量": "音量",
+    "调整单位": "単位を調整する",
+    "图标样式": "アイコンのスタイル",
+    "静音类型": "パターン",
+    "模式": "モード",
+    "设置": "音量調節",
+    "设置输入设备": "入力デバイス",
+    "设置输出设备": "出力デバイス",
+    "设置二者": "入力デバイスと出力デバイスを設定する",
+    "调整": "調整する",
+    "静音": "ミュート",
+    "动态垂直": "ダイナミック垂直",
+    "动态水平": "ダイナミックレベル",
+    "静态": "静的",
+    "搜索": "検索",
+    "25%": "25%",
+    "-25%": "-25%",
+    "取消静音": "ミュート解除",
+    "静音/取消静音": "ミュート/ミュート解除",
+    "View the tutorial": "チュートリアルを見る",
+    "连接次数过多请重新启动Discord": "接続が多すぎる場合は、Discordを再起動してください",
+    "info": "サーバーポートが3002から26432に変更されました。アプリのバックエンドでリダイレクトURLを更新してください。ご不便をおかけして申し訳ありません。",
+    "https://discord.com/developers/applications": "https://discord.com/developers/applications"
+  }
+}
