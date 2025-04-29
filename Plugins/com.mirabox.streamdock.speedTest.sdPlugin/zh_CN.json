@@ -1,0 +1,34 @@
+{
+  "Name": "网速测试",
+  "Description": "网速测试",
+  "com.hotspot.streamdock.speedTest.action1": {
+    "Name": "网速测试",
+    "Tooltip": "网速测试"
+  },
+  "com.hotspot.streamdock.speedTest.action2": {
+    "Name": "LIBRESPEED®网速测试",
+    "Tooltip": "LIBRESPEED®网速测试"
+  },
+  "Category": "网速测试",
+  "Localization": {
+    "Server": "服务器",
+    "* Servers are choosen by LIBRESPEED®, we cannot add/modify the list": "* 服务器由LIBRESPEED®选择，我们无法添加/修改列表",
+    "* Servers are choosen by SPEEDTEST®, we cannot add/modify the list": "* 服务器由SPEEDTEST®选择，我们无法添加/修改列表",
+    "* Pro-Tip: Long pressing the key after a speed test will open the results in browser": "* 专业提示：测速后长按按键将在浏览器中打开结果",
+    "DISPLAY SETTINGS": "显示设置",
+    "Background": "背景",
+    "Latency Color": "延迟颜色",
+    "Download Color": "下载颜色",
+    "Upload Color": "上传颜色",
+    "Time Color": "时间颜色",
+    "Time": "时间",
+    "Show time as AM/PM": "以AM/PM格式显示时间",
+    "BEHAVIOUR": "行为设置",
+    "Autorun every (minutes)": "自动运行间隔（分钟）",
+    "RESULTS LEGEND": "结果图例",
+    "\"G\" - Gbps (Gigabit/sec)": "\"G\" - 千兆比特/秒",
+    "\"M\" - Mbps (Megabit/sec)": "\"M\" - 兆比特/秒",
+    "\"K\" - Kbps (Kilobit/sec)": "\"K\" - 千比特/秒"
+  }
+}
+

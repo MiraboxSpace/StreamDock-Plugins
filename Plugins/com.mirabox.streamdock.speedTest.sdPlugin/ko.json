@@ -1,0 +1,33 @@
+{
+  "Name": "인터넷 속도 테스트",
+  "Description": "인터넷 속도 테스트",
+  "com.hotspot.streamdock.speedTest.action1": {
+    "Name": "인터넷 속도 테스트",
+    "Tooltip": "인터넷 속도 테스트"
+  },
+  "com.hotspot.streamdock.speedTest.action2": {
+    "Name": "LIBRESPEED® 속도 테스트",
+    "Tooltip": "LIBRESPEED® 속도 테스트"
+  },
+  "Category": "속도 테스트",
+  "Localization": {
+    "Server": "서버",
+    "* Servers are choosen by LIBRESPEED®, we cannot add/modify the list": "* 서버는 LIBRESPEED®에서 선택되며, 목록을 수정할 수 없습니다",
+    "* Servers are choosen by SPEEDTEST®, we cannot add/modify the list": "* 서버는 SPEEDTEST®에서 선택되며, 목록을 수정할 수 없습니다",
+    "* Pro-Tip: Long pressing the key after a speed test will open the results in browser": "* 팁: 테스트 후 길게 누르면 브라우저에서 결과를 엽니다",
+    "DISPLAY SETTINGS": "표시 설정",
+    "Background": "배경",
+    "Latency Color": "지연 시간 색상",
+    "Download Color": "다운로드 색상",
+    "Upload Color": "업로드 색상",
+    "Time Color": "시간 색상",
+    "Time": "시간",
+    "Show time as AM/PM": "AM/PM 형식으로 표시",
+    "BEHAVIOUR": "동작 설정",
+    "Autorun every (minutes)": "자동 실행 간격 (분)",
+    "RESULTS LEGEND": "결과 범례",
+    "\"G\" - Gbps (Gigabit/sec)": "\"G\" - 기가비트/초",
+    "\"M\" - Mbps (Megabit/sec)": "\"M\" - 메가비트/초",
+    "\"K\" - Kbps (Kilobit/sec)": "\"K\" - 킬로비트/초"
+  }
+}
