@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta name=viewport
+        content="width=device-width,initial-scale=1,maximum-scale=1,minimum-scale=1,user-scalable=no,minimal-ui,viewport-fit=cover">
+    <meta name=apple-mobile-web-app-capable content=yes>
+    <meta name=apple-mobile-web-app-status-bar-style content=black>
+    <title>SpeedTest Settings</title>
+    <link rel="stylesheet" href="../../static/css/sdpi.css">
+    <script src="../utils/translate.js"></script>
+    <script src="../utils/sdtools.common.js"></script>
+    <script src="../utils/pickers.js"></script>
+</head>
+
+<body>
+    <div class="sdpi-wrapper">
+        <div class="sdpi-item" id="dvSteamApp">
+            <div class="sdpi-item-label">Server</div>
+            <select class="sdpi-item-value select sdProperty sdList" id="servers" oninput="setSettings()"
+                sdListTextProperty="name" sdListValueProperty="id" sdValueField="serverId"></select>
+        </div>
+        <details class="message">
+            <summary>* Servers are choosen by LIBRESPEED®, we cannot add/modify the list</summary>
+        </details>
+        <!-- <details class="message">
+            <summary>* Pro-Tip: Long pressing the key after a speed test will open the results in browser</summary>
+        </details> -->
+
+        <div class="sdpi-heading">DISPLAY SETTINGS</div>
+        <div type="color" class="sdpi-item" id="dvBackgroundColor">
+            <div class="sdpi-item-label">Background</div>
+            <input type="color" class="sdpi-item-value sdProperty" value="#000000" id="backgroundColor"
+                oninput="debouncedSetSettings()">
+        </div>
+        <div type="color" class="sdpi-item" id="dvLatencyColor">
+            <div class="sdpi-item-label">Latency Color</div>
+            <input type="color" class="sdpi-item-value sdProperty" value="#808080" id="latencyColor"
+                oninput="debouncedSetSettings()">
+        </div>
+        <div type="color" class="sdpi-item" id="dvDownloadColor">
+            <div class="sdpi-item-label">Download Color</div>
+            <input type="color" class="sdpi-item-value sdProperty" value="#008000" id="downloadColor"
+                oninput="debouncedSetSettings()">
+        </div>
+        <div type="color" class="sdpi-item" id="dvUploadColor">
+            <div class="sdpi-item-label">Upload Color</div>
+            <input type="color" class="sdpi-item-value sdProperty" value="#800080" id="uploadColor"
+                oninput="debouncedSetSettings()">
+        </div>
+        <div type="color" class="sdpi-item" id="dvTimeColor">
+            <div class="sdpi-item-label">Time Color</div>
+            <input type="color" class="sdpi-item-value sdProperty" value="#FFFFFF" id="timeColor"
+                oninput="debouncedSetSettings()">
+        </div>
+        <div type="checkbox" class="sdpi-item" id="dvTimeAMPM">
+            <div class="sdpi-item-label">Time</div>
+            <div class="sdpi-item-value">
+                <input id="timeAMPM" type="checkbox" value="" class="sdProperty sdCheckbox"
+                    oninput="debouncedSetSettings()">
+                <label for="timeAMPM" class="sdpi-item-label"><span></span>Show time as AM/PM</label>
+            </div>
+        </div>
+
+        <div class="sdpi-heading">BEHAVIOUR</div>
+        <div class="sdpi-item" id="dvAutorun">
+            <div class="sdpi-item-label">Autorun every (minutes)</div>
+            <input class="sdpi-item-value sdProperty" id="autorunTime" type="number" inputmode="numeric" min="1"
+                step="1" placeholder="1" oninput="validatePositiveInteger(this)" onblur="validatePositiveInteger(this)">
+        </div>
+
+        <div class="sdpi-heading">RESULTS LEGEND</div>
+        <details class="message">
+            <summary>"G" - Gbps (Gigabit/sec)</summary>
+        </details>
+        <details class="message">
+            <summary>"M" - Mbps (Megabit/sec)</summary>
+        </details>
+        <details class="message">
+            <summary>"K" - Kbps (Kilobit/sec)</summary>
+        </details>
+    </div>
+</body>
+
+</html>
