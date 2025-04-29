@@ -1,0 +1,196 @@
+/// <reference types="vite/client" />
+
+interface Window {
+  argv: StreamDock.Argv; // 入口参数
+  connectSocket(): void; // 入口函数
+  connectElgatoStreamDeckSocket(): void; // 旧版接口
+  onFilePickerReturn(files: string): void; // 文件上传触发 => 用于获取绝对路径
+}
+
+// 标题参数
+type titleParameters = EventPayload.titleParametersDidChange['payload']['titleParameters'];
+
+// 事件负载
+declare namespace EventPayload {
+  // 操作持久化数据
+  type didReceiveSettings = {
+    action: string;
+    event: string;
+    device: string;
+    context: string;
+    payload: {
+      settings: {};
+      coordinates: {
+        column: number;
+        row: number;
+      };
+    };
+    isInMultiAction: boolean;
+  };
+  // 按下|抬起|触摸
+  type keyDownUpTouchTap = {
+    action: string;
+    event: string;
+    context: string;
+    device: string;
+    payload: {
+      settings: {};
+      coordinates: {
+        column: number;
+        row: number;
+      };
+      state: number;
+      userDesiredState: number;
+      isInMultiAction: boolean;
+    };
+  };
+  // 创建|注销 操作
+  type willAppearDisappear = {
+    action: string;
+    event: string;
+    context: string;
+    device: string;
+    payload: {
+      settings: {};
+      coordinates: {
+        column: number;
+        row: number;
+      };
+      state: number;
+      isInMultiAction: boolean;
+    };
+  };
+  // 修改标题参数
+  type titleParametersDidChange = {
+    action: string;
+    event: string;
+    context: string;
+    device: string;
+    payload: {
+      coordinates: {
+        column: number;
+        row: number;
+      };
+      settings: {};
+      state: number;
+      title: string;
+      titleParameters: {
+        fontFamily: string;
+        fontSize: number;
+        fontStyle: string;
+        fontUnderline: boolean;
+        showTitle: boolean;
+        titleAlignment: string;
+        titleColor: string;
+      };
+    };
+  };
+  // 连接|断开 设备
+  type deviceDidConnectDisconnect = {
+    event: string;
+    device: string;
+    deviceInfo: {
+      name: string;
+      type: number;
+      size: {
+        columns: number;
+        rows: number;
+      };
+    };
+  };
+  // 显示|注销 属性检查器
+  type propertyInspectorDidAppearDisappear = {
+    action: string;
+    event: string;
+    context: string;
+    device: string;
+  };
+  // 接收属性检查器消息
+  type sendToPlugin = {
+    event: string;
+    action: string;
+    context: string;
+    payload: { [k: string]: any };
+  };
+  // 接收插件消息
+  type sendToPropertyInspector = {
+    action: string;
+    event: string;
+    context: string;
+    payload: { [k: string]: any };
+  };
+}
+
+// 软件相关
+declare namespace StreamDock {
+  // 入口参数
+  type Argv = [
+    string,
+    string,
+    string,
+    {
+      application: {
+        font: string;
+        language: string;
+        platform: string;
+        platformVersion: string;
+        version: string;
+      };
+      plugin: {
+        uuid: string;
+        version: string;
+      };
+    },
+    {
+      action: string;
+      context: string;
+      payload: {
+        controller: string;
+        coordinates: {
+          column: number;
+          row: number;
+        };
+        isInMultiAction: boolean;
+        settings: any;
+        state: number;
+      };
+    }
+  ];
+
+  // 消息通信
+  type Message = {
+    event: string;
+    action?: string;
+    context?: string;
+    payload?: unknown;
+  };
+
+  // 属性检查器事件
+  type ProperMessage = {
+    didReceiveSettings?(this: ProperMessage, data: EventPayload.didReceiveSettings): void;
+    sendToPropertyInspector?(this: ProperMessage, data: EventPayload.sendToPropertyInspector): void;
+  };
+
+  // 操作触发事件
+  type ActionMessage = {
+    ActionID?: string;
+    didReceiveSettings?(this: ActionMessage, data: EventPayload.didReceiveSettings): void;
+    keyDown?(this: ActionMessage, data: EventPayload.keyDownUpTouchTap): void;
+    keyUp?(this: ActionMessage, data: EventPayload.keyDownUpTouchTap): void;
+    touchTap?(this: ActionMessage, data: EventPayload.keyDownUpTouchTap): void;
+    willAppear?(this: ActionMessage, data: EventPayload.willAppearDisappear): void;
+    willDisappear?(this: ActionMessage, data: EventPayload.willAppearDisappear): void;
+    titleParametersDidChange?(this: ActionMessage, data: EventPayload.titleParametersDidChange): void;
+    propertyInspectorDidAppear?(this: ActionMessage, data: EventPayload.propertyInspectorDidAppearDisappear): void;
+    propertyInspectorDidDisappear?(this: ActionMessage, data: EventPayload.propertyInspectorDidAppearDisappear): void;
+    sendToPlugin?(this: ActionMessage, data: EventPayload.sendToPlugin): void;
+  };
+
+  // 插件触发事件
+  type PluginMessage = {
+    // 设备连接 TODO: 参数未知
+    deviceDidConnect?(this: PluginMessage, data: EventPayload.deviceDidConnectDisconnect): void;
+    // 设备断开 TODO: 参数未知
+    deviceDidDisconnect?(this: PluginMessage, data: EventPayload.deviceDidConnectDisconnect): void;
+  };
+}
