@@ -1,0 +1,105 @@
+{
+  "Actions": [
+    {
+      "Icon": "static/speed-speedtest.png",
+      "Name": "speedTest",
+      "States": [
+        {
+          "FontSize": "10",
+          "TitleAlignment": "center",
+          "Image": "static/speed-speedtest.png"
+        }
+      ],
+      "Settings": {
+        "servers": [],
+        "autorunTime": "",
+        "backgroundColor": "#363535",
+        "downloadColor": "#d0e859",
+        "latencyColor": "#808080",
+        "serverId": "",
+        "timeAMPM": false,
+        "timeColor": "#ffffff",
+        "uploadColor": "#52daa6",
+        "testInfo": {
+          "latency": null,
+          "download": null,
+          "upload": null,
+          "url": null,
+          "state": null
+        }
+      },
+      "Controllers": [
+        "Keypad",
+        "Information",
+        "Knob"
+      ],
+      "UserTitleEnabled": false,
+      "SupportedInMultiActions": false,
+      "Tooltip": "speedTest",
+      "UUID": "com.hotspot.streamdock.speedTest.action1",
+      "PropertyInspectorPath": "propertyInspector/action1/index.html"
+    },
+    {
+      "Icon": "static/speed-librespeed.png",
+      "Name": "LIBRESPEED",
+      "States": [
+        {
+          "FontSize": "10",
+          "TitleAlignment": "center",
+          "Image": "static/speed-librespeed.png"
+        }
+      ],
+      "Settings": {
+        "servers": [],
+        "autorunTime": "",
+        "backgroundColor": "#363535",
+        "downloadColor": "#d0e859",
+        "latencyColor": "#808080",
+        "serverId": "",
+        "timeAMPM": false,
+        "timeColor": "#ffffff",
+        "uploadColor": "#52daa6",
+        "testInfo": {
+          "latency": null,
+          "download": null,
+          "upload": null,
+          "url": null,
+          "state": null
+        }
+      },
+      "Controllers": [
+        "Keypad",
+        "Information",
+        "Knob"
+      ],
+      "UserTitleEnabled": false,
+      "SupportedInMultiActions": false,
+      "Tooltip": "LIBRESPEED",
+      "UUID": "com.hotspot.streamdock.speedTest.action2",
+      "PropertyInspectorPath": "propertyInspector/action2/index.html"
+    }
+  ],
+  "SDKVersion": 1,
+  "Author": "Mirabox",
+  "Name": "speedTest",
+  "Icon": "static/speed.png",
+  "CodePath": "plugin/app.exe",
+  "Description": "speedTest",
+  "Category": "speedTest",
+  "CategoryIcon": "static/speed.png",
+  "Version": "1.0.0",
+  "URL": "http://video.hotspotek.com.cn/",
+  "OS": [
+    {
+      "Platform": "mac",
+      "MinimumVersion": "10.11"
+    },
+    {
+      "Platform": "windows",
+      "MinimumVersion": "7"
+    }
+  ],
+  "Software": {
+    "MinimumVersion": "2.9"
+  }
+}

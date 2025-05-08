@@ -1,0 +1,33 @@
+{
+  "Name": "速度テスト",
+  "Description": "速度テスト",
+  "com.hotspot.streamdock.speedTest.action1": {
+    "Name": "速度テスト",
+    "Tooltip": "速度テスト"
+  },
+  "com.hotspot.streamdock.speedTest.action2": {
+    "Name": "LIBRESPEED®速度テスト",
+    "Tooltip": "LIBRESPEED®速度テスト"
+  },
+  "Category": "速度テスト",
+  "Localization": {
+    "Server": "サーバー",
+    "* Servers are choosen by LIBRESPEED®, we cannot add/modify the list": "* サーバーはLIBRESPEED®が選択し、変更できません",
+    "* Servers are choosen by SPEEDTEST®, we cannot add/modify the list": "* サーバーはSPEEDTEST®が選択し、変更できません",
+    "* Pro-Tip: Long pressing the key after a speed test will open the results in browser": "* ヒント：長押しで結果をブラウザで開きます",
+    "DISPLAY SETTINGS": "表示設定",
+    "Background": "背景",
+    "Latency Color": "レイテンシ色",
+    "Download Color": "ダウンロード色",
+    "Upload Color": "アップロード色",
+    "Time Color": "時間色",
+    "Time": "時間",
+    "Show time as AM/PM": "AM/PM形式で表示",
+    "BEHAVIOUR": "動作設定",
+    "Autorun every (minutes)": "自動実行間隔（分）",
+    "RESULTS LEGEND": "結果凡例",
+    "\"G\" - Gbps (Gigabit/sec)": "\"G\" - ギガビット/秒",
+    "\"M\" - Mbps (Megabit/sec)": "\"M\" - メガビット/秒",
+    "\"K\" - Kbps (Kilobit/sec)": "\"K\" - キロビット/秒"
+  }
+}

@@ -1,0 +1,33 @@
+{
+  "Name": "Test de vitesse",
+  "Description": "Test de vitesse",
+  "com.hotspot.streamdock.speedTest.action1": {
+    "Name": "Test de vitesse",
+    "Tooltip": "Test de vitesse"
+  },
+  "com.hotspot.streamdock.speedTest.action2": {
+    "Name": "Test de vitesse LIBRESPEED®",
+    "Tooltip": "Test de vitesse LIBRESPEED®"
+  },
+  "Category": "Test de vitesse",
+  "Localization": {
+    "Server": "Serveur",
+    "* Servers are choosen by LIBRESPEED®, we cannot add/modify the list": "* Les serveurs sont choisis par LIBRESPEED®, nous ne pouvons pas modifier la liste",
+    "* Servers are choosen by SPEEDTEST®, we cannot add/modify the list": "* Les serveurs sont choisis par SPEEDTEST®, nous ne pouvons pas modifier la liste",
+    "* Pro-Tip: Long pressing the key after a speed test will open the results in browser": "* Astuce : Un appui long ouvrira les résultats dans le navigateur",
+    "DISPLAY SETTINGS": "Paramètres d'affichage",
+    "Background": "Arrière-plan",
+    "Latency Color": "Couleur latence",
+    "Download Color": "Couleur téléchargement",
+    "Upload Color": "Couleur envoi",
+    "Time Color": "Couleur heure",
+    "Time": "Heure",
+    "Show time as AM/PM": "Afficher l'heure en AM/PM",
+    "BEHAVIOUR": "Comportement",
+    "Autorun every (minutes)": "Exécution automatique toutes les (minutes)",
+    "RESULTS LEGEND": "Légende des résultats",
+    "\"G\" - Gbps (Gigabit/sec)": "\"G\" - Gb/s (Gigabit/sec)",
+    "\"M\" - Mbps (Megabit/sec)": "\"M\" - Mb/s (Megabit/sec)",
+    "\"K\" - Kbps (Kilobit/sec)": "\"K\" - Kb/s (Kilobit/sec)"
+  }
+}
