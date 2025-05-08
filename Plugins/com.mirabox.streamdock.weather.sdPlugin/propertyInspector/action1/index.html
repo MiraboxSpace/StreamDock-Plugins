@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8" />
+  <title>天气查询 - 属性检查器</title>
+  <link rel="stylesheet" href="../../static/css/sdpi.css" />
+  <style>
+    #searchList {
+      flex: 3;
+      margin-right: 0;
+    }
+
+    #searchBtn {
+      flex: 1;
+    }
+
+    #titleWrap {
+      display: none;
+    }
+
+    .sdpi-item-label {
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="sdpi-wrapper" style="display: none">
+    <div class="sdpi-heading">天气查询</div>
+    <div type="radio" class="sdpi-item">
+      <div class="sdpi-item-label">天气提供商</div>
+      <div class="sdpi-item-value">
+        <span class="sdpi-item-child">
+          <input name="radioUseApi" id="rdio5" type="radio" value="qweather" />
+          <label for="rdio5" class=""><span></span>和风天气</label>
+        </span>
+        <span class="sdpi-item-child">
+          <input name="radioUseApi" id="rdio6" type="radio" value="weatherapi" />
+          <label for="rdio6" class=""><span></span>weatherapi</label>
+        </span>
+      </div>
+    </div>
+    <div class="sdpi-item">
+      <div class="sdpi-item-label">输入城市</div>
+      <input class="sdpi-item-value" id="inputCity" placeholder="请输入城市" />
+    </div>
+    <div class="sdpi-item">
+      <div class="sdpi-item-label">搜索列表</div>
+      <select class="sdpi-item-value select" id="searchList"></select>
+      <button class="sdpi-item-value" id="searchBtn">更新</button>
+    </div>
+    <div type="radio" class="sdpi-item">
+      <div class="sdpi-item-label">天气名称</div>
+      <div class="sdpi-item-value">
+        <span class="sdpi-item-child">
+          <input name="rdio2" id="rdio3" type="radio" value="0" />
+          <label for="rdio3" class=""><span></span>显示</label>
+        </span>
+        <span class="sdpi-item-child">
+          <input name="rdio2" id="rdio4" type="radio" value="1" />
+          <label for="rdio4" class=""><span></span>隐藏</label>
+        </span>
+      </div>
+    </div>
+    <div class="sdpi-item">
+      <div class="sdpi-item-label">温度单位</div>
+      <select class="sdpi-item-value select" id="tempList">
+        <option value="0">摄氏度</option>
+        <option value="1">华氏度</option>
+      </select>
+    </div>
+    <div type="radio" class="sdpi-item">
+      <div class="sdpi-item-label">显示选项</div>
+      <div class="sdpi-item-value">
+        <span class="sdpi-item-child">
+          <input name="rdio" id="rdio1" type="radio" value="0" />
+          <label for="rdio1" class=""><span></span>城市名称</label>
+        </span>
+        <span class="sdpi-item-child">
+          <input name="rdio" id="rdio2" type="radio" value="1" />
+          <label for="rdio2" class=""><span></span>自定义标题</label>
+        </span>
+      </div>
+    </div>
+    <div class="sdpi-item" id="titleWrap">
+      <div class="sdpi-item-label">自定名称</div>
+      <input class="sdpi-item-value" id="inputTitle" placeholder="请输入标题" />
+    </div>
+    <div class="sdpi-item">
+      <div class="sdpi-item-label">主题切换</div>
+      <select class="sdpi-item-value select" id="themeList">
+        <option value="Modern">简约摩登</option>
+        <option value="Luxury">豪华绚丽</option>
+        <!-- <option value="dynamic">轻盈灵动</option> -->
+      </select>
+    </div>
+  </div>
+  <script src="../../static/utils/common.js"></script>
+  <script src="../../static/action.js"></script>
+  <script src="index.js"></script>
+</body>
+
+</html>
