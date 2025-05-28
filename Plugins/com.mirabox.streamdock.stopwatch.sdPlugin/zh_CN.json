@@ -1,0 +1,28 @@
+{
+  "Name": "秒表",
+  "Description": "秒表",
+  "com.hotspot.streamdock.stopwatch.stopwatch": {
+    "Name": "秒表",
+    "Tooltip": "秒表"
+  },
+  "Category": "秒表",
+  "Localization": {
+    "Tip: Long press resets the stopwatch": "提示：长按重置秒表",
+    "Save to file": "保存到文件",
+    "Clear on Reset": "重置时清空",
+    "Clear text file on reset": "重置时清空文本文件",
+    "Multiline": "多行显示",
+    "3 different lines": "3行格式",
+    "Resume on click": "点击继续",
+    "Unpausing does not reset": "暂停恢复不会重置",
+    "Lap Mode": "分段计时模式",
+    "For 'Lap Mode' usage instructions": "关于'分段计时模式'的使用说明 ",
+    "CLICK HERE": " 点击此处",
+    "In Lap mode, each press records a lap, Long press stops. After a long press, all laps are copied to clipboard": "在分段模式下，每次点击记录一个分段，长按停止。长按后，所有分段将复制到剪贴板",
+    "Shared Id (optional)": "共享ID（可选）",
+    "For 'Shared Id' usage instructions": "关于'共享ID'的使用说明 ",
+    "By default, every instance of a Stopwatch is independent.": "默认情况下，每个秒表实例都是独立的。",
+    "This function allows you to view/modify the same stopwatch across multiple Stream Dock profiles. Type the same name/id in 'Shared Id' across all the Stopwatch actions you want to be identical.": "此功能允许您在多个Stream Dock配置文件中查看/修改同一个秒表。在所有需要同步的秒表动作中，在'共享ID'处输入相同的名称/ID即可实现联动。"
+}
+}
+

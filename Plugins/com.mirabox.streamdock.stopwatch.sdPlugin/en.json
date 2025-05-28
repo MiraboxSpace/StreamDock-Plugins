@@ -1,0 +1,28 @@
+{
+  "Name": "stopwatch",
+  "Description": "stopwatch",
+  "com.hotspot.streamdock.stopwatch.stopwatch": {
+    "Name": "stopwatch",
+    "Tooltip": "stopwatch"
+  },
+  "Category": "stopwatch",
+  "Localization": {
+    "Tip: Long press resets the stopwatch": "Tip: Long press resets the stopwatch",
+    "Save to file": "Save to file",
+    "Clear on Reset": "Clear on Reset",
+    "Clear text file on reset": "Clear text file on reset",
+    "Multiline": "Multiline",
+    "3 different lines": "3 different lines",
+    "Resume on click": "Resume on click",
+    "Unpausing does not reset": "Unpausing does not reset",
+    "Lap Mode": "Lap Mode",
+    "For 'Lap Mode' usage instructions": "For 'Lap Mode' usage instructions ",
+    "CLICK HERE": " CLICK HERE",
+    "In Lap mode, each press records a lap, Long press stops. After a long press, all laps are copied to clipboard": "In Lap mode, each press records a lap, Long press stops. After a long press, all laps are copied to clipboard",
+    "Shared Id (optional)": "Shared Id (optional)",
+    "For 'Shared Id' usage instructions": "For 'Shared Id' usage instructions ",
+    "By default, every instance of a Stopwatch is independent.": "By default, every instance of a Stopwatch is independent.",
+    "This function allows you to view/modify the same stopwatch across multiple Stream Dock profiles. Type the same name/id in 'Shared Id' across all the Stopwatch actions you want to be identical.": "This function allows you to view/modify the same stopwatch across multiple Stream Dock profiles. Type the same name/id in 'Shared Id' across all the Stopwatch actions you want to be identical."
+  }
+}
+

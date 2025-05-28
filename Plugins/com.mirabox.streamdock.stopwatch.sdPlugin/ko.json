@@ -1,0 +1,27 @@
+{
+  "Name": "스톱워치",
+  "Description": "스톱워치",
+  "com.hotspot.streamdock.stopwatch.stopwatch": {
+    "Name": "스톱워치",
+    "Tooltip": "스톱워치"
+  },
+  "Category": "스톱워치",
+  "Localization": {
+    "Tip: Long press resets the stopwatch": "팁: 길게 누르면 스톱워치가 초기화됩니다",
+    "Save to file": "파일로 저장",
+    "Clear on Reset": "초기화 시 지우기",
+    "Clear text file on reset": "초기화 시 텍스트 파일 지우기",
+    "Multiline": "멀티라인",
+    "3 different lines": "3줄 형식",
+    "Resume on click": "클릭 시 재개",
+    "Unpausing does not reset": "재개해도 초기화되지 않음",
+    "Lap Mode": "랩 모드",
+    "For 'Lap Mode' usage instructions": "'랩 모드' 사용 설명서",
+    "CLICK HERE": "여기를 클릭하세요",
+    "In Lap mode, each press records a lap, Long press stops. After a long press, all laps are copied to clipboard": "랩 모드에서는 각 누름이 랩을 기록하고, 길게 누르면 중지됩니다. 길게 누른 후 모든 랩이 클립보드에 복사됩니다",
+    "Shared Id (optional)": "공유 ID (선택 사항)",
+    "For 'Shared Id' usage instructions": "'공유 ID' 사용 설명서",
+    "By default, every instance of a Stopwatch is independent.": "기본적으로 각 스톱워치 인스턴스는 독립적입니다.",
+    "This function allows you to view/modify the same stopwatch across multiple Stream Dock profiles. Type the same name/id in 'Shared Id' across all the Stopwatch actions you want to be identical.": "이 기능을 사용하면 여러 Stream Dock 프로필에서 동일한 스톱워치를 보고 수정할 수 있습니다. 동일하게 만들고자 하는 모든 스톱워치 작업에서 '공유 ID'에 동일한 이름/ID를 입력하세요."
+  }
+}
