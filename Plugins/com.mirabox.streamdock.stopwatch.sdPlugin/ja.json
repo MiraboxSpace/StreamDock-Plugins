@@ -1,0 +1,27 @@
+{
+  "Name": "ストップウォッチ",
+  "Description": "ストップウォッチ",
+  "com.hotspot.streamdock.stopwatch.stopwatch": {
+    "Name": "ストップウォッチ",
+    "Tooltip": "ストップウォッチ"
+  },
+  "Category": "ストップウォッチ",
+  "Localization": {
+    "Tip: Long press resets the stopwatch": "ヒント：長押しでストップウォッチをリセット",
+    "Save to file": "ファイルに保存",
+    "Clear on Reset": "リセット時にクリア",
+    "Clear text file on reset": "リセット時にテキストファイルをクリア",
+    "Multiline": "複数行表示",
+    "3 different lines": "3行形式",
+    "Resume on click": "クリックで再開",
+    "Unpausing does not reset": "再開してもリセットされない",
+    "Lap Mode": "ラップモード",
+    "For 'Lap Mode' usage instructions": "「ラップモード」の使用説明",
+    "CLICK HERE": "こちらをクリック",
+    "In Lap mode, each press records a lap, Long press stops. After a long press, all laps are copied to clipboard": "ラップモードでは、各押下でラップを記録し、長押しで停止します。長押し後、すべてのラップがクリップボードにコピーされます",
+    "Shared Id (optional)": "共有ID（オプション）",
+    "For 'Shared Id' usage instructions": "「共有ID」の使用説明",
+    "By default, every instance of a Stopwatch is independent.": "デフォルトでは、各ストップウォッチのインスタンスは独立しています。",
+    "This function allows you to view/modify the same stopwatch across multiple Stream Dock profiles. Type the same name/id in 'Shared Id' across all the Stopwatch actions you want to be identical.": "この機能により、複数のStream Dockプロファイルで同じストップウォッチを表示/編集できます。同一にしたいすべてのストップウォッチアクションで「共有ID」に同じ名前/IDを入力してください。"
+  }
+}

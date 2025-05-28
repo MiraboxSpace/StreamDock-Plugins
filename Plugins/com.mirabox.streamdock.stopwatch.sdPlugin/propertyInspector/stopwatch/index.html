@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name=viewport content="width=device-width,initial-scale=1,maximum-scale=1,minimum-scale=1,user-scalable=no,minimal-ui,viewport-fit=cover">
+    <meta name=apple-mobile-web-app-capable content=yes>
+    <meta name=apple-mobile-web-app-status-bar-style content=black>
+    <title>Stopwatch</title>
+    <link rel="stylesheet" href="../../static/css/sdpi.css">
+    <script src="../utils/translate.js"></script>
+    <script src="../utils/sdtools.common.js"></script>
+    <script src="../utils/pickers.js"></script>
+    <style>
+        .linkspan {
+            color: blueviolet;
+        }
+    </style>
+</head>
+<body>
+    <div class="sdpi-wrapper">
+        <div class="sdpi-item" id="dvTip">
+            <summary>Tip: Long press resets the stopwatch</summary>
+        </div>
+        <div class="sdpi-item" id="dvFileName">
+            <div class="sdpi-item-label">Save to file</div>
+            <input class="sdpi-item-value sdProperty hasFileButton" disabled value="" id="fileName">
+            <button class="max100 leftMargin0" onclick="openSaveFilePicker('File Name', 'Text files (*.txt)|*.txt|All files (*.*)|*.*', 'fileName');">...</button>
+        </div>
+        <div type="checkbox" class="sdpi-item" id="dvClearFileOnReset">
+            <div class="sdpi-item-label">Clear on Reset</div>
+            <div class="sdpi-item-value">
+                <input id="clearFileOnReset" type="checkbox" value="" class="sdProperty sdCheckbox" oninput="setSettings()">
+                <label for="clearFileOnReset" class="sdpi-item-label"><span></span>Clear text file on reset</label>
+            </div>
+        </div>
+        <div type="checkbox" class="sdpi-item" id="dvMultilineStopwatch">
+            <div class="sdpi-item-label">Multiline</div>
+            <div class="sdpi-item-value">
+                <input id="multiline" type="checkbox" value="" class="sdProperty sdCheckbox" oninput="setSettings()">
+                <label for="multiline" class="sdpi-item-label"><span></span>3 different lines</label>
+            </div>
+        </div>
+        <div type="checkbox" class="sdpi-item" id="dvClickResume">
+            <div class="sdpi-item-label">Resume on click</div>
+            <div class="sdpi-item-value">
+                <input id="resumeOnClick" type="checkbox" value="" class="sdProperty sdCheckbox" oninput="setSettings()">
+                <label for="resumeOnClick" class="sdpi-item-label"><span></span>Unpausing does not reset</label>
+            </div>
+        </div>
+        <div type="checkbox" class="sdpi-item" id="dvLapMode">
+            <div class="sdpi-item-label">Lap Mode</div>
+            <div class="sdpi-item-value">
+                <input id="lapMode" type="checkbox" value="" class="sdProperty sdCheckbox" oninput="setSettings()">
+                <label for="lapMode" class="sdpi-item-label"><span></span>&nbsp;</label>
+            </div>
+        </div>
+        <div class="sdpi-item" id="dvLapMode_tip">
+            <details class="message">
+                <summary>For 'Lap Mode' usage instructions <span class="linkspan"> CLICK HERE</span></summary>
+                <p>In Lap mode, each press records a lap, Long press stops. After a long press, all laps are copied to clipboard</p>
+            </details>
+        </div>
+        <div class="sdpi-item" id="dvSharedId">
+            <div class="sdpi-item-label">Shared Id (optional)</div>
+            <input class="sdpi-item-value sdProperty" placeholder="watch1" value="" id="sharedId" oninput="setSettings()">
+        </div>
+        <div class="sdpi-item" id="dvSharedId_tip">
+            <details class="message">
+                <summary>For 'Shared Id' usage instructions <span class="linkspan"> CLICK HERE</span></summary>
+                <p>By default, every instance of a Stopwatch is independent.</p>
+                <p>
+                    This function allows you to view/modify the same stopwatch across multiple Stream Dock profiles. Type the same name/id in 'Shared Id' across all the Stopwatch actions you want to be identical.
+                </p>
+            </details>
+        </div>
+    </div>
+    <!-- <script src="../utils/common.js"></script>
+    <script src="../utils/action.js"></script>
+    <script src="index.js"></script> -->
+</body>
+</html>

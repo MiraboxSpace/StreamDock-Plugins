@@ -1,0 +1,27 @@
+{
+  "Name": "Секундомер",
+  "Description": "Секундомер",
+  "com.hotspot.streamdock.stopwatch.stopwatch": {
+    "Name": "Секундомер",
+    "Tooltip": "Секундомер"
+  },
+  "Category": "Секундомер",
+  "Localization": {
+    "Tip: Long press resets the stopwatch": "Подсказка: долгое нажатие сбрасывает секундомер",
+    "Save to file": "Сохранить в файл",
+    "Clear on Reset": "Очищать при сбросе",
+    "Clear text file on reset": "Очищать текстовый файл при сбросе",
+    "Multiline": "Многострочный режим",
+    "3 different lines": "Формат из 3 строк",
+    "Resume on click": "Продолжить по клику",
+    "Unpausing does not reset": "Возобновление не сбрасывает",
+    "Lap Mode": "Режим кругов",
+    "For 'Lap Mode' usage instructions": "Инструкции по использованию 'Режима кругов'",
+    "CLICK HERE": "Нажмите здесь",
+    "In Lap mode, each press records a lap, Long press stops. After a long press, all laps are copied to clipboard": "В режиме кругов каждое нажатие записывает круг, долгое нажатие останавливает. После долгого нажатия все круги копируются в буфер обмена",
+    "Shared Id (optional)": "Общий ID (опционально)",
+    "For 'Shared Id' usage instructions": "Инструкции по использованию 'Общего ID'",
+    "By default, every instance of a Stopwatch is independent.": "По умолчанию каждый экземпляр секундомера независим.",
+    "This function allows you to view/modify the same stopwatch across multiple Stream Dock profiles. Type the same name/id in 'Shared Id' across all the Stopwatch actions you want to be identical.": "Эта функция позволяет просматривать/изменять один и тот же секундомер в нескольких профилях Stream Dock. Введите одинаковое имя/ID в поле 'Общий ID' для всех действий секундомера, которые должны быть синхронизированы."
+  }
+}

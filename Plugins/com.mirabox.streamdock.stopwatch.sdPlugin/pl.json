@@ -1,0 +1,27 @@
+{
+  "Name": "Stoper",
+  "Description": "Stoper",
+  "com.hotspot.streamdock.stopwatch.stopwatch": {
+    "Name": "Stoper",
+    "Tooltip": "Stoper"
+  },
+  "Category": "Stoper",
+  "Localization": {
+    "Tip: Long press resets the stopwatch": "Wskazówka: długie naciśnięcie resetuje stoper",
+    "Save to file": "Zapisz do pliku",
+    "Clear on Reset": "Wyczyść przy resecie",
+    "Clear text file on reset": "Wyczyść plik tekstowy przy resecie",
+    "Multiline": "Wielowierszowy",
+    "3 different lines": "Format 3-wierszowy",
+    "Resume on click": "Wznów po kliknięciu",
+    "Unpausing does not reset": "Wznowienie nie resetuje",
+    "Lap Mode": "Tryb okrążeń",
+    "For 'Lap Mode' usage instructions": "Instrukcje użytkowania 'Trybu okrążeń'",
+    "CLICK HERE": "Kliknij tutaj",
+    "In Lap mode, each press records a lap, Long press stops. After a long press, all laps are copied to clipboard": "W trybie okrążeń każde naciśnięcie rejestruje okrążenie, długie naciśnięcie zatrzymuje. Po długim naciśnięciu wszystkie okrążenia są kopiowane do schowka",
+    "Shared Id (optional)": "Wspólny ID (opcjonalnie)",
+    "For 'Shared Id' usage instructions": "Instrukcje użytkowania 'Wspólnego ID'",
+    "By default, every instance of a Stopwatch is independent.": "Domyślnie każda instancja stopera jest niezależna.",
+    "This function allows you to view/modify the same stopwatch across multiple Stream Dock profiles. Type the same name/id in 'Shared Id' across all the Stopwatch actions you want to be identical.": "Ta funkcja pozwala przeglądać/modyfikować ten sam stoper w wielu profilach Stream Dock. Wprowadź tę samą nazwę/ID w 'Wspólny ID' we wszystkich akcjach stopera, które mają być identyczne."
+  }
+}
