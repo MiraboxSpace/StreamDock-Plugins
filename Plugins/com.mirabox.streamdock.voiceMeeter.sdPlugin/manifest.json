@@ -1,0 +1,287 @@
+{
+  "Actions": [
+    {
+      "Icon": "static/voicemeeter.png",
+      "Name": "Modify Setting",
+      "DisableAutomaticStates": true,
+      "States": [
+        {
+          "Image": "static/voicemeeter.png",
+          "TitleAlignment": "bottom",
+          "FontSize": "8"
+        }
+      ],
+      "Settings": {
+        "param": "Gain",
+        "strip_bus": "Strip",
+        "strip_bus_num": "0",
+        "strip_layer": "0",
+        "value": 0,
+        "long_press_value": 0,
+        "title": "current_value",
+        "title_prefix": ""
+      },
+      "Controllers": [
+        "Keypad"
+      ],
+      "UserTitleEnabled": false,
+      "SupportedInMultiActions": true,
+      "Tooltip": "VoiceMeeter Modify Setting",
+      "UUID": "com.mirabox.streamdock.voicemeeter.modify_setting",
+      "PropertyInspectorPath": "propertyInspector/modify_setting/index.html"
+    },
+    {
+      "Icon": "static/voicemeeter.png",
+      "Name": "Mute/Unmute",
+      "DisableAutomaticStates": true,
+      "States": [
+        {
+          "Image": "static/mic.png",
+          "TitleAlignment": "bottom",
+          "FontSize": "8"
+        },
+        {
+          "Image": "static/mic-mute.png",
+          "TitleAlignment": "bottom",
+          "FontSize": "8"
+        }
+      ],
+      "Settings": {
+        "mic_type": "single_setting",
+        "strip_bus": "Strip",
+        "strip_bus_num": "0",
+        "mute_sends_hotkey": "",
+        "unmute_sends_hotkey": "",
+        "title": "",
+        "value": ""
+      },
+      "Controllers": [
+        "Keypad"
+      ],
+      "UserTitleEnabled": false,
+      "SupportedInMultiActions": true,
+      "Tooltip": "VoiceMeeter Mute/Unmute",
+      "UUID": "com.mirabox.streamdock.voicemeeter.mute_unmute",
+      "PropertyInspectorPath": "propertyInspector/mute_unmute/index.html"
+    },
+    {
+      "Icon": "static/voicemeeter.png",
+      "Name": "Advanced Press/Long-Press",
+      "DisableAutomaticStates": true,
+      "States": [
+        {
+          "Image": "static/voicemeeter.png",
+          "TitleAlignment": "bottom",
+          "FontSize": "8"
+        }
+      ],
+      "Settings": {
+        "keypress": "",
+        "keypress_send_hotkey": "",
+        "keypress_midi": "",
+        "long_keypress": "",
+        "long_keypress_time": 600,
+        "long_send_hotkey": "",
+        "longpress_midi": "",
+        "title": "current_value",
+        "title_prefix": "",
+        "title_value": "",
+        "enabled_text": "",
+        "disabled_text": ""
+      },
+      "Controllers": [
+        "Keypad"
+      ],
+      "UserTitleEnabled": false,
+      "SupportedInMultiActions": true,
+      "Tooltip": "Advanced Press/Long-Press",
+      "UUID": "com.mirabox.streamdock.voicemeeter.advanced_press_long_press",
+      "PropertyInspectorPath": "propertyInspector/advanced_press_long_press/index.html"
+    },
+    {
+      "Icon": "static/voicemeeter.png",
+      "Name": "Advanced Toggle",
+      "DisableAutomaticStates": true,
+      "States": [
+        {
+          "Image": "static/voicemeeter.png",
+          "TitleAlignment": "bottom",
+          "FontSize": "8"
+        },
+        {
+          "Image": "static/voicemeeter.png",
+          "TitleAlignment": "bottom",
+          "FontSize": "8"
+        }
+      ],
+      "Settings": {
+        "mode1_check": "",
+        "mode1_key_press": "",
+        "mode1_send_hotkey": "",
+        "mode1_midi": "",
+        "mode2_key_press": "",
+        "mode2_send_hotkey": "",
+        "mode2_midi": "",
+        "title": "current_value",
+        "title_prefix": "",
+        "title_value": "",
+        "mode1_text": "",
+        "mode2_text": ""
+      },
+      "Controllers": [
+        "Keypad"
+      ],
+      "UserTitleEnabled": false,
+      "SupportedInMultiActions": true,
+      "Tooltip": "Advanced Toggle",
+      "UUID": "com.mirabox.streamdock.voicemeeter.advanced_toggle",
+      "PropertyInspectorPath": "propertyInspector/advanced_toggle/index.html"
+    },
+    {
+      "Icon": "static/voicemeeter.png",
+      "Name": "Advanced PTT",
+      "DisableAutomaticStates": true,
+      "States": [
+        {
+          "Image": "static/voicemeeter.png",
+          "TitleAlignment": "bottom",
+          "FontSize": "8"
+        }
+      ],
+      "Settings": {
+        "keypress": "",
+        "keypress_send_hotkey": "",
+        "keypress_midi": "",
+        "key_release": "",
+        "release_send_hotkey": "",
+        "release_midi": "",
+        "title": "current_value",
+        "title_prefix": "",
+        "title_value": "",
+        "enabled_text": "",
+        "disabled_text": ""
+      },
+      "Controllers": [
+        "Keypad"
+      ],
+      "UserTitleEnabled": false,
+      "SupportedInMultiActions": true,
+      "Tooltip": "Advanced PTT",
+      "UUID": "com.mirabox.streamdock.voicemeeter.advanced_ptt",
+      "PropertyInspectorPath": "propertyInspector/advanced_ptt/index.html"
+    },
+        {
+      "Icon": "static/voicemeeter.png",
+      "Name": "MacroButton Toggle",
+      "DisableAutomaticStates": true,
+      "States": [
+        {
+          "Image": "static/inactive.png",
+          "TitleAlignment": "center",
+          "FontSize": "8"
+        },
+        {
+          "Image": "static/active.png",
+          "TitleAlignment": "center",
+          "FontSize": "8"
+        }
+      ],
+      "Settings": {
+        "logical_id": 0,
+        "mode": "toggle_mode",
+        "title": "current_value",
+        "title_prefix": "",
+        "title_value": 0,
+        "enabled_text": "",
+        "disabled_text": ""
+      },
+      "Controllers": [
+        "Keypad"
+      ],
+      "UserTitleEnabled": false,
+      "SupportedInMultiActions": true,
+      "Tooltip": "MacroButton Toggle",
+      "UUID": "com.mirabox.streamdock.voicemeeter.macrobuttom_toggle",
+      "PropertyInspectorPath": "propertyInspector/macrobuttom_toggle/index.html"
+    },
+    {
+      "Icon": "static/voicemeeter.png",
+      "Name": "Gain Adjust",
+      "DisableAutomaticStates": true,
+      "States": [
+        {
+          "Image": "static/horn.png",
+          "TitleAlignment": "bottom",
+          "FontSize": "8"
+        }
+      ],
+      "Settings": {
+        "strip_bus": "Strip",
+        "strip_bus_num": "0",
+        "step_size": "1",
+        "title": ""
+      },
+      "Controllers": [
+        "Knob"
+      ],
+      "UserTitleEnabled": false,
+      "SupportedInMultiActions": true,
+      "Tooltip": "Gain Adjust",
+      "UUID": "com.mirabox.streamdock.voicemeeter.gain_adjust",
+      "PropertyInspectorPath": "propertyInspector/gain_adjust/index.html"
+    },
+        {
+      "Icon": "static/voicemeeter.png",
+      "Name": "Setting Adjust",
+      "DisableAutomaticStates": true,
+      "States": [
+        {
+          "Image": "static/Settings-adjust.png",
+          "TitleAlignment": "bottom",
+          "FontSize": "8"
+        }
+      ],
+      "Settings": {
+        "strip_num": "0",
+        "setting": "Comp",
+        "step_size": "1",
+        "title": ""
+      },
+      "Controllers": [
+        "Knob"
+      ],
+      "UserTitleEnabled": false,
+      "SupportedInMultiActions": true,
+      "Tooltip": "Setting Adjust",
+      "UUID": "com.mirabox.streamdock.voicemeeter.setting_adjust",
+      "PropertyInspectorPath": "propertyInspector/setting_adjust/index.html"
+    }
+  ],
+  "SDKVersion": 1,
+  "Author": "MiraBox",
+  "Name": "VoiceMeeter",
+  "Icon": "static/voicemeeter.png",
+  "CodePathWin": "plugin/index.js",
+  "CodePathMac": "plugin/index.js",
+  "Description": "VoiceMeeter",
+  "Category": "VoiceMeeter",
+  "CategoryIcon": "static/voicemeeter.png",
+  "Version": "1.0.0",
+  "URL": "https://mirabox.key123.vip/home",
+  "OS": [
+    {
+      "Platform": "mac",
+      "MinimumVersion": "10.11"
+    },
+    {
+      "Platform": "windows",
+      "MinimumVersion": "7"
+    }
+  ],
+  "Software": {
+    "MinimumVersion": "3.10.188.226"
+  },
+  "Nodejs": {
+    "Version": "20"
+  }
+}
