@@ -91,6 +91,8 @@
     "连接次数过多请重新启动Discord": "연결 시도 횟수가 너무 많습니다. Discord를 다시 시작하세요",
     "CLIENT ID": "CLIENT ID",
     "info": "서버 포트가 3002에서 26432로 변경되었습니다. 앱 백엔드에서 리디렉션 URL을 업데이트해 주세요. 불편을 드려 죄송합니다.",
-    "https://discord.com/developers/applications": "https://discord.com/developers/applications"
+    "https://discord.com/developers/applications": "https://discord.com/developers/applications",
+    "Restart the Discord app": "Discord 앱 재시작",
+    "If you can't connect, please restart the Discord app": "연결할 수 없으면 Discord 앱을 다시 시작하십시오"
   }
 }

@@ -24,7 +24,9 @@ const $propEvent = {
             // 计算居中位置
             const top = (screenHeight - 500) / 2;
             const left = (screenWidth - 350) / 2;
-            window.open("../utils/authorization.html", "_blank", `width=500,height=350,top=${top},left=${left}`)
+            if(data?.type) {
+                window.open(`../utils/${data?.type}.html`, "_blank", `width=500,height=350,top=${top},left=${left}`)
+            }
         }
     }
 };
