@@ -135,13 +135,17 @@ async function connectElgatoStreamDeckSocket(port, uuid, event, app, info) {
     });
     while (walker.nextNode()) {
         console.log(walker.currentNode.data);
-        walker.currentNode.data = $lang[walker.currentNode.data];
+        if($lang[walker.currentNode.data]) {
+            walker.currentNode.data = $lang[walker.currentNode.data];
+        }
     }
     // placeholder 特殊处理
     const translate = item => {
         if (item.placeholder?.trim()) {
             console.log(item.placeholder);
-            item.placeholder = $lang[item.placeholder];
+            if($lang[item.placeholder]) {
+                item.placeholder = $lang[item.placeholder];
+            }
         }
     };
     $('input', true).forEach(translate);

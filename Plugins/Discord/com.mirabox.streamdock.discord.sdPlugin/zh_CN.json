@@ -91,6 +91,8 @@
     "静音/取消静音": "静音/取消静音",
     "连接次数过多请重新启动Discord": "连接次数过多请重新启动Discord",
     "CLIENT ID": "CLIENT ID",
-    "https://discord.com/developers/applications": "https://discord.com/developers/applications"
+    "https://discord.com/developers/applications": "https://discord.com/developers/applications",
+    "Restart the Discord app": "重启Discord app",
+    "If you can't connect, please restart the Discord app": "无法连接请重启discord app"
   }
 }

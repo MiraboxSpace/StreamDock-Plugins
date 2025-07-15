@@ -91,6 +91,8 @@
     "CLIENT ID": "CLIENT ID",
     "info": "O serviço de porta foi alterado de 3002 para 26432. Por favor, vá para o backend do aplicativo para alterar a URL de redirecionamento. Lamentamos o inconveniente que você sofreu.",
     "View the tutorial": "Visualizar tutorial",
-    "https://discord.com/developers/applications": "https://discord.com/developers/applications"
+    "https://discord.com/developers/applications": "https://discord.com/developers/applications",
+    "Restart the Discord app": "Reiniciar o aplicativo Discord",
+    "If you can't connect, please restart the Discord app": "Se você não conseguir se conectar, por favor, reinicie o aplicativo Discord"
   }
 }

@@ -91,6 +91,8 @@
     "连接次数过多请重新启动Discord": "Слишком много подключений, пожалуйста, перезапустите Discord",
     "CLIENT ID": "CLIENT ID",
     "info": "Порт сервиса изменен с 3002 на 26432. Пожалуйста, перейдите в бэкенд приложения и измените URL-адрес перенаправления. Приносим извинения за доставленные неудобства.",
-    "https://discord.com/developers/applications": "https://discord.com/developers/applications"
+    "https://discord.com/developers/applications": "https://discord.com/developers/applications",
+    "Restart the Discord app": "Перезапустить приложение Discord",
+    "If you can't connect, please restart the Discord app": "Если вы не можете подключиться, пожалуйста, перезапустите приложение Discord"
   }
 }
