@@ -1,0 +1,12 @@
+{
+  "parserOptions": {
+    "ecmaVersion": 2018, // Supports ES6 and beyond
+    "sourceType": "module" // If you're using import/export syntax
+  },
+  "rules": {
+    "semi": [
+      "error",
+      "always"
+    ]
+  }
+}

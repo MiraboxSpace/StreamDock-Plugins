@@ -1,0 +1,42 @@
+/* ./src/index.css */
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+.Icon--fullTheme--3Fc-5 {
+    --color-moon: #e3e3e3;
+    --color-star: #e3e3e3;
+    --color-cloud: #d3d3d3;
+    --color-na: #d3d3d3;
+    --color-fog: #d3d3d3;
+    --color-hail: #d3d3d3;
+    --color-tornado: #d3d3d3;
+    --color-wind: #d3d3d3;
+    --color-storm: #d3d3d3;
+    --color-lightning: #ebdb00;
+    --color-sun: #ebdb00;
+    --color-drop: #6adef8;
+    --color-snowflake: #d3d3d3;
+    --color-thunderstorm-mask: #2b2b2b
+}
+
+
+.samsungLightTheme {
+    --snow: #70c8f9;
+    --wind-rain: #c1c1c1;
+    --wind: #c1c1c1;
+    --cloud-1: #cce4ff;
+    --cloud-2: #c2ddf9;
+    --cloud-3: #e0e0e0;
+    --cloud-4: #d1d1d1;
+    --cloud-5: #dadada
+}
+
+.samsungLightTheme {
+    --sun-lightning: #ffbc09;
+    --moon: #b081e1;
+    --hot-1: #e15d5d;
+    --hot-2: #ffe2e2
+}
