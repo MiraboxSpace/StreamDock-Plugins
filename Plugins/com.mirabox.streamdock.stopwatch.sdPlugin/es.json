@@ -1,0 +1,27 @@
+{
+  "Name": "Cronómetro",
+  "Description": "Cronómetro",
+  "com.hotspot.streamdock.stopwatch.stopwatch": {
+    "Name": "Cronómetro",
+    "Tooltip": "Cronómetro"
+  },
+  "Category": "Cronómetro",
+  "Localization": {
+    "Tip: Long press resets the stopwatch": "Consejo: mantén pulsado para reiniciar el cronómetro",
+    "Save to file": "Guardar en archivo",
+    "Clear on Reset": "Limpiar al reiniciar",
+    "Clear text file on reset": "Limpiar archivo de texto al reiniciar",
+    "Multiline": "Multilínea",
+    "3 different lines": "Formato de 3 líneas",
+    "Resume on click": "Reanudar al hacer clic",
+    "Unpausing does not reset": "Reanudar no reinicia",
+    "Lap Mode": "Modo vuelta",
+    "For 'Lap Mode' usage instructions": "Instrucciones de uso del 'Modo vuelta'",
+    "CLICK HERE": "Haz clic aquí",
+    "In Lap mode, each press records a lap, Long press stops. After a long press, all laps are copied to clipboard": "En modo vuelta, cada pulsación registra una vuelta, mantén pulsado para detener. Tras mantener pulsado, todas las vueltas se copian al portapapeles",
+    "Shared Id (optional)": "ID compartido (opcional)",
+    "For 'Shared Id' usage instructions": "Instrucciones de uso del 'ID compartido'",
+    "By default, every instance of a Stopwatch is independent.": "Por defecto, cada instancia del cronómetro es independiente.",
+    "This function allows you to view/modify the same stopwatch across multiple Stream Dock profiles. Type the same name/id in 'Shared Id' across all the Stopwatch actions you want to be identical.": "Esta función permite ver/modificar el mismo cronómetro en múltiples perfiles de Stream Dock. Escribe el mismo nombre/ID en 'ID compartido' en todas las acciones de cronómetro que quieras que sean idénticas."
+  }
+}

@@ -1,0 +1,61 @@
+{
+  "Actions": [
+    {
+      "Icon": "static/time-empty-1.png",
+      "Name": "stopwatch",
+      "States": [
+        {
+          "FontSize": "10",
+          "TitleAlignment": "bottom",
+          "Image": "static/time-empty-1.png"
+        },
+        {
+          "FontSize": "10",
+          "TitleAlignment": "bottom",
+          "Image": "static/time-empty-2.png"
+        }
+      ],
+      "Settings": {
+        "clearFileOnReset": false,
+        "fileName": "",
+        "lapMode": false,
+        "multiline": false,
+        "resumeOnClick": false,
+        "sharedId": ""
+      },
+      "Controllers": [
+        "Keypad",
+        "Information",
+        "Knob"
+      ],
+      "UserTitleEnabled": false,
+      "SupportedInMultiActions": false,
+      "Tooltip": "stopwatch",
+      "UUID": "com.hotspot.streamdock.stopwatch.stopwatch",
+      "PropertyInspectorPath": "propertyInspector/stopwatch/index.html"
+    }
+  ],
+  "SDKVersion": 1,
+  "Author": "Mirabox",
+  "Name": "stopwatch",
+  "Icon": "static/time-empty-1.png",
+  "CodePath": "plugin/app.exe",
+  "Description": "stopwatch",
+  "Category": "stopwatch",
+  "CategoryIcon": "static/time-empty-1.png",
+  "Version": "1.0.0",
+  "URL": "http://video.hotspotek.com.cn/",
+  "OS": [
+    {
+      "Platform": "mac",
+      "MinimumVersion": "10.11"
+    },
+    {
+      "Platform": "windows",
+      "MinimumVersion": "7"
+    }
+  ],
+  "Software": {
+    "MinimumVersion": "2.9"
+  }
+}

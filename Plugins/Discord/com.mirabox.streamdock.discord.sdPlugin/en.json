@@ -91,6 +91,8 @@
     "CLIENT ID": "CLIENT ID",
     "info": "The service port has changed from 3002 to 26432. Please go to the APP backend to change the redirection URL. We are very sorry for the inconvenience caused to you.",
     "View the tutorial": "View the tutorial",
-    "https://discord.com/developers/applications": "https://discord.com/developers/applications"
+    "https://discord.com/developers/applications": "https://discord.com/developers/applications",
+    "Restart the Discord app": "Restart the Discord app",
+    "If you can't connect, please restart the Discord app": "If you can't connect, please restart the Discord app"
   }
 }

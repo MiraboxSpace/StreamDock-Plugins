@@ -1,0 +1,27 @@
+{
+  "Name": "Stoppuhr",
+  "Description": "Stoppuhr",
+  "com.hotspot.streamdock.stopwatch.stopwatch": {
+    "Name": "Stoppuhr",
+    "Tooltip": "Stoppuhr"
+  },
+  "Category": "Stoppuhr",
+  "Localization": {
+    "Tip: Long press resets the stopwatch": "Tipp: Langer Druck setzt die Stoppuhr zurück",
+    "Save to file": "In Datei speichern",
+    "Clear on Reset": "Beim Zurücksetzen löschen",
+    "Clear text file on reset": "Textdatei beim Zurücksetzen löschen",
+    "Multiline": "Mehrzeilig",
+    "3 different lines": "3-Zeilen-Format",
+    "Resume on click": "Bei Klick fortsetzen",
+    "Unpausing does not reset": "Fortsetzen setzt nicht zurück",
+    "Lap Mode": "Rundenmodus",
+    "For 'Lap Mode' usage instructions": "Anleitung zum 'Rundenmodus'",
+    "CLICK HERE": "Hier klicken",
+    "In Lap mode, each press records a lap, Long press stops. After a long press, all laps are copied to clipboard": "Im Rundenmodus zeichnet jeder Druck eine Runde auf, langer Druck stoppt. Nach langem Druck werden alle Runden in die Zwischenablage kopiert",
+    "Shared Id (optional)": "Gemeinsame ID (optional)",
+    "For 'Shared Id' usage instructions": "Anleitung zur 'gemeinsamen ID'",
+    "By default, every instance of a Stopwatch is independent.": "Standardmäßig ist jede Stoppuhr-Instanz unabhängig.",
+    "This function allows you to view/modify the same stopwatch across multiple Stream Dock profiles. Type the same name/id in 'Shared Id' across all the Stopwatch actions you want to be identical.": "Diese Funktion ermöglicht es, dieselbe Stoppuhr in mehreren Stream Dock-Profilen anzuzeigen/zu ändern. Geben Sie in allen Stoppuhr-Aktionen, die identisch sein sollen, denselben Namen/dieselbe ID in 'Gemeinsame ID' ein."
+  }
+}

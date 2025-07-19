@@ -91,6 +91,8 @@
     "View the tutorial": "チュートリアルを見る",
     "连接次数过多请重新启动Discord": "接続が多すぎる場合は、Discordを再起動してください",
     "info": "サーバーポートが3002から26432に変更されました。アプリのバックエンドでリダイレクトURLを更新してください。ご不便をおかけして申し訳ありません。",
-    "https://discord.com/developers/applications": "https://discord.com/developers/applications"
+    "https://discord.com/developers/applications": "https://discord.com/developers/applications",
+    "Restart the Discord app": "Discordアプリを再起動してください",
+    "If you can't connect, please restart the Discord app": "接続できない場合は、Discordアプリを再起動してください"
   }
 }

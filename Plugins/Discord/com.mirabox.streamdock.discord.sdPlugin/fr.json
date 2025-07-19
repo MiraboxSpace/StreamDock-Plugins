@@ -91,6 +91,8 @@
     "连接次数过多请重新启动Discord": "Trop de tentatives de connexion. Veuillez redémarrer Discord",
     "CLIENT ID": "ID CLIENT",
     "info": "Le port du serveur a été changé de 3002 à 26432. Veuillez mettre à jour l'URL de redirection dans l'interface administrateur de l'application. Nous nous excusons pour les désagréments occasionnés.",
-    "https://discord.com/developers/applications": "https://discord.com/developers/applications"
+    "https://discord.com/developers/applications": "https://discord.com/developers/applications",
+    "Restart the Discord app": "Redémarrer l'application Discord",
+    "If you can't connect, please restart the Discord app": "Si vous ne pouvez pas vous connecter, veuillez redémarrer l'application Discord"
   }
 }

@@ -1,9 +1,14 @@
 const { Plugins, Actions, log, EventEmitter } = require('./utils/plugin');
-const { getToken, getClientId } = require('./utils/getToken');
+const { getScopes, getAccessToken, getClientId, getClientSecret, getExpiresIn, getLastUpdateTimeStamp, getRefreshToken, getCode, saveToken } = require('./utils/getToken');
 const RPC = require('discord-rpc');
 // const { login } = require('./utils/login');
 const fs = require('fs-extra');
 const Jimp = require('jimp');
+const https = require('https');
+const { URLSearchParams } = require('url');
+const { getProxySettings } = require('get-proxy-settings');
+const { HttpsProxyAgent } = require('https-proxy-agent');
+
 
 const plugin = new Plugins('discord');
 const eventEmitter = new EventEmitter();
@@ -22,11 +27,32 @@ process.on('unhandledRejection', (reason) => {
 //##################################################
 
 const delay = (ms) => new Promise(resolve => setTimeout(resolve, ms));
-const login = async () => {
+function debounce(fn, delay) {
+  let timer = null;
+  return function() {
+    const context = this;
+    const args = arguments;
+    
+    // 每次触发都清除之前的定时器
+    clearTimeout(timer);
+    
+    // 设置新的定时器
+    timer = setTimeout(() => {
+      fn.apply(context, args);
+    }, delay);
+  };
+}
+const _login = async () => {
     try {
-        const scopes = ['rpc', 'identify', 'rpc.voice.read', 'messages.read', 'rpc.notifications.read', 'rpc.voice.write'];
-        const accessToken = await getToken('./data/globalData.json');
+        // const scopes = ['rpc', 'identify', 'rpc.voice.read', 'messages.read', 'rpc.notifications.read', 'rpc.voice.write'];
+        const scopes = await getScopes('./data/globalData.json');
+        const accessToken = await getAccessToken('./data/globalData.json');
         const clientId = await getClientId('./data/globalData.json');
+        const clientSecret = await getClientSecret('./data/globalData.json');
+        const expiresIn = await getExpiresIn('./data/globalData.json');
+        const lastUpdateTimeStamp = await getLastUpdateTimeStamp('./data/globalData.json');
+        const refreshToken = await getRefreshToken('./data/globalData.json');
+
         if (accessToken) {
             client = new RPC.Client({ transport: 'ipc' });
             try {
@@ -34,8 +60,9 @@ const login = async () => {
                 log.info('Logged in successfully!');
                 client.on('ready', () => {
                     log.info('Client is ready!');
+                    // plugin.sendToPropertyInspector({ open: true, type: 'close'})
                     try {
-                        // eventEmitter.emit('SOUNDBOARD_SOUNDS');F
+                        // eventEmitter.emit('SOUNDBOARD_SOUNDS');
                         contexts.forEach(context => {
                             eventEmitter.emit(context);
                         });
@@ -44,17 +71,29 @@ const login = async () => {
                     }
                 });
                 client.on('disconnected', () => {
-                    log.info(`WebSocket 连接已关闭，代码：${client?.transport.ws._closeCode}，原因：${client?.transport.ws._closeMessage}`);
+                    // log.info(`WebSocket 连接已关闭，代码：${client?.transport.ws._closeCode}，原因：${client?.transport.ws._closeMessage}`);
+                    log.info('disconnected', client?.transport.ipc);
+                    client = null;
+                    login();
                 });
             } catch (error) {
+                log.info('Logged in Failed!');
                 if (error.code === 4009) { // code: 4009, Token does not match current user Invalid token
                     const filePath = './data/globalData.json'; // 文件路径
+                    // try {
+                    //     await fs.outputJson(filePath, {}); // 异步写入文件
+                    //     log.info('Token does not match current user');
+                    // } catch (fileError) {
+                    //     log.error('Failed to write to file:', fileError);
+                    // }
                     try {
-                        await fs.outputJson(filePath, {}); // 异步写入文件
-                        log.info('Token does not match current user');
-                    } catch (fileError) {
-                        log.error('Failed to write to file:', fileError);
+                        const data = await refresh_token(refreshToken);
+                        data.lastUpdateTimeStamp = Date.now();
+                        await saveToken(filePath, data);
+                    } catch (error) {
+                        console.error('刷新令牌失败:', error);
                     }
+
                 } else if (error.message !== 'Could not connect') {
                     log.error('Login failed:', error);
                 }
@@ -67,6 +106,7 @@ const login = async () => {
         log.error('Login failed:', error);
     }
 }
+const login = debounce(_login, 1000);
 
 login();
 
@@ -795,7 +835,9 @@ plugin.userVolumeControl = new Actions({
     },
     async _willAppear({ context, payload }) {
         log.info("用户音量控制: ", context);
-        plugin.setSettings(context, {})
+        // plugin.setSettings(context, {})
+        this.data[context].settings = payload.settings;
+        // log.info(this.data[context].settings)
         contexts.push(context);
         const VOLUME = () => {
             this.data[context].timer = setInterval(() => {
@@ -813,8 +855,10 @@ plugin.userVolumeControl = new Actions({
                         this.data[context].voice_states = res.voice_states;
 
                         const elementExists = res.voice_states.filter(state => {//找出选中的用户
+                            // log.info(state?.user.id,'222222')
                             return state?.user.id === this.data[context].settings?.user;
                         });
+                        // log.info(elementExists, this.data[context].settings?.user,'111111')
                         // log.info(elementExists)
                         if (res.voice_states[0]?.user == undefined) {//没有用户
                             return
@@ -852,10 +896,14 @@ plugin.userVolumeControl = new Actions({
     },
     sendToPlugin({ payload, context }) {
         if ('user' in payload) {
-            this.data[context].settings.user = payload.user
-            let title = this.data[context].voice_states.filter(item => item.user.id == payload.user)[0].user?.global_name;
-            title = title ? title : this.data[context].voice_states.filter(item => item.user.id == payload.user)[0].user?.username;
-            plugin.setTitle(context, title, 3, 6);
+            try {
+                this.data[context].settings.user = payload.user
+                let title = this.data[context].voice_states.filter(item => item.user.id == payload.user)[0].user?.global_name;
+                title = title ? title : this.data[context].voice_states.filter(item => item.user.id == payload.user)[0].user?.username;
+                plugin.setTitle(context, title, 3, 6);
+            } catch (error) {
+                log.error('用户信息为空',error)
+            }
         }
         if ('mode' in payload) {
             this.data[context].settings.mode = payload.mode
@@ -908,6 +956,7 @@ plugin.userVolumeControl = new Actions({
                     volume: voice_state.volume,
                     mute: voice_state.mute,
                 }
+                log.info(JSON.stringify(userVoiceSettings, null , 2))
                 client?.setUserVoiceSettings(this.data[context].settings.user, userVoiceSettings).then((res) => {
                     const index = this.data[context].voice_states.findIndex(item => item.user.id === this.data[context].settings.user);
                     this.data[context].voice_states[index].mute = voice_state.mute;
@@ -1031,8 +1080,14 @@ plugin.setDevices = new Actions({
             client?.getVoiceSettings().then((res) => {
                 this.data[context].settings.inputDevices = res?.input?.availableDevices;
                 this.data[context].settings.outputDevices = res?.output?.availableDevices;
-                this.data[context].settings.output = res?.output?.device;
-                this.data[context].settings.input = res?.input?.device;
+                if(!this.data[context].settings?.output) {
+                    this.data[context].settings.output = res?.output?.device;
+                }
+                if(!this.data[context].settings?.input) {
+                    this.data[context].settings.input = res?.input?.device;
+                }
+                // this.data[context].settings.output = res?.output?.device;
+                // this.data[context].settings.input = res?.input?.device;
                 plugin.setSettings(context, this.data[context].settings);
             }).catch((error) => {
                 log.error('getVoiceSettings failed:', error);
@@ -1052,6 +1107,7 @@ plugin.setDevices = new Actions({
             this.data[context].settings.output = payload.output;
         }
         plugin.setSettings(context, this.data[context].settings);
+        // this.keyUp({context, payload: this.data[context]});
     },
     keyDown({ context, payload }) {
 
@@ -1079,17 +1135,111 @@ plugin.setDevices = new Actions({
 
 
 const checkLogin = async () => {
-    const access_token = await getToken('./data/globalData.json'); // 动态获取 token
-    if (client == null || access_token == null) {
+    const access_token = await getAccessToken('./data/globalData.json'); // 动态获取 token
+    if (access_token == null) {
         try {
             // window.open("successful.html", "width=400,height=300");
-            plugin.sendToPropertyInspector({ open: true })
+            plugin.sendToPropertyInspector({ open: true, type: 'authorization'})
         } catch (error) {
             log.error(error);
         }
+        return
+    }
+    if(client == null) {
+        login();
+        setTimeout(() => {
+            if(client == null) {
+                plugin.sendToPropertyInspector({ open: true, type: 'reluanch'})
+            }
+        }, 5000)
     }
 }
+const API_ENDPOINT = 'https://discord.com/api/v10';
+const REDIRECT_URI = 'http://127.0.0.1:26432';
 
+async function exchange_code(code) {
+    const clientId = await getClientId('./data/globalData.json');
+    const clientSecret = await getClientSecret('./data/globalData.json');
+    const data = await getProxySettings();
+    return new Promise((resolve, reject) => {
+        const postData = new URLSearchParams();
+        postData.append('grant_type', 'authorization_code');
+        postData.append('code', code);
+        postData.append('redirect_uri', REDIRECT_URI);
+
+        const options = {
+        hostname: 'discord.com',
+        path: '/api/v10/oauth2/token',
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/x-www-form-urlencoded',
+            'Authorization': 'Basic ' + Buffer.from(`${clientId}:${clientSecret}`).toString('base64')
+        },
+        agent: data? new HttpsProxyAgent(data.https): null
+        };
+
+        const req = https.request(options, (res) => {
+        let data = '';
+        
+        res.on('data', (chunk) => {
+            data += chunk;
+        });
+
+        res.on('end', () => {
+            if (res.statusCode >= 200 && res.statusCode < 300) {
+            resolve(JSON.parse(data));
+            } else {
+            reject(new Error(`Request failed with status code ${res.statusCode}: ${data}`));
+            }
+        });
+        });
+
+        req.on('error', (error) => {
+        reject(error);
+        });
+
+        req.write(postData.toString());
+        req.end();
+    });
+}
+
+async function refresh_token(refresh_token) {
+    const clientId = await getClientId('./data/globalData.json');
+    const clientSecret = await getClientSecret('./data/globalData.json');
+  const data = await getProxySettings();
+  return new Promise((resolve, reject) => {
+    const postData = new URLSearchParams();
+    postData.append('grant_type', 'refresh_token');
+    postData.append('refresh_token', refresh_token);
+
+    const options = {
+      hostname: 'discord.com',
+      path: '/api/v10/oauth2/token',
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/x-www-form-urlencoded',
+        'Authorization': `Basic ${Buffer.from(`${clientId}:${clientSecret}`).toString('base64')}`
+      },
+      agent: data? new HttpsProxyAgent(data.https): null
+    };
+
+    const req = https.request(options, (res) => {
+      let data = '';
+      res.on('data', (chunk) => data += chunk);
+      res.on('end', () => {
+        if (res.statusCode >= 200 && res.statusCode < 300) {
+          resolve(JSON.parse(data));
+        } else {
+          reject(new Error(`HTTP ${res.statusCode}: ${data}`));
+        }
+      });
+    });
+
+    req.on('error', (error) => reject(error));
+    req.write(postData.toString());
+    req.end();
+  });
+}
 
 //启动服务器
 //Start the server
@@ -1099,6 +1249,7 @@ function startServer() {
     const express = require('express');
     const cors = require('cors');
     let id = ''
+    let secret
 
     const app = express();
     app.use(cors());
@@ -1114,8 +1265,10 @@ function startServer() {
     app.get('/authorization', (req, res) => {
         // log.info(req.query)
         id = req.query.clientId
-        res.redirect(`https://discord.com/oauth2/authorize?client_id=${id}&response_type=token&redirect_uri=http%3A%2F%2F127.0.0.1%3A26432&scope=identify+rpc+rpc.voice.read+rpc.notifications.read+messages.read+rpc.voice.write`)
+        secret = req.query.clientSecret
+        // res.redirect(`https://discord.com/oauth2/authorize?client_id=${id}&response_type=token&redirect_uri=http%3A%2F%2F127.0.0.1%3A26432&scope=identify+rpc+rpc.voice.read+rpc.notifications.read+messages.read+rpc.voice.write`)
         // res.redirect(`https://discord.com/oauth2/authorize?client_id=${id}&response_type=token&redirect_uri=http%3A%2F%2F127.0.0.1%3A26432&scope=identify+rpc+rpc.voice.read+messages.read+rpc.notifications.read+rpc.voice.write`)
+        res.redirect(`https://discord.com/oauth2/authorize?client_id=${id}&response_type=code&redirect_uri=http%3A%2F%2F127.0.0.1%3A26432&scope=identify+rpc+rpc.voice.read+rpc.notifications.read+messages.read+rpc.voice.write&state=15773059ghq9183habn&prompt=none&integration_type=0`)
     })
 
 
@@ -1128,7 +1281,6 @@ function startServer() {
     // 添加接收数据的路由处理器
     // Add a route handler to receive data
     app.post('/data', (req, res) => {
-
         let data = '';
         // 接收请求数据
         // Receiving request data
@@ -1137,23 +1289,29 @@ function startServer() {
         });
 
         req.on('end', async () => {
-            // 在这里可以对接收到的数据进行处理
-            // Here you can process the received data
-            const parsedData = JSON.parse(data);
-            plugin.sendToPropertyInspector({ 'access_token': parsedData.access_token });
-            globalData = parsedData;
-            globalData.clientId = id;
-            // 将数据存储到文件
-            // Store data in a file
-            const filePath = './data/globalData.json'; // 路径 path
             try {
-                await fs.outputJson(filePath, globalData)
+                const parsedData = JSON.parse(data);
+                log.info(parsedData);
+                
+                globalData = { ...parsedData, clientId: id, clientSecret: secret, lastUpdateTimeStamp: Date.now() };
+                
+                const filePath = './data/globalData.json';
+                await fs.outputJson(filePath, globalData);
+                
+                const code = await getCode(filePath);
+                const tokenData = await exchange_code(code);
+                tokenData.lastUpdateTimeStamp = Date.now();
+                
+                plugin.sendToPropertyInspector({ 'access_token': tokenData.access_token });
+                log.info(tokenData);
+                await saveToken(filePath, tokenData);
                 login();
+                res.json({ msg: "完成" }); // 所有操作完成后响应
             } catch (err) {
-                log.error(err)
+                log.error(err);
+                res.status(500).json({ error: err.message }); // 返回错误信息
             }
         });
-        res.json({ msg: "完成" })
     });
 
     app.get('/logout', async (req, res) => {

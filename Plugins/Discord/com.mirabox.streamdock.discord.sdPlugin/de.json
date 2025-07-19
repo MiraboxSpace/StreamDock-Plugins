@@ -91,6 +91,8 @@
     "连接次数过多请重新启动Discord": "Zu viele Verbindungsversuche, bitte starten Sie Discord neu",
     "CLIENT ID": "CLIENT ID",
     "info": "Der Serverport wurde von 3002 auf 26432 geändert. Bitte aktualisieren Sie die Weiterleitungs-URL im Admin-Panel der App. Wir entschuldigen uns für die Unannehmlichkeiten.",
-    "https://discord.com/developers/applications": "https://discord.com/developers/applications"
+    "https://discord.com/developers/applications": "https://discord.com/developers/applications",
+    "Restart the Discord app": "Discord-App neu starten",
+    "If you can't connect, please restart the Discord app": "Wenn du keine Verbindung herstellen kannst, starte die Discord-App bitte neu"
   }
 }
