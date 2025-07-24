@@ -1,25 +1,18 @@
-# Vue 3 + TypeScript + Vite
+### OBS Studio WebSocket 连接设置
+步骤一：启用 WebSocket 服务器
 
-### Install
+打开 OBS Studio。
 
-```bash
-$ pnpm i
-```
+点击顶部菜单栏的 工具 (Tools)。
 
-### Development
+选择 WebSocket 服务器设置 (WebSocket Server Settings)。
 
-```bash
-$ pnpm dev
-```
+在弹出的窗口中：
 
-### Format
+勾选 启用 WebSocket 服务器 (Enable WebSocket server)。
 
-```bash
-$ pnpm format
-```
+记住 服务器端口 (Server Port)（默认 4455）。
 
-### Build
+勾选 启用身份验证 (Enable Authentication)，并设置一个密码 (Server Password)。请务必记住此密码。
 
-```bash
-$ pnpm build
-```
+点击 确定 (OK) 保存设置。

@@ -57,7 +57,7 @@ const connect = () => {
 }
 
 const open = () => {
-  window.opener.property.openUrl('https://github.com/MiraboxSpace/StreamDock-Plugins/tree/main/Plugins/OBSTools#readme')
+  window.opener.property.openUrl('https://github.com/MiraboxSpace/StreamDock-Plugins/tree/main/Plugins/obstools#readme')
 }
 
 onMounted(() => {

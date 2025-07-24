@@ -11,7 +11,8 @@ export default function (name: string) {
     willAppear({ context }) {
       console.log('创建 前一个:', context);
       plugin.Interval(context, 1000, async () => {
-        const { sceneName } = await plugin.obs.call('GetCurrentProgramScene');
+        // const { sceneName } = await plugin.obs.call('GetCurrentProgramScene');
+        const sceneName = await getPreviousSceneName();
         plugin.getAction(context).setTitle(sceneName);
       })
     },
@@ -37,7 +38,8 @@ async function previousScene() {
     const currentScene = await plugin.obs.call('GetCurrentProgramScene');
     
     // 获取场景列表
-    const { scenes } = await plugin.obs.call('GetSceneList');
+    let { scenes } = await plugin.obs.call('GetSceneList');
+    scenes = scenes.reverse(); // 反转数组顺序
     
     // 查找当前场景索引
     const currentIndex = scenes.findIndex(s => s.sceneName === currentScene.sceneName);
@@ -62,6 +64,34 @@ async function previousScene() {
   } catch (error) {
     console.error('切换到上一个场景失败:', error);
     throw error;
+  }
+}
+async function getPreviousSceneName() {
+  try {
+    // 获取当前场景和场景列表
+    const [{ currentProgramSceneName }, { scenes }] = await Promise.all([
+      plugin.obs.call('GetCurrentProgramScene'),
+      plugin.obs.call('GetSceneList')
+    ]);
+    
+    // 确保场景列表顺序与UI一致（可能需要反转）
+    const orderedScenes = scenes.reverse(); // 或使用其他排序方法
+    
+    // 查找当前场景索引
+    const currentIndex = orderedScenes.findIndex(s => s.sceneName === currentProgramSceneName);
+    
+    if (currentIndex === -1) {
+      console.error('当前场景不在场景列表中');
+      return null;
+    }
+    
+    // 计算上一个场景索引（循环到末尾）
+    const previousIndex = (currentIndex - 1 + orderedScenes.length) % orderedScenes.length;
+    
+    return orderedScenes[previousIndex].sceneName;
+  } catch (error) {
+    console.error('获取上一个场景失败:', error);
+    return null;
   }
 }
 }

@@ -49,7 +49,7 @@ Object.keys(i18n).forEach((item) => {
   obj.Name = i18n[item].Name;
   obj.Category = i18n[item].Name;
   obj.Description = i18n[item].Description;
-  console.log(i18n)
+  // console.log(i18n)
   manifest.Actions.forEach((action) => {
     obj[action.UUID] = {
       Name: action.i18n[item].Name,

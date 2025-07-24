@@ -57,6 +57,7 @@ export default function (name: string) {
             arr.push(scene)
           }
           // console.log(arr);
+          arr.reverse();
           plugin.getAction(context).sendToPropertyInspector({ sceneList: arr })
         }).catch(err => {
           console.log(err);
