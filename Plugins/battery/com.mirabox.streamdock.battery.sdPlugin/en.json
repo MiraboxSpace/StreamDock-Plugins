@@ -1,0 +1,26 @@
+{
+  "Description": "Show the battery levels of Logitech, Razer Synapse and Xbox devices.",
+  "Name": "battery Display",
+  "Category": "battery Display",
+  "com.mirabox.streamdock.battery.action1": {
+    "Name": "Logitech",
+    "Tooltip": "Show the battery level of Logitech devices"
+  },
+  "com.mirabox.streamdock.battery.action3": {
+    "Name": "Razer Synapse",
+    "Tooltip": "Show the battery level of Razer Synapse devices"
+  },
+  "com.mirabox.streamdock.battery.action4": {
+    "Name": "Xbox",
+    "Tooltip": "Show the battery level of Xbox devices"
+  },
+  "Localization": {
+    "设备": "device",
+    "标签": "title",
+    "保存": "save",
+    "设备1": "device1",
+    "设备2": "device2",
+    "设备3": "device3",
+    "设备4": "device4"
+  }
+}
