@@ -134,7 +134,8 @@ export const useI18nStore = () => {
   "Saturation": "Sättigung",
   "Width": "Breite",
   "X Position": "X-Position",
-  "Y Position": "Y-Position"
+  "Y Position": "Y-Position",
+  "guide_content": "<h2>Deutscher Leitfaden</h2>\n\n<h3>OBS Studio WebSocket-Verbindungseinstellungen</h3>\n\n<p>Dieser Leitfaden zeigt Ihnen, wie Sie eine WebSocket-Verbindung in OBS Studio für die Fernsteuerung einrichten.</p>\n\n<h4>Schritt eins: WebSocket-Server aktivieren</h4>\n\n<ol>\n  <li>Öffnen Sie die <strong>OBS Studio</strong>-Anwendung.</li>\n  <li>Klicken Sie in der oberen Menüleiste von OBS Studio auf <strong><code>Extras (Tools)</code></strong>.</li>\n  <li>Wählen Sie im Dropdown-Menü <strong><code>WebSocket-Server-Einstellungen (WebSocket Server Settings)</code></strong>.</li>\n  <li>Im sich öffnenden Fenster \"WebSocket-Server-Einstellungen\" nehmen Sie folgende Konfigurationen vor:\n    <ul>\n      <li><strong>Aktivieren Sie <code>WebSocket-Server aktivieren (Enable WebSocket server)</code></strong>.</li>\n      <li><strong>Merken Sie sich den <code>Server-Port (Server Port)</code></strong> (Standard ist <code>4455</code>). Dieser Port wird für externe Programmverbindungen benötigt.</li>\n      <li><strong>Aktivieren Sie <code>Authentifizierung aktivieren (Enable Authentication)</code></strong> und legen Sie ein <strong>Passwort (Server Password)</strong> fest. Merken Sie sich dieses Passwort unbedingt, da es für die Authentifizierung externer Programme verwendet wird.</li>\n    </ul>\n  </li>\n  <li>Klicken Sie auf <strong><code>OK (OK)</code></strong>, um Ihre Einstellungen zu speichern.</li>\n</ol>\n\n<p>Ihr OBS Studio ist jetzt so konfiguriert, dass es Verbindungen von externen Programmen akzeptiert, die das WebSocket-Protokoll unterstützen.</p>"
 },
     en: {
   "Server Info": "Server Info",
@@ -264,7 +265,8 @@ export const useI18nStore = () => {
   "Saturation": "Saturation",
   "Width": "Width",
   "X Position": "X Position",
-  "Y Position": "Y Position"
+  "Y Position": "Y Position",
+  "guide_content": "<h2>English Guide</h2>\n\n<h3>OBS Studio WebSocket Connection Setup</h3>\n\n<p>This guide will teach you how to set up a WebSocket connection in OBS Studio for remote control.</p>\n\n<h4>Step One: Enable WebSocket Server</h4>\n\n<ol>\n  <li>Open the <strong>OBS Studio</strong> application.</li>\n  <li>Click on <strong><code>Tools</code></strong> in the top menu bar of OBS Studio.</li>\n  <li>In the dropdown menu, select <strong><code>WebSocket Server Settings</code></strong>.</li>\n  <li>In the \"WebSocket Server Settings\" window that appears, configure the following:\n    <ul>\n      <li><strong>Check <code>Enable WebSocket server</code></strong>.</li>\n      <li><strong>Note the <code>Server Port</code></strong> (default is <code>4455</code>). This port will be needed for external program connections.</li>\n      <li><strong>Check <code>Enable Authentication</code></strong> and set a <strong>Server Password</strong>. Make sure to remember this password, as it will be used for external program authentication.</li>\n    </ul>\n  </li>\n  <li>Click <strong><code>OK</code></strong> to save your settings.</li>\n</ol>\n\n<p>Your OBS Studio is now configured to accept connections from external programs that support the WebSocket protocol.</p>"
 },
 es: {
   "Server Info": "Información del Servidor",
@@ -394,7 +396,8 @@ es: {
   "Saturation": "Saturación",
   "Width": "Ancho",
   "X Position": "Posición X",
-  "Y Position": "Posición Y"
+  "Y Position": "Posición Y",
+  "guide_content": "<h2>Guía en Español</h2>\n\n<h3>Configuración de Conexión WebSocket de OBS Studio</h3>\n\n<p>Esta guía le enseñará cómo configurar una conexión WebSocket en OBS Studio para control remoto.</p>\n\n<h4>Paso uno: Habilitar el Servidor WebSocket</h4>\n\n<ol>\n  <li>Abra la aplicación <strong>OBS Studio</strong>.</li>\n  <li>Haga clic en <strong><code>Herramientas (Tools)</code></strong> en la barra de menú superior de OBS Studio.</li>\n  <li>En el menú desplegable, seleccione <strong><code>Configuración del Servidor WebSocket (WebSocket Server Settings)</code></strong>.</li>\n  <li>En la ventana \"Configuración del Servidor WebSocket\" que aparece, realice las siguientes configuraciones:\n    <ul>\n      <li><strong>Marque <code>Habilitar servidor WebSocket (Enable WebSocket server)</code></strong>.</li>\n      <li><strong>Anote el <code>Puerto del Servidor (Server Port)</code></strong> (el predeterminado es <code>4455</code>). Este puerto será necesario para las conexiones de programas externos.</li>\n      <li><strong>Marque <code>Habilitar Autenticación (Enable Authentication)</code></strong> y establezca una <strong>Contraseña del Servidor (Server Password)</strong>. Asegúrese de recordar esta contraseña, ya que se utilizará para la autenticación de programas externos.</li>\n    </ul>\n  </li>\n  <li>Haga clic en <strong><code>Aceptar (OK)</code></strong> para guardar su configuración.</li>\n</ol>\n\n<p>Su OBS Studio ahora está configurado para aceptar conexiones de programas externos que soporten el protocolo WebSocket.</p>"
 },
 fr: {
   "Server Info": "Infos Serveur",
@@ -524,7 +527,8 @@ fr: {
   "Saturation": "Saturation",
   "Width": "Largeur",
   "X Position": "Position X",
-  "Y Position": "Position Y"
+  "Y Position": "Position Y",
+  "guide_content": "<h2>Guide en Français</h2>\n\n<h3>Configuration de la connexion WebSocket d'OBS Studio</h3>\n\n<p>Ce guide vous apprendra comment configurer une connexion WebSocket dans OBS Studio pour le contrôle à distance.</p>\n\n<h4>Première étape : Activer le serveur WebSocket</h4>\n\n<ol>\n  <li>Ouvrez l'application <strong>OBS Studio</strong>.</li>\n  <li>Cliquez sur <strong><code>Outils (Tools)</code></strong> dans la barre de menu supérieure d'OBS Studio.</li>\n  <li>Dans le menu déroulant, sélectionnez <strong><code>Paramètres du serveur WebSocket (WebSocket Server Settings)</code></strong>.</li>\n  <li>Dans la fenêtre \"Paramètres du serveur WebSocket\" qui apparaît, effectuez les configurations suivantes :\n    <ul>\n      <li><strong>Cochez <code>Activer le serveur WebSocket (Enable WebSocket server)</code></strong>.</li>\n      <li><strong>Notez le <code>Port du serveur (Server Port)</code></strong> (le port par défaut est <code>4455</code>). Ce port sera nécessaire pour les connexions de programmes externes.</li>\n      <li><strong>Cochez <code>Activer l'authentification (Enable Authentication)</code></strong> et définissez un <strong>Mot de passe du serveur (Server Password)</strong>. Assurez-vous de bien retenir ce mot de passe, car il sera utilisé pour l'authentification des programmes externes.</li>\n    </ul>\n  </li>\n  <li>Cliquez sur <strong><code>OK (OK)</code></strong> pour enregistrer vos paramètres.</li>\n</ol>\n\n<p>Votre OBS Studio est maintenant configuré pour accepter les connexions de programmes externes qui prennent en charge le protocole WebSocket.</p>"
 },
 it: {
   "Server Info": "Info Server",
@@ -654,7 +658,8 @@ it: {
   "Saturation": "Saturazione",
   "Width": "Larghezza",
   "X Position": "Posizione X",
-  "Y Position": "Posizione Y"
+  "Y Position": "Posizione Y",
+  "guide_content": "<h2>Guida Italiana</h2>\n\n<h3>Configurazione della Connessione WebSocket di OBS Studio</h3>\n\n<p>Questa guida ti insegnerà come configurare una connessione WebSocket in OBS Studio per il controllo remoto.</p>\n\n<h4>Passaggio 1: Abilitare il server WebSocket</h4>\n\n<ol>\n  <li>Apri l'applicazione <strong>OBS Studio</strong>.</li>\n  <li>Clicca su <strong><code>Strumenti (Tools)</code></strong> nella barra dei menu superiore di OBS Studio.</li>\n  <li>Nel menu a discesa, seleziona <strong><code>Impostazioni server WebSocket (WebSocket Server Settings)</code></strong>.</li>\n  <li>Nella finestra pop-up \"Impostazioni server WebSocket\", configura quanto segue:\n    <ul>\n      <li><strong>Seleziona <code>Abilita server WebSocket (Enable WebSocket server)</code></strong>.</li>\n      <li><strong>Annota la <code>Porta server (Server Port)</code></strong> (la porta predefinita è <code>4455</code>). Questo numero di porta sarà necessario quando i programmi esterni si connetteranno.</li>\n      <li><strong>Seleziona <code>Abilita autenticazione (Enable Authentication)</code></strong> e imposta una <strong>Password del server (Server Password)</strong>. Assicurati di ricordare questa password, poiché verrà utilizzata per l'autenticazione del programma esterno.</li>\n    </ul>\n  </li>\n  <li>Clicca su <strong><code>OK</code></strong> per salvare le impostazioni.</li>\n</ol>\n\n<p>Il tuo OBS Studio è ora configurato per accettare connessioni da programmi esterni che supportano il protocollo WebSocket.</p>"
 },
 ja: {
   "Server Info": "サーバー情報",
@@ -784,7 +789,8 @@ ja: {
   "Saturation": "彩度",
   "Width": "幅",
   "X Position": "X座標",
-  "Y Position": "Y座標"
+  "Y Position": "Y座標",
+  "guide_content": "<h2>日本語ガイド</h2>\n\n<h3>OBS Studio WebSocket 接続設定</h3>\n\n<p>このガイドでは、リモートコントロールのために OBS Studio で WebSocket 接続を設定する方法を説明します。</p>\n\n<h4>ステップ1：WebSocketサーバーを有効にする</h4>\n\n<ol>\n  <li><strong>OBS Studio</strong> アプリケーションを開きます。</li>\n  <li>OBS Studio の上部メニューバーにある <strong><code>ツール (Tools)</code></strong> をクリックします。</li>\n  <li>ドロップダウンメニューから <strong><code>WebSocket サーバー設定 (WebSocket Server Settings)</code></strong> を選択します。</li>\n  <li>表示される「WebSocket サーバー設定」ウィンドウで、以下の設定を行います。\n    <ul>\n      <li><strong><code>WebSocket サーバーを有効にする (Enable WebSocket server)</code></code> にチェックを入れます。</strong></li>\n      <li><strong><code>サーバーポート (Server Port)</code></code> を覚えておきます</strong>（デフォルトポートは <code>4455</code> です）。このポートは、外部プログラムが接続する際に必要になります。</li>\n      <li><strong><code>認証を有効にする (Enable Authentication)</code></code> にチェックを入れ、<strong>パスワード (Server Password)</strong> を設定します。</strong>このパスワードは外部プログラムの認証に使用されるため、必ず覚えておいてください。</li>\n    </ul>\n  </li>\n  <li><strong><code>OK (OK)</code></strong> をクリックして設定を保存します。</li>\n</ol>\n\n<p>これで OBS Studio は、WebSocket プロトコルをサポートする外部プログラムからの接続を受け入れるように設定されました。</p>"
 },
 ko: {
   "Server Info": "서버 정보",
@@ -914,7 +920,8 @@ ko: {
   "Saturation": "채도",
   "Width": "너비",
   "X Position": "X 좌표",
-  "Y Position": "Y 좌표"
+  "Y Position": "Y 좌표",
+  "guide_content": "<h2>한국어 가이드</h2>\n\n<h3>OBS Studio WebSocket 연결 설정</h3>\n\n<p>이 가이드는 OBS Studio에서 원격 제어를 위한 WebSocket 연결을 설정하는 방법을 알려줍니다.</p>\n\n<h4>1단계: WebSocket 서버 활성화</h4>\n\n<ol>\n  <li><strong>OBS Studio</strong> 애플리케이션을 엽니다.</li>\n  <li>OBS Studio 상단 메뉴바에서 <strong><code>도구 (Tools)</code></code>를 클릭합니다.</li>\n  <li>드롭다운 메뉴에서 <strong><code>WebSocket 서버 설정 (WebSocket Server Settings)</code></code>을 선택합니다.</li>\n  <li>나타나는 \"WebSocket 서버 설정\" 창에서 다음을 구성합니다.\n    <ul>\n      <li><strong><code>WebSocket 서버 활성화 (Enable WebSocket server)</code></code>에 체크합니다.</strong></li>\n      <li><strong><code>서버 포트 (Server Port)</code></code>를 기억합니다</strong> (기본값은 <code>4455</code>입니다). 이 포트는 외부 프로그램 연결에 필요합니다.</li>\n      <li><strong><code>인증 활성화 (Enable Authentication)</code>`에 체크하고 <strong>비밀번호 (Server Password)</strong>를 설정합니다.</strong> 이 비밀번호는 외부 프로그램 인증에 사용되므로 반드시 기억하십시오.</li>\n    </ul>\n  </li>\n  <li><strong><code>확인 (OK)</code></code>을 클릭하여 설정을 저장합니다.</strong></li>\n</ol>\n\n<p>이제 OBS Studio는 WebSocket 프로토콜을 지원하는 외부 프로그램으로부터의 연결을 수락하도록 구성되었습니다.</p>"
 },
 pl: {
   "Server Info": "Informacje o Serwerze",
@@ -1044,7 +1051,8 @@ pl: {
   "Saturation": "Nasycenie",
   "Width": "Szerokość",
   "X Position": "Pozycja X",
-  "Y Position": "Pozycja Y"
+  "Y Position": "Pozycja Y",
+  "guide_content": "<h2>Polski przewodnik</h2>\n\n<h3>Konfiguracja połączenia WebSocket w OBS Studio</h3>\n\n<p>Ten przewodnik nauczy Cię, jak skonfigurować połączenie WebSocket w OBS Studio do zdalnego sterowania.</p>\n\n<h4>Krok pierwszy: Włącz serwer WebSocket</h4>\n\n<ol>\n  <li>Otwórz aplikację <strong>OBS Studio</strong>.</li>\n  <li>Kliknij <strong><code>Narzędzia (Tools)</code></strong> w górnym pasku menu OBS Studio.</li>\n  <li>Z rozwijanego menu wybierz <strong><code>Ustawienia serwera WebSocket (WebSocket Server Settings)</code></strong>.</li>\n  <li>W wyświetlonym oknie \"Ustawienia serwera WebSocket\" skonfiguruj następujące opcje:\n    <ul>\n      <li><strong>Zaznacz <code>Włącz serwer WebSocket (Enable WebSocket server)</code></strong>.</li>\n      <li><strong>Zapamiętaj <code>Port serwera (Server Port)</code></strong> (domyślnie jest to <code>4455</code>). Ten port będzie potrzebny do połączeń z zewnętrznymi programami.</li>\n      <li><strong>Zaznacz <code>Włącz uwierzytelnianie (Enable Authentication)</code></strong> i ustaw <strong>Hasło serwera (Server Password)</strong>. Pamiętaj to hasło, ponieważ będzie ono używane do uwierzytelniania zewnętrznych programów.</li>\n    </ul>\n  </li>\n  <li>Kliknij <strong><code>OK (OK)</code></strong>, aby zapisać ustawienia.</li>\n</ol>\n\n<p>Twoje OBS Studio jest teraz skonfigurowane do akceptowania połączeń z zewnętrznych programów obsługujących protokół WebSocket.</p>"
 },
 pt: {
   "Server Info": "Informações do Servidor",
@@ -1174,7 +1182,8 @@ pt: {
   "Saturation": "Saturação",
   "Width": "Largura",
   "X Position": "Posição X",
-  "Y Position": "Posição Y"
+  "Y Position": "Posição Y",
+  "guide_content": "<h2>Guia em Português</h2>\n\n<h3>Configuração de Conexão WebSocket no OBS Studio</h3>\n\n<p>Este guia irá ensinar como configurar uma conexão WebSocket no OBS Studio para controle remoto.</p>\n\n<h4>Passo um: Habilitar o Servidor WebSocket</h4>\n\n<ol>\n  <li>Abra o aplicativo <strong>OBS Studio</strong>.</li>\n  <li>Clique em <strong><code>Ferramentas (Tools)</code></strong> na barra de menu superior do OBS Studio.</li>\n  <li>No menu suspenso, selecione <strong><code>Configurações do Servidor WebSocket (WebSocket Server Settings)</code></strong>.</li>\n  <li>Na janela \"Configurações do Servidor WebSocket\" que aparece, configure o seguinte:\n    <ul>\n      <li><strong>Marque <code>Habilitar servidor WebSocket (Enable WebSocket server)</code></strong>.</li>\n      <li><strong>Anote a <code>Porta do Servidor (Server Port)</code></strong> (o padrão é <code>4455</code>). Esta porta será necessária para conexões de programas externos.</li>\n      <li><strong>Marque <code>Habilitar Autenticação (Enable Authentication)</code></strong> e defina uma <strong>Senha do Servidor (Server Password)</strong>. Certifique-se de lembrar esta senha, pois ela será usada para a autenticação de programas externos.</li>\n    </ul>\n  </li>\n  <li>Clique em <strong><code>OK (OK)</code></strong> para salvar suas configurações.</li>\n</ol>\n\n<p>Seu OBS Studio agora está configurado para aceitar conexões de programas externos que suportam o protocolo WebSocket.</p>"
 },
 ru: {
   "Server Info": "Информация о сервере",
@@ -1304,7 +1313,8 @@ ru: {
   "Saturation": "Насыщенность",
   "Width": "Ширина",
   "X Position": "Позиция X",
-  "Y Position": "Позиция Y"
+  "Y Position": "Позиция Y",
+  "guide_content": "<h2>Русское Руководство</h2>\n\n<h3>Настройка WebSocket-соединения в OBS Studio</h3>\n\n<p>Это руководство научит вас, как настроить WebSocket-соединение в OBS Studio для удаленного управления.</p>\n\n<h4>Шаг первый: Включение WebSocket-сервера</h4>\n\n<ol>\n  <li>Откройте приложение <strong>OBS Studio</strong>.</li>\n  <li>Нажмите на <strong><code>Инструменты (Tools)</code></strong> в верхней строке меню OBS Studio.</li>\n  <li>В выпадающем меню выберите <strong><code>Настройки WebSocket-сервера (WebSocket Server Settings)</code></strong>.</li>\n  <li>В появившемся окне \"Настройки WebSocket-сервера\" выполните следующие настройки:\n    <ul>\n      <li><strong>Установите флажок <code>Включить WebSocket-сервер (Enable WebSocket server)</code></strong>.</li>\n      <li><strong>Запомните <code>Порт сервера (Server Port)</code></strong> (по умолчанию <code>4455</code>). Этот порт потребуется для подключения внешних программ.</li>\n      <li><strong>Установите флажок <code>Включить аутентификацию (Enable Authentication)</code></strong> и установите <strong>Пароль сервера (Server Password)</strong>. Обязательно запомните этот пароль, так как он будет использоваться для аутентификации внешних программ.</li>\n    </ul>\n  </li>\n  <li>Нажмите <strong><code>ОК (OK)</code></strong>, чтобы сохранить настройки.</li>\n</ol>\n\n<p>Ваша OBS Studio теперь настроена на прием соединений от внешних программ, поддерживающих протокол WebSocket.</p>"
 },
     zh_CN: {
       "Server Info": "服务信息",
@@ -1449,7 +1459,8 @@ ru: {
       "Saturation": "饱和度",
       "Width": "宽度",
       "X Position": "X 坐标",
-      "Y Position": "Y 坐标"
+      "Y Position": "Y 坐标",
+      "guide_content": "<h2>中文指南</h2>\n\n<h3>OBS Studio WebSocket 连接设置</h3>\n\n<p>本指南将教您如何在 OBS Studio 中设置 WebSocket 连接，以便进行远程控制。</p>\n\n<h4>步骤一：启用 WebSocket 服务器</h4>\n\n<ol>\n  <li>打开 <strong>OBS Studio</strong> 应用程序。</li>\n  <li>点击 OBS Studio 顶部菜单栏的 <strong><code>工具 (Tools)</code></strong>。</li>\n  <li>在下拉菜单中，选择 <strong><code>WebSocket 服务器设置 (WebSocket Server Settings)</code></strong>。</li>\n  <li>在弹出的\"WebSocket 服务器设置\"窗口中，进行以下配置：\n    <ul>\n      <li><strong>勾选 <code>启用 WebSocket 服务器 (Enable WebSocket server)</code></strong>。</li>\n      <li><strong>记住 <code>服务器端口 (Server Port)</code></strong>（默认端口是 <code>4455</code>）。在外部程序连接时将需要这个端口号。</li>\n      <li><strong>勾选 <code>启用身份验证 (Enable Authentication)</code></strong>，并设置一个<strong>密码 (Server Password)</strong>。请务必牢记此密码，因为它将用于外部程序的身份验证。</li>\n    </ul>\n  </li>\n  <li>点击 <strong><code>确定 (OK)</code></strong> 保存您的设置。</li>\n</ol>\n\n<p>您的 OBS Studio 现在已配置完毕，可以接受来自支持 WebSocket 协议的外部程序的连接。</p>"
     }
   };
   return localString[language] || localString['en'];

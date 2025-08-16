@@ -1,6 +1,7 @@
 const { Plugins, Actions, log, EventEmitter } = require('./utils/plugin');
 const { getScopes, getAccessToken, getClientId, getClientSecret, getExpiresIn, getLastUpdateTimeStamp, getRefreshToken, getCode, saveToken } = require('./utils/getToken');
 const RPC = require('discord-rpc');
+const { RpcCommands, RPCCommands } = require('./node_modules/discord-rpc/src/constants');
 // const { login } = require('./utils/login');
 const fs = require('fs-extra');
 const Jimp = require('jimp');
@@ -120,7 +121,7 @@ plugin.action1 = new Actions({
         log.info("声音板: ", context);
         contexts.push(context);
         const SOUNDBOARD_SOUNDS = () => {
-            client?.GET_SOUNDBOARD_SOUNDS().then(async (res) => {
+            client.request('GET_SOUNDBOARD_SOUNDS').then(async (res) => {
                 const groupedByGuild = {};
                 for (const sound of res) {
                     if (!groupedByGuild[sound.guild_id]) {
@@ -172,7 +173,7 @@ plugin.action1 = new Actions({
                         }
                     })
                 })
-                client?.PLAY_SOUNDBOARD_SOUND(sound).then((res) => {
+                client.request('PLAY_SOUNDBOARD_SOUND', sound).then((res) => {
                 }).catch((error) => {
                     if (error.code == 4005 || error.code == 4018) {
                         return;
@@ -531,6 +532,10 @@ plugin.voicechannel = new Actions({
         const VOICECHANNEL = () => {
             client?.getGuilds().then((res) => {//获取服务器
                 // log.info(context)
+                let payload = {
+                    settings: plugin.voicechannel.data[context]
+                }
+
                 if (payload.settings.channels) {
                     plugin.setSettings(context, { 'guilds': res.guilds, 'select': payload.settings.select, 'channels': payload.settings.channels, 'channel': payload.settings.channel })
                     const item = payload.settings.channels.filter((e) => e.id == payload.settings.channel)
@@ -562,6 +567,7 @@ plugin.voicechannel = new Actions({
         // log.info(payload)
         if (payload.channel) {//选择了新的语音通道
             plugin.setSettings(context, { 'guilds': payload.guilds, 'select': payload.select, 'channels': payload.channels, 'channel': payload.channel });
+            plugin.voicechannel.data[context] = { 'guilds': payload.guilds, 'select': payload.select, 'channels': payload.channels, 'channel': payload.channel };
             const item = payload.channels.filter((e) => e.id == payload.channel);
             plugin.setTitle(context, item[0].name);
         } else {//选择了新的服务器
@@ -569,6 +575,7 @@ plugin.voicechannel = new Actions({
                 const channels = res.filter((item) => item.type == 2 || item.type == 13);
                 // log.info(channels)
                 plugin.setSettings(context, { 'guilds': payload.guilds, 'select': payload.select, 'channels': channels, 'channel': channels[0].id });
+                plugin.voicechannel.data[context] = { 'guilds': payload.guilds, 'select': payload.select, 'channels': payload.channels, 'channel': payload.channel };
                 plugin.setTitle(context, channels[0].name);
             }).catch((error) => {
                 log.error('getChannels failed:', error);
@@ -577,7 +584,7 @@ plugin.voicechannel = new Actions({
     },
     keyUp({ context, payload }) {
         // log.info(payload)
-        client?.GET_SELECTED_VOICE_CHANNEL().then((res) => {
+        client.request(RPCCommands.GET_SELECTED_VOICE_CHANNEL).then((res) => {
             if (res == undefined || res == null) {
                 client?.selectVoiceChannel(payload.settings.channel).then((res) => {
                     log.info("连接语音通道：" + payload.settings.channel)
@@ -621,6 +628,9 @@ plugin.textchannel = new Actions({
         const TEXTCHANNEL = () => {
             client?.getGuilds().then((res) => {//获取服务器
                 log.info(context)
+                let payload = {
+                    settings: plugin.textchannel.data[context]
+                }
                 if (payload.settings.channels) {
                     plugin.setSettings(context, { 'guilds': res.guilds, 'select': payload.settings.select, 'channels': payload.settings.channels, 'channel': payload.settings.channel });
                     const item = payload.settings.channels.filter((e) => e.id == payload.settings.channel);
@@ -651,6 +661,7 @@ plugin.textchannel = new Actions({
         // log.info(payload)
         if (payload.channel) {//选择了新的文本通道
             plugin.setSettings(context, { 'guilds': payload.guilds, 'select': payload.select, 'channels': payload.channels, 'channel': payload.channel })
+            plugin.textchannel.data[context] = { 'guilds': payload.guilds, 'select': payload.select, 'channels': payload.channels, 'channel': payload.channel };
             const item = payload.channels.filter((e) => e.id == payload.channel)
             plugin.setTitle(context, item[0].name)
         } else {//选择了新的服务器
@@ -659,6 +670,7 @@ plugin.textchannel = new Actions({
                 const channels = res.filter((item) => item.type == 0)
                 // log.info(channels)
                 plugin.setSettings(context, { 'guilds': payload.guilds, 'select': payload.select, 'channels': channels, 'channel': channels[0].id })
+                plugin.textchannel.data[context] = { 'guilds': payload.guilds, 'select': payload.select, 'channels': payload.channels, 'channel': payload.channel };
                 plugin.setTitle(context, channels[0].name)
             }).catch((error) => {
                 log.error('getVoiceSettings failed:', error);
@@ -841,7 +853,7 @@ plugin.userVolumeControl = new Actions({
         contexts.push(context);
         const VOLUME = () => {
             this.data[context].timer = setInterval(() => {
-                client?.GET_SELECTED_VOICE_CHANNEL().then((res) => {
+                client.request(RPCCommands.GET_SELECTED_VOICE_CHANNEL).then((res) => {
                     if (res == null) {
                         this.data[context].settings = {};
                         plugin.setSettings(context, {});
@@ -1268,7 +1280,7 @@ function startServer() {
         secret = req.query.clientSecret
         // res.redirect(`https://discord.com/oauth2/authorize?client_id=${id}&response_type=token&redirect_uri=http%3A%2F%2F127.0.0.1%3A26432&scope=identify+rpc+rpc.voice.read+rpc.notifications.read+messages.read+rpc.voice.write`)
         // res.redirect(`https://discord.com/oauth2/authorize?client_id=${id}&response_type=token&redirect_uri=http%3A%2F%2F127.0.0.1%3A26432&scope=identify+rpc+rpc.voice.read+messages.read+rpc.notifications.read+rpc.voice.write`)
-        res.redirect(`https://discord.com/oauth2/authorize?client_id=${id}&response_type=code&redirect_uri=http%3A%2F%2F127.0.0.1%3A26432&scope=identify+rpc+rpc.voice.read+rpc.notifications.read+messages.read+rpc.voice.write&state=15773059ghq9183habn&prompt=none&integration_type=0`)
+        res.redirect(`https://discord.com/oauth2/authorize?client_id=${id}&response_type=code&redirect_uri=http%3A%2F%2F127.0.0.1%3A26432&scope=identify+rpc+rpc.voice.read+rpc.notifications.read+rpc.voice.write&state=15773059ghq9183habn&prompt=none&integration_type=0`)
     })
 
 

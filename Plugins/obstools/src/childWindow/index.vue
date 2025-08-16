@@ -1,6 +1,6 @@
 <!-- 请勿修改此文件 -->
 <script setup lang="ts">
-import { NConfigProvider, darkTheme, GlobalThemeOverrides } from 'naive-ui';
+import { NConfigProvider, darkTheme, GlobalThemeOverrides, NCollapse, NCollapseItem } from 'naive-ui';
 import { useI18nStore } from '@/hooks/i18n';
 document.title = window.opener.argv[3].plugin.uuid + ' - 子窗口';
 const i18n = useI18nStore();
@@ -89,8 +89,13 @@ onMounted(() => {
         <div class="bg-[#333] p-8 rounded-lg">
           <div class="text-[#ccc] mb-5 leading-relaxed">
             {{ i18n["tips"] }}
-            <span class="text-[#1DB954] cursor-pointer underline" id="open" @click="open">{{ i18n["Click here"]
-              }}</span>
+            <!-- <span class="text-[#1DB954] cursor-pointer underline" id="open" @click="open">{{ i18n["Click here"] }}</span> -->
+            <!-- <span class="text-[#1DB954] cursor-pointer underline" id="open">{{ i18n["Click here"] }}</span> -->
+            <n-collapse>
+              <n-collapse-item :title="i18n['Click here']" name="1">
+                <div v-html="i18n['guide_content']"></div>
+              </n-collapse-item>
+            </n-collapse>
           </div>
 
           <div class="space-y-2.5">
