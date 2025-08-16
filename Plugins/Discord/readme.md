@@ -4,11 +4,11 @@
 
 Click this link to jump to the discord dev
 
-<img src="./3.png">
+<img src="./3_1.png">
 
 Create an app and add a redirect address: http://127.0.0.1:26432
 
-<img src="./4.png">
+<img src="./4_1.png">
 
 ## 2. Authorization
 
