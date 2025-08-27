@@ -1,0 +1,27 @@
+{
+  "Name": "minecraft",
+  "Description": "minecraft stats",
+  "Category": "minecraft",
+  "com.mirabox.streamdock.minecraftstats.action1": {
+    "Name": "minecraft stats",
+    "Tooltip": "minecraft stats"
+  },
+  "Localization": {
+    "Server Hostname": "서버 호스트명",
+    "Server Port": "서버 포트",
+    "Title": "제목",
+    "Image": "이미지",
+    "Launch": "실행",
+    "App Location": "앱 위치",
+    "Players": "플레이어 수",
+    "Max Players": "최대 플레이어 수",
+    "Latency": "지연 시간",
+    "Hide of players": "플레이어 수 숨기기",
+    "Hide of max players": "최대 플레이어 수 숨기기",
+    "Hide ping latency": "지연 시간 숨기기",
+    "Launch Minecraft on keypress": "키를 눌러 Minecraft 실행",
+    "Save": "저장",
+    "ChooseFile": "파일 선택",
+    "NoFile": "파일 없음"
+  }
+}

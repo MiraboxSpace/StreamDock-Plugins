@@ -1,0 +1,27 @@
+{
+  "Name": "minecraft",
+  "Description": "minecraft stats",
+  "Category": "minecraft",
+  "com.mirabox.streamdock.minecraftstats.action1": {
+    "Name": "minecraft stats",
+    "Tooltip": "minecraft stats"
+  },
+  "Localization": {
+    "Server Hostname": "服务器地址",
+    "Server Port": "服务器端口",
+    "Title": "标题",
+    "Image": "图片",
+    "Launch": "启动",
+    "App Location": "应用位置",
+    "Players": "玩家人数",
+    "Max Players": "最大玩家人数",
+    "Latency": "延迟",
+    "Hide of players": "隐藏玩家人数",
+    "Hide of max players": "隐藏最大玩家人数",
+    "Hide ping latency": "隐藏延迟",
+    "Launch Minecraft on keypress": "按下按键启动Minecraft",
+    "Save": "保存",
+    "ChooseFile": "选取文件",
+    "NoFile": "无文件"
+  }
+}

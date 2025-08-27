@@ -1,0 +1,64 @@
+{
+  "Actions": [
+    {
+      "Icon": "static/icon.png",
+      "Name": "minecraft stats",
+      "DisableAutomaticStates": true,
+      "States": [
+        {
+          "Image": "static/icon.png",
+          "TitleAlignment": "center",
+          "FontSize": "8"
+        }
+      ],
+      "Settings": {
+        "Hostname": "",
+        "minecraftPort": 25565,
+        "Title": "",
+        "Image": "",
+        "Launch": false,
+        "hiddenPlayers": false,
+        "hiddenMaxPlayers": false,
+        "isLatency": false,
+        "serverStatus": "offLine",
+        "players": 0,
+        "maxPlayers": 0,
+        "isConnect": false,
+        "AppLocationPath": ""
+      },
+      "Controllers": [],
+      "UserTitleEnabled": true,
+      "SupportedInMultiActions": true,
+      "Tooltip": "action1",
+      "UUID": "com.mirabox.streamdock.minecraftstats.action1",
+      "PropertyInspectorPath": "propertyInspector/action1/index.html"
+    } 
+  ],
+  "SDKVersion": 1,
+  "Author": "MiraBox",
+  "Name": "minecraft",
+  "Icon": "static/icon.png",
+  "CodePathWin": "plugin/index.js",
+  "CodePathMac": "plugin/index.js",
+  "Description": "minecraft operation",
+  "Category": "minecraft",
+  "CategoryIcon": "static/icon.png",
+  "Version": "1.0.0",
+  "URL": "https://mirabox.key123.vip/home",
+  "OS": [
+    {
+      "Platform": "mac",
+      "MinimumVersion": "10.11"
+    },
+    {
+      "Platform": "windows",
+      "MinimumVersion": "7"
+    }
+  ],
+  "Software": {
+    "MinimumVersion": "3.10.188.226"
+  },
+  "Nodejs": {
+    "Version": "20"
+  }
+}
