@@ -1,0 +1,27 @@
+{
+  "Name": "minecraft",
+  "Description": "minecraft stats",
+  "Category": "minecraft",
+  "com.mirabox.streamdock.minecraftstats.action1": {
+    "Name": "minecraft stats",
+    "Tooltip": "minecraft stats"
+  },
+  "Localization": {
+    "Server Hostname": "Nom du serveur",
+    "Server Port": "Port du serveur",
+    "Title": "Titre",
+    "Image": "Image",
+    "Launch": "Lancer",
+    "App Location": "Emplacement de l'application",
+    "Players": "Joueurs",
+    "Max Players": "Nombre maximal de joueurs",
+    "Latency": "Latence",
+    "Hide of players": "Masquer les joueurs",
+    "Hide of max players": "Masquer le nombre maximal de joueurs",
+    "Hide ping latency": "Masquer la latence",
+    "Launch Minecraft on keypress": "Lancer Minecraft à la pression d'une touche",
+    "Save": "Enregistrer",
+    "ChooseFile": "Choisir un fichier",
+    "NoFile": "Aucun fichier"
+  }
+}

@@ -1,0 +1,27 @@
+{
+  "Name": "minecraft",
+  "Description": "minecraft stats",
+  "Category": "minecraft",
+  "com.mirabox.streamdock.minecraftstats.action1": {
+    "Name": "minecraft stats",
+    "Tooltip": "minecraft stats"
+  },
+  "Localization": {
+    "Server Hostname": "サーバーホスト名",
+    "Server Port": "サーバーポート",
+    "Title": "タイトル",
+    "Image": "画像",
+    "Launch": "起動",
+    "App Location": "アプリケーションの場所",
+    "Players": "プレイヤー数",
+    "Max Players": "最大プレイヤー数",
+    "Latency": "レイテンシ",
+    "Hide of players": "プレイヤー数を非表示",
+    "Hide of max players": "最大プレイヤー数を非表示",
+    "Hide ping latency": "レイテンシを非表示",
+    "Launch Minecraft on keypress": "キー押下でMinecraftを起動",
+    "Save": "保存",
+    "ChooseFile": "ファイルを選択",
+    "NoFile": "ファイルなし"
+  }
+}

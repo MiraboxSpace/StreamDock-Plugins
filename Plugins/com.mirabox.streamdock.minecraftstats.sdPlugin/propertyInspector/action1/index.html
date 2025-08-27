@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <title>minecraft stats - Property Inspector</title>
+    <link href="../utils/bootstrap-icons.css" rel="stylesheet">
+    <link href="../utils/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background-color: rgba(0, 0, 0, 0)
+        }
+    </style>
+</head>
+
+<body>
+    <div class="sdpi-wrapper p-3 text-light">
+        <form>
+            <div class="">
+                <label class="form-label">Server Hostname</label>
+                <div class="row">
+                    <div class="col-9">
+                        <!-- oninput="serverHostnameInput()" -->
+                        <input type="text" 
+                            class="form-control form-control-sm text-light bg-dark border-dark" id="serverName">
+                    </div>
+                    <div class="col-3">
+                        <button onclick="saveClick()" type="button btn-dark" class="btn  btn-dark btn-sm"
+                            id="save">Save</button>
+                    </div>
+                </div>
+                <div class="">
+                    <label class="form-label">Server Port</label>
+                    <input type="text" onchange="portChange()"
+                        class="form-control form-control-sm text-light bg-dark border-dark" id="minecraftPort">
+                </div>
+                <div class="">
+                    <label class="form-label">Title</label>
+                    <input oninput="titleInput()" type="text"
+                        class="form-control form-control-sm text-light bg-dark border-dark" id="title">
+                </div>
+                <div class="">
+                    <label class="form-label">Image</label>
+                    <div class="row">
+                        <div class="col-8">
+                            <label id="ImageLabel"
+                                class="text-light bg-dark border-dark lh-lg w-100 h-100 px-1 text-break"
+                                for="Image">NoFile</label>
+                            <input style="display: none;"
+                                class="form-control form-control-sm text-light bg-dark border-dark" type="file"
+                                id="Image" accept="image/*">
+                        </div>
+                        <div class="col-4">
+                            <button onclick="triggerFile()" type="button" class="btn btn-dark btn-sm">ChooseFile</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="">
+                    <label class="form-label">Launch</label>
+                    <div class="form-check">
+                        <input onchange="changeLaunch()" class="form-check-input" type="checkbox" value="" id="Launch">
+                        <label class="form-check-label" for="Launch">Launch Minecraft on keypress</label>
+                    </div>
+                </div>
+                <div class="" id="AppLocationBox" style="display: none;">
+                    <label class="form-label">App Location</label>
+                    <!-- <input class="form-control form-control-sm text-light bg-dark border-dark" type="file" id="AppLocation"> -->
+                    <div class="row">
+                        <div class="col-8">
+                            <label id="AppLocationLabel" class="text-light bg-dark border-dark lh-lg w-100 h-100 px-1 text-break"
+                                for="AppLocation">NoFile</label>
+                            <input style="display: none;"
+                                class="form-control form-control-sm text-light bg-dark border-dark" type="file"
+                                id="AppLocation">
+                        </div>
+                        <div class="col-4">
+                            <button onclick="triggerFile2()" type="button" class="btn btn-dark btn-sm">ChooseFile</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="">
+                <label class="form-label">Players</label>
+                <div class="form-check">
+                    <input onchange="playersChange()" class="form-check-input" type="checkbox" value="" id="Players">
+                    <label class="form-check-label" for="Players">Hide of players</label>
+                </div>
+            </div>
+            <div class="">
+                <label class="form-label">Max Players</label>
+                <div class="form-check">
+                    <input onchange="maxChange()" class="form-check-input" type="checkbox" value="" id="MaxPlayers">
+                    <label class="form-check-label" for="MaxPlayers">Hide of max players</label>
+                </div>
+            </div>
+            <!-- <div class="mb-2">
+                <label class="form-label">Latency</label>
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="" id="Latency">
+                    <label class="form-check-label" for="Latency">Hide ping latency</label>
+                </div>
+            </div> -->
+        </form>
+    </div>
+    <script src="../utils/common.js"></script>
+    <script src="../utils/action.js"></script>
+    <script src="../utils/axios.js"></script>
+    <script src="index.js"></script>
+</body>
+
+<style>
+    body {
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+        padding: 8px;
+        background-color: #2a2a2a;
+        color: #fff;
+    }
+
+    ::-webkit-scrollbar {
+        display: none;
+    }
+</style>
+
+</html>
