@@ -1,0 +1,72 @@
+{
+  "Actions": [
+    {
+      "Icon": "images/icon",
+      "Name": "Logitech",
+      "States": [
+        {
+          "FontSize": "10",
+          "TitleAlignment": "bottom",
+          "Image": "images/pluginAction.png",
+          "TitleColor": "white"
+        }
+      ],
+      "SupportedInMultiActions": false,
+      "Tooltip": "Show the battery level of Logitech devices",
+      "UUID": "com.mirabox.streamdock.battery.action1",
+      "PropertyInspectorPath": "action1/ghub.html"
+    },
+    {
+      "Icon": "images/icon",
+      "Name": "Razer Synapse",
+      "States": [
+        {
+          "FontSize": "10",
+          "TitleAlignment": "bottom",
+          "Image": "images/pluginAction.png",
+          "TitleColor": "white"
+        }
+      ],
+      "SupportedInMultiActions": false,
+      "Tooltip": "Show the battery level of Razer Synapse devices",
+      "UUID": "com.mirabox.streamdock.battery.action3",
+      "PropertyInspectorPath": "action1/synapse.html"
+    },
+    {
+      "Icon": "images/icon",
+      "Name": "Xbox",
+      "States": [
+        {
+          "FontSize": "10",
+          "TitleAlignment": "bottom",
+          "Image": "images/pluginAction.png",
+          "TitleColor": "white"
+        }
+      ],
+      "SupportedInMultiActions": false,
+      "Tooltip": "Show the battery level of Xbox devices",
+      "UUID": "com.mirabox.streamdock.battery.action4",
+      "PropertyInspectorPath": "action1/xbox.html"
+    }
+  ],
+  "SDKVersion": 1,
+  "Author": "Hotspot",
+  "Category": "battery Display",
+  "CategoryIcon": "images/categoryIcon.png",
+  "CodePath": "battery.exe",
+  "CodePathMac": "battery",
+  "CodePathWin": "battery.exe",
+  "Description": "Show the battery levels of Logitech, Razer Synapse and Xbox devices.",
+  "Name": "battery Display",
+  "Icon": "images/pluginIcon.png",
+  "Version": "1.0",
+  "OS": [
+    {
+      "Platform": "windows",
+      "MinimumVersion": "10"
+    }
+  ],
+  "Software": {
+    "MinimumVersion": "2.9"
+  }
+}
