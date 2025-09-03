@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8" />
+  <title>切换扬声器 - 属性检查器</title>
+  <link rel="stylesheet" href="./static/css/sdpi.css" />
+  <style>
+    .sdpi-item {
+      margin: 2px auto;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="sdpi-wrapper" style="display: none">
+    <div type="radio" class="sdpi-item">
+      <div class="sdpi-item-label">设备</div>
+      <div class="sdpi-item-value">
+        <span class="sdpi-item-child">
+          <input id="input" class="device" type="radio" name="rdio1" value="input">
+          <label for="input" class="sdpi-item-label"><span></span>输入</label>
+        </span>
+        <span class="sdpi-item-child">
+          <input id="output" class="device" type="radio" name="rdio1" value="output">
+          <label for="output" class="sdpi-item-label"><span></span>输出</label>
+        </span>
+      </div>
+    </div>
+    <div type="radio" class="sdpi-item">
+      <div class="sdpi-item-label">模式</div>
+      <div class="sdpi-item-value">
+        <span class="sdpi-item-child">
+          <input id="rdio1" class="mode" type="radio" name="rdio" value="0">
+          <label for="rdio1" class="sdpi-item-label"><span></span>切换至选定</label>
+        </span>
+        <span class="sdpi-item-child">
+          <input id="rdio2" class="mode" type="radio" name="rdio" value="1">
+          <label for="rdio2" class="sdpi-item-label"><span></span>选定来回切换</label>
+        </span>
+      </div>
+    </div>
+    <div class="sdpi-item">
+      <div class="sdpi-item-label">选择设备</div>
+      <select class="sdpi-item-value select" id="select"></select>
+    </div>
+    <div class="sdpi-item" id="selectBox">
+      <div class="sdpi-item-label">选择设备</div>
+      <select class="sdpi-item-value select" id="select2"></select>
+    </div>
+  </div>
+  <script src="./static/utils/common.js"></script>
+  <script src="./static/action.js"></script>
+  <script src="index.js"></script>
+</body>
+
+</html>

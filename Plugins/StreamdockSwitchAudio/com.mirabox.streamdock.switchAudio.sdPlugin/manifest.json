@@ -1,0 +1,49 @@
+{
+  "Actions": [
+    {
+      "Icon": "images/icon",
+      "Name": "切换音频设备",
+      "States": [
+        {
+          "Image": "images/headphones"
+        },
+        {
+          "Image": "images/speakers"
+        },
+        {
+          "Image": "images/inactive"
+        },
+        {
+          "Image": "images/active"
+        }
+      ],
+      "SupportedInMultiActions": false,
+      "Tooltip": "切换音频设备",
+      "UUID": "com.mirabox.streamdock.switchAudio.myaction1",
+      "PropertyInspectorPath": "index.html"
+    }
+  ],
+  "SDKVersion": 1,
+  "Author": "Mirabox",
+  "Category": "CPP Plugin Demo",
+  "CategoryIcon": "images/icon",
+  "CodePathMac": "streamdockSwitchAudio",
+  "CodePathWin": "streamdockSwitchAudio.exe",
+  "Description": "切换音频设备",
+  "Name": "切换音频设备",
+  "Icon": "images/icon",
+  "Version": "1.0.3",
+  "OS": [
+    {
+      "Platform": "mac",
+      "MinimumVersion": "10.11"
+    },
+    {
+      "Platform": "windows",
+      "MinimumVersion": "10"
+    }
+  ],
+  "Software": {
+    "MinimumVersion": "2.10.179.426"
+  }
+}

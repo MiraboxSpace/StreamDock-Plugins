@@ -1,0 +1,18 @@
+{
+  "Description": "Alternar dispositivos de áudio", 
+  "Name": "Alternar dispositivos de áudio", 
+  "Category": "Alternar dispositivos de áudio",
+  "com.mirabox.streamdock.switchAudio.myaction1": {
+    "Name": "Alternar dispositivos de áudio",
+    "Tooltip": "Alternar dispositivos de áudio"
+  },
+  "Localization": {
+    "选择设备": "Selecione o dispositivo",
+    "模式": "Modo",
+    "切换至选定": "Alternar a Seleccionado",
+    "选定来回切换": "Seleccione Alternar ronda",
+    "设备": "Equipamento",
+    "输入": "Entrada",
+    "输出": "Saída"
+  }
+}

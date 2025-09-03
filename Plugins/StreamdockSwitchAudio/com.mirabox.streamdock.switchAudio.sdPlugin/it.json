@@ -1,0 +1,18 @@
+{
+  "Description": "Passare da un dispositivo audio all'altro", 
+  "Name": "Passare da un dispositivo audio all'altro", 
+  "Category": "Passare da un dispositivo audio all'altro",
+  "com.mirabox.streamdock.switchAudio.myaction1": {
+    "Name": "Passare da un dispositivo audio all'altro",
+    "Tooltip": "Passare da un dispositivo audio all'altro"
+  },
+  "Localization": {
+    "选择设备": "Seleziona il dispositivo",
+    "模式": "Modo",
+    "切换至选定": "Passa a selezionato",
+    "选定来回切换": "Seleziona Toggle Round",
+    "设备": "Attrezzatura",
+    "输入": "Immissione",
+    "输出": "Prodotto"
+  }
+}

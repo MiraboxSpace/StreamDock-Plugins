@@ -1,0 +1,18 @@
+{
+  "Description": "Audiogeräte wechseln", 
+  "Name": "Audiogeräte wechseln", 
+  "Category": "Audiogeräte wechseln",
+  "com.mirabox.streamdock.switchAudio.myaction1": {
+    "Name": "Audiogeräte wechseln",
+    "Tooltip": "Audiogeräte wechseln"
+  },
+  "Localization": {
+    "选择设备": "Wählen Sie das Gerät aus",
+    "模式": "Modus",
+    "切换至选定": "Zu Ausgewählt umschalten",
+    "选定来回切换": "Wählen Sie Runde umschalten",
+    "设备": "Ausrüstung",
+    "输入": "Eingabe",
+    "输出": "Ausgabe"
+  }
+}
