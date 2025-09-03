@@ -18,6 +18,10 @@ void GhubAction::Getrefreshdevice()
         data["select"] = devices[0].name;
         SetSettings(data);
     }
+    else
+    {
+        HSDLogger::LogMessage("errroooorrrr 111111111111");
+    }
 }
 
 GhubAction::GhubAction(HSDConnectionManager* hsd_connection, const std::string& action, const std::string& context)

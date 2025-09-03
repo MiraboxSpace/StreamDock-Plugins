@@ -1,0 +1,130 @@
+{
+  "Actions": [
+    {
+      "Icon": "Images/iconplay",
+      "Name": "Play Sound",
+      "States": [
+        {
+          "Image": "Images/sound",
+          "TitleAlignment": "bottom",
+          "FontSize": "9"
+        }
+      ],
+      "SupportedInMultiActions": true,
+      "Tooltip": "Play a sound from Soundpad.",
+      "UUID": "com.hotspot.soundpadplay",
+      "PropertyInspectorPath": "PropertyInspector/SoundpadPlay/index.html"
+    },
+    {
+      "Icon": "Images/iconplayrand",
+      "Name": "Play Random Sound",
+      "States": [
+        {
+          "Image": "Images/soundrand",
+          "TitleAlignment": "bottom",
+          "FontSize": "9"
+        }
+      ],
+      "SupportedInMultiActions": true,
+      "Tooltip": "Play a random sound from Soundpad.",
+      "UUID": "com.hotspot.soundpadplayrand",
+      "PropertyInspectorPath": "PropertyInspector/SoundpadPlayRandom/index.html"
+    },
+    {
+      "Icon": "Images/playpauseIcon",
+      "Name": "Pause/Unpause Sound",
+      "States": [
+        {
+          "Image": "Images/playpauseAction",
+          "TitleAlignment": "bottom",
+          "FontSize": "9"
+        }
+      ],
+      "SupportedInMultiActions": true,
+      "Tooltip": "Pause/Unpause a sound",
+      "UUID": "com.hotspot.soundpadpause",
+      "PropertyInspectorPath": "PropertyInspector/soundpadpause/index.html"
+    },
+    {
+      "Icon": "Images/iconremove",
+      "Name": "Remove sound from Playlist",
+      "States": [
+        {
+          "Image": "Images/removeSound",
+          "TitleAlignment": "bottom",
+          "FontSize": "9"
+        }
+      ],
+      "SupportedInMultiActions": true,
+      "Tooltip": "Removes a sound from Soundpad at a specific index",
+      "UUID": "com.hotspot.soundpadremove",
+      "PropertyInspectorPath": "PropertyInspector/soundpadremove/index.html"
+    },
+    {
+      "Icon": "Images/iconstop",
+      "Name": "Stop",
+      "States": [
+        {
+          "Image": "Images/stop",
+          "TitleAlignment": "bottom",
+          "FontSize": "9"
+        }
+      ],
+      "SupportedInMultiActions": true,
+      "Tooltip": "Allows to stop the current playing sound in Soundpad.",
+      "UUID": "com.hotspot.soundpadstop",
+      "PropertyInspectorPath": "PropertyInspector/soundpadstop/index.html"
+    },
+    {
+      "Icon": "Images/iconrecord",
+      "Name": "Record PTT",
+      "States": [
+        {
+          "Image": "Images/recordptt",
+          "TitleAlignment": "bottom",
+          "FontSize": "9"
+        }
+      ],
+      "SupportedInMultiActions": true,
+      "Tooltip": "Records sound and creates a new Soundpad sound",
+      "UUID": "com.hotspot.soundpadrecordptt",
+      "PropertyInspectorPath": "PropertyInspector/soundpadrecordptt/index.html"
+    },
+    {
+      "Icon": "Images/iconload",
+      "Name": "Load Sound List",
+      "States": [
+        {
+          "Image": "Images/load",
+          "TitleAlignment": "bottom",
+          "FontSize": "9"
+        }
+      ],
+      "SupportedInMultiActions": true,
+      "Tooltip": "Loads an existing Soundpad Sound List (*.spl) file",
+      "UUID": "com.hotspot.soundpadloadsoundlist",
+      "PropertyInspectorPath": "PropertyInspector/soundpadloadsoundlist/index.html"
+    }
+  ],
+  "Author": "hotspot",
+  "Description": "Soundpad integration for your StreamDock. Play sounds directly from Soundpad, without needing to configure hotkeys",
+  "Name": "Soundpad Integration",
+  "Icon": "Images/pluginIcon",
+  "Version": "1.8",
+  "CodePath": "StreamDockQtPlugin.exe",
+  "Category": "SoundPad",
+  "CategoryIcon": "Images/categoryIcon",
+  "OS": [
+    {
+      "Platform": "mac",
+      "MinimumVersion": "10.11"
+    },
+    {
+      "Platform": "windows",
+      "MinimumVersion": "10"
+    }
+  ],
+  "Software": {
+    "MinimumVersion": "2.9"
+  }
+}
