@@ -1,0 +1,18 @@
+{
+  "Description": "Switch audio devices", 
+  "Name": "Switch audio devices", 
+  "Category": "Switch audio devices",
+  "com.mirabox.streamdock.switchAudio.myaction1": {
+    "Name": "Switch audio devices",
+    "Tooltip": "Switch audio devices"
+  },
+  "Localization": {
+    "选择设备": "Select the device",
+    "模式": "Mode",
+    "切换至选定": "Switch to Selected",
+    "选定来回切换": "Select switch back and forth",
+    "设备": "Devices",
+    "输入": "Input",
+    "输出": "Output"
+  }
+}

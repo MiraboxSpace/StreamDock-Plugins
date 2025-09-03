@@ -1,0 +1,18 @@
+{
+  "Description": "切换音频设备", 
+  "Name": "切换音频设备", 
+  "Category": "切换音频设备",
+  "com.mirabox.streamdock.switchAudio.myaction1": {
+    "Name": "切换音频设备",
+    "Tooltip": "切换音频设备"
+  },
+  "Localization": {
+    "选择设备": "选择设备",
+    "模式": "模式",
+    "切换至选定": "切换至选定",
+    "选定来回切换": "选定来回切换",
+    "设备": "设备",
+    "输入": "输入",
+    "输出": "输出"
+  }
+}

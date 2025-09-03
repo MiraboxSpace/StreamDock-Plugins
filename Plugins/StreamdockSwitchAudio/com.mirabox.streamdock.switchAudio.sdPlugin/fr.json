@@ -1,0 +1,18 @@
+{
+  "Description": "Changer d’appareil audio", 
+  "Name": "Changer d’appareil audio", 
+  "Category": "Changer d’appareil audio",
+  "com.mirabox.streamdock.switchAudio.myaction1": {
+    "Name": "Changer d’appareil audio",
+    "Tooltip": "Changer d’appareil audio"
+  },
+  "Localization": {
+    "选择设备": "Sélectionnez l’appareil",
+    "模式": "Mode",
+    "切换至选定": "Basculer vers Sélectionné",
+    "选定来回切换": "Sélectionnez Basculer l’arrondi",
+    "设备": "équipement",
+    "输入": "Entrée",
+    "输出": "Sortie"
+  }
+}
