@@ -62,6 +62,7 @@ std::shared_ptr<SynapseBatteryStats> SynapseReader::GetBatteryStats(const std::s
     return std::make_shared<SynapseBatteryStats>(it->second);
 }
 
+#include "StreamDockCPPSDK/StreamDockSDK/HSDLogger.h"
 //刷新线程
 void SynapseReader::RefreshStats() {
     char* UserProfile = nullptr;
@@ -77,26 +78,32 @@ void SynapseReader::RefreshStats() {
     }
     else {
         fs::path logDir = fs::path(UserProfile) / "AppData" / "Local" / "Razer" / "RazerAppEngine" / "User Data" / "Logs";
-        std::regex reg("background-manager\\d*\\.log");
+        std::regex reg("background-manager.log");
+        //std::regex reg1("background-manager\\d*\\.log");
 
         std::vector<fs::path> logFiles;
         for (const auto& entry : fs::directory_iterator(logDir)) {
             if (std::regex_match(entry.path().filename().string(), reg)) {
                 logFiles.push_back(entry.path());
             }
+            //else if(std::regex_match(entry.path().filename().string(), reg1)) {
+            //    logFiles.push_back(entry.path());
+            //}
         }
 
-        if (logFiles.empty()) {
+       /* if (logFiles.empty()) {
             return;
         }
 
         std::sort(logFiles.begin(), logFiles.end(), [](const fs::path& a, const fs::path& b) {
             return a.filename().string() > b.filename().string();
-            });
+            });*/
 
         logFilePath = logFiles.front();
     }
     free(UserProfile);
+
+    
 
     if (!fs::exists(logFilePath)) {
         return;
@@ -111,15 +118,20 @@ void SynapseReader::RefreshStats() {
     if (fileSize == lastMaxOffset) {
         return;
     }
-
     if (fileSize < lastMaxOffset) {
        lastMaxOffset = 0;
+    }
+    if (lastMaxOffset < 0) {
+        lastMaxOffset = 0; 
     }
 
     file.seekg(lastMaxOffset);
     std::string line;
 
-    while (std::getline(file, line)) {
+    HSDLogger::LogMessage("=================== logFilePath" + logFilePath.string() + 
+                          "version: " + std::to_string(synapseVersion) +
+                          "file size: " + std::to_string(lastMaxOffset) + " / " + std::to_string(fileSize));
+    while (std::getline(file, line)) { 
         if (synapseVersion == 3) {
             if (line.find("INFO 1 Battery Get By Device Handle") != std::string::npos) {
                 auto updateDate = ParseDateTime(line.substr(0, 24));
@@ -145,22 +157,37 @@ void SynapseReader::RefreshStats() {
             }
         }
         else if (synapseVersion == 4) {
-            if (line.find("info: opentab") != std::string::npos) {
+            if (line.find("info: call function handleOpenUITab") != std::string::npos) {
                 try {
                     auto updateDate = ParseDateTime(line.substr(1, 23));
                     auto jsonStart = line.find('{');
                     if (jsonStart != std::string::npos) {
-                        auto j = json::parse(line.substr(jsonStart));
+                        auto allJson = json::parse(line.substr(jsonStart));
+                        if (allJson.contains("newValue")) {
+                            auto newValueStr = allJson["newValue"].get<std::string>();
+                            auto j = nlohmann::json::parse(newValueStr);
 
-                        if (j.contains("hasBattery") && j["hasBattery"].get<bool>() &&
-                            j.contains("powerStatus") && !j["powerStatus"].is_null()) {
-                            SynapseBatteryStats stats;
-                            stats.DeviceName = j["name"]["en"].get<std::string>();
-                            stats.UpdateDate = updateDate;
-                            stats.percentage = j["powerStatus"]["level"].get<int>();
-                            stats.ChargingState = j["powerStatus"]["chargingStatus"].get<std::string>();
+                            if (j.contains("hasBattery") && j["hasBattery"].get<bool>() &&
+                                j.contains("powerStatus") && !j["powerStatus"].is_null()) {
+                                SynapseBatteryStats stats;
+                                stats.DeviceName = j["name"]["en"].get<std::string>();
+                                stats.UpdateDate = updateDate;
+                                stats.percentage = j["powerStatus"]["level"].get<int>();
+                                stats.ChargingState = j["powerStatus"]["chargingStatus"].get<std::string>();
 
-                            batteryStats[stats.DeviceName] = stats;
+                                // 转换时间
+                                std::time_t tt = std::chrono::system_clock::to_time_t(stats.UpdateDate);
+                                char timeBuf[32];
+                                std::strftime(timeBuf, sizeof(timeBuf), "%Y-%m-%d %H:%M:%S", std::localtime(&tt));
+                                HSDLogger::LogMessage(
+                                    "DeviceName=" + stats.DeviceName +
+                                    ", Percentage=" + std::to_string(stats.percentage) +
+                                    ", ChargingState=" + stats.ChargingState +
+                                    ", UpdateDate=" + std::string(timeBuf)
+                                );
+
+                                batteryStats[stats.DeviceName] = stats;
+                            }
                         }
                     }
                 }

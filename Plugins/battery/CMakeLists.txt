@@ -26,9 +26,14 @@ set(
   common.cpp
   main.cpp
 )
+
+
+
 add_executable(
   battery
   ${SOURCES}      )
+
+
 
 # Link StreamDock CPP SDK
 target_link_libraries(battery StreamDockSDK)

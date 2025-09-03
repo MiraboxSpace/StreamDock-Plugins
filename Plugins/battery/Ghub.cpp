@@ -57,7 +57,7 @@ nlohmann::json GHubReader::readSettingsDB(const std::string& fileName) {
 
     return result;
 }
-
+#include "StreamDockCPPSDK/StreamDockSDK/HSDLogger.h"
 // 刷新电池状态
 void GHubReader::refreshStats() {
     try {
@@ -68,6 +68,7 @@ void GHubReader::refreshStats() {
             std::lock_guard<std::mutex> lock(statsMutex);
             // 检查文件是否存在
             if (!fs::exists(ghubFullPath)) {
+                HSDLogger::LogMessage("not exists: " + ghubFullPath);
                 running = false;
                 return;
             }
@@ -75,13 +76,16 @@ void GHubReader::refreshStats() {
             // 读取JSON数据
             jObject = readSettingsDB(ghubFullPath);
             if (jObject.is_null()) {
+                HSDLogger::LogMessage("jObject is empty");
                 return;
             }
         }
+        //HSDLogger::LogMessage("============= json: " + jObject.dump());
 
         // 解析电池信息
         for (auto& [key, value] : jObject.items()) {
             if (key.find("battery") != std::string::npos) {
+                //HSDLogger::LogMessage("=========== find battery key：" + key);
                 std::vector<std::string> parts;
                 size_t start = 0;
                 size_t end = key.find('/');
@@ -120,7 +124,7 @@ GHubReader::~GHubReader() {
         refreshThread.join();
     }
 }
-
+#include "StreamDockCPPSDK/StreamDockSDK/HSDLogger.h"
 // 获取所有罗技设备
 std::vector<DeviceInfo> GHubReader::GetAllDevices() {
     if (batteryStats.empty()) {    //为空，则进入刷新线程里面刷新设备 
