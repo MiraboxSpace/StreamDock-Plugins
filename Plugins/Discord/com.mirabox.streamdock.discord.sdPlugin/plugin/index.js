@@ -9,7 +9,7 @@ const https = require('https');
 const { URLSearchParams } = require('url');
 const { getProxySettings } = require('get-proxy-settings');
 const { HttpsProxyAgent } = require('https-proxy-agent');
-
+const { withExponentialBackoff } = require('./utils/withExponentialBackoff');
 
 const plugin = new Plugins('discord');
 const eventEmitter = new EventEmitter();
@@ -29,19 +29,19 @@ process.on('unhandledRejection', (reason) => {
 
 const delay = (ms) => new Promise(resolve => setTimeout(resolve, ms));
 function debounce(fn, delay) {
-  let timer = null;
-  return function() {
-    const context = this;
-    const args = arguments;
-    
-    // 每次触发都清除之前的定时器
-    clearTimeout(timer);
-    
-    // 设置新的定时器
-    timer = setTimeout(() => {
-      fn.apply(context, args);
-    }, delay);
-  };
+    let timer = null;
+    return function () {
+        const context = this;
+        const args = arguments;
+
+        // 每次触发都清除之前的定时器
+        clearTimeout(timer);
+
+        // 设置新的定时器
+        timer = setTimeout(() => {
+            fn.apply(context, args);
+        }, delay);
+    };
 }
 const _login = async () => {
     try {
@@ -509,7 +509,7 @@ plugin.deafcontrol = new Actions({
         //设置耳机静音或解除静音
         client?.getVoiceSettings().then((res) => {
             res.deaf = !res.deaf
-            client?.setVoiceSettings({ deaf: res.deaf})
+            client?.setVoiceSettings({ deaf: res.deaf })
             if (res.deaf) {
                 plugin.setState(context, 1)
             } else {
@@ -531,7 +531,7 @@ plugin.voicechannel = new Actions({
         contexts.push(context);
         const VOICECHANNEL = () => {
             client?.getGuilds().then((res) => {//获取服务器
-                // log.info(context)
+                log.info(context)
                 let payload = {
                     settings: plugin.voicechannel.data[context]
                 }
@@ -552,10 +552,22 @@ plugin.voicechannel = new Actions({
                     });
                 }
             }).catch((error) => {
-                log.error('getChannels failed:', error);
+                log.error('getGuilds failed:', error);
             });
         }
-        VOICECHANNEL();
+        try {
+            const result = await withExponentialBackoff(() => {
+                log.info('正在尝试获取 Guilds...');
+                // 这里直接返回 Promise
+                return client.getGuilds();
+            });
+
+            // log.info('成功获取 Guilds：', result);
+            VOICECHANNEL();
+
+        } catch (error) {
+            log.error('操作在多次重试后仍失败：', error.message);
+        }
         eventEmitter.subscribe(context, VOICECHANNEL);
     },
     _willDisappear({ context }) { contexts.splice(contexts.indexOf(context), 1); },
@@ -646,10 +658,22 @@ plugin.textchannel = new Actions({
                     });
                 }
             }).catch((error) => {
-                log.error('getChannels failed:', error);
+                log.error('getGuilds failed:', error);
             });
         }
-        TEXTCHANNEL();
+        try {
+            const result = await withExponentialBackoff(() => {
+                log.info('正在尝试获取 Guilds...');
+                // 这里直接返回 Promise
+                return client.getGuilds();
+            });
+
+            // log.info('成功获取 Guilds：', result);
+            TEXTCHANNEL();
+
+        } catch (error) {
+            log.error('操作在多次重试后仍失败：', error.message);
+        }
         eventEmitter.subscribe(context, TEXTCHANNEL);
     },
     _willDisappear({ context }) { contexts.splice(contexts.indexOf(context), 1); },
@@ -914,7 +938,7 @@ plugin.userVolumeControl = new Actions({
                 title = title ? title : this.data[context].voice_states.filter(item => item.user.id == payload.user)[0].user?.username;
                 plugin.setTitle(context, title, 3, 6);
             } catch (error) {
-                log.error('用户信息为空',error)
+                log.error('用户信息为空', error)
             }
         }
         if ('mode' in payload) {
@@ -968,7 +992,7 @@ plugin.userVolumeControl = new Actions({
                     volume: voice_state.volume,
                     mute: voice_state.mute,
                 }
-                log.info(JSON.stringify(userVoiceSettings, null , 2))
+                log.info(JSON.stringify(userVoiceSettings, null, 2))
                 client?.setUserVoiceSettings(this.data[context].settings.user, userVoiceSettings).then((res) => {
                     const index = this.data[context].voice_states.findIndex(item => item.user.id === this.data[context].settings.user);
                     this.data[context].voice_states[index].mute = voice_state.mute;
@@ -1092,10 +1116,10 @@ plugin.setDevices = new Actions({
             client?.getVoiceSettings().then((res) => {
                 this.data[context].settings.inputDevices = res?.input?.availableDevices;
                 this.data[context].settings.outputDevices = res?.output?.availableDevices;
-                if(!this.data[context].settings?.output) {
+                if (!this.data[context].settings?.output) {
                     this.data[context].settings.output = res?.output?.device;
                 }
-                if(!this.data[context].settings?.input) {
+                if (!this.data[context].settings?.input) {
                     this.data[context].settings.input = res?.input?.device;
                 }
                 // this.data[context].settings.output = res?.output?.device;
@@ -1151,17 +1175,17 @@ const checkLogin = async () => {
     if (access_token == null) {
         try {
             // window.open("successful.html", "width=400,height=300");
-            plugin.sendToPropertyInspector({ open: true, type: 'authorization'})
+            plugin.sendToPropertyInspector({ open: true, type: 'authorization' })
         } catch (error) {
             log.error(error);
         }
         return
     }
-    if(client == null) {
+    if (client == null) {
         login();
         setTimeout(() => {
-            if(client == null) {
-                plugin.sendToPropertyInspector({ open: true, type: 'reluanch'})
+            if (client == null) {
+                plugin.sendToPropertyInspector({ open: true, type: 'reluanch' })
             }
         }, 5000)
     }
@@ -1180,34 +1204,34 @@ async function exchange_code(code) {
         postData.append('redirect_uri', REDIRECT_URI);
 
         const options = {
-        hostname: 'discord.com',
-        path: '/api/v10/oauth2/token',
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/x-www-form-urlencoded',
-            'Authorization': 'Basic ' + Buffer.from(`${clientId}:${clientSecret}`).toString('base64')
-        },
-        agent: data? new HttpsProxyAgent(data.https): null
+            hostname: 'discord.com',
+            path: '/api/v10/oauth2/token',
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/x-www-form-urlencoded',
+                'Authorization': 'Basic ' + Buffer.from(`${clientId}:${clientSecret}`).toString('base64')
+            },
+            agent: data ? new HttpsProxyAgent(data.https) : null
         };
 
         const req = https.request(options, (res) => {
-        let data = '';
-        
-        res.on('data', (chunk) => {
-            data += chunk;
-        });
+            let data = '';
 
-        res.on('end', () => {
-            if (res.statusCode >= 200 && res.statusCode < 300) {
-            resolve(JSON.parse(data));
-            } else {
-            reject(new Error(`Request failed with status code ${res.statusCode}: ${data}`));
-            }
-        });
+            res.on('data', (chunk) => {
+                data += chunk;
+            });
+
+            res.on('end', () => {
+                if (res.statusCode >= 200 && res.statusCode < 300) {
+                    resolve(JSON.parse(data));
+                } else {
+                    reject(new Error(`Request failed with status code ${res.statusCode}: ${data}`));
+                }
+            });
         });
 
         req.on('error', (error) => {
-        reject(error);
+            reject(error);
         });
 
         req.write(postData.toString());
@@ -1218,39 +1242,39 @@ async function exchange_code(code) {
 async function refresh_token(refresh_token) {
     const clientId = await getClientId('./data/globalData.json');
     const clientSecret = await getClientSecret('./data/globalData.json');
-  const data = await getProxySettings();
-  return new Promise((resolve, reject) => {
-    const postData = new URLSearchParams();
-    postData.append('grant_type', 'refresh_token');
-    postData.append('refresh_token', refresh_token);
+    const data = await getProxySettings();
+    return new Promise((resolve, reject) => {
+        const postData = new URLSearchParams();
+        postData.append('grant_type', 'refresh_token');
+        postData.append('refresh_token', refresh_token);
 
-    const options = {
-      hostname: 'discord.com',
-      path: '/api/v10/oauth2/token',
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/x-www-form-urlencoded',
-        'Authorization': `Basic ${Buffer.from(`${clientId}:${clientSecret}`).toString('base64')}`
-      },
-      agent: data? new HttpsProxyAgent(data.https): null
-    };
+        const options = {
+            hostname: 'discord.com',
+            path: '/api/v10/oauth2/token',
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/x-www-form-urlencoded',
+                'Authorization': `Basic ${Buffer.from(`${clientId}:${clientSecret}`).toString('base64')}`
+            },
+            agent: data ? new HttpsProxyAgent(data.https) : null
+        };
 
-    const req = https.request(options, (res) => {
-      let data = '';
-      res.on('data', (chunk) => data += chunk);
-      res.on('end', () => {
-        if (res.statusCode >= 200 && res.statusCode < 300) {
-          resolve(JSON.parse(data));
-        } else {
-          reject(new Error(`HTTP ${res.statusCode}: ${data}`));
-        }
-      });
+        const req = https.request(options, (res) => {
+            let data = '';
+            res.on('data', (chunk) => data += chunk);
+            res.on('end', () => {
+                if (res.statusCode >= 200 && res.statusCode < 300) {
+                    resolve(JSON.parse(data));
+                } else {
+                    reject(new Error(`HTTP ${res.statusCode}: ${data}`));
+                }
+            });
+        });
+
+        req.on('error', (error) => reject(error));
+        req.write(postData.toString());
+        req.end();
     });
-
-    req.on('error', (error) => reject(error));
-    req.write(postData.toString());
-    req.end();
-  });
 }
 
 //启动服务器
@@ -1304,16 +1328,16 @@ function startServer() {
             try {
                 const parsedData = JSON.parse(data);
                 log.info(parsedData);
-                
+
                 globalData = { ...parsedData, clientId: id, clientSecret: secret, lastUpdateTimeStamp: Date.now() };
-                
+
                 const filePath = './data/globalData.json';
                 await fs.outputJson(filePath, globalData);
-                
+
                 const code = await getCode(filePath);
                 const tokenData = await exchange_code(code);
                 tokenData.lastUpdateTimeStamp = Date.now();
-                
+
                 plugin.sendToPropertyInspector({ 'access_token': tokenData.access_token });
                 log.info(tokenData);
                 await saveToken(filePath, tokenData);
