@@ -1,0 +1,13 @@
+{
+  "Description": "Kontrollige oma veebikaamera seadeid StreamDockist.", 
+  "Name": "Cam juhtimine", 
+  "Category": "Cam juhtimine",
+  "com.mirabox.webcam.settings": {
+    "Name": "Veebikaamera seaded",
+    "Tooltip": "Kontrollige oma veebikaamera seadeid StreamDockist."
+  },
+  "com.mirabox.webcamptt.settings": {
+    "Name": "WebcamPTT seaded",
+    "Tooltip": "Kontrollige oma veebikaamera seadeid StreamDockist."
+  }
+}

@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <title>webcam settings</title>
+    <link rel="stylesheet" href="../../static/css/sdpi.css">
+</head>
+
+<body>
+    <div class="sdpi-wrapper" style="display: none">
+        <!-- webcam -->
+        <div type="select" class="sdpi-item">
+            <div class="sdpi-item-label">Webcam</div>
+            <select class="sdpi-item-value" id="webcamSelect">
+            </select>
+        </div>
+
+        <!-- property -->
+        <div type="select" class="sdpi-item">
+            <div class="sdpi-item-label">Property</div>
+            <select class="sdpi-item-value" id="propertySelect">
+                <option value="-Select Value-">--Select Value--</option>
+                <option value="Backlight Compensation">Backlight Compensation</option>
+                <option value="Brightness">Brightness</option>
+                <option value="ColorEnable">ColorEnable</option>
+                <option value="Contrast">Contrast</option>
+                <option value="Gain">Gain</option>
+                <option value="Gamma">Gamma</option>
+                <option value="Exposure">Exposure</option>
+                <option value="Focus">Focus</option>
+                <option value="Hue">Hue</option>
+                <option value="Iris">Iris</option>
+                <!-- <option value="Low Light Compensation">Low Light Compensation</option> -->
+                <option value="Pan">Pan</option>
+                <!-- <option value="Powerline Frequency (50/60)">Powerline Frequency (50/60)</option> -->
+                <option value="Roll">Roll</option>
+                <option value="Saturation">Saturation</option>
+                <option value="Sharpness">Sharpness</option>
+                <option value="Tilt">Tilt</option>
+                <option value="White Balance">White Balance</option>
+                <option value="Zoom">Zoom</option>
+            </select>
+        </div>
+
+        <!-- input -->
+        <div class="sdpi-item">
+            <div class="sdpi-item-label">Rotation Step</div>
+            <input class="sdpi-item-value" id="rotationStepInputElement" value="10"></input>
+        </div>
+
+        <!-- slider -->
+        <div type="range" class="sdpi-item">
+            <div class="sdpi-item-label">Dial Press Value</div>
+            <input type="range" id="temperaturesliderInputElement" class="sdpi-item-value" min="0" max="100">
+            <div id="sliderValue" class="slider-value">0</div>
+        </div>
+
+        <!-- fade -->
+        <div class="sdpi-item">
+            <div class="sdpi-item-label">Fade length(ms)</div>
+            <input class="sdpi-item-value" id="fadelengthInputElement" value="0"></input>
+        </div>
+        <div class="sdpi-item" id="fadelengthlabel1">
+            <div class="sdpi-item-value">Fade allows to gradually transition to the Value.</div>
+        </div>
+        <div class="sdpi-item" id="fadelengthlabel2">
+            <div class="sdpi-item-value">You set how long it'll take (in ms).</div>
+        </div>
+
+    </div>
+    <div class="sdpi-heading"></div>
+    <script src="../utils/common.js"></script>
+    <script src="../utils/action.js"></script>
+    <script src="index.js"></script>
+</body>
+
+<style>
+    .sdpi-item[type="checkbox"] .sdpi-item-label::after {
+        content: none !important;
+    }
+
+    .sdpi-item-value {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .sdpi-item-row {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .sdpi-item-child {
+        flex: 1;
+        margin-right: 10px;
+        white-space: nowrap;
+        /* 禁止换行 */
+    }
+
+    .sdpi-item-child label {
+        white-space: nowrap;
+        /* 确保标签文字不换行 */
+    }
+</style>
+
+</html>
