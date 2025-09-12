@@ -1,0 +1,13 @@
+{
+  "Description": "Controlla le impostazioni della tua webcam da StreamDock.", 
+  "Name": "Controllo Cam", 
+  "Category": "Controllo Cam",
+  "com.mirabox.webcam.settings": {
+    "Name": "Impostazioni webcam",
+    "Tooltip": "Controlla le impostazioni della tua webcam da StreamDock."
+  },
+  "com.mirabox.webcamptt.settings": {
+    "Name": "Impostazioni webcamPTT",
+    "Tooltip": "Controlla le impostazioni della tua webcam da StreamDock."
+  }
+}

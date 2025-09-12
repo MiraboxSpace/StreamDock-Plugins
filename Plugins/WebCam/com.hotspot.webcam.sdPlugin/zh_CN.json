@@ -1,0 +1,13 @@
+{
+  "Description": "从StreamDock控制您的网络摄像头设置。", 
+  "Name": "Cam控制", 
+  "Category": "Cam控制",
+  "com.mirabox.webcam.settings": {
+    "Name": "Webcam设置",
+    "Tooltip": "从StreamDock控制您的网络摄像头设置。"
+  },
+  "com.mirabox.webcamptt.settings": {
+    "Name": "WebcamPTT设置",
+    "Tooltip": "从StreamDock控制您的网络摄像头设置。"
+  }
+}

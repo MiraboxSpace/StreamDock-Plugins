@@ -1,0 +1,13 @@
+{
+  "Description": "StreamDockからウェブカメラの設定を制御します。", 
+  "Name": "CAM コントロール", 
+  "Category": "CAM コントロール",
+  "com.mirabox.webcam.settings": {
+    "Name": "Webcam 設定",
+    "Tooltip": "StreamDockからウェブカメラの設定を制御します。"
+  },
+  "com.mirabox.webcamptt.settings": {
+    "Name": "WebcamPTT 設定",
+    "Tooltip": "StreamDockからウェブカメラの設定を制御します。"
+  }
+}

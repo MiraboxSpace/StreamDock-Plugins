@@ -1,0 +1,76 @@
+{
+  "Actions": [
+    {
+      "Icon": "Images/icon",
+      "Name": "Webcam Settings",
+      "States": [
+        {
+          "Image": "Images/webcamAction",
+          "TitleAlignment": "bottom",
+          "FontSize": "14"
+        }
+      ],
+      "SupportedInMultiActions": true,
+      "Tooltip": "Control your webcam settings from the StreamDock.",
+      "UUID": "com.mirabox.webcam.settings",
+      "PropertyInspectorPath": "propertyInspector/action1/index.html"
+    },
+    {
+      "Icon": "Images/icon",
+      "Name": "Webcam SettingsDial",
+      "States": [
+        {
+          "Image": "Images/webcamAction",
+          "TitleAlignment": "bottom",
+          "FontSize": "14"
+        }
+      ],
+       "Controllers": [
+        "Knob"
+      ],
+      "SupportedInMultiActions": true,
+      "Tooltip": "Control your webcam settings from the StreamDock.",
+      "UUID": "com.mirabox.webcam.settingsdial",
+      "PropertyInspectorPath": "propertyInspector/action3/index.html"
+    },
+    {
+      "Icon": "Images/pttIcon",
+      "Name": "WebcamPTT Settings",
+      "States": [
+        {
+          "Image": "Images/webcamActionPTT",
+          "TitleAlignment": "bottom",
+          "FontSize": "14"
+        }
+      ],
+      "SupportedInMultiActions": true,
+      "Tooltip": "Control your webcamptt settings from the StreamDock.",
+      "UUID": "com.mirabox.webcamptt.settings",
+      "PropertyInspectorPath": "propertyInspector/action2/index.html"
+    }
+  ],
+  "SDKVersion": 1,
+  "Author": "Hotspot",
+  "Category": "Cam Control",
+  "CategoryIcon": "images/categoryIcon",
+  "CodePath": "StreamDockQtPlugin.exe",
+  "CodePathMac": "StreamDockQtPlugin",
+  "CodePathWin": "StreamDockQtPlugin.exe",
+  "Description": "Control your webcam from the StreamDock.",
+  "Name": "Cam Control",
+  "Icon": "images/categoryIcon",
+  "Version": "1.0.0",
+  "OS": [
+    {
+      "Platform": "mac",
+      "MinimumVersion": "10.11"
+    },
+    {
+      "Platform": "windows",
+      "MinimumVersion": "10"
+    }
+  ],
+  "Software": {
+    "MinimumVersion": "2.9"
+  }
+}
