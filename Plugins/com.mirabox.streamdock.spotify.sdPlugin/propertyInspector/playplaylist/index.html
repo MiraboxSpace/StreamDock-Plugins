@@ -10,21 +10,30 @@
 <body>
     <div class="sdpi-wrapper p-3">
         <div class="mb-3">
+            <label class="form-label">Playback Device</label>
+            <select class="form-select" id="deviceSelect">
+                <option value="">Loading...</option>
+            </select>
+        </div>
+
+        <div class="my-3">
+            <button class="btn w-100" id="refresh">refresh</button>
+        </div>
+
+        <div class="mb-3">
             <label class="form-label">Playlist</label>
             <select class="form-select" id="uri">
                 <option value="">Loading...</option>
             </select>
         </div>
-<input type="checkbox" class="form-check-input" id="showCover" checked>
+
+        <div class="mb-3 form-check">
+            <input type="checkbox" class="form-check-input" id="showCover" checked>
             <label class="form-check-label" for="showCover">Show Cover</label>
         </div>
-<label class="form-label">Playback Device</label>
-            <select class="form-select" id="deviceSelect">
-                <option value="">Loading...</option>
-            </select>
-        </div>
-<button class="btn w-100" id="refresh">refresh</button>
-<button class="btn btn-danger w-100" id="logoutBtn">Logout</button>
+
+        <div class="mt-4">
+            <button class="btn btn-danger w-100" id="logoutBtn">Logout</button>
         </div>
     </div>
 
