@@ -2,7 +2,7 @@
 
 [English](README.md) |  [中文](README_CN.md)
 
-A plugin for Stream Deck, developed in C++ using the Stream Deck SDK.
+A plugin for Stream Dock, developed in C++ using the Stream DockSDK.
 
 ## Building
 

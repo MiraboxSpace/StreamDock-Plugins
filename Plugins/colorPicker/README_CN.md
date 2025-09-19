@@ -1,6 +1,6 @@
 # SDPlugins
 
-为 Stream Deck 开发的插件，使用 C++ 和 Stream Deck SDK。
+为 Stream Dock开发的插件，使用 C++ 和 Stream Dock SDK。
 
 ## 构建
 
