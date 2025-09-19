@@ -1,0 +1,39 @@
+{
+    "Actions": [
+        {
+            "Icon": "images/action1.png",
+            "Name": "屏幕取色器",
+            "States": [
+                {
+                    "FontSize": "12",
+                    "TitleAlignment": "center",
+                    "Image": "images/action1.png"
+                }
+            ],
+            "SupportedInMultiActions": false,
+            "Tooltip": "屏幕取色器",
+            "UUID": "com.mirabox.steamdock.colorpicker.myaction1",
+            "PropertyInspectorPath": "action1/index.html"
+        }
+    ],
+    "SDKVersion": 1,
+    "Author": "icloudwar",
+    "Category": "屏幕取色器",
+    "CategoryIcon": "images/icon",
+    "CodePath": "colorPicker.exe",
+    "CodePathMac": "colorPicker",
+    "CodePathWin": "colorPicker.exe",
+    "Description": "屏幕取色器",
+    "Name": "屏幕取色器",
+    "Icon": "images/icon",
+    "Version": "1.0",
+    "OS": [
+        {
+            "Platform": "mac",
+            "MinimumVersion": "10.11"
+        }
+    ],
+    "Software": {
+        "MinimumVersion": "2.9"
+    }
+}

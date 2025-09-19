@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <title>StreamDeck.ColorPicker</title>
+    <link rel="stylesheet" href="../static/css/sdpi.css">
+</head>
+
+<body>
+    <div class="sdpi-wrapper">
+        <div class="sdpi-item" id="dvSelectType">
+            <div class="sdpi-item-label">取样方式</div>
+            <select class="sdpi-item-value select sdProperty" id="SelectType">
+                <option value="onKeyPress">按下</option>
+                <option value="dynamic">动态</option>
+                <option value="fixed">固定</option>
+            </select>
+        </div>
+        <div class="sdpi-item" id="dvDisplayFormatType">
+            <div class="sdpi-item-label">显示方式</div>
+            <select class="sdpi-item-value select sdProperty" id="DisplayFormatType">
+                <option value="colorName">颜色名称</option>
+                <option value="RGBValue">RGB 值</option>
+                <option value="hexValue">十六进制值</option>
+            </select>
+        </div>
+        <div type="checkbox" class="sdpi-item" id="configuration">
+            <div class="sdpi-item-label">复制到剪贴板</div>
+            <div class="sdpi-item-value min100">
+                <div class="sdpi-item-child">
+                    <input id="copyToClipboard" class="sdProperty sdCheckbox" type="checkbox" name="configuration">
+                    <label for="copyToClipboard" class="sdpi-item-label">
+                        <span></span>
+                    </label>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+<script src="../static/utils/common.js"></script>
+<script src="../static/action.js"></script>
+<script src="index.js"></script>
+
+</html>
