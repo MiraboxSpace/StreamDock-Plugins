@@ -1,3 +1,12 @@
+<!--
+ * @Author: JKWTCN jkwtcn@icloud.com
+ * @Date: 2025-09-19 09:46:32
+ * @LastEditors: Please set LastEditors
+ * @LastEditTime: 2025-09-19 10:04:23
+ * @FilePath: \StreamDock-Plugins\Plugins\colorPicker\README_CN.md
+ * @Description: 
+-->
+
 # SDPlugins
 
 为 Stream Dock开发的插件，使用 C++ 和 Stream Dock SDK。
@@ -10,7 +19,7 @@
 
 - CMake 3.10 或更高版本
 - C++ 编译器（macOS 上的 GCC）
-- Stream Deck SDK 依赖项
+- Stream Dock SDK 依赖项
 
 ### 兼容性
 
@@ -48,7 +57,7 @@
 
 ## 使用
 
-1. 打开 Stream Deck 软件。
+1. 打开 Stream Dock 软件。
 2. 从插件添加新操作。
 3. 根据需要配置操作。
 
