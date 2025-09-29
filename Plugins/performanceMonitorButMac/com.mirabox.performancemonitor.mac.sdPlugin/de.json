@@ -1,0 +1,14 @@
+{
+    "Localization": {
+        "性能监视器": "Leistungsmonitor",
+        "CPU占用率": "CPU-Auslastung",
+        "低阈值": "Niedriger Schwellenwert",
+        "危险阈值": "Gefährlicher Schwellenwert",
+        "内存使用率": "Speicherauslastung",
+        "硬盘使用率": "Festplattenauslastung",
+        "GPU占用率": "GPU-Auslastung",
+        "网速": "Netzwerkgeschwindigkeit",
+        "CPU温度": "CPU-Temperatur",
+        "GPU温度": "GPU-Temperatur"
+    }
+}

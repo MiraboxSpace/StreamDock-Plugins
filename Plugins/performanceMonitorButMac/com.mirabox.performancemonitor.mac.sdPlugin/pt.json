@@ -1,0 +1,14 @@
+{
+    "Localization": {
+        "性能监视器": "Monitor de Desempenho",
+        "CPU占用率": "Taxa de Uso da CPU",
+        "低阈值": "Limite Baixo",
+        "危险阈值": "Limite Perigoso",
+        "内存使用率": "Taxa de Uso da Memória",
+        "硬盘使用率": "Taxa de Uso do Disco",
+        "GPU占用率": "Taxa de Uso da GPU",
+        "网速": "Velocidade da Rede",
+        "CPU温度": "Temperatura da CPU",
+        "GPU温度": "Temperatura da GPU"
+    }
+}
