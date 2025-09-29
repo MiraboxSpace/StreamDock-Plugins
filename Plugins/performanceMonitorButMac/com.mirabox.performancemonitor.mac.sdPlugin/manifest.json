@@ -1,0 +1,129 @@
+{
+    "Actions": [
+        {
+            "Icon": "images/cpu.png",
+            "Name": "CPU占用率",
+            "States": [
+                {
+                    "FontSize": "12",
+                    "TitleAlignment": "center",
+                    "Image": "images/cpu.png"
+                }
+            ],
+            "SupportedInMultiActions": true,
+            "Tooltip": "",
+            "UUID": "com.mirabox.performancemonitor.action1",
+            "PropertyInspectorPath": "PropertyInspector/cpuUsageRate.html"
+        },
+        {
+            "Icon": "images/memory.png",
+            "Name": "内存使用率",
+            "States": [
+                {
+                    "FontSize": "12",
+                    "TitleAlignment": "center",
+                    "Image": "images/memory.png"
+                }
+            ],
+            "SupportedInMultiActions": true,
+            "Tooltip": "",
+            "UUID": "com.mirabox.performancemonitor.action2",
+            "PropertyInspectorPath": "PropertyInspector/memoryUsageRate.html"
+        },
+        {
+            "Icon": "images/disk.png",
+            "Name": "硬盘使用率",
+            "States": [
+                {
+                    "FontSize": "12",
+                    "TitleAlignment": "center",
+                    "Image": "images/disk.png"
+                }
+            ],
+            "SupportedInMultiActions": true,
+            "Tooltip": "",
+            "UUID": "com.mirabox.performancemonitor.action3",
+            "PropertyInspectorPath": "PropertyInspector/diskUsageRate.html"
+        },
+        {
+            "Icon": "images/disk.png",
+            "Name": "GPU使用率",
+            "States": [
+                {
+                    "FontSize": "12",
+                    "TitleAlignment": "center",
+                    "Image": "images/disk.png"
+                }
+            ],
+            "SupportedInMultiActions": true,
+            "Tooltip": "",
+            "UUID": "com.mirabox.performancemonitor.action4",
+            "PropertyInspectorPath": "PropertyInspector/gpuUsageRate.html"
+        },
+        {
+            "Icon": "images/network.png",
+            "Name": "网速",
+            "States": [
+                {
+                    "FontSize": "12",
+                    "TitleAlignment": "center",
+                    "Image": "images/network.png"
+                }
+            ],
+            "SupportedInMultiActions": true,
+            "Tooltip": "",
+            "UUID": "com.mirabox.performancemonitor.action5",
+            "PropertyInspectorPath": "PropertyInspector/dataRate.html"
+        },
+        {
+            "Icon": "images/temperature.png",
+            "Name": "CPU温度",
+            "States": [
+                {
+                    "FontSize": "12",
+                    "TitleAlignment": "center",
+                    "Image": "images/temperature.png"
+                }
+            ],
+            "SupportedInMultiActions": true,
+            "Tooltip": "",
+            "UUID": "com.mirabox.performancemonitor.action6",
+            "PropertyInspectorPath": "PropertyInspector/cpuTemperature.html"
+        },
+        {
+            "Icon": "images/temperature.png",
+            "Name": "GPU温度",
+            "States": [
+                {
+                    "FontSize": "12",
+                    "TitleAlignment": "center",
+                    "Image": "images/temperature.png"
+                }
+            ],
+            "SupportedInMultiActions": true,
+            "Tooltip": "",
+            "UUID": "com.mirabox.performancemonitor.action7",
+            "PropertyInspectorPath": "PropertyInspector/gpuTemperature.html"
+        }
+    ],
+    "SDKVersion": 1,
+    "Author": "icloudwar",
+    "Category": "性能监视器",
+    "CategoryIcon": "images/icon",
+    "CodePath": "performanceMonitor.exe",
+    "CodePathMac": "performanceMonitor",
+    "CodePathWin": "performanceMonitor.exe",
+    "Description": "性能监视器",
+    "Name": "性能监视器",
+    "Icon": "images/icon",
+    "Version": "1.0",
+    "OS": [
+        {
+            "Platform": "mac",
+            "MinimumVersion": "10.11"
+        }
+    ],
+    "Software": {
+        "MinimumVersion": "2.9"
+    }
+}

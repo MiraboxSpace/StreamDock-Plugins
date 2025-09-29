@@ -1,0 +1,14 @@
+{
+    "Localization": {
+        "性能监视器": "Performance Monitor",
+        "CPU占用率": "CPU Usage Rate",
+        "低阈值": "Low Threshold",
+        "危险阈值": "Danger Threshold",
+        "内存使用率": "Memory Usage Rate",
+        "硬盘使用率": "Disk Usage Rate",
+        "GPU占用率": "GPU Usage Rate",
+        "网速": "Network Speed",
+        "CPU温度": "CPU Temperature",
+        "GPU温度": "GPU Temperature"
+    }
+}
