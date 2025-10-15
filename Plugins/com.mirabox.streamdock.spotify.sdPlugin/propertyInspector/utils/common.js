@@ -72,7 +72,7 @@ $.debounce = (fn, delay) => {
 };
 
 // 绑定限制数字方法
-Array.from($('input[type="num"]', true)).forEach(item => {
+Array.from($('input[type="number"]', true)).forEach(item => {
     item.addEventListener('input', function limitNum() {
         if (!item.value || /^\d+$/.test(item.value)) return;
         item.value = item.value.slice(0, -1);

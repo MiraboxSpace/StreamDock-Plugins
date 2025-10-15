@@ -42,7 +42,7 @@ show.addEventListener('change', function () {
 });
 
 step.addEventListener('input', function () {
-    $settings.step = step.value;
+    $settings.step = parseInt(step.value);
 });
 
 logoutBtn.addEventListener('click', () => {
