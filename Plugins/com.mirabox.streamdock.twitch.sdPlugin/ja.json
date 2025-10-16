@@ -1,0 +1,100 @@
+{
+  "Name": "けいれん",
+  "Description": "Twitchのライブブロードキャスト操作",
+  "com.mirabox.streamdock.twitch_live_streaming.action1": {
+    "Name": "チャットメッセージ",
+    "Tooltip": "「/」コマンドラインを使用せずに編集可能なチャットメッセージを送信します。"
+  },
+  "com.mirabox.streamdock.twitch_live_streaming.action2": {
+    "Name": "クリアチャット",
+    "Tooltip": "チャット インターフェイスをクリアし、ユーザーに表示されないようにします。  （経営には影響ありません）"
+  },
+  "com.mirabox.streamdock.twitch_live_streaming.action3": {
+    "Name": "絵文字チャット",
+    "Tooltip": "絵文字のみを使用したチャットを有効にします。"
+  },
+  "com.mirabox.streamdock.twitch_live_streaming.action4": {
+    "Name": "フォロワーチャット",
+    "Tooltip": "チャットをフォロワーに制限するをオンにします。"
+  },
+  "com.mirabox.streamdock.twitch_live_streaming.action5": {
+    "Name": "広告を再生",
+    "Tooltip": "配信中に広告を再生します。"
+  },
+  "com.mirabox.streamdock.twitch_live_streaming.action6": {
+    "Name": "ゆっくりおしゃべり",
+    "Tooltip": "チャット メッセージの頻度の制限を有効にします。"
+  },
+  "com.mirabox.streamdock.twitch_live_streaming.action7": {
+    "Name": "購読者チャット",
+    "Tooltip": "加入者専用チャットを有効にします。"
+  },
+  "com.mirabox.streamdock.twitch_live_streaming.action8": {
+    "Name": "シールド防御モード",
+    "Tooltip": "生放送ルーム内のすべての情報を緊急遮断します。"
+  },
+  "com.mirabox.streamdock.twitch_live_streaming.action9": {
+    "Name": "観客",
+    "Tooltip": "ライブブロードキャストルームのリアルタイムの人数を表示します。"
+  },
+  "com.mirabox.streamdock.twitch_live_streaming.action10": {
+    "Name": "実況プレイ/ゲームタイトル",
+    "Tooltip": "生放送ルームのタイトルとゲームの種類。"
+  },
+  "com.mirabox.streamdock.twitch_live_streaming.action11": {
+    "Name": "マークアップストリームを作成する",
+    "Tooltip": "ライブ録画でのタグ付け。"
+  },
+  "com.mirabox.streamdock.twitch_live_streaming.action12": {
+    "Name": "クリップの作成",
+    "Tooltip": "指定した長さのクリップを作成します。"
+  },
+  "com.mirabox.streamdock.twitch_live_streaming.action13": {
+    "Name": "前のクリップ",
+    "Tooltip": "クリップ コンテンツ内の最新のクリップを開きます。"
+  },
+  "Category": "けいれん",
+  "Localization": {
+    "执行成功！": "実行成功！",
+    "执行失败！": "実行失敗！",
+    "请输入合法内容！": "有効な内容を入力してください！",
+    "执行异常！请重启软件！": "実行エラー！ソフトを再起動してください！",
+    "播放成功！": "再生成功！",
+    "播放广告冷却中！": "広告のクールダウン中！",
+    "请您打开直播间后再试！": "ライブを開いてから再度お試しください！",
+    "请求至少更新一个属性！": "リクエストは少なくとも1つの属性を更新する必要があります！",
+    "请求过于频繁，请稍后再试！": "リクエストが多すぎます。後ほどお試しください！",
+    "字符串太长！": "文字列が長すぎます！",
+    "账户": "アカウント",
+    "未登录": "未ログイン",
+    "添加账户": "アカウント追加",
+    "注销": "ログアウト",
+    "消息": "メッセージ",
+    "不支持包含'/'的聊天指令，列如'/announce'": "'/'を含むチャットコマンドはサポートされていません。例: '/announce'",
+    "0分钟 (任意关注着)": "0分 (任意のフォロワー)",
+    "10分钟 (最常用)": "10分 (最も一般的)",
+    "30分钟": "30分",
+    "1小时": "1時間",
+    "1天": "1日",
+    "1周": "1週間",
+    "3个月": "3ヶ月",
+    "时间长度": "時間の長さ",
+    "30 秒": "30秒",
+    "60 秒": "60秒",
+    "90 秒": "90秒",
+    "120 秒": "120秒",
+    "150 秒": "150秒",
+    "180 秒": "180秒",
+    "3 秒": "3秒",
+    "5 秒": "5秒",
+    "10 秒": "10秒",
+    "15 秒": "15秒",
+    "直播标题": "配信タイトル",
+    "游戏": "ゲーム",
+    "授权成功": "認証成功",
+    "您已成功授权！": "認証に成功しました！",
+    "Click Me": "クリック",
+    "0/140": "0/140",
+    "0/500": "0/500"
+}
+}

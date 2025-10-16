@@ -1,0 +1,106 @@
+{
+  "Name": "Twitch",
+  "Description": "Twitch直播操作",
+  "com.mirabox.streamdock.twitch_live_streaming.action1": {
+    "Name": "聊天消息",
+    "Tooltip": "发送可编辑的聊天消息，不包含“/”命令行。"
+  },
+  "com.mirabox.streamdock.twitch_live_streaming.action2": {
+    "Name": "清除聊天",
+    "Tooltip": "清空聊天界面，用户不可见。（管理不受影响）"
+  },
+  "com.mirabox.streamdock.twitch_live_streaming.action3": {
+    "Name": "表情聊天",
+    "Tooltip": "开启只能使用表情聊天。"
+  },
+  "com.mirabox.streamdock.twitch_live_streaming.action4": {
+    "Name": "关注者聊天",
+    "Tooltip": "开启限制为关注者聊天。"
+  },
+  "com.mirabox.streamdock.twitch_live_streaming.action5": {
+    "Name": "播放广告",
+    "Tooltip": "在直播间内播放广告。"
+  },
+  "com.mirabox.streamdock.twitch_live_streaming.action6": {
+    "Name": "慢聊",
+    "Tooltip": "开启限制聊天信息频率。"
+  },
+  "com.mirabox.streamdock.twitch_live_streaming.action7": {
+    "Name": "订阅者聊天",
+    "Tooltip": "开启仅限订阅者聊天。"
+  },
+  "com.mirabox.streamdock.twitch_live_streaming.action8": {
+    "Name": "盾防模式",
+    "Tooltip": "紧急屏蔽直播间内所有信息。"
+  },
+  "com.mirabox.streamdock.twitch_live_streaming.action9": {
+    "Name": "观众",
+    "Tooltip": "显示直播间内实时人数。"
+  },
+  "com.mirabox.streamdock.twitch_live_streaming.action10": {
+    "Name": "实时播放/游戏标题",
+    "Tooltip": "直播间的标题以及游戏类型。"
+  },
+  "com.mirabox.streamdock.twitch_live_streaming.action11": {
+    "Name": "创建标记流",
+    "Tooltip": "在直播录像中标记。"
+  },
+  "com.mirabox.streamdock.twitch_live_streaming.action12": {
+    "Name": "创建剪辑",
+    "Tooltip": "创建指定时长的剪辑。"
+  },
+  "com.mirabox.streamdock.twitch_live_streaming.action13": {
+    "Name": "上一个剪辑",
+    "Tooltip": "打开剪辑内容中最新剪辑。"
+  },
+  "com.mirabox.streamdock.twitch_live_streaming.action14": {
+    "Name": "添加直播标记",
+    "Tooltip": "添加直播标记"
+  },
+  "Category": "Twitch",
+  "Localization": {
+    "频道": "频道",
+    "留空'频道'参数时，将对你自己的频道执行操作。": "留空'频道'参数时，将对你自己的频道执行操作。",
+    "执行成功！": "执行成功！",
+    "执行失败！": "执行失败！",
+    "请输入合法内容！": "请输入合法内容！",
+    "执行异常！请重启软件！": "执行异常！请重启软件！",
+    "播放成功！": "播放成功！",
+    "播放广告冷却中！": "播放广告冷却中！",
+    "请您打开直播间后再试！": "请您打开直播间后再试！",
+    "请求至少更新一个属性！": "请求至少更新一个属性！",
+    "请求过于频繁，请稍后再试！": "请求过于频繁，请稍后再试！",
+    "字符串太长！": "字符串太长！",
+    "账户": "账户",
+    "未登录": "未登录",
+    "添加账户": "添加账户",
+    "注销": "注销",
+    "消息": "消息",
+    "不支持包含'/'的聊天指令，列如'/announce'": "不支持包含'/'的聊天指令，列如'/announce'",
+    "0分钟 (任意关注着)": "0分钟 (任意关注着)",
+    "10分钟 (最常用)": "10分钟 (最常用)",
+    "30分钟": "30分钟",
+    "1小时": "1小时",
+    "1天": "1天",
+    "1周": "1周",
+    "3个月": "3个月",
+    "时间长度": "时间长度",
+    "30 秒": "30 秒",
+    "60 秒": "60 秒",
+    "90 秒": "90 秒",
+    "120 秒": "120 秒",
+    "150 秒": "150 秒",
+    "180 秒": "180 秒",
+    "3 秒": "3 秒",
+    "5 秒": "5 秒",
+    "10 秒": "10 秒",
+    "15 秒": "15 秒",
+    "直播标题": "直播标题",
+    "游戏": "游戏",
+    "授权成功": "授权成功",
+    "您已成功授权！": "您已成功授权！",
+    "Click Me": "Click Me",
+    "0/140": "0/140",
+    "0/500": "0/500"
+  }
+}

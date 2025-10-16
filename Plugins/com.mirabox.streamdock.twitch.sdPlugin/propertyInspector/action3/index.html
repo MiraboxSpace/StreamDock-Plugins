@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <title>模板 - 属性检查器</title>
+    <link rel="stylesheet" href="../../static/css/sdpi.css">
+</head>
+
+<body>
+    <div class="sdpi-wrapper">
+        <!-- <div class="sdpi-heading">模板</div> -->
+        <div type="select" class="sdpi-item">
+            <div class="sdpi-item-label">账户</div>
+            <select class="sdpi-item-value" id="user">
+                <option value="1" disabled selected>未登录</option>
+                <option value="addUser">添加账户</option>
+            </select>
+        </div>
+        <!-- button -->
+        <div class="sdpi-item">
+            <div class="sdpi-item-label">注销</div>
+            <button class="sdpi-item-value" id="clearUser">Click Me</button>
+        </div>
+        <div id="reference"></div>
+
+    </div>
+
+    <script src="../utils/common.js"></script>
+    <script src="../utils/action.js"></script>
+    <script src="index.js"></script>
+</body>
+
+</html>

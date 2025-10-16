@@ -394,7 +394,7 @@
   "Description": "spotify operation",
   "Category": "spotify",
   "CategoryIcon": "static/icon/icon@2x.png",
-  "Version": "1.0.0",
+  "Version": "1.0.1",
   "URL": "https://mirabox.key123.vip/home",
   "OS": [
     {
