@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <title>模板 - 属性检查器</title>
+    <link rel="stylesheet" href="../../static/css/sdpi.css">
+</head>
+
+<body>
+    <style>
+        .temp {
+            flex-wrap: wrap;
+            justify-content: flex-end;
+        }
+
+        #selects {
+            width: 225px;
+            /* background: #fff; */
+            margin-right: 14px;
+            font-size: 15px;
+            border: 1px solid yellow;
+            /* background: rgb(63, 63, 71); */
+            color: var(--sdpi-color);
+            padding: 0px;
+            min-height: 26px;
+        }
+
+        #selects option {
+            background: #3d3d3d;
+            padding-left: 4px;
+            pointer-events: auto;
+        }
+
+        #selects option:hover {
+            background-color: rgb(82, 122, 255);
+            color: #fff;
+        }
+
+        .overflow-text {
+            white-space: nowrap;
+            /* 不换行 */
+            overflow: hidden;
+            text-overflow: ellipsis;
+            /* 显示省略号 */
+        }
+    </style>
+    <div class="sdpi-wrapper">
+        <!-- <div class="sdpi-heading">模板</div> -->
+        <div type="select" class="sdpi-item">
+            <div class="sdpi-item-label">账户</div>
+            <select class="sdpi-item-value" id="user">
+                <option value="1" disabled selected>未登录</option>
+                <option value="addUser">添加账户</option>
+            </select>
+        </div>
+        <!-- button -->
+        <div class="sdpi-item">
+            <div class="sdpi-item-label">注销</div>
+            <button class="sdpi-item-value" id="clearUser">Click Me</button>
+        </div>
+        <!-- input -->
+        <div class="sdpi-item">
+            <div class="sdpi-item-label">直播标题</div>
+            <input class="sdpi-item-value" id="channelTitle"></input>
+        </div>
+        <!-- input -->
+        <div class="sdpi-item temp">
+            <div class="sdpi-item-label">游戏</div>
+            <input class="sdpi-item-value" id="gameId" list="selects"></input>
+            <datalist id="selects" style="display: none; pointer-events: auto;"></datalist>
+        </div>
+
+
+        <div id="reference"></div>
+    </div>
+    <script src="../utils/common.js"></script>
+    <script src="../utils/action.js"></script>
+    <script src="index.js"></script>
+</body>
+
+</html>

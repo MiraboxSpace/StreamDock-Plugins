@@ -1,0 +1,106 @@
+{
+  "Name": "Twitch",
+  "Description": "Twitch live broadcast operations",
+  "com.mirabox.streamdock.twitch_live_streaming.action1": {
+    "Name": "Chat messages",
+    "Tooltip": "Send an editable chat message without the \"/\" command line."
+  },
+  "com.mirabox.streamdock.twitch_live_streaming.action2": {
+    "Name": "clear chat",
+    "Tooltip": " Clear the chat interface and make it invisible to users.  (Management is not affected)"
+  },
+  "com.mirabox.streamdock.twitch_live_streaming.action3": {
+    "Name": "Emoticon chat",
+    "Tooltip": "Enable chat using emoticons only."
+  },
+  "com.mirabox.streamdock.twitch_live_streaming.action4": {
+    "Name": "Follower Chat",
+    "Tooltip": "Turn on restricting chat to followers."
+  },
+  "com.mirabox.streamdock.twitch_live_streaming.action5": {
+    "Name": "Play Ad",
+    "Tooltip": "Play an ad during the live stream."
+  },
+  "com.mirabox.streamdock.twitch_live_streaming.action6": {
+    "Name": "Chat slowly",
+    "Tooltip": "Enable limiting the frequency of chat messages."
+  },
+  "com.mirabox.streamdock.twitch_live_streaming.action7": {
+    "Name": "Subscriber chat",
+    "Tooltip": "Enable subscriber-only chat."
+  },
+  "com.mirabox.streamdock.twitch_live_streaming.action8": {
+    "Name": "Shield defense mode",
+    "Tooltip": "Emergency blocking of all information in the live broadcast room."
+  },
+  "com.mirabox.streamdock.twitch_live_streaming.action9": {
+    "Name": "audience",
+    "Tooltip": "Displays the real-time number of people in the live broadcast room."
+  },
+  "com.mirabox.streamdock.twitch_live_streaming.action10": {
+    "Name": "Live play/game titles",
+    "Tooltip": "The title of the live broadcast room and the type of game."
+  },
+  "com.mirabox.streamdock.twitch_live_streaming.action11": {
+    "Name": "Create a markup stream",
+    "Tooltip": "Tag in live recording."
+  },
+  "com.mirabox.streamdock.twitch_live_streaming.action12": {
+    "Name": "Create clip",
+    "Tooltip": "Creates a clip of a specified duration."
+  },
+  "com.mirabox.streamdock.twitch_live_streaming.action13": {
+    "Name": "previous clip",
+    "Tooltip": "Open the latest clip in the clip content."
+  },
+  "com.mirabox.streamdock.twitch_live_streaming.action14": {
+    "Name": "Add marker",
+    "Tooltip": "Add marker"
+  },
+  "Category": "Twitch",
+  "Localization": {
+    "频道": "Channel",
+    "留空'频道'参数时，将对你自己的频道执行操作。": "Empty 'Channel' performs action on your own channel.",
+    "执行成功！": "Execution successful!",
+    "执行失败！": "Execution failed!",
+    "请输入合法内容！": "Please enter valid content!",
+    "执行异常！请重启软件！": "Execution error! Restart the software!",
+    "播放成功！": "Playback successful!",
+    "播放广告冷却中！": "Ad on cooldown!",
+    "请您打开直播间后再试！": "Please open the live stream and try again!",
+    "请求至少更新一个属性！": "Request must update at least one attribute!",
+    "请求过于频繁，请稍后再试！": "Requests too frequent, try again later!",
+    "字符串太长！": "String too long!",
+    "账户": "Account",
+    "未登录": "Not logged in",
+    "添加账户": "Add account",
+    "注销": "Logout",
+    "消息": "Message",
+    "不支持包含'/'的聊天指令，列如'/announce'": "Chat commands with '/' are not supported, e.g. '/announce'",
+    "0分钟 (任意关注着)": "0 minutes (any follower)",
+    "10分钟 (最常用)": "10 minutes (most common)",
+    "30分钟": "30 minutes",
+    "1小时": "1 hour",
+    "1天": "1 day",
+    "1周": "1 week",
+    "3个月": "3 months",
+    "时间长度": "Duration",
+    "30 秒": "30 seconds",
+    "60 秒": "60 seconds",
+    "90 秒": "90 seconds",
+    "120 秒": "120 seconds",
+    "150 秒": "150 seconds",
+    "180 秒": "180 seconds",
+    "3 秒": "3 seconds",
+    "5 秒": "5 seconds",
+    "10 秒": "10 seconds",
+    "15 秒": "15 seconds",
+    "直播标题": "Stream title",
+    "游戏": "Game",
+    "授权成功": "Authorization successful",
+    "您已成功授权！": "You have been successfully authorized!",
+    "Click Me": "Click Me",
+    "0/140": "0/140",
+    "0/500": "0/500"
+  }
+}

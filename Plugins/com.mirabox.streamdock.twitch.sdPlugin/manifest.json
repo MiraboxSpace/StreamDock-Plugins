@@ -1,0 +1,328 @@
+{
+  "Actions": [
+    {
+      "Icon": "static/img/31.png",
+      "Name": "聊天消息",
+      "States": [
+        {
+          "FontSize": "16",
+          "TitleAlignment": "bottom",
+          "Image": "static/img/17.png"
+        }
+      ],
+      "Controllers": [
+        "Keypad",
+        "Information"
+      ],
+      "UserTitleEnabled": true,
+      "SupportedInMultiActions": false,
+      "Tooltip": "行动说明",
+      "UUID": "com.mirabox.streamdock.twitch_live_streaming.action1",
+      "PropertyInspectorPath": "propertyInspector/action1/index.html"
+    },
+    {
+      "Icon": "static/img/22.png",
+      "Name": "清除聊天",
+      "States": [
+        {
+          "FontSize": "16",
+          "TitleAlignment": "bottom",
+          "Image": "static/img/3.png"
+        }
+      ],
+      "Controllers": [
+        "Keypad",
+        "Information"
+      ],
+      "UserTitleEnabled": true,
+      "SupportedInMultiActions": false,
+      "Tooltip": "行动说明",
+      "UUID": "com.mirabox.streamdock.twitch_live_streaming.action2",
+      "PropertyInspectorPath": "propertyInspector/action2/index.html"
+    },
+    {
+      "Icon": "static/img/20.png",
+      "Name": "表情聊天",
+      "States": [
+        {
+          "State": 0,
+          "FontSize": "16",
+          "TitleAlignment": "bottom",
+          "Image": "static/img/6.png"
+        },
+        {
+          "State": 1,
+          "FontSize": "16",
+          "TitleAlignment": "bottom",
+          "Image": "static/img/2.png"
+        }
+      ],
+      "Controllers": [
+        "Keypad",
+        "Information"
+      ],
+      "UserTitleEnabled": true,
+      "SupportedInMultiActions": false,
+      "Tooltip": "行动说明",
+      "UUID": "com.mirabox.streamdock.twitch_live_streaming.action3",
+      "PropertyInspectorPath": "propertyInspector/action3/index.html"
+    },
+    {
+      "Icon": "static/img/28.png",
+      "Name": "关注者聊天",
+      "States": [
+        {
+          "State": 0,
+          "FontSize": "16",
+          "TitleAlignment": "bottom",
+          "Image": "static/img/13.png"
+        },
+        {
+          "State": 1,
+          "FontSize": "16",
+          "TitleAlignment": "bottom",
+          "Image": "static/img/11.png"
+        }
+      ],
+      "Controllers": [
+        "Keypad",
+        "Information"
+      ],
+      "UserTitleEnabled": true,
+      "SupportedInMultiActions": false,
+      "Tooltip": "行动说明",
+      "UUID": "com.mirabox.streamdock.twitch_live_streaming.action4",
+      "PropertyInspectorPath": "propertyInspector/action4/index.html"
+    },
+    {
+      "Icon": "static/img/21.png",
+      "Name": "播放广告",
+      "States": [
+        {
+          "FontSize": "16",
+          "TitleAlignment": "bottom",
+          "Image": "static/img/7.png"
+        }
+      ],
+      "Controllers": [
+        "Keypad",
+        "Information"
+      ],
+      "UserTitleEnabled": true,
+      "SupportedInMultiActions": false,
+      "Tooltip": "行动说明",
+      "UUID": "com.mirabox.streamdock.twitch_live_streaming.action5",
+      "PropertyInspectorPath": "propertyInspector/action5/index.html"
+    },
+    {
+      "Icon": "static/img/30.png",
+      "Name": "慢聊",
+      "States": [
+        {
+          "State": 0,
+          "FontSize": "16",
+          "TitleAlignment": "bottom",
+          "Image": "static/img/16.png"
+        },
+        {
+          "State": 1,
+          "FontSize": "16",
+          "TitleAlignment": "bottom",
+          "Image": "static/img/14.png"
+        }
+      ],
+      "Controllers": [
+        "Keypad",
+        "Information"
+      ],
+      "UserTitleEnabled": true,
+      "SupportedInMultiActions": false,
+      "Tooltip": "行动说明",
+      "UUID": "com.mirabox.streamdock.twitch_live_streaming.action6",
+      "PropertyInspectorPath": "propertyInspector/action6/index.html"
+    },
+    {
+      "Icon": "static/img/25.png",
+      "Name": "订阅者聊天",
+      "States": [
+        {
+          "State": 0,
+          "FontSize": "16",
+          "TitleAlignment": "bottom",
+          "Image": "static/img/9.png"
+        },
+        {
+          "State": 1,
+          "FontSize": "16",
+          "TitleAlignment": "bottom",
+          "Image": "static/img/12.png"
+        }
+      ],
+      "Controllers": [
+        "Keypad",
+        "Information"
+      ],
+      "UserTitleEnabled": true,
+      "SupportedInMultiActions": false,
+      "Tooltip": "行动说明",
+      "UUID": "com.mirabox.streamdock.twitch_live_streaming.action7",
+      "PropertyInspectorPath": "propertyInspector/action7/index.html"
+    },
+    {
+      "Icon": "static/img/26.png",
+      "Name": "盾防模式",
+      "States": [
+        {
+          "State": 0,
+          "FontSize": "16",
+          "TitleAlignment": "bottom",
+          "Image": "static/img/10.png"
+        },
+        {
+          "State": 1,
+          "FontSize": "16",
+          "TitleAlignment": "bottom",
+          "Image": "static/img/8.png"
+        }
+      ],
+      "Controllers": [
+        "Keypad",
+        "Information"
+      ],
+      "UserTitleEnabled": true,
+      "SupportedInMultiActions": false,
+      "Tooltip": "行动说明",
+      "UUID": "com.mirabox.streamdock.twitch_live_streaming.action8",
+      "PropertyInspectorPath": "propertyInspector/action8/index.html"
+    },
+    {
+      "Icon": "static/img/27.png",
+      "Name": "观众",
+      "States": [
+        {
+          "Title": "1",
+          "State": 0,
+          "FontSize": "16",
+          "TitleAlignment": "bottom",
+          "Image": "static/img/18.png"
+        }
+      ],
+      "Controllers": [
+        "Keypad",
+        "Information"
+      ],
+      "UserTitleEnabled": true,
+      "SupportedInMultiActions": false,
+      "Tooltip": "行动说明",
+      "UUID": "com.mirabox.streamdock.twitch_live_streaming.action9",
+      "PropertyInspectorPath": "propertyInspector/action9/index.html"
+    },
+    {
+      "Icon": "static/img/24.png",
+      "Name": "实时播放/游戏标题",
+      "States": [
+        {
+          "FontSize": "16",
+          "TitleAlignment": "bottom",
+          "Image": "static/img/5.png"
+        }
+      ],
+      "Controllers": [
+        "Keypad",
+        "Information"
+      ],
+      "UserTitleEnabled": true,
+      "SupportedInMultiActions": false,
+      "Tooltip": "行动说明",
+      "UUID": "com.mirabox.streamdock.twitch_live_streaming.action10",
+      "PropertyInspectorPath": "propertyInspector/action10/index.html"
+    },
+    {
+      "Icon": "static/img/29.png",
+      "Name": "创建剪辑",
+      "States": [
+        {
+          "FontSize": "16",
+          "TitleAlignment": "bottom",
+          "Image": "static/img/15.png"
+        }
+      ],
+      "Controllers": [
+        "Keypad",
+        "Information"
+      ],
+      "UserTitleEnabled": true,
+      "SupportedInMultiActions": false,
+      "Tooltip": "行动说明",
+      "UUID": "com.mirabox.streamdock.twitch_live_streaming.action12",
+      "PropertyInspectorPath": "propertyInspector/action12/index.html"
+    },
+    {
+      "Icon": "static/img/19.png",
+      "Name": "上一个剪辑",
+      "States": [
+        {
+          "FontSize": "16",
+          "TitleAlignment": "bottom",
+          "Image": "static/img/1.png"
+        }
+      ],
+      "Controllers": [
+        "Keypad",
+        "Information"
+      ],
+      "UserTitleEnabled": true,
+      "SupportedInMultiActions": false,
+      "Tooltip": "行动说明",
+      "UUID": "com.mirabox.streamdock.twitch_live_streaming.action13",
+      "PropertyInspectorPath": "propertyInspector/action13/index.html"
+    },
+    {
+      "Icon": "static/img/33.png",
+      "Name": "添加直播标记",
+      "States": [
+        {
+          "FontSize": "16",
+          "TitleAlignment": "bottom",
+          "Image": "static/img/32.png"
+        }
+      ],
+      "Controllers": [
+        "Keypad",
+        "Information"
+      ],
+      "UserTitleEnabled": true,
+      "SupportedInMultiActions": false,
+      "Tooltip": "行动说明",
+      "UUID": "com.mirabox.streamdock.twitch_live_streaming.action14",
+      "PropertyInspectorPath": "propertyInspector/action14/index.html"
+    }
+  ],
+  "SDKVersion": 1,
+  "Author": "HotSpot",
+  "Name": "Twitch",
+  "Icon": "static/img/twitch.png",
+  "CodePathWin": "plugin/index.js",
+  "CodePathMac": "plugin/index.js",
+  "Description": "插件描述",
+  "Category": "Twitch",
+  "CategoryIcon": "static/img/twitch.png",
+  "Version": "1.0.3",
+  "URL": "http://video.hotspotek.com.cn/",
+  "OS": [
+    {
+      "Platform": "mac",
+      "MinimumVersion": "10.11"
+    },
+    {
+      "Platform": "windows",
+      "MinimumVersion": "7"
+    }
+  ],
+  "Software": {
+    "MinimumVersion": "3.10.188.226"
+  },
+  "Nodejs": {
+    "Version": "20"
+  }
+}

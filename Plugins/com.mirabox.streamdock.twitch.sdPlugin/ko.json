@@ -1,0 +1,100 @@
+{
+    "Name": "경련",
+    "Description": "Twitch 라이브 방송 운영",
+    "com.mirabox.streamdock.twitch_live_streaming.action1": {
+        "Name": "채팅 메시지",
+        "Tooltip": "\"/\" 명령줄 없이 편집 가능한 채팅 메시지를 보냅니다."
+    },
+    "com.mirabox.streamdock.twitch_live_streaming.action2": {
+        "Name": "채팅 지우기",
+        "Tooltip": " 채팅 인터페이스를 지우고 사용자에게 보이지 않게 만듭니다.  (관리에는 영향을 미치지 않습니다)"
+    },
+    "com.mirabox.streamdock.twitch_live_streaming.action3": {
+        "Name": "이모티콘 채팅",
+        "Tooltip": "이모티콘만 사용하여 채팅을 활성화하세요."
+    },
+    "com.mirabox.streamdock.twitch_live_streaming.action4": {
+        "Name": "팔로어 채팅",
+        "Tooltip": "팔로워로 채팅 제한을 켭니다."
+    },
+    "com.mirabox.streamdock.twitch_live_streaming.action5": {
+    "Name": "광고 재생",
+    "Tooltip": "라이브 방송 중 광고를 재생합니다."
+    },
+    "com.mirabox.streamdock.twitch_live_streaming.action6": {
+        "Name": "천천히 채팅하세요",
+        "Tooltip": "채팅 메시지 빈도 제한을 활성화합니다."
+    },
+    "com.mirabox.streamdock.twitch_live_streaming.action7": {
+        "Name": "구독자 채팅",
+        "Tooltip": "구독자 전용 채팅을 활성화합니다."
+    },
+    "com.mirabox.streamdock.twitch_live_streaming.action8": {
+        "Name": "쉴드 디펜스 모드",
+        "Tooltip": "생방송실 내 모든 정보를 긴급 차단합니다."
+    },
+    "com.mirabox.streamdock.twitch_live_streaming.action9": {
+        "Name": "청중",
+        "Tooltip": "실시간 방송실 인원수를 표시합니다."
+    },
+    "com.mirabox.streamdock.twitch_live_streaming.action10": {
+        "Name": "라이브 플레이/게임 타이틀",
+        "Tooltip": "생방송방의 제목과 게임의 종류입니다."
+    },
+    "com.mirabox.streamdock.twitch_live_streaming.action11": {
+        "Name": "마크업 스트림 만들기",
+        "Tooltip": "실시간 녹화에 태그를 지정하세요."
+    },
+    "com.mirabox.streamdock.twitch_live_streaming.action12": {
+        "Name": "클립 만들기",
+        "Tooltip": "지정된 지속 시간의 클립을 생성합니다."
+    },
+    "com.mirabox.streamdock.twitch_live_streaming.action13": {
+        "Name": "이전 클립",
+        "Tooltip": "클립 콘텐츠에서 최신 클립을 엽니다."
+    },
+    "Category": "경련",
+    "Localization": {
+    "执行成功！": "실행 성공!",
+    "执行失败！": "실행 실패!",
+    "请输入合法内容！": "유효한 내용을 입력하세요!",
+    "执行异常！请重启软件！": "실행 오류! 소프트웨어를 재시작하세요!",
+    "播放成功！": "재생 성공!",
+    "播放广告冷却中！": "광고 재사용 대기 중!",
+    "请您打开直播间后再试！": "라이브 방송을 열고 다시 시도하세요!",
+    "请求至少更新一个属性！": "요청은 최소 하나의 속성을 업데이트해야 합니다!",
+    "请求过于频繁，请稍后再试！": "요청이 너무 잦습니다. 나중에 다시 시도하세요!",
+    "字符串太长！": "문자열이 너무 깁니다!",
+    "账户": "계정",
+    "未登录": "로그인 안 됨",
+    "添加账户": "계정 추가",
+    "注销": "로그아웃",
+    "消息": "메시지",
+    "不支持包含'/'的聊天指令，列如'/announce'": "'/'가 포함된 채팅 명령은 지원되지 않습니다. 예: '/announce'",
+    "0分钟 (任意关注着)": "0분 (모든 팔로워)",
+    "10分钟 (最常用)": "10분 (가장 일반적)",
+    "30分钟": "30분",
+    "1小时": "1시간",
+    "1天": "1일",
+    "1周": "1주",
+    "3个月": "3개월",
+    "时间长度": "시간 길이",
+    "30 秒": "30초",
+    "60 秒": "60초",
+    "90 秒": "90초",
+    "120 秒": "120초",
+    "150 秒": "150초",
+    "180 秒": "180초",
+    "3 秒": "3초",
+    "5 秒": "5초",
+    "10 秒": "10초",
+    "15 秒": "15초",
+    "直播标题": "라이브 제목",
+    "游戏": "게임",
+    "授权成功": "인증 성공",
+    "您已成功授权！": "성공적으로 인증되었습니다!",
+    "Click Me": "클릭하세요",
+    "0/140": "0/140",
+    "0/500": "0/500"
+}
+}

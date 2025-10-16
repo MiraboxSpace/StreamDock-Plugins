@@ -1,0 +1,100 @@
+{
+  "Name": "Contração muscular",
+  "Description": "Operações de transmissão ao vivo do Twitch",
+  "com.mirabox.streamdock.twitch_live_streaming.action1": {
+    "Name": "Mensagens de bate-papo",
+    "Tooltip": "Envie uma mensagem de bate-papo editável sem a linha de comando \"/\"."
+  },
+  "com.mirabox.streamdock.twitch_live_streaming.action2": {
+    "Name": "limpar conversa",
+    "Tooltip": " Limpe a interface de bate-papo e torne-a invisível para os usuários.  (A gestão não é afetada)"
+  },
+  "com.mirabox.streamdock.twitch_live_streaming.action3": {
+    "Name": "Bate-papo emoticon",
+    "Tooltip": "Ative o bate-papo usando apenas emoticons."
+  },
+  "com.mirabox.streamdock.twitch_live_streaming.action4": {
+    "Name": "Bate-papo com seguidores",
+    "Tooltip": "Ative a restrição de bate-papo para seguidores."
+  },
+  "com.mirabox.streamdock.twitch_live_streaming.action5": {
+    "Name": "Reproduzir anúncio",
+    "Tooltip": "Reproduzir um anúncio durante a live."
+  },
+  "com.mirabox.streamdock.twitch_live_streaming.action6": {
+    "Name": "Converse devagar",
+    "Tooltip": "Ative a limitação da frequência das mensagens de chat."
+  },
+  "com.mirabox.streamdock.twitch_live_streaming.action7": {
+    "Name": "Bate-papo do assinante",
+    "Tooltip": "Ative o bate-papo somente para assinantes."
+  },
+  "com.mirabox.streamdock.twitch_live_streaming.action8": {
+    "Name": "Modo de defesa do escudo",
+    "Tooltip": "Bloqueio de emergência de todas as informações na sala de transmissão ao vivo."
+  },
+  "com.mirabox.streamdock.twitch_live_streaming.action9": {
+    "Name": "público",
+    "Tooltip": "Exibe o número de pessoas em tempo real na sala de transmissão ao vivo."
+  },
+  "com.mirabox.streamdock.twitch_live_streaming.action10": {
+    "Name": "Jogos/títulos de jogos ao vivo",
+    "Tooltip": "O título da sala de transmissão ao vivo e o tipo de jogo."
+  },
+  "com.mirabox.streamdock.twitch_live_streaming.action11": {
+    "Name": "Crie um fluxo de marcação",
+    "Tooltip": "Tag na gravação ao vivo."
+  },
+  "com.mirabox.streamdock.twitch_live_streaming.action12": {
+    "Name": "Criar clipe",
+    "Tooltip": "Cria um clipe com duração especificada."
+  },
+  "com.mirabox.streamdock.twitch_live_streaming.action13": {
+    "Name": "clipe anterior",
+    "Tooltip": "Abra o clipe mais recente no conteúdo do clipe."
+  },
+  "Category": "Contração muscular",
+  "Localization": {
+    "执行成功！": "Executado com sucesso!",
+    "执行失败！": "Falha na execução!",
+    "请输入合法内容！": "Por favor, insira conteúdo válido!",
+    "执行异常！请重启软件！": "Erro na execução! Reinicie o software!",
+    "播放成功！": "Reprodução bem-sucedida!",
+    "播放广告冷却中！": "Anúncio em recarga!",
+    "请您打开直播间后再试！": "Abra a live e tente novamente!",
+    "请求至少更新一个属性！": "A solicitação deve atualizar pelo menos um atributo!",
+    "请求过于频繁，请稍后再试！": "Solicitações muito frequentes, tente mais tarde!",
+    "字符串太长！": "String muito longa!",
+    "账户": "Conta",
+    "未登录": "Não logado",
+    "添加账户": "Adicionar conta",
+    "注销": "Sair",
+    "消息": "Mensagem",
+    "不支持包含'/'的聊天指令，列如'/announce'": "Comandos de chat com '/' não são suportados, ex: '/announce'",
+    "0分钟 (任意关注着)": "0 minutos (qualquer seguidor)",
+    "10分钟 (最常用)": "10 minutos (mais comum)",
+    "30分钟": "30 minutos",
+    "1小时": "1 hora",
+    "1天": "1 dia",
+    "1周": "1 semana",
+    "3个月": "3 meses",
+    "时间长度": "Duração",
+    "30 秒": "30 segundos",
+    "60 秒": "60 segundos",
+    "90 秒": "90 segundos",
+    "120 秒": "120 segundos",
+    "150 秒": "150 segundos",
+    "180 秒": "180 segundos",
+    "3 秒": "3 segundos",
+    "5 秒": "5 segundos",
+    "10 秒": "10 segundos",
+    "15 秒": "15 segundos",
+    "直播标题": "Título da live",
+    "游戏": "Jogo",
+    "授权成功": "Autorização bem-sucedida",
+    "您已成功授权！": "Você foi autorizado com sucesso!",
+    "Click Me": "Clique aqui",
+    "0/140": "0/140",
+    "0/500": "0/500"
+}
+}

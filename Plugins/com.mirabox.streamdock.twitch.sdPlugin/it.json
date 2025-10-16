@@ -1,0 +1,100 @@
+{
+  "Name": "Contrazione",
+  "Description": "Twitch operazioni di trasmissione in diretta",
+  "com.mirabox.streamdock.twitch_live_streaming.action1": {
+    "Name": "Messaggi di chat",
+    "Tooltip": "Invia un messaggio di chat modificabile senza la riga di comando \"/\"."
+  },
+  "com.mirabox.streamdock.twitch_live_streaming.action2": {
+    "Name": "chiacchierata chiara",
+    "Tooltip": " Cancella l'interfaccia della chat e rendila invisibile agli utenti.  (La gestione non è influenzata)"
+  },
+  "com.mirabox.streamdock.twitch_live_streaming.action3": {
+    "Name": "Chat con emoticon",
+    "Tooltip": "Abilita la chat utilizzando solo le emoticon."
+  },
+  "com.mirabox.streamdock.twitch_live_streaming.action4": {
+    "Name": "Chat dei follower",
+    "Tooltip": "Attiva la limitazione della chat ai follower."
+  },
+  "com.mirabox.streamdock.twitch_live_streaming.action5": {
+    "Name": "Riproduci pubblicità",
+    "Tooltip": "Riproduce una pubblicità durante la diretta."
+  },
+  "com.mirabox.streamdock.twitch_live_streaming.action6": {
+    "Name": "Chatta lentamente",
+    "Tooltip": "Abilita la limitazione della frequenza dei messaggi di chat."
+  },
+  "com.mirabox.streamdock.twitch_live_streaming.action7": {
+    "Name": "Chatta con gli abbonati",
+    "Tooltip": "Abilita la chat riservata agli abbonati."
+  },
+  "com.mirabox.streamdock.twitch_live_streaming.action8": {
+    "Name": "Modalità di difesa dello scudo",
+    "Tooltip": "Blocco d'emergenza di tutte le informazioni nella sala di trasmissione in diretta."
+  },
+  "com.mirabox.streamdock.twitch_live_streaming.action9": {
+    "Name": "pubblico",
+    "Tooltip": "Visualizza il numero di persone in tempo reale nella sala di trasmissione dal vivo."
+  },
+  "com.mirabox.streamdock.twitch_live_streaming.action10": {
+    "Name": "Titoli di giochi/giochi dal vivo",
+    "Tooltip": "Il titolo della sala di trasmissione in diretta e il tipo di gioco."
+  },
+  "com.mirabox.streamdock.twitch_live_streaming.action11": {
+    "Name": "Crea un flusso di markup",
+    "Tooltip": "Tagga nella registrazione dal vivo."
+  },
+  "com.mirabox.streamdock.twitch_live_streaming.action12": {
+    "Name": "Crea clip",
+    "Tooltip": "Crea una clip di una durata specificata."
+  },
+  "com.mirabox.streamdock.twitch_live_streaming.action13": {
+    "Name": "clip precedente",
+    "Tooltip": "Apri l'ultima clip nel contenuto della clip."
+  },
+  "Category": "Contrazione",
+  "Localization": {
+    "执行成功！": "Eseguito con successo!",
+    "执行失败！": "Esecuzione fallita!",
+    "请输入合法内容！": "Inserisci contenuto valido!",
+    "执行异常！请重启软件！": "Errore di esecuzione! Riavvia il software!",
+    "播放成功！": "Riproduzione riuscita!",
+    "播放广告冷却中！": "Pubblicità in ricarica!",
+    "请您打开直播间后再试！": "Apri la live e riprova!",
+    "请求至少更新一个属性！": "La richiesta deve aggiornare almeno un attributo!",
+    "请求过于频繁，请稍后再试！": "Richieste troppo frequenti, riprova più tardi!",
+    "字符串太长！": "Stringa troppo lunga!",
+    "账户": "Account",
+    "未登录": "Non loggato",
+    "添加账户": "Aggiungi account",
+    "注销": "Esci",
+    "消息": "Messaggio",
+    "不支持包含'/'的聊天指令，列如'/announce'": "Comandi chat con '/' non supportati, es: '/announce'",
+    "0分钟 (任意关注着)": "0 minuti (qualsiasi follower)",
+    "10分钟 (最常用)": "10 minuti (più comune)",
+    "30分钟": "30 minuti",
+    "1小时": "1 ora",
+    "1天": "1 giorno",
+    "1周": "1 settimana",
+    "3个月": "3 mesi",
+    "时间长度": "Durata",
+    "30 秒": "30 secondi",
+    "60 秒": "60 secondi",
+    "90 秒": "90 secondi",
+    "120 秒": "120 secondi",
+    "150 秒": "150 secondi",
+    "180 秒": "180 secondi",
+    "3 秒": "3 secondi",
+    "5 秒": "5 secondi",
+    "10 秒": "10 secondi",
+    "15 秒": "15 secondi",
+    "直播标题": "Titolo live",
+    "游戏": "Gioco",
+    "授权成功": "Autorizzazione riuscita",
+    "您已成功授权！": "Sei stato autorizzato con successo!",
+    "Click Me": "Cliccami",
+    "0/140": "0/140",
+    "0/500": "0/500"
+}
+}

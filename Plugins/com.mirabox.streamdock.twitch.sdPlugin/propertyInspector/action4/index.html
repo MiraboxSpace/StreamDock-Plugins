@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <title>模板 - 属性检查器</title>
+    <link rel="stylesheet" href="../../static/css/sdpi.css">
+</head>
+
+<body>
+    <div class="sdpi-wrapper">
+        <!-- <div class="sdpi-heading">模板</div> -->
+        <div type="select" class="sdpi-item">
+            <div class="sdpi-item-label">账户</div>
+            <select class="sdpi-item-value" id="user">
+                <option value="1" disabled selected>未登录</option>
+                <option value="addUser">添加账户</option>
+            </select>
+        </div>
+        <!-- button -->
+        <div class="sdpi-item">
+            <div class="sdpi-item-label">注销</div>
+            <button class="sdpi-item-value" id="clearUser">Click Me</button>
+        </div>
+        <div type="select" class="sdpi-item">
+            <div class="sdpi-item-label">时间长度</div>
+            <select class="sdpi-item-value" id="followerDuration">
+                <option value="0" selected>0分钟 (任意关注着)</option>
+                <option value="10">10分钟 (最常用)</option>
+                <option value="30">30分钟</option>
+                <option value="60">1小时</option>
+                <option value="1440">1天</option>
+                <option value="10080">1周</option>
+                <option value="129600">3个月</option>
+            </select>
+        </div>
+        <div id="reference"></div>
+
+    </div>
+
+    <script src="../utils/common.js"></script>
+    <script src="../utils/action.js"></script>
+    <script src="index.js"></script>
+</body>
+
+</html>
