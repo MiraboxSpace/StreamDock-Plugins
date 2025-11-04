@@ -1,0 +1,96 @@
+{
+  "Name": "Discord",
+  "Description": "Contrôler Discord",
+  "com.hotspot.streamdock.discord.deaf": {
+    "Name": "Muet casque",
+    "Tooltip": "Muet casque / Annuler muet"
+  },
+  "com.hotspot.streamdock.discord.mute": {
+    "Name": "Muet micro",
+    "Tooltip": "Muet micro / Annuler muet"
+  },
+  "com.hotspot.streamdock.discord.voicechannel": {
+    "Name": "Canal vocal",
+    "Tooltip": "Rejoindre le canal vocal"
+  },
+  "com.hotspot.streamdock.discord.textchannel": {
+    "Name": "Canal texte",
+    "Tooltip": "Rejoindre le canal texte"
+  },
+  "com.hotspot.streamdock.discord.pushtotalk": {
+    "Name": "Appuyer pour parler",
+    "Tooltip": "Appuyer pour parler"
+  },
+  "com.hotspot.streamdock.discord.pushtomute": {
+    "Name": "Appuyer pour couper le son",
+    "Tooltip": "Appuyer pour couper le son"
+  },
+  "com.hotspot.streamdock.discord.volumeControl": {
+    "Name": "Contrôle du volume",
+    "Tooltip": "Contrôler le volume du périphérique audio"
+  },
+  "com.hotspot.streamdock.discord.notice": {
+    "Name": "Notifications",
+    "Tooltip": "Recevoir des notifications"
+  },
+  "com.hotspot.streamdock.discord.setDevices": {
+    "Name": "Configurer les périphériques audio",
+    "Tooltip": "Configurer les périphériques audio"
+  },
+  "com.hotspot.streamdock.discord.userVolumeControl": {
+    "Name": "Contrôle du volume utilisateur",
+    "Tooltip": "Contrôle du volume utilisateur"
+  },
+  "com.hotspot.streamdock.discord.voiceboard": {
+    "Name": "Panneau vocal",
+    "Tooltip": "Panneau vocal"
+  },
+  "com.hotspot.streamdock.discord.mutecontrol": {
+    "Name": "Contrôle du micro",
+    "Tooltip": "Contrôle du micro"
+  },
+  "com.hotspot.streamdock.discord.deafcontrol": {
+    "Name": "Contrôle du casque",
+    "Tooltip": "Contrôle du casque"
+  },
+  "Category": "Discord",
+  "Localization": {
+    "请启动Discord": "Veuillez démarrer Discord",
+    "请求授权": "Save",
+    "Logout": "Se déconnecter",
+    "授权": "Autoriser",
+    "服务器": "Serveur",
+    "文本通道": "Canal texte",
+    "设备": "Périphériques",
+    "输入": "Entrée",
+    "输出": "Sortie",
+    "音量": "Volume",
+    "语音通道": "Canal vocal",
+    "获取ID": "Obtenir l'ID",
+    "用户": "Utilisateur",
+    "理想音量": "Volume idéal",
+    "调整单位": "Unité de réglage",
+    "图标样式": "Style d'icône",
+    "静音类型": "Type de silence",
+    "模式": "Mode",
+    "设置": "Paramètres",
+    "设置输入设备": "Configurer le périphérique d'entrée",
+    "设置输出设备": "Configurer le périphérique de sortie",
+    "设置二者": "Configurer les deux",
+    "调整": "Ajuster",
+    "静音": "Silencieux",
+    "动态垂直": "Vertical dynamique",
+    "动态水平": "Horizontal dynamique",
+    "静态": "Statique",
+    "搜索": "Recherche",
+    "25%": "25%",
+    "-25%": "-25%",
+    "取消静音": "Annuler muet",
+    "View the tutorial": "Voir le tutoriel",
+    "静音/取消静音": "Muet / Annuler muet",
+    "连接次数过多请重新启动Discord": "Trop de tentatives de connexion. Veuillez redémarrer Discord",
+    "CLIENT ID": "ID CLIENT",
+    "info": "Le port du serveur a été changé de 3002 à 26432. Veuillez mettre à jour l'URL de redirection dans l'interface administrateur de l'application. Nous nous excusons pour les désagréments occasionnés.",
+    "DEV网址": "https://discord.com/developers/applications"
+  }
+}

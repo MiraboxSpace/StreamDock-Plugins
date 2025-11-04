@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <title>模板 - 属性检查器</title>
+    <link rel="stylesheet" href="../../static/css/sdpi.css">
+</head>
+
+<body>
+    <div class="sdpi-wrapper" style="display: none">
+        <div class="sdpi-item" style="display: none;" id="logoutdiv">
+            <div class="sdpi-item-label">Logout</div>
+            <button class="sdpi-item-value" id="logout">Logout</button>
+        </div>
+        <div type="select" class="sdpi-item" id="modeBox">
+            <div class="sdpi-item-label">模式</div>
+            <select class="sdpi-item-value" id="mode">
+                <option value="input" selected>设置输入设备</option>
+                <option value="output">设置输出设备</option>
+                <option value="both">设置二者</option>
+            </select>
+        </div>
+        <div type="select" class="sdpi-item" id="inputBox" style="display: none">
+            <div class="sdpi-item-label">输入</div>
+            <select class="sdpi-item-value" id="input"></select>
+        </div>
+        <div type="select" class="sdpi-item" id="outputBox" style="display: none">
+            <div class="sdpi-item-label">输出</div>
+            <select class="sdpi-item-value" id="output"></select>
+        </div>
+    </div>
+    <script src="../utils/common.js"></script>
+    <script src="../utils/action.js"></script>
+    <script src="../utils/axios.js"></script>
+    <script src="index.js"></script>
+</body>
+<style>
+    #initiateBox,
+    #initiateBoxx {
+        justify-content: center;
+        font-weight: bold;
+    }
+</style>
+
+</html>

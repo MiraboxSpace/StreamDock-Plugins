@@ -1,0 +1,38 @@
+{
+  "name": "nodeplugin",
+  "version": "1.0.0",
+  "author": "mirabox",
+  "main": "index.js",
+  "type": "commonjs",
+  "description": "以子进程的方式运行nodejs代码",
+  "scripts": {
+    "build": "ncc build index.mjs -m -o ./build && node autofile.js",
+    "test": "ncc build index.mjs -m -o ./build && node autofile.js",
+    "dev": "node dev.js",
+    "dev2": "node devnodel.js"
+  },
+  "license": "ISC",
+  "dependencies": {
+    "@jimp/wasm-webp": "^1.6.0",
+    "@saschazar/wasm-webp": "^3.0.1",
+    "axios": "^1.12.2",
+    "cors": "^2.8.5",
+    "cwebp": "^3.2.0",
+    "discord-rpc": "^4.0.1",
+    "express": "^4.19.2",
+    "fs-extra": "^11.3.0",
+    "get-proxy-settings": "^0.1.13",
+    "global-agent": "^3.0.0",
+    "https-proxy-agent": "^7.0.4",
+    "install": "^0.13.0",
+    "jimp": "^1.6.0",
+    "log4js": "^6.9.1",
+    "npm": "^11.6.2",
+    "path": "^0.12.7",
+    "qs": "^6.14.0",
+    "twemoji": "^14.0.2",
+    "undici": "^7.16.0",
+    "webp-converter": "^2.3.3",
+    "ws": "^8.14.2"
+  }
+}

@@ -1,0 +1,237 @@
+{
+  "Actions": [
+    {
+      "Icon": "static/icon/1.png",
+      "Name": "麦克风静音",
+      "DisableAutomaticStates": true,
+      "States": [
+        {
+          "Image": "static/icon/Image1.png",
+          "Name": "Unmute"
+        },
+        {
+          "Image": "static/icon/Image2.png",
+          "Name": "Mute"
+        }
+      ],
+      "UserTitleEnabled": false,
+      "SupportedInMultiActions": false,
+      "Tooltip": "discord operation",
+      "UUID": "com.hotspot.streamdock.discord.mute",
+      "PropertyInspectorPath": "propertyInspector/mute/index.html"
+    },
+    {
+      "Icon": "static/icon/2.png",
+      "Name": "耳机静音",
+      "DisableAutomaticStates": true,
+      "States": [
+        {
+          "Image": "static/icon/Image3.png",
+          "Name": "Undeafen"
+        },
+        {
+          "Image": "static/icon/Image4.png",
+          "Name": "Deafen"
+        }
+      ],
+      "UserTitleEnabled": false,
+      "SupportedInMultiActions": false,
+      "Tooltip": "discord operation",
+      "UUID": "com.hotspot.streamdock.discord.deaf",
+      "PropertyInspectorPath": "propertyInspector/deaf/index.html"
+    },
+    {
+      "Icon": "static/icon/3",
+      "Name": "语音通道",
+      "States": [
+        {
+          "Image": "static/icon/Image5.png",
+          "Name": "Enter"
+        },
+        {
+          "Image": "static/icon/Image5.png",
+          "Name": "Leave"
+        }
+      ],
+      "UserTitleEnabled": false,
+      "SupportedInMultiActions": false,
+      "Tooltip": "discord operation",
+      "UUID": "com.hotspot.streamdock.discord.voicechannel",
+      "PropertyInspectorPath": "propertyInspector/voicechannel/index.html"
+    },
+    {
+      "Icon": "static/icon/4.png",
+      "Name": "文本通道",
+      "States": [
+        {
+          "Image": "static/icon/Image7.png",
+          "Name": "Enter"
+        }
+      ],
+      "UserTitleEnabled": false,
+      "SupportedInMultiActions": false,
+      "Tooltip": "discord operation",
+      "UUID": "com.hotspot.streamdock.discord.textchannel",
+      "PropertyInspectorPath": "propertyInspector/textchannel/index.html"
+    },
+    {
+      "Icon": "static/icon/5.png",
+      "Name": "通知",
+      "States": [
+        {
+          "FontSize": "12",
+          "TitleAlignment": "center",
+          "Image": "static/icon/Image9.png"
+        }
+      ],
+      "UserTitleEnabled": false,
+      "SupportedInMultiActions": false,
+      "Tooltip": "discord operation",
+      "UUID": "com.hotspot.streamdock.discord.notice",
+      "PropertyInspectorPath": "propertyInspector/notice/index.html"
+    },
+    {
+      "Icon": "static/icon/6.png",
+      "Name": "用户音量控制",
+      "States": [
+        {
+          "FontSize": "12",
+          "TitleAlignment": "bottom",
+          "Image": "static/icon/Image10.png"
+        }
+      ],
+      "UserTitleEnabled": false,
+      "SupportedInMultiActions": false,
+      "Tooltip": "discord operation",
+      "UUID": "com.hotspot.streamdock.discord.userVolumeControl",
+      "PropertyInspectorPath": "propertyInspector/userVolumeControl/index.html"
+    },
+    {
+      "Icon": "static/icon/7.png",
+      "Name": "音量控制",
+      "States": [
+        {
+          "Image": "static/icon/Image11.png"
+        }
+      ],
+      "UserTitleEnabled": false,
+      "SupportedInMultiActions": false,
+      "Tooltip": "discord operation",
+      "UUID": "com.hotspot.streamdock.discord.volumeControl",
+      "PropertyInspectorPath": "propertyInspector/volumeControl/index.html"
+    },
+    {
+      "Icon": "static/icon/8.png",
+      "Name": "语音板",
+      "States": [
+        {
+          "FontSize": "9",
+          "TitleAlignment": "bottom",
+          "Image": "static/icon/Image12.png"
+        }
+      ],
+      "UserTitleEnabled": false,
+      "SupportedInMultiActions": false,
+      "Tooltip": "discord operation",
+      "UUID": "com.hotspot.streamdock.discord.voiceboard",
+      "PropertyInspectorPath": "propertyInspector/voiceboard/index.html"
+    },
+    {
+      "Icon": "static/icon/9.png",
+      "Name": "设置音频设备",
+      "States": [
+        {
+          "FontSize": "12",
+          "TitleAlignment": "center",
+          "Image": "static/icon/Image13.png"
+        }
+      ],
+      "UserTitleEnabled": false,
+      "SupportedInMultiActions": false,
+      "Tooltip": "discord operation",
+      "UUID": "com.hotspot.streamdock.discord.setDevices",
+      "PropertyInspectorPath": "propertyInspector/setDevices/index.html"
+    },
+    {
+      "Icon": "static/icon/1.png",
+      "Name": "麦克风控制",
+      "DisableAutomaticStates": true,
+      "States": [
+        {
+          "Image": "static/icon/Image1.png",
+          "Name": "Unmute"
+        },
+        {
+          "Image": "static/icon/Image2.png",
+          "Name": "Mute"
+        }
+      ],
+      "Controllers": [
+        "Knob"
+      ],
+      "UserTitleEnabled": true,
+      "SupportedInMultiActions": false,
+      "Tooltip": "discord operation",
+      "UUID": "com.hotspot.streamdock.discord.mutecontrol",
+      "PropertyInspectorPath": "propertyInspector/mutecontrol/index.html"
+    },
+    {
+      "Icon": "static/icon/2.png",
+      "Name": "耳机控制",
+      "DisableAutomaticStates": true,
+      "States": [
+        {
+          "Image": "static/icon/Image3.png",
+          "Name": "Undeafen"
+        },
+        {
+          "Image": "static/icon/Image4.png",
+          "Name": "Deafen"
+        }
+      ],
+      "Controllers": [
+        "Knob"
+      ],
+      "UserTitleEnabled": true,
+      "SupportedInMultiActions": false,
+      "Tooltip": "discord operation",
+      "UUID": "com.hotspot.streamdock.discord.deafcontrol",
+      "PropertyInspectorPath": "propertyInspector/deafcontrol/index.html"
+    }
+  ],
+  "SDKVersion": 1,
+  "ApplicationsToMonitor": {
+    "mac": [
+      "com.apple.mail"
+    ],
+    "windows": [
+      "Discord.exe"
+    ]
+  },
+  "Author": "MiraBox",
+  "Name": "discord",
+  "Icon": "static/favicon",
+  "CodePathWin": "plugin/index.mjs",
+  "CodePathMac": "plugin/index.mjs",
+  "Description": "discord operation",
+  "Category": "discord",
+  "CategoryIcon": "static/favicon",
+  "Version": "25.11.04",
+  "URL": "https://mirabox.key123.vip/home",
+  "OS": [
+    {
+      "Platform": "mac",
+      "MinimumVersion": "10.11"
+    },
+    {
+      "Platform": "windows",
+      "MinimumVersion": "7"
+    }
+  ],
+  "Software": {
+    "MinimumVersion": "3.10.188.226"
+  },
+  "Nodejs": {
+    "Version": "20"
+  }
+}
