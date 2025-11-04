@@ -1,0 +1,226 @@
+{
+    "OVERLAY": {
+        "scope": "RPC_PRIVATE_SCOPE"
+    },
+    "GUILD_STATUS": {
+        "scope": "rpc"
+    },
+    "VOICE_STATE_CREATE": {
+        "scope": {
+            "$any": [
+                "rpc",
+                "rpc.voice.read"
+            ]
+        }
+    },
+    "VOICE_STATE_DELETE": {
+        "scope": {
+            "$any": [
+                "rpc",
+                "rpc.voice.read"
+            ]
+        }
+    },
+    "VOICE_STATE_UPDATE": {
+        "scope": {
+            "$any": [
+                "rpc",
+                "rpc.voice.read"
+            ]
+        }
+    },
+    "VOICE_CONNECTION_STATUS": {
+        "scope": {
+            "$any": [
+                "rpc",
+                "rpc.voice.read"
+            ]
+        }
+    },
+    "MESSAGE_CREATE": {
+        "scope": "rpc"
+    },
+    "MESSAGE_UPDATE": {
+        "scope": "rpc"
+    },
+    "MESSAGE_DELETE": {
+        "scope": "rpc"
+    },
+    "SPEAKING_START": {
+        "scope": {
+            "$any": [
+                "rpc",
+                "rpc.voice.read",
+                "RPC_LOCAL_SCOPE"
+            ]
+        }
+    },
+    "SPEAKING_STOP": {
+        "scope": {
+            "$any": [
+                "rpc",
+                "rpc.voice.read",
+                "RPC_LOCAL_SCOPE"
+            ]
+        }
+    },
+    "GUILD_CREATE": {
+        "scope": "rpc"
+    },
+    "CHANNEL_CREATE": {
+        "scope": "rpc"
+    },
+    "GAME_JOIN": {
+        "scope": {
+            "$any": [
+                "rpc",
+                "RPC_LOCAL_SCOPE"
+            ]
+        }
+    },
+    "GAME_SPECTATE": {
+        "scope": {
+            "$any": [
+                "rpc",
+                "RPC_LOCAL_SCOPE"
+            ]
+        }
+    },
+    "ACTIVITY_JOIN": {
+        "scope": {
+            "$any": [
+                "rpc",
+                "RPC_AUTHENTICATED_SCOPE",
+                "RPC_LOCAL_SCOPE"
+            ]
+        }
+    },
+    "ACTIVITY_JOIN_REQUEST": {
+        "scope": {
+            "$any": [
+                "rpc",
+                "RPC_LOCAL_SCOPE"
+            ]
+        }
+    },
+    "ACTIVITY_SPECTATE": {
+        "scope": {
+            "$any": [
+                "rpc",
+                "RPC_AUTHENTICATED_SCOPE",
+                "RPC_LOCAL_SCOPE"
+            ]
+        }
+    },
+    "ACTIVITY_INVITE": {
+        "scope": {
+            "$any": [
+                "rpc",
+                "RPC_LOCAL_SCOPE"
+            ]
+        }
+    },
+    "ACTIVITY_PIP_MODE_UPDATE": {},
+    "ACTIVITY_LAYOUT_MODE_UPDATE": {},
+    "ACTIVITY_INSTANCE_PARTICIPANTS_UPDATE": {
+        "scope": {
+            "$any": [
+                "RPC_AUTHENTICATED_SCOPE"
+            ]
+        }
+    },
+    "THERMAL_STATE_UPDATE": {
+        "scope": {
+            "$any": [
+                "RPC_AUTHENTICATED_SCOPE"
+            ]
+        }
+    },
+    "ORIENTATION_UPDATE": {
+        "scope": {
+            "$any": [
+                "RPC_AUTHENTICATED_SCOPE"
+            ]
+        }
+    },
+    "VOICE_CHANNEL_SELECT": {
+        "scope": "rpc"
+    },
+    "NOTIFICATION_CREATE": {
+        "scope": {
+            "$all": [
+                "rpc",
+                "rpc.notifications.read"
+            ]
+        }
+    },
+    "RELATIONSHIP_UPDATE": {
+        "scope": "relationships.read"
+    },
+    "CURRENT_USER_UPDATE": {
+        "scope": {
+            "$any": [
+                "RPC_LOCAL_SCOPE",
+                "identify"
+            ]
+        }
+    },
+    "CURRENT_GUILD_MEMBER_UPDATE": {
+        "scope": {
+            "$all": [
+                "identify",
+                "guilds.members.read"
+            ]
+        }
+    },
+    "ENTITLEMENT_CREATE": {
+        "scope": {
+            "$any": [
+                "RPC_LOCAL_SCOPE",
+                "RPC_AUTHENTICATED_SCOPE"
+            ]
+        }
+    },
+    "ENTITLEMENT_DELETE": {
+        "scope": {
+            "$any": [
+                "RPC_LOCAL_SCOPE",
+                "RPC_AUTHENTICATED_SCOPE"
+            ]
+        }
+    },
+    "SCREENSHARE_STATE_UPDATE": {
+        "scope": {
+            "$all": [
+                "RPC_LOCAL_SCOPE",
+                "rpc.screenshare.read"
+            ]
+        }
+    },
+    "VIDEO_STATE_UPDATE": {
+        "scope": {
+            "$all": [
+                "RPC_LOCAL_SCOPE",
+                "rpc.video.read"
+            ]
+        }
+    },
+    "AUTHORIZE_REQUEST": {},
+    "OVERLAY_UPDATE": {
+        "scope": "RPC_LOCAL_SCOPE"
+    },
+    "QUEST_ENROLLMENT_STATUS_UPDATE": {
+        "scope": "identify"
+    },
+    "VOICE_SETTINGS_UPDATE": {
+        "scope": {
+            "$any": [
+                "rpc",
+                "rpc.voice.read"
+            ]
+        }
+    },
+    "VOICE_SETTINGS_UPDATE_2": {
+        "scope": "RPC_LOCAL_SCOPE"
+    }
+}

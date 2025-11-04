@@ -1,0 +1,397 @@
+{
+    "OVERLAY": {
+        "scope": "RPC_PRIVATE_SCOPE"
+    },
+    "SEND_ANALYTICS_EVENT": {},
+    "GET_APPLICATION_TICKET": {
+        "scope": "RPC_LOCAL_SCOPE"
+    },
+    "SET_CERTIFIED_DEVICES": {
+        "scope": {
+            "$any": [
+                "rpc",
+                "RPC_LOCAL_SCOPE"
+            ]
+        }
+    },
+    "GET_CHANNEL": {
+        "scope": {
+            "$any": [
+                "rpc",
+                "guilds",
+                "guilds.channels.read"
+            ]
+        }
+    },
+    "GET_CHANNELS": {
+        "scope": "rpc"
+    },
+    "GET_CHANNEL_PERMISSIONS": {
+        "scope": {
+            "$any": [
+                "guilds.members.read",
+                "guilds.channels.read"
+            ]
+        }
+    },
+    "SELECT_VOICE_CHANNEL": {
+        "scope": "rpc"
+    },
+    "GET_SELECTED_VOICE_CHANNEL": {
+        "scope": {
+            "$any": [
+                "rpc",
+                "rpc.voice.read"
+            ]
+        }
+    },
+    "SELECT_TEXT_CHANNEL": {
+        "scope": "rpc"
+    },
+    "CREATE_CHANNEL_INVITE": {
+        "scope": "rpc"
+    },
+    "SET_CONFIG": {
+        "scope": "RPC_AUTHENTICATED_SCOPE"
+    },
+    "GET_GUILD": {
+        "scope": "rpc"
+    },
+    "GET_GUILDS": {
+        "scope": "rpc"
+    },
+    "GET_IMAGE": {
+        "scope": "RPC_LOCAL_SCOPE"
+    },
+    "INVITE_USER_EMBEDDED": {
+        "scope": {
+            "$any": [
+                "relationships.read"
+            ]
+        }
+    },
+    "OPEN_EXTERNAL_LINK": {
+        "scope": {
+            "$any": [
+                "RPC_AUTHENTICATED_SCOPE",
+                "RPC_EMBEDDED_APP_SCOPE"
+            ]
+        }
+    },
+    "NAVIGATE_TO_CONNECTIONS": {
+        "scope": {
+            "$any": [
+                "RPC_AUTHENTICATED_SCOPE"
+            ]
+        }
+    },
+    "SHARE_LINK": {
+        "scope": {
+            "$any": [
+                "RPC_AUTHENTICATED_SCOPE"
+            ]
+        }
+    },
+    "CAPTURE_LOG": {},
+    "GET_NETWORKING_CONFIG": {
+        "scope": "RPC_LOCAL_SCOPE"
+    },
+    "NETWORKING_SYSTEM_METRICS": {
+        "scope": "RPC_LOCAL_SCOPE"
+    },
+    "NETWORKING_PEER_METRICS": {
+        "scope": "RPC_LOCAL_SCOPE"
+    },
+    "NETWORKING_CREATE_TOKEN": {
+        "scope": "RPC_LOCAL_SCOPE"
+    },
+    "GET_PROVIDER_ACCESS_TOKEN": {
+        "scope": {
+            "$any": [
+                "RPC_AUTHENTICATED_SCOPE"
+            ]
+        }
+    },
+    "MAYBE_GET_PROVIDER_ACCESS_TOKEN": {
+        "scope": {
+            "$any": [
+                "RPC_AUTHENTICATED_SCOPE"
+            ]
+        }
+    },
+    "GET_RELATIONSHIPS": {
+        "scope": {
+            "$any": [
+                "relationships.read"
+            ]
+        }
+    },
+    "SET_ACTIVITY": {
+        "scope": {
+            "$any": [
+                "rpc",
+                "rpc.activities.write",
+                "RPC_LOCAL_SCOPE"
+            ]
+        }
+    },
+    "SET_ORIENTATION_LOCK_STATE": {},
+    "GET_SKUS": {
+        "$any": [
+            "RPC_AUTHENTICATED_SCOPE",
+            "RPC_LOCAL_SCOPE"
+        ]
+    },
+    "GET_ENTITLEMENTS": {
+        "$any": [
+            "RPC_AUTHENTICATED_SCOPE",
+            "RPC_LOCAL_SCOPE"
+        ]
+    },
+    "GET_SKUS_EMBEDDED": {
+        "$any": [
+            "RPC_AUTHENTICATED_SCOPE",
+            "RPC_LOCAL_SCOPE"
+        ]
+    },
+    "GET_ENTITLEMENTS_EMBEDDED": {
+        "$any": [
+            "RPC_AUTHENTICATED_SCOPE",
+            "RPC_LOCAL_SCOPE"
+        ]
+    },
+    "SUBSCRIBE": {},
+    "UNSUBSCRIBE": {},
+    "GET_USER": {
+        "scope": {
+            "$any": [
+                "RPC_EMBEDDED_APP_SCOPE",
+                "RPC_LOCAL_SCOPE"
+            ]
+        }
+    },
+    "USER_SETTINGS_GET_LOCALE": {
+        "scope": "identify"
+    },
+    "GET_PLATFORM_BEHAVIORS": {},
+    "GET_SOUNDBOARD_SOUNDS": {
+        "scope": {
+            "$any": [
+                "rpc",
+                "RPC_LOCAL_SCOPE"
+            ]
+        }
+    },
+    "PLAY_SOUNDBOARD_SOUND": {
+        "scope": {
+            "$all": [
+                "rpc",
+                "rpc.voice.write"
+            ]
+        }
+    },
+    "GET_ACTIVITY_INSTANCE_CONNECTED_PARTICIPANTS": {
+        "scope": {
+            "$any": [
+                "RPC_AUTHENTICATED_SCOPE"
+            ]
+        }
+    },
+    "SEND_ACTIVITY_JOIN_INVITE": {
+        "scope": {
+            "$any": [
+                "rpc",
+                "RPC_LOCAL_SCOPE"
+            ]
+        }
+    },
+    "CLOSE_ACTIVITY_JOIN_REQUEST": {
+        "scope": {
+            "$any": [
+                "rpc",
+                "RPC_LOCAL_SCOPE"
+            ]
+        }
+    },
+    "ACTIVITY_INVITE_USER": {
+        "scope": {
+            "$any": [
+                "rpc",
+                "RPC_LOCAL_SCOPE"
+            ]
+        }
+    },
+    "ACCEPT_ACTIVITY_INVITE": {
+        "scope": {
+            "$any": [
+                "rpc",
+                "RPC_LOCAL_SCOPE"
+            ]
+        }
+    },
+    "OPEN_INVITE_DIALOG": {
+        "scope": {
+            "$any": [
+                "rpc",
+                "RPC_LOCAL_SCOPE",
+                "RPC_AUTHENTICATED_SCOPE"
+            ]
+        }
+    },
+    "INITIATE_IMAGE_UPLOAD": {
+        "scope": {
+            "$any": [
+                "rpc",
+                "RPC_LOCAL_SCOPE",
+                "RPC_AUTHENTICATED_SCOPE"
+            ]
+        }
+    },
+    "OPEN_SHARE_MOMENT_DIALOG": {
+        "scope": {
+            "$any": [
+                "RPC_AUTHENTICATED_SCOPE"
+            ]
+        }
+    },
+    "SHARE_INTERACTION": {
+        "scope": {
+            "$any": [
+                "RPC_AUTHENTICATED_SCOPE",
+                "RPC_LOCAL_SCOPE"
+            ]
+        }
+    },
+    "VALIDATE_APPLICATION": {
+        "scope": "RPC_LOCAL_SCOPE"
+    },
+    "GET_ENTITLEMENT_TICKET": {
+        "scope": "RPC_LOCAL_SCOPE"
+    },
+    "ENCOURAGE_HW_ACCELERATION": {},
+    "OPEN_MESSAGE": {
+        "scope": "RPC_LOCAL_SCOPE"
+    },
+    "OPEN_INVITE": {
+        "scope": "RPC_LOCAL_SCOPE"
+    },
+    "SET_OVERLAY_LOCKED": {
+        "scope": "RPC_LOCAL_SCOPE"
+    },
+    "OPEN_OVERLAY_ACTIVITY_INVITE": {
+        "scope": "RPC_LOCAL_SCOPE"
+    },
+    "OPEN_OVERLAY_GUILD_INVITE": {
+        "scope": "RPC_LOCAL_SCOPE"
+    },
+    "OPEN_OVERLAY_VOICE_SETTINGS": {
+        "scope": "RPC_LOCAL_SCOPE"
+    },
+    "INVITE_BROWSER": {
+        "scope": "RPC_PRIVATE_SCOPE"
+    },
+    "GUILD_TEMPLATE_BROWSER": {
+        "scope": "RPC_PRIVATE_SCOPE"
+    },
+    "GIFT_CODE_BROWSER": {
+        "scope": "RPC_PRIVATE_SCOPE"
+    },
+    "DEEP_LINK": {
+        "scope": {
+            "$any": [
+                "RPC_PRIVATE_SCOPE",
+                "RPC_LOCAL_SCOPE"
+            ]
+        }
+    },
+    "BROWSER_HANDOFF": {
+        "scope": "RPC_PRIVATE_LIMITED_SCOPE"
+    },
+    "CONNECTIONS_CALLBACK": {
+        "scope": "RPC_PRIVATE_SCOPE"
+    },
+    "BRAINTREE_POPUP_BRIDGE_CALLBACK": {
+        "scope": "RPC_PRIVATE_SCOPE"
+    },
+    "BILLING_POPUP_BRIDGE_CALLBACK": {
+        "scope": "RPC_PRIVATE_SCOPE"
+    },
+    "GET_QUEST_ENROLLMENT_STATUS": {
+        "scope": "identify"
+    },
+    "QUEST_START_TIMER": {
+        "scope": "identify"
+    },
+    "SET_SUPPRESS_NOTIFICATIONS": {
+        "scope": "RPC_LOCAL_SCOPE"
+    },
+    "START_PURCHASE": {
+        "$any": [
+            "RPC_AUTHENTICATED_SCOPE",
+            "RPC_LOCAL_SCOPE"
+        ]
+    },
+    "START_PREMIUM_PURCHASE": {
+        "$any": [
+            "RPC_AUTHENTICATED_SCOPE",
+            "RPC_LOCAL_SCOPE"
+        ]
+    },
+    "TOGGLE_VIDEO": {
+        "scope": {
+            "$all": [
+                "rpc",
+                "rpc.video.write"
+            ]
+        }
+    },
+    "TOGGLE_SCREENSHARE": {
+        "scope": {
+            "$all": [
+                "rpc",
+                "rpc.screenshare.write"
+            ]
+        }
+    },
+    "SET_USER_VOICE_SETTINGS": {
+        "scope": {
+            "$any": [
+                "rpc",
+                "rpc.voice.write"
+            ]
+        }
+    },
+    "GET_VOICE_SETTINGS": {
+        "scope": {
+            "$any": [
+                "rpc",
+                "rpc.voice.read"
+            ]
+        }
+    },
+    "SET_VOICE_SETTINGS": {
+        "scope": {
+            "$any": [
+                "rpc",
+                "rpc.voice.write"
+            ]
+        }
+    },
+    "SET_VOICE_SETTINGS_2": {
+        "scope": "RPC_LOCAL_SCOPE"
+    },
+    "SET_USER_VOICE_SETTINGS_2": {
+        "scope": "RPC_LOCAL_SCOPE"
+    },
+    "PUSH_TO_TALK": {
+        "scope": {
+            "$all": [
+                "rpc",
+                "rpc.voice.write"
+            ]
+        }
+    },
+    "AUTHENTICATE": {},
+    "AUTHORIZE": {},
+    "SEND_GENERIC_EVENT": {}
+}

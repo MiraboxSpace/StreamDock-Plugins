@@ -14,12 +14,15 @@
 
 # Dependencies
 **/node_modules/
+!Plugins/
 !Plugins/Discord/
-!Plugins/Discord/com.mirabox.streamdock.discord.sdPlugin/
-!Plugins/Discord/com.mirabox.streamdock.discord.sdPlugin/plugin/
-!Plugins/Discord/com.mirabox.streamdock.discord.sdPlugin/plugin/node_modules/
-!Plugins/Discord/com.mirabox.streamdock.discord.sdPlugin/plugin/node_modules/discord-rpc/
-!Plugins/Discord/com.mirabox.streamdock.discord.sdPlugin/plugin/node_modules/discord-rpc/** 
+!Plugins/Discord/plugin/
+!Plugins/Discord/plugin/node_modules/
+!Plugins/Discord/plugin/node_modules/discord-rpc/
+!Plugins/Discord/plugin/node_modules/discord-rpc/**
+Plugins/Discord/plugin/node_modules/*
+!Plugins/Discord/plugin/node_modules/discord-rpc/
+!Plugins/Discord/plugin/node_modules/discord-rpc/**
 
 # Build outputs
 **/build/

@@ -1,0 +1,97 @@
+{
+  "Name": "Discord",
+  "Description": "Discord 제어",
+  "com.hotspot.streamdock.discord.deaf": {
+    "Name": "헤드셋 음소거",
+    "Tooltip": "헤드셋 음소거/음소거 해제"
+  },
+  "com.hotspot.streamdock.discord.mute": {
+    "Name": "마이크 음소거",
+    "Tooltip": "마이크 음소거/음소거 해제"
+  },
+  "com.hotspot.streamdock.discord.voicechannel": {
+    "Name": "음성 채널",
+    "Tooltip": "음성 채널에 참여"
+  },
+  "com.hotspot.streamdock.discord.textchannel": {
+    "Name": "텍스트 채널",
+    "Tooltip": "텍스트 채널에 참여"
+  },
+  "com.hotspot.streamdock.discord.pushtotalk": {
+    "Name": "말하기 버튼 눌러 음소거",
+    "Tooltip": "말하기 버튼을 눌러 음소거"
+  },
+  "com.hotspot.streamdock.discord.pushtomute": {
+    "Name": "음소거 버튼 눌러 말하기",
+    "Tooltip": "음소거 버튼을 눌러 말하기"
+  },
+  "com.hotspot.streamdock.discord.volumeControl": {
+    "Name": "볼륨 제어",
+    "Tooltip": "오디오 장치의 볼륨 제어"
+  },
+  "com.hotspot.streamdock.discord.notice": {
+    "Name": "알림",
+    "Tooltip": "알림 받기"
+  },
+  "com.hotspot.streamdock.discord.setDevices": {
+    "Name": "오디오 장치 설정",
+    "Tooltip": "오디오 장치 설정"
+  },
+  "com.hotspot.streamdock.discord.userVolumeControl": {
+    "Name": "사용자 볼륨 제어",
+    "Tooltip": "사용자 볼륨 제어"
+  },
+  "com.hotspot.streamdock.discord.voiceboard": {
+    "Name": "음성 패널",
+    "Tooltip": "음성 패널"
+  },
+  "com.hotspot.streamdock.discord.mutecontrol": {
+    "Name": "마이크 제어",
+    "Tooltip": "마이크 제어"
+  },
+  "com.hotspot.streamdock.discord.deafcontrol": {
+    "Name": "헤드셋 제어",
+    "Tooltip": "헤드셋 제어"
+  },
+  "Category": "Discord",
+  "Localization": {
+    "请启动Discord": "Discord를 시작하세요",
+    "请求授权": "Save",
+    "Logout": "로그아웃",
+    "授权": "권한 부여",
+    "服务器": "서버",
+    "文本通道": "텍스트 채널",
+    "设备": "장치",
+    "输入": "입력",
+    "输出": "출력",
+    "CLIENT SECRET": "CLIENT SECRET",
+    "音量": "볼륨",
+    "语音通道": "음성 채널",
+    "获取ID": "ID 가져오기",
+    "用户": "사용자",
+    "理想音量": "이상적인 볼륨",
+    "调整单位": "조정 단위",
+    "图标样式": "아이콘 스타일",
+    "静音类型": "음소거 유형",
+    "模式": "모드",
+    "设置": "설정",
+    "设置输入设备": "입력 장치 설정",
+    "设置输出设备": "출력 장치 설정",
+    "设置二者": "둘 다 설정",
+    "调整": "조정",
+    "静音": "음소거",
+    "动态垂直": "동적 수직",
+    "动态水平": "동적 수평",
+    "静态": "정적",
+    "搜索": "검색",
+    "25%": "25%",
+    "-25%": "-25%",
+    "取消静音": "음소거 해제",
+    "View the tutorial": "튜토리얼 보기",
+    "静音/取消静音": "음소거/음소거 해제",
+    "连接次数过多请重新启动Discord": "연결 시도 횟수가 너무 많습니다. Discord를 다시 시작하세요",
+    "CLIENT ID": "CLIENT ID",
+    "info": "서버 포트가 3002에서 26432로 변경되었습니다. 앱 백엔드에서 리디렉션 URL을 업데이트해 주세요. 불편을 드려 죄송합니다.",
+    "DEV网址": "https://discord.com/developers/applications"
+  }
+}
