@@ -18,15 +18,12 @@ const $local = false, $back = false, $dom = {
     PTPModeCheckID: $('#PTPModeCheckID'),
 };
 
-let isInit = false;
 const $propEvent = {
     didReceiveSettings(data) {
         console.log(data);
         $dom.CategorySelectID.value = $settings.CategorySelect || '';
         $dom.SoundSelectID.value = $settings.SoundSelect || '';
-        if ($settings.SoundIndexInput) {
-            $dom.SoundIndexInputID.value = $settings.SoundIndexInput;
-        }
+        $dom.SoundIndexInputID.value = $settings.SoundIndexInput || '';
         $dom.ShowTitleCheckID.checked = $settings.ShowTitleCheck || false;
         $dom.PTPModeCheckID.checked = $settings.PTPModeCheck || false;
     },
@@ -44,13 +41,24 @@ const $propEvent = {
         $dom.SoundSelectID.innerHTML = '';
         data.CategoryAndSounds.sounds.forEach(sound => {
             const option = document.createElement('option');
-            option.value = sound;
-            option.textContent = sound;
+            const isObject = typeof sound === 'object' && sound !== null;
+            option.value = isObject ? sound.name : sound;
+            option.textContent = isObject ? sound.name : sound;
+            if (isObject) option.dataset.index = sound.index;
             $dom.SoundSelectID.appendChild(option);
         });
 
         $dom.CategorySelectID.value = $settings.CategorySelect || '';
         $dom.SoundSelectID.value = $settings.SoundSelect || '';
+
+        // Auto-restore index after dropdown repopulation (e.g. after Refresh)
+        const selectedOption = $dom.SoundSelectID.options[$dom.SoundSelectID.selectedIndex];
+        if (selectedOption && selectedOption.dataset.index) {
+            $dom.SoundIndexInputID.value = selectedOption.dataset.index;
+            $settings.SoundIndexInput = selectedOption.dataset.index;
+        } else {
+            $dom.SoundIndexInputID.value = $settings.SoundIndexInput || '';
+        }
     }
 };
 
@@ -61,6 +69,15 @@ function CategorySelectChange(value) {
 function SoundSelectChange(value) {
     console.log('SoundSelectChange:', value);
     $settings.SoundSelect = value;
+
+    // Auto-populate Sound Index from the selected option's data-index
+    const selectedOption = $dom.SoundSelectID.options[$dom.SoundSelectID.selectedIndex];
+    if (selectedOption && selectedOption.dataset.index) {
+        const index = selectedOption.dataset.index;
+        $dom.SoundIndexInputID.value = index;
+        $settings.SoundIndexInput = index;
+        console.log('Auto-populated SoundIndex:', index);
+    }
 }
 function SoundIndexInputChange(value) {
     console.log('SoundIndexInputChange:', value);
@@ -70,8 +87,9 @@ function ShowTitleCheckChange(checked) {
     console.log('ShowTitleCheckChange:', checked);
     $settings.ShowTitleCheck = checked;
 
+    const text = $dom.SoundSelectID.options[$dom.SoundSelectID.selectedIndex]?.textContent || $dom.SoundIndexInputID.value;
+
     if (checked) {
-        var text = $dom.SoundIndexInputID.value;
         var canvas = document.createElement("canvas");
         var ctx = canvas.getContext("2d");
         var img = new Image();
