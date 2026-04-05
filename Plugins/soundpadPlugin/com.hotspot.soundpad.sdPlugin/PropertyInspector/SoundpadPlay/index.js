@@ -18,6 +18,22 @@ const $local = false, $back = false, $dom = {
     PTPModeCheckID: $('#PTPModeCheckID'),
 };
 
+let $allSounds = [];
+function populateSoundsByCategory(category) {
+    const filtered = category
+        ? $allSounds.filter(s => s.category === category)
+        : $allSounds;
+
+    $dom.SoundSelectID.innerHTML = '';
+    filtered.forEach(sound => {
+        const option = document.createElement('option');
+        option.value = sound.name;
+        option.textContent = sound.name;
+        option.dataset.index = sound.index;
+        $dom.SoundSelectID.appendChild(option);
+    });
+}
+
 const $propEvent = {
     didReceiveSettings(data) {
         console.log(data);
@@ -38,17 +54,9 @@ const $propEvent = {
             $dom.CategorySelectID.appendChild(option);
         });
 
-        $dom.SoundSelectID.innerHTML = '';
-        data.CategoryAndSounds.sounds.forEach(sound => {
-            const option = document.createElement('option');
-            const isObject = typeof sound === 'object' && sound !== null;
-            option.value = isObject ? sound.name : sound;
-            option.textContent = isObject ? sound.name : sound;
-            if (isObject) option.dataset.index = sound.index;
-            $dom.SoundSelectID.appendChild(option);
-        });
-
+        $allSounds = data.CategoryAndSounds.sounds;
         $dom.CategorySelectID.value = $settings.CategorySelect || '';
+        populateSoundsByCategory($settings.CategorySelect || '');
         $dom.SoundSelectID.value = $settings.SoundSelect || '';
 
         // Auto-restore index after dropdown repopulation (e.g. after Refresh)
@@ -65,6 +73,18 @@ const $propEvent = {
 function CategorySelectChange(value) {
     console.log('CategorySelectChange:', value);
     $settings.CategorySelect = value;
+
+    populateSoundsByCategory(value);
+    $dom.SoundSelectID.value = $settings.SoundSelect || '';
+
+    const selectedOption = $dom.SoundSelectID.options[$dom.SoundSelectID.selectedIndex];
+    if (selectedOption && selectedOption.dataset.index) {
+        $dom.SoundIndexInputID.value = selectedOption.dataset.index;
+        $settings.SoundIndexInput = selectedOption.dataset.index;
+    } else {
+        $dom.SoundIndexInputID.value = '';
+        $settings.SoundIndexInput = '';
+    }
 }
 function SoundSelectChange(value) {
     console.log('SoundSelectChange:', value);

@@ -386,6 +386,7 @@ QJsonObject  ExampleAction::ExecuteCommand(HANDLE hPipe, const std::string& cmd)
                         QJsonObject soundObj;
                         soundObj["name"] = sound.attribute("title");
                         soundObj["index"] = sound.attribute("index").toInt();
+                        soundObj["category"] = categoryName;
                         soundsArray.append(soundObj);
                     }
                 }
