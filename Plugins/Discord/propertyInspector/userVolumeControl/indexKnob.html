@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>模板-属性检查器</title>
+    <link rel="stylesheet" href="../../static/css/sdpi.css">
+</head>
+
+<body>
+    <div class="sdpi-wrapper" style="display: none">
+        <div class="sdpi-item" style="display: none;" id="logoutdiv">
+            <div class="sdpi-item-label">Logout</div>
+            <button class="sdpi-item-value" id="logout">Logout</button>
+        </div>
+        <div type="select" class="sdpi-item" id="userBox">
+            <div class="sdpi-item-label">用户</div>
+            <select class="sdpi-item-value" id="user"></select>
+        </div>
+        <div type="range" class="sdpi-item" id="adjustmentBox" style="display: none">
+            <div class="sdpi-item-label">调整单位</div>
+            <span>@@@1</span>
+            <input type="range" id="adjustment" class="sdpi-item-value" min="1" max="25" value="1">
+            <span>@@@25</span>
+        </div>
+
+        <div class="sdpi-info-label hidden" style="left: 227px; top: -1000px;" value>tooltiptext</div>
+    </div>
+    <script src="../utils/common.js"></script>
+    <script src="../utils/action.js"></script>
+    <script src="../utils/axios.js"></script>
+    <script src="indexKnob.js"></script>
+</body>
+<style>
+    #initiateBox,
+    #initiateBoxx {
+        justify-content: center;
+        font-weight: bold;
+    }
+
+    span {
+        line-height: 26px;
+    }
+</style>
+
+</html>

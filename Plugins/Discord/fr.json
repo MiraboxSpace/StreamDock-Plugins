@@ -1,6 +1,6 @@
 {
   "Name": "Discord",
-  "Description": "Contrôler Discord",
+  "Description": "opération discord",
   "com.hotspot.streamdock.discord.deaf": {
     "Name": "Muet casque",
     "Tooltip": "Muet casque / Annuler muet"
@@ -41,6 +41,10 @@
     "Name": "Contrôle du volume utilisateur",
     "Tooltip": "Contrôle du volume utilisateur"
   },
+  "com.hotspot.streamdock.discord.userVolumeControlKnob": {
+    "Name": "Contrôle du volume utilisateur",
+    "Tooltip": "Contrôle du volume utilisateur"
+  },
   "com.hotspot.streamdock.discord.voiceboard": {
     "Name": "Panneau vocal",
     "Tooltip": "Panneau vocal"
@@ -53,8 +57,17 @@
     "Name": "Contrôle du casque",
     "Tooltip": "Contrôle du casque"
   },
-  "Category": "Discord",
+  "com.hotspot.streamdock.discord.screenShare": {
+    "Name": "Activer/désactiver le partage d'écran",
+    "Tooltip": "Activer/désactiver le partage d'écran"
+  },
+  "com.hotspot.streamdock.discord.toggleVideo": {
+    "Name": "Activer/désactiver la caméra",
+    "Tooltip": "Activer/désactiver la caméra"
+  },
+  "Category": "discord",
   "Localization": {
+    "5": "5",
     "请启动Discord": "Veuillez démarrer Discord",
     "请求授权": "Save",
     "Logout": "Se déconnecter",
@@ -91,6 +104,22 @@
     "连接次数过多请重新启动Discord": "Trop de tentatives de connexion. Veuillez redémarrer Discord",
     "CLIENT ID": "ID CLIENT",
     "info": "Le port du serveur a été changé de 3002 à 26432. Veuillez mettre à jour l'URL de redirection dans l'interface administrateur de l'application. Nous nous excusons pour les désagréments occasionnés.",
-    "DEV网址": "https://discord.com/developers/applications"
+    "DEV网址": "https://discord.com/developers/applications",
+    "CLIENT SECRET": "CLIENT SECRET",
+    "刷新": "Rafraîchir",
+    "callbackpage": "page de rappel",
+    "授权成功(authorizationsuccessful)": "Autorisation réussie (authorizationsuccessful)",
+    "模板-属性检查器": "Modèle - Inspecteur d'attributs",
+    "https://discord.com/developers/applications": "https://discord.com/developers/applications",
+    "tooltiptext": "texte d'info-bulle",
+    "authorization": "autorisation",
+    "discordauthorization": "autorisation discord",
+    "authorizationsuccess": "succès de l'autorisation",
+    "authorizationcompletedsuccessfully!": "l'autorisation a été complétée avec succès !",
+    "closingwindowin": "fermerfenêtreen",
+    "seconds...": "secondes...",
+    "closewindow": "fermerla fenêtre",
+    "connectionfailed{0}time": "Échec de la connexion {0} fois",
+    "unconnected": "non connecté"
   }
 }

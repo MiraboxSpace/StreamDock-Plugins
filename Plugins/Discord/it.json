@@ -1,0 +1,125 @@
+{
+  "Name": "Discord",
+  "Description": "operazione discord",
+  "com.hotspot.streamdock.discord.deaf": {
+    "Name": "Silenzia cuffie",
+    "Tooltip": "Silenzia cuffie / Annulla silenzio"
+  },
+  "com.hotspot.streamdock.discord.mute": {
+    "Name": "Silenzia microfono",
+    "Tooltip": "Silenzia microfono / Annulla silenzio"
+  },
+  "com.hotspot.streamdock.discord.voicechannel": {
+    "Name": "Canale vocale",
+    "Tooltip": "Entra nel canale vocale"
+  },
+  "com.hotspot.streamdock.discord.textchannel": {
+    "Name": "Canale testuale",
+    "Tooltip": "Entra nel canale testuale"
+  },
+  "com.hotspot.streamdock.discord.pushtotalk": {
+    "Name": "Premi per parlare",
+    "Tooltip": "Premi per parlare"
+  },
+  "com.hotspot.streamdock.discord.pushtomute": {
+    "Name": "Premi per silenziare",
+    "Tooltip": "Premi per silenziare"
+  },
+  "com.hotspot.streamdock.discord.volumeControl": {
+    "Name": "Controllo volume",
+    "Tooltip": "Controlla il volume del dispositivo audio"
+  },
+  "com.hotspot.streamdock.discord.notice": {
+    "Name": "Notifiche",
+    "Tooltip": "Ricevi notifiche"
+  },
+  "com.hotspot.streamdock.discord.setDevices": {
+    "Name": "Configura i dispositivi audio",
+    "Tooltip": "Configura i dispositivi audio"
+  },
+  "com.hotspot.streamdock.discord.userVolumeControl": {
+    "Name": "Controllo volume utente",
+    "Tooltip": "Controllo volume utente"
+  },
+  "com.hotspot.streamdock.discord.userVolumeControlKnob": {
+    "Name": "Controllo volume utente",
+    "Tooltip": "Controllo volume utente"
+  },
+  "com.hotspot.streamdock.discord.voiceboard": {
+    "Name": "Pannello vocale",
+    "Tooltip": "Pannello vocale"
+  },
+  "com.hotspot.streamdock.discord.mutecontrol": {
+    "Name": "Controllo microfono",
+    "Tooltip": "Controllo microfono"
+  },
+  "com.hotspot.streamdock.discord.deafcontrol": {
+    "Name": "Controllo cuffie",
+    "Tooltip": "Controllo cuffie"
+  },
+  "com.hotspot.streamdock.discord.screenShare": {
+    "Name": "Attiva/disattiva condivisione schermo",
+    "Tooltip": "Attiva/disattiva condivisione schermo"
+  },
+  "com.hotspot.streamdock.discord.toggleVideo": {
+    "Name": "Attiva/disattiva videocamera",
+    "Tooltip": "Attiva/disattiva videocamera"
+  },
+  "Category": "discord",
+  "Localization": {
+    "5": "5",
+    "请启动Discord": "Per favore avvia Discord",
+    "请求授权": "Salva",
+    "Logout": "Disconnetti",
+    "授权": "Autorizza",
+    "服务器": "Server",
+    "文本通道": "Canale testuale",
+    "设备": "Dispositivo",
+    "输入": "Inserisci",
+    "输出": "Esci",
+    "音量": "Volume",
+    "语音通道": "Canale vocale",
+    "获取ID": "Ottieni ID",
+    "用户": "Utente",
+    "理想音量": "Volume ideale",
+    "调整单位": "Unità di regolazione",
+    "图标样式": "Stile icona",
+    "静音类型": "Tipo di silenziamento",
+    "模式": "Modalità",
+    "设置": "Impostazioni",
+    "设置输入设备": "Imposta dispositivo di input",
+    "设置输出设备": "Imposta il dispositivo di output",
+    "设置二者": "Imposta entrambi",
+    "调整": "Regola",
+    "静音": "Silenzioso",
+    "动态垂直": "Verticale dinamico",
+    "动态水平": "Orizzontale dinamico",
+    "静态": "Statico",
+    "搜索": "Cerca",
+    "25%": "25%",
+    "-25%": "-25%",
+    "取消静音": "Disattiva il silenzio",
+    "info": "La porta del server è cambiata da 3002 a 26432, vi preghiamo di recarvi nel backend dell'APP per cambiare l'url di reindirizzamento, ci scusiamo per gli inconvenienti causati",
+    "View the tutorial": "Visualizza il tutorial",
+    "静音/取消静音": "Silenzioso / Disattiva il silenzio",
+    "连接次数过多请重新启动Discord": "Troppi tentativi di connessione, riavviare Discord per favore",
+    "CLIENT ID": "CLIENT ID",
+    "CLIENT SECRET": "CLIENT SECRET",
+    "刷新": "Aggiorna",
+    "DEV网址": "https://discord.com/developers/applications",
+    "callbackpage": "callbackpage",
+    "授权成功(authorizationsuccessful)": "Autorizzazione riuscita (authorizationsuccessful)",
+    "模板-属性检查器": "Modello - Controllore delle proprietà",
+    "https://discord.com/developers/applications": "https://discord.com/developers/applications",
+    "tooltiptext": "tooltiptext",
+    "authorization": "autorizzazione",
+    "discordauthorization": "discordautorizzazione",
+    "authorizationsuccess": "autorizzazioneriuscita",
+    "authorizationcompletedsuccessfully!": "autorizzazione completata con successo!",
+    "closingwindowin": "chiudere_finestra_in",
+    "seconds...": "secondi...",
+    "closewindow": "chiudi_finestra",
+    "connectionfailed{0}time": "Connessione fallita {0} volte",
+    "unconnected": "non connesso"
+  }
+}

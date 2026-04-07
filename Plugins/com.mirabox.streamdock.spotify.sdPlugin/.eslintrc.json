@@ -1,0 +1,27 @@
+{
+    "env": {
+        "browser": false,
+        "es2020": true,
+        "node": true,
+        "mocha": true
+    },
+    "extends": [
+        "eslint:recommended"
+    ],
+    "parserOptions": {
+        "ecmaVersion": 2020,
+        "sourceType": "commonjs"
+    },
+    "rules": {
+        "no-console": "off",
+        "no-unused-vars": "off",
+        "no-undef": "error",
+        "no-empty": "off",
+        "no-constant-condition": "off"
+    },
+    "ignorePatterns": [
+        "node_modules/",
+        "build/",
+        "dist/"
+    ]
+}

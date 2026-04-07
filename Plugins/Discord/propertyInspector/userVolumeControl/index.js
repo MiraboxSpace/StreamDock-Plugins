@@ -72,7 +72,7 @@ const $propEvent = {
 
   didReceiveGlobalSettings({ settings }) {
     console.log('Global setting');
-    if (!settings.clientSecret) {
+    if (!settings.clientSecret && !settings.accessToken) {
       openAuthorization();
     } else {
       logoutdiv.style.display = 'flex';

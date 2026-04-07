@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Authorization</title>
+    <title>authorization</title>
     <link rel="stylesheet" href="bootstrap.min.css">
     <link rel="stylesheet" href="bootstrap-icons.css">
     <style>
@@ -79,19 +79,40 @@
             color: #7289da;
             margin-bottom: 15px;
         }
+
+        /* Loading animation styles */
+        .spinner {
+            display: inline-block;
+            width: 16px;
+            height: 16px;
+            border: 2px solid rgba(255,255,255,.3);
+            border-radius: 50%;
+            border-top-color: #fff;
+            animation: spin 1s ease-in-out infinite;
+            margin-right: 8px;
+        }
+
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+
+        .btn-loading {
+            pointer-events: none;
+            opacity: 0.7;
+        }
     </style>
 </head>
 
 <body class="d-flex align-items-center justify-content-center">
     <div class="row justify-content-center" style="width: 100%;">
-        <div class="col-10">
+        <div class="col-10" id="authorizeBox">
             <div class="card p-4">
                 <div class="text-center">
                     <i class="bi bi-shield-lock header-icon"></i>
-                    <h3 class="mb-4">Discord Authorization</h3>
+                    <h3 class="mb-4">discordauthorization</h3>
                 </div>
 
-                <form id="authorizeBox">
+                <form>
                     <div class="mb-3">
                         <label for="open" class="form-label">获取ID</label>
                         <div class="sdpi-item-value discord-link" id="open">DEV网址</div>
@@ -108,7 +129,11 @@
                     </div>
 
                     <div class="d-grid mt-4">
-                        <button type="button" class="btn btn-primary" id="authorizeBtn"><i class="bi bi-key"></i>请求授权</button>
+                        <button type="button" class="btn btn-primary" id="authorizeBtn">
+                            <i class="bi bi-key"></i>
+                            <span class="btn-text">请求授权</span>
+                            <span class="spinner" style="display: none;"></span>
+                        </button>
                     </div>
 
                     <div class="text-center mt-3">
@@ -125,11 +150,31 @@
     let $websocket = window.opener.$websocket;
     const clientId = document.querySelector("#clientId");
     const clientSecret = document.querySelector("#clientSecret");
+    const authorizeBtn = document.querySelector("#authorizeBtn");
+    const btnText = authorizeBtn.querySelector(".btn-text");
+    const spinner = authorizeBtn.querySelector(".spinner");
+
+    // 添加加载状态管理函数
+    function setButtonLoading(loading) {
+        if (loading) {
+            // 显示加载动画，隐藏文本
+            btnText.style.display = 'none';
+            spinner.style.display = 'inline-block';
+            authorizeBtn.classList.add('btn-loading');
+        } else {
+            // 隐藏加载动画，显示文本
+            btnText.style.display = 'inline';
+            spinner.style.display = 'none';
+            authorizeBtn.classList.remove('btn-loading');
+        }
+    }
+
     document.querySelector("#authorizeBtn").addEventListener('click', (e) => {
-        if (clientId.value != null && clientId.value != '') {
-            $websocket.setGlobalSettings({ clientId: clientId.value, clientSecret: clientSecret.value })
-            // $websocket.openUrl("http://127.0.0.1:26432/authorization?clientId=" + clientId.value)
-            window.close();
+        // 显示加载动画
+        
+        if (clientId.value && clientSecret.value) {
+            setButtonLoading(true);
+            $websocket.setGlobalSettings({ clientId: clientId.value, clientSecret: clientSecret.value });
         }
     })
 
@@ -138,7 +183,7 @@
     })
 
     document.querySelector("#tutorialLink").addEventListener('click', () => {
-        $websocket.openUrl('https://github.com/MiraboxSpace/discord-plugin-for-streamdock')
+        $websocket.openUrl('https://github.com/MiraboxSpace/StreamDock-Plugins/tree/main/Plugins/Discord')
     })
 
     // 自动翻译页面
@@ -151,13 +196,12 @@
     });
     while (walker.nextNode()) {
         console.log(walker.currentNode.data);
-        walker.currentNode.data = $lang[walker.currentNode.data];
+        if($lang[walker.currentNode.data]) walker.currentNode.data = $lang[walker.currentNode.data];
     }
     // placeholder 特殊处理
     const translate = item => {
         if (item.placeholder?.trim()) {
-            console.log(item.placeholder);
-            item.placeholder = $lang[item.placeholder];
+            if($lang[item.placeholder]) item.placeholder = $lang[item.placeholder];
         }
     };
     document.querySelectorAll('input').forEach(translate);

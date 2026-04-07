@@ -1,6 +1,6 @@
 {
   "Name": "Discord",
-  "Description": "Controlar Discord",
+  "Description": "operación de discord",
   "com.hotspot.streamdock.discord.deaf": {
     "Name": "Silenciar auriculares",
     "Tooltip": "Silenciar auriculares / Desactivar silencio"
@@ -41,6 +41,10 @@
     "Name": "Control de volumen de usuario",
     "Tooltip": "Control de volumen de usuario"
   },
+  "com.hotspot.streamdock.discord.userVolumeControlKnob": {
+    "Name": "Control de volumen de usuario",
+    "Tooltip": "Control de volumen de usuario"
+  },
   "com.hotspot.streamdock.discord.voiceboard": {
     "Name": "Panel de voz",
     "Tooltip": "Panel de voz"
@@ -53,8 +57,17 @@
     "Name": "Control de auriculares",
     "Tooltip": "Control de auriculares"
   },
-  "Category": "Discord",
+  "com.hotspot.streamdock.discord.screenShare": {
+    "Name": "Alternar compartir pantalla",
+    "Tooltip": "Alternar compartir pantalla"
+  },
+  "com.hotspot.streamdock.discord.toggleVideo": {
+    "Name": "Alternar cámara",
+    "Tooltip": "Alternar cámara"
+  },
+  "Category": "discord",
   "Localization": {
+    "5": "5",
     "请启动Discord": "Por favor, inicie Discord",
     "请求授权": "Save",
     "Logout": "Cerrar sesión",
@@ -91,6 +104,22 @@
     "连接次数过多请重新启动Discord": "Demasiados intentos de conexión, por favor reinicie Discord",
     "CLIENT ID": "ID CLIENTE",
     "info": "El puerto del servidor ha cambiado de 3002 a 26432. Por favor, actualiza la URL de redirección en el panel de administración de la aplicación. Lamentamos los inconvenientes causados.",
-    "DEV网址": "https://discord.com/developers/applications"
+    "DEV网址": "https://discord.com/developers/applications",
+    "CLIENT SECRET": "SECRETO DEL CLIENTE",
+    "刷新": "Actualizar",
+    "callbackpage": "paginadecallback",
+    "授权成功(authorizationsuccessful)": "Autorización exitosa(authorizationsuccessful)",
+    "模板-属性检查器": "Plantilla - Comprobador de atributos",
+    "https://discord.com/developers/applications": "https://discord.com/developers/applications",
+    "tooltiptext": "texto de ayuda",
+    "authorization": "autorización",
+    "discordauthorization": "autorizacióndiscord",
+    "authorizationsuccess": "éxito de autorización",
+    "authorizationcompletedsuccessfully!": "¡autorización completada con éxito!",
+    "closingwindowin": "ventana de cierre en",
+    "seconds...": "segundos...",
+    "closewindow": "cerrar ventana",
+    "connectionfailed{0}time": "Conexión fallida {0} vez",
+    "unconnected": "desconectado"
   }
 }

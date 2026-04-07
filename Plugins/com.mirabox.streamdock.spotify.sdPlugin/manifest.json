@@ -4,6 +4,7 @@
       "Icon": "static/icon/n1spotify_toggle_play_on_white@2x.png",
       "Name": "播放/暂停",
       "DisableAutomaticStates": true,
+      "KeyboardSupport": true,
       "States": [
         {
           "Image": "static/btn/btn_spotify_144_play_pause.png",
@@ -16,7 +17,10 @@
         "timeDisplay": "elapsed",
         "showTitle": true
       },
-      "Controllers": [],
+      "Controllers": [
+        "Keypad",
+        "Information"
+      ],
       "UserTitleEnabled": true,
       "SupportedInMultiActions": true,
       "Tooltip": "spotify operation",
@@ -27,6 +31,7 @@
       "Icon": "static/icon/n1spotify_prev@2x.png",
       "Name": "上一首",
       "DisableAutomaticStates": true,
+      "KeyboardSupport": true,
       "States": [
         {
           "Image": "static/btn/btn_spotify_144_prev.png",
@@ -44,6 +49,7 @@
       "Icon": "static/icon/n1spotify_next@2x.png",
       "Name": "下一首",
       "DisableAutomaticStates": true,
+      "KeyboardSupport": true,
       "States": [
         {
           "Image": "static/btn/btn_spotify_144_next.png",
@@ -61,6 +67,7 @@
       "Icon": "static/icon/n1spotify_device@2x.png",
       "Name": "切换播放设备",
       "DisableAutomaticStates": true,
+      "KeyboardSupport": true,
       "States": [
         {
           "Image": "static/btn/btn_spotify_144_device.png",
@@ -78,6 +85,7 @@
       "Icon": "static/icon/n1spotify_like@2x.png",
       "Name": "添加到喜欢",
       "DisableAutomaticStates": true,
+      "KeyboardSupport": true,
       "States": [
         {
           "Image": "static/btn/btn_spotify_144_like.png",
@@ -99,6 +107,7 @@
       "Icon": "static/icon/n1spotify_play@2x.png",
       "Name": "通过uri播放",
       "DisableAutomaticStates": true,
+      "KeyboardSupport": true,
       "States": [
         {
           "Image": "static/btn/btn_spotify_144_play.png",
@@ -119,6 +128,7 @@
       "Icon": "static/icon/n1spotify_toggle_play_playlist_on_white@2x.png",
       "Name": "播放播放列表",
       "DisableAutomaticStates": true,
+      "KeyboardSupport": true,
       "States": [
         {
           "Image": "static/btn/btn_spotify_144_play_playlist.png",
@@ -139,6 +149,7 @@
       "Icon": "static/icon/n1spotify_remove_from_playlist@2x.png",
       "Name": "从播放列表删除",
       "DisableAutomaticStates": true,
+      "KeyboardSupport": true,
       "States": [
         {
           "Image": "static/btn/btn_spotify_144_remove_from_playlist.png",
@@ -159,6 +170,7 @@
       "Icon": "static/icon/n1spotify_save_to_playlist@2x.png",
       "Name": "添加到播放列表",
       "DisableAutomaticStates": true,
+      "KeyboardSupport": true,
       "States": [
         {
           "Image": "static/btn/btn_spotify_144_save_to_playlist.png",
@@ -179,6 +191,7 @@
       "Icon": "static/icon/n1spotify_repeat@2x.png",
       "Name": "循环模式",
       "DisableAutomaticStates": true,
+      "KeyboardSupport": true,
       "States": [
         {
           "Image": "static/btn/btn_spotify_144_repeat_off.png",
@@ -205,6 +218,7 @@
       "Icon": "static/icon/n1spotify_toggle_shuffle_on_white@2x.png",
       "Name": "随机模式",
       "DisableAutomaticStates": true,
+      "KeyboardSupport": true,
       "States": [
         {
           "Image": "static/btn/btn_spotify_144_shuffle_off.png",
@@ -227,6 +241,7 @@
       "Icon": "static/icon/n1spotify_info@2x.png",
       "Name": "歌曲信息",
       "DisableAutomaticStates": true,
+      "KeyboardSupport": true,
       "States": [
         {
           "Image": "static/btn/btn_spotify_144_info.png",
@@ -247,11 +262,12 @@
       "Icon": "static/icon/n1spotify_volume_up@2x.png",
       "Name": "音量加",
       "DisableAutomaticStates": true,
+      "KeyboardSupport": true,
       "States": [
         {
           "Image": "static/btn/btn_spotify_144_volume_up.png",
           "TitleAlignment": "center",
-          "FontSize": "8"
+          "FontSize": "20"
         }
       ],
       "Settings": {
@@ -269,11 +285,12 @@
       "Icon": "static/icon/n1spotify_volume_down@2x.png",
       "Name": "音量减",
       "DisableAutomaticStates": true,
+      "KeyboardSupport": true,
       "States": [
         {
           "Image": "static/btn/btn_spotify_144_volume_down.png",
           "TitleAlignment": "center",
-          "FontSize": "8"
+          "FontSize": "20"
         }
       ],
       "Settings": {
@@ -291,11 +308,12 @@
       "Icon": "static/icon/n1spotify_volume_set@2x.png",
       "Name": "设置音量",
       "DisableAutomaticStates": true,
+      "KeyboardSupport": true,
       "States": [
         {
           "Image": "static/btn/btn_spotify_144_volume_set.png",
           "TitleAlignment": "center",
-          "FontSize": "8"
+          "FontSize": "20"
         }
       ],
       "Settings": {
@@ -313,14 +331,17 @@
       "Icon": "static/icon/n1spotify_volume_mute@2x.png",
       "Name": "静音",
       "DisableAutomaticStates": true,
+      "KeyboardSupport": true,
       "States": [
         {
           "Image": "static/btn/btn_spotify_144_volume_set.png",
-          "TitleAlignment": "center"
+          "TitleAlignment": "center",
+          "FontSize": "20"
         },
         {
           "Image": "static/btn/btn_spotify_144_volume_mute.png",
-          "TitleAlignment": "center"
+          "TitleAlignment": "center",
+          "FontSize": "20"
         }
       ],
       "Settings": {
@@ -337,6 +358,7 @@
       "Icon": "static/icon/n1spotify_144_prevornext.png",
       "Name": "上一首<< | >>下一首",
       "DisableAutomaticStates": true,
+      "KeyboardSupport": true,
       "States": [
         {
           "Image": "static/btn/btn_spotify_144_prevornext.png",
@@ -361,14 +383,17 @@
       "Icon": "static/icon/n1spotify_volume_set@2x.png",
       "Name": "音量调节",
       "DisableAutomaticStates": true,
+      "KeyboardSupport": true,
       "States": [
         {
           "Image": "static/btn/btn_spotify_144_volume_set.png",
-          "TitleAlignment": "center"
+          "TitleAlignment": "center",
+          "FontSize": "20"
         },
         {
           "Image": "static/btn/btn_spotify_144_volume_mute.png",
-          "TitleAlignment": "center"
+          "TitleAlignment": "center",
+          "FontSize": "20"
         }
       ],
       "Settings": {
@@ -394,7 +419,7 @@
   "Description": "spotify operation",
   "Category": "spotify",
   "CategoryIcon": "static/icon/icon@2x.png",
-  "Version": "1.0.1",
+  "Version": "2.0.auto",
   "URL": "https://mirabox.key123.vip/home",
   "OS": [
     {

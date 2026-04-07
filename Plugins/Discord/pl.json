@@ -1,6 +1,6 @@
 {
   "Name": "Discord",
-  "Description": "Kontroluj Discorda",
+  "Description": "działanie discord",
   "com.hotspot.streamdock.discord.deaf": {
     "Name": "Wyciszenie słuchawek",
     "Tooltip": "Wyciszenie słuchawek / Przywrócenie słuchawek"
@@ -41,6 +41,10 @@
     "Name": "Kontrola głośności użytkownika",
     "Tooltip": "Kontrola głośności użytkownika"
   },
+  "com.hotspot.streamdock.discord.userVolumeControlKnob": {
+    "Name": "Kontrola głośności użytkownika",
+    "Tooltip": "Kontrola głośności użytkownika"
+  },
   "com.hotspot.streamdock.discord.voiceboard": {
     "Name": "Panel głosowy",
     "Tooltip": "Panel głosowy"
@@ -53,8 +57,17 @@
     "Name": "Kontrola słuchawek",
     "Tooltip": "Kontrola słuchawek"
   },
-  "Category": "Discord",
+  "com.hotspot.streamdock.discord.screenShare": {
+    "Name": "Przełącz udostępnianie ekranu",
+    "Tooltip": "Przełącz udostępnianie ekranu"
+  },
+  "com.hotspot.streamdock.discord.toggleVideo": {
+    "Name": "Przełącz kamerę",
+    "Tooltip": "Przełącz kamerę"
+  },
+  "Category": "discord",
   "Localization": {
+    "5": "5",
     "请启动Discord": "Proszę uruchomić Discorda",
     "请求授权": "Prośba o autoryzację",
     "Logout": "Wyloguj",
@@ -91,6 +104,22 @@
     "连接次数过多请重新启动Discord": "Za dużo połączeń, proszę zrestartować Discorda",
     "CLIENT ID": "ID klienta",
     "info": "Port serwera zmienił się z 3002 na 26432. Prosimy o aktualizację URL przekierowania w aplikacji. Przepraszamy za wszelkie niedogodności.",
-    "DEV网址": "https://discord.com/developers/applications"
+    "DEV网址": "https://discord.com/developers/applications",
+    "CLIENT SECRET": "TAJEMNICA KLIENTA",
+    "刷新": "Odśwież",
+    "callbackpage": "callbackpage",
+    "授权成功(authorizationsuccessful)": "autoryzacja zakończona sukcesem (authorizationsuccessful)",
+    "模板-属性检查器": "szablon - inspektor właściwości",
+    "https://discord.com/developers/applications": "https://discord.com/developers/applications",
+    "tooltiptext": "tooltiptext",
+    "authorization": "autoryzacja",
+    "discordauthorization": "discordautoryzacja",
+    "authorizationsuccess": "autoryzacja zakończona sukcesem",
+    "authorizationcompletedsuccessfully!": "autoryzacja została pomyślnie zakończona!",
+    "closingwindowin": "zamykanie okna w",
+    "seconds...": "sekundach...",
+    "closewindow": "zamknij okno",
+    "connectionfailed{0}time": "Połączenie nie powiodło się {0} razy",
+    "unconnected": "niepołączony"
   }
 }

@@ -3,14 +3,25 @@ const now = new Date();
 const log = require('log4js')
   .configure({
     appenders: {
-      file: { type: 'file', filename: `./log/${now.getFullYear()}.${now.getMonth() + 1}.${now.getDate()}.log` },
+      console: { type: 'console' },
+      file: {
+        type: 'file',
+        filename: `./log/${now.getFullYear()}.${now.getMonth() + 1}.${now.getDate()}.log`,
+        maxLogSize: 5 * 1024 * 1024,
+        backups: 3,
+      },
+      // 用过滤器包装 file appender，使其只写 info 及以上的日志
+      filteredFile: {
+        type: 'logLevelFilter',
+        appender: 'file',
+        level: 'info',
+      },
     },
     categories: {
-      default: { appenders: ['file'], level: 'info' },
+      default: { appenders: ['console', 'filteredFile'], level: 'debug' },
     },
   })
   .getLogger();
-
 //##################################################
 //##################全局异常捕获#####################
 process.on('uncaughtException', (error) => {
@@ -23,7 +34,15 @@ process.on('unhandledRejection', (reason) => {
 });
 //##################################################
 //##################################################
-
+const inspector = require('inspector');
+if (process.argv.some((ele) => ele == '-dev')) {
+  try {
+    inspector.open(25564, '127.0.0.1', true);
+    log.info('Inspector listening at:', inspector.url());
+  } catch (e) {
+    log.info('Failed to open inspector:', e);
+  }
+}
 // 插件类
 const ws = require('ws');
 class Plugins {

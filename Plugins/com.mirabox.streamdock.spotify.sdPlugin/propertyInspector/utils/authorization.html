@@ -152,8 +152,8 @@
         </div>
 
         <div class="content">
+            <div class="description">A Spotify Premium account is required for the plugin to function properly. Free accounts are not supported due to Spotify’s limitations.</div>
             <div class="description">We need you to provide the 'Client Id' and 'Client Secret' of your Spotify account. Please <span class="link" id="open">Click here</span></div>
-
             <div class="input-group">
                 <input type="text" id="clientId" placeholder="Client ID" required>
                 <input type="password" id="clientSecret" placeholder="Client Secret" required>
@@ -185,7 +185,7 @@
         });
 
         document.querySelector("#open").addEventListener('click', () => {
-            $websocket.openUrl('https://github.com/MiraboxSpace/StreamDock-Plugins/tree/main/Plugins/com.mirabox.streamdock.spotify.sdPlugin#readme');
+            $websocket.openUrl('https://mirabox.net/blogs/tutorial/how-to-set-up-the-spotify-plugin-in-streamdock');
         });
 
         document.querySelector("#cancelBtn").addEventListener('click', () => {

@@ -1,6 +1,6 @@
 {
   "Name": "Discord",
-  "Description": "控制 Discord",
+  "Description": "Discord操作",
   "com.hotspot.streamdock.discord.deaf": {
     "Name": "耳机静音",
     "Tooltip": "耳机静音/解除静音"
@@ -41,6 +41,10 @@
     "Name": "用户音量控制",
     "Tooltip": "用户音量控制"
   },
+  "com.hotspot.streamdock.discord.userVolumeControlKnob": {
+    "Name": "用户音量控制",
+    "Tooltip": "用户音量控制"
+  },
   "com.hotspot.streamdock.discord.voiceboard": {
     "Name": "语音板",
     "Tooltip": "语音板"
@@ -53,8 +57,17 @@
     "Name": "耳机控制",
     "Tooltip": "耳机控制"
   },
+  "com.hotspot.streamdock.discord.screenShare": {
+    "Name": "打开/关闭屏幕共享",
+    "Tooltip": "打开/关闭屏幕共享"
+  },
+  "com.hotspot.streamdock.discord.toggleVideo": {
+    "Name": "打开/关闭摄像头",
+    "Tooltip": "打开/关闭摄像头"
+  },
   "Category": "Discord",
   "Localization": {
+    "5": "5",
     "请启动Discord": "请启动Discord",
     "请求授权": "保存",
     "Logout": "注销",
@@ -93,6 +106,20 @@
     "CLIENT ID": "CLIENT ID",
     "CLIENT SECRET": "CLIENT SECRET",
     "刷新": "刷新",
-    "DEV网址": "https://discord.com/developers/applications"
+    "DEV网址": "https://discord.com/developers/applications",
+    "callbackpage": "回调页面",
+    "授权成功(authorizationsuccessful)": "授权成功(authorizationsuccessful)",
+    "模板-属性检查器": "模板-属性检查器",
+    "https://discord.com/developers/applications": "https://discord.com/developers/applications",
+    "tooltiptext": "提示文本",
+    "authorization": "授权",
+    "discordauthorization": "Discord授权",
+    "authorizationsuccess": "授权成功",
+    "authorizationcompletedsuccessfully!": "授权已成功完成!",
+    "closingwindowin": "关闭窗口",
+    "seconds...": "秒...",
+    "closewindow": "关闭窗口",
+    "connectionfailed{0}time": "连接失败{0}次",
+    "unconnected": "未连接"
   }
 }
