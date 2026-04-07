@@ -1,6 +1,6 @@
 {
   "Name": "Discord",
-  "Description": "Control Discord",
+  "Description": "discord operation",
   "com.hotspot.streamdock.discord.deaf": {
     "Name": "Deafen",
     "Tooltip": "Toggle Deafen"
@@ -41,6 +41,10 @@
     "Name": "User volume control",
     "Tooltip": "User volume control"
   },
+  "com.hotspot.streamdock.discord.userVolumeControlKnob": {
+    "Name": "User volume control",
+    "Tooltip": "User volume control"
+  },
   "com.hotspot.streamdock.discord.voiceboard": {
     "Name": "Soundboard",
     "Tooltip": "Soundboard"
@@ -53,8 +57,17 @@
     "Name": "Deaf Control",
     "Tooltip": "Deaf Control"
   },
+  "com.hotspot.streamdock.discord.screenShare": {
+    "Name": "Toggle Screen Share",
+    "Tooltip": "Toggle Screen Share"
+  },
+  "com.hotspot.streamdock.discord.toggleVideo": {
+    "Name": "Toggle Video",
+    "Tooltip": "Toggle Video"
+  },
   "Category": "Discord",
   "Localization": {
+    "5": "5",
     "请启动Discord": "Please start Discord",
     "请求授权": "Save",
     "授权": "Authorization",
@@ -93,6 +106,20 @@
     "刷新": "Refresh",
     "info": "The service port has changed from 3002 to 26432. Please go to the APP backend to change the redirection URL. We are very sorry for the inconvenience caused to you.",
     "View the tutorial": "View the tutorial",
-    "DEV网址": "https://discord.com/developers/applications"
+    "DEV网址": "https://discord.com/developers/applications",
+    "callbackpage": "callbackpage",
+    "授权成功(authorizationsuccessful)": "Authorization successful",
+    "模板-属性检查器": "Template - Property Inspector",
+    "https://discord.com/developers/applications": "https://discord.com/developers/applications",
+    "tooltiptext": "Tooltip text",
+    "authorization": "Authorization",
+    "discordauthorization": "Discord Authorization",
+    "authorizationsuccess": "Authorization success",
+    "authorizationcompletedsuccessfully!": "Authorization completed successfully!",
+    "closingwindowin": "closing window in",
+    "seconds...": "seconds...",
+    "closewindow": "close window",
+    "connectionfailed{0}time": "Connection failed {0} times",
+    "unconnected": "unconnected"
   }
 }

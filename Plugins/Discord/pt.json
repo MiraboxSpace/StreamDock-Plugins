@@ -1,6 +1,6 @@
 {
   "Name": "Discord",
-  "Description": "Control Discord",
+  "Description": "operação do discord",
   "com.hotspot.streamdock.discord.deaf": {
     "Name": "Ensurdecer",
     "Tooltip": "Alternar ensurdecimento"
@@ -41,6 +41,10 @@
     "Name": "Controle de volume do usuário",
     "Tooltip": "Controle de volume do usuário"
   },
+  "com.hotspot.streamdock.discord.userVolumeControlKnob": {
+    "Name": "Controle de volume do usuário",
+    "Tooltip": "Controle de volume do usuário"
+  },
   "com.hotspot.streamdock.discord.voiceboard": {
     "Name": "Painel de voz",
     "Tooltip": "Painel de voz"
@@ -53,8 +57,17 @@
     "Name": "Controle de fones de ouvido",
     "Tooltip": "Controle de fones de ouvido"
   },
-  "Category": "Discord",
+  "com.hotspot.streamdock.discord.screenShare": {
+    "Name": "Alternar compartilhamento de tela",
+    "Tooltip": "Alternar compartilhamento de tela"
+  },
+  "com.hotspot.streamdock.discord.toggleVideo": {
+    "Name": "Alternar câmera",
+    "Tooltip": "Alternar câmera"
+  },
+  "Category": "discord",
   "Localization": {
+    "5": "5",
     "请启动Discord": "Por favor inicie o discord",
     "请求授权": "Solicitar autorização",
     "授权": "Autorização",
@@ -91,6 +104,22 @@
     "CLIENT ID": "CLIENT ID",
     "info": "O serviço de porta foi alterado de 3002 para 26432. Por favor, vá para o backend do aplicativo para alterar a URL de redirecionamento. Lamentamos o inconveniente que você sofreu.",
     "View the tutorial": "Visualizar tutorial",
-    "DEV网址": "https://discord.com/developers/applications"
+    "DEV网址": "https://discord.com/developers/applications",
+    "CLIENT SECRET": "SEGREDO DO CLIENTE",
+    "刷新": "Atualizar",
+    "callbackpage": "callbackpage",
+    "授权成功(authorizationsuccessful)": "Autorização bem-sucedida (authorizationsuccessful)",
+    "模板-属性检查器": "Modelo - Inspetor de Propriedades",
+    "https://discord.com/developers/applications": "https://discord.com/developers/applications",
+    "tooltiptext": "texto de dica",
+    "authorization": "autorização",
+    "discordauthorization": "autorização do discord",
+    "authorizationsuccess": "sucesso na autorização",
+    "authorizationcompletedsuccessfully!": "autorização concluída com sucesso!",
+    "closingwindowin": "fechandjanotificação",
+    "seconds...": "segundos...",
+    "closewindow": "fecharjanotificação",
+    "connectionfailed{0}time": "Falha de conexão {0} vezes",
+    "unconnected": "desconectado"
   }
 }

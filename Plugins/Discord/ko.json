@@ -1,6 +1,6 @@
 {
   "Name": "Discord",
-  "Description": "Discord 제어",
+  "Description": "디스코드 운영",
   "com.hotspot.streamdock.discord.deaf": {
     "Name": "헤드셋 음소거",
     "Tooltip": "헤드셋 음소거/음소거 해제"
@@ -41,6 +41,10 @@
     "Name": "사용자 볼륨 제어",
     "Tooltip": "사용자 볼륨 제어"
   },
+  "com.hotspot.streamdock.discord.userVolumeControlKnob": {
+    "Name": "사용자 볼륨 제어",
+    "Tooltip": "사용자 볼륨 제어"
+  },
   "com.hotspot.streamdock.discord.voiceboard": {
     "Name": "음성 패널",
     "Tooltip": "음성 패널"
@@ -53,8 +57,17 @@
     "Name": "헤드셋 제어",
     "Tooltip": "헤드셋 제어"
   },
-  "Category": "Discord",
+  "com.hotspot.streamdock.discord.screenShare": {
+    "Name": "화면 공유 전환",
+    "Tooltip": "화면 공유 전환"
+  },
+  "com.hotspot.streamdock.discord.toggleVideo": {
+    "Name": "카메라 전환",
+    "Tooltip": "카메라 전환"
+  },
+  "Category": "디스코드",
   "Localization": {
+    "5": "5",
     "请启动Discord": "Discord를 시작하세요",
     "请求授权": "Save",
     "Logout": "로그아웃",
@@ -92,6 +105,21 @@
     "连接次数过多请重新启动Discord": "연결 시도 횟수가 너무 많습니다. Discord를 다시 시작하세요",
     "CLIENT ID": "CLIENT ID",
     "info": "서버 포트가 3002에서 26432로 변경되었습니다. 앱 백엔드에서 리디렉션 URL을 업데이트해 주세요. 불편을 드려 죄송합니다.",
-    "DEV网址": "https://discord.com/developers/applications"
+    "DEV网址": "https://discord.com/developers/applications",
+    "刷新": "새로 고침",
+    "callbackpage": "callbackpage",
+    "授权成功(authorizationsuccessful)": "인증 성공(authorizationsuccessful)",
+    "模板-属性检查器": "템플릿 - 속성 검사기",
+    "https://discord.com/developers/applications": "https://discord.com/developers/applications",
+    "tooltiptext": "tooltiptext",
+    "authorization": "인증",
+    "discordauthorization": "discordauthorization",
+    "authorizationsuccess": "인증 성공(authorizationsuccess)",
+    "authorizationcompletedsuccessfully!": "인증이 성공적으로 완료되었습니다(authorizationcompletedsuccessfully)!",
+    "closingwindowin": "창을 닫는 중",
+    "seconds...": "초...",
+    "closewindow": "창 닫기",
+    "connectionfailed{0}time": "연결 실패 {0} 회",
+    "unconnected": "연결되지 않음"
   }
 }

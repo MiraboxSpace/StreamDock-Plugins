@@ -1,0 +1,125 @@
+{
+  "com.hotspot.streamdock.discord.deaf": {
+    "Name": "Deafen",
+    "Tooltip": "Toggle Deafen"
+  },
+  "com.hotspot.streamdock.discord.mute": {
+    "Name": "Mute",
+    "Tooltip": "Toggle Microphone Mute"
+  },
+  "com.hotspot.streamdock.discord.voicechannel": {
+    "Name": "Voice Channel",
+    "Tooltip": "Join a voice channel"
+  },
+  "com.hotspot.streamdock.discord.textchannel": {
+    "Name": "Text Channel",
+    "Tooltip": "Go to a text channel"
+  },
+  "com.hotspot.streamdock.discord.pushtotalk": {
+    "Name": "Push to Talk",
+    "Tooltip": "Press and hold to talk"
+  },
+  "com.hotspot.streamdock.discord.pushtomute": {
+    "Name": "Push to Mute",
+    "Tooltip": "Press and hold to mute"
+  },
+  "com.hotspot.streamdock.discord.volumeControl": {
+    "Name": "Volume Control",
+    "Tooltip": "Control the volume of audio devices"
+  },
+  "com.hotspot.streamdock.discord.notice": {
+    "Name": "Notice",
+    "Tooltip": "Get notified"
+  },
+  "com.hotspot.streamdock.discord.setDevices": {
+    "Name": "Set up your audio device",
+    "Tooltip": "Set up your audio device"
+  },
+  "com.hotspot.streamdock.discord.userVolumeControl": {
+    "Name": "User volume control",
+    "Tooltip": "User volume control"
+  },
+  "com.hotspot.streamdock.discord.userVolumeControlKnob": {
+    "Name": "User volume control",
+    "Tooltip": "User volume control"
+  },
+  "com.hotspot.streamdock.discord.voiceboard": {
+    "Name": "Soundboard",
+    "Tooltip": "Soundboard"
+  },
+  "com.hotspot.streamdock.discord.mutecontrol": {
+    "Name": "Mute Control",
+    "Tooltip": "Mute Control"
+  },
+  "com.hotspot.streamdock.discord.deafcontrol": {
+    "Name": "Deaf Control",
+    "Tooltip": "Deaf Control"
+  },
+  "com.hotspot.streamdock.discord.screenShare": {
+    "Name": "تبديل مشاركة الشاشة",
+    "Tooltip": "تبديل مشاركة الشاشة"
+  },
+  "com.hotspot.streamdock.discord.toggleVideo": {
+    "Name": "تبديل الكاميرا",
+    "Tooltip": "تبديل الكاميرا"
+  },
+  "Localization": {
+    "5": "5",
+    "请启动Discord": "يرجى بدء تشغيل Discord",
+    "请求授权": "حفظ",
+    "Logout": "تسجيل الخروج",
+    "授权": "تفويض",
+    "服务器": "الخادم",
+    "文本通道": "قناة النصوص",
+    "设备": "الجهاز",
+    "输入": "إدخال",
+    "输出": "إخراج",
+    "音量": "الصوت",
+    "语音通道": "قناة الصوت",
+    "获取ID": "الحصول على الهوية",
+    "用户": "المستخدم",
+    "理想音量": "حجم الصوت المثالي",
+    "调整单位": "وحدة الضبط",
+    "图标样式": "نمط الرمز",
+    "静音类型": "نوع كتم الصوت",
+    "模式": "الوضع",
+    "设置": "الإعدادات",
+    "设置输入设备": "تعيين جهاز الإدخال",
+    "设置输出设备": "تعيين جهاز الإخراج",
+    "设置二者": "تعيين الاثنين",
+    "调整": "تعديل",
+    "静音": "كتم الصوت",
+    "动态垂直": "عمودي ديناميكي",
+    "动态水平": "أفقي ديناميكي",
+    "静态": "ساكن",
+    "搜索": "بحث",
+    "25%": "25%",
+    "-25%": "-25%",
+    "取消静音": "إلغاء كتم الصوت",
+    "info": "تم تغيير منفذ الخدمة من 3002 إلى 26432، نعتذر بشدة عن أي إزعاج تسببنا به، يرجى الذهاب إلى خلفية التطبيق لتغيير عنوان URL لإعادة التوجيه",
+    "View the tutorial": "عرض تعليمات الاستخدام",
+    "静音/取消静音": "كتم الصوت/إلغاء كتم الصوت",
+    "连接次数过多请重新启动Discord": "عدد عمليات الاتصال الزائد، يرجى إعادة تشغيل Discord",
+    "CLIENT ID": "معرف العميل",
+    "CLIENT SECRET": "سر العميل",
+    "刷新": "تحديث",
+    "DEV网址": "https://discord.com/developers/applications",
+    "callbackpage": "callbackpage",
+    "授权成功(authorizationsuccessful)": "نجاح التفويض (authorizationsuccessful)",
+    "模板-属性检查器": "قالب - مدقق الخصائص",
+    "https://discord.com/developers/applications": "https://discord.com/developers/applications",
+    "tooltiptext": "نص التلميح",
+    "authorization": "التفويض",
+    "discordauthorization": "تفويض ديسكورد (Discord Authorization)",
+    "authorizationsuccess": "نجاح التفويض (authorizationsuccess)",
+    "authorizationcompletedsuccessfully!": "تم إكمال التفويض بنجاح! (authorizationcompletedsuccessfully!)",
+    "closingwindowin": "إغلاق النافذة في",
+    "seconds...": "ثوانٍ...",
+    "closewindow": "إغلاق النافذة",
+    "connectionfailed{0}time": "فشل الاتصال {0} مرة",
+    "unconnected": "غير متصل"
+  },
+  "Name": "Discord",
+  "Description": "عملية الإزعاج",
+  "Category": "إزعاج"
+}

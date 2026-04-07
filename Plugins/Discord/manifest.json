@@ -3,7 +3,7 @@
     {
       "Icon": "static/icon/1.png",
       "Name": "麦克风静音",
-      "DisableAutomaticStates": true,
+      "KeyboardSupport": true,
       "States": [
         {
           "Image": "static/icon/Image1.png",
@@ -14,8 +14,8 @@
           "Name": "Mute"
         }
       ],
-      "UserTitleEnabled": false,
-      "SupportedInMultiActions": false,
+      "UserTitleEnabled": true,
+      "SupportedInMultiActions": true,
       "Tooltip": "discord operation",
       "UUID": "com.hotspot.streamdock.discord.mute",
       "PropertyInspectorPath": "propertyInspector/mute/index.html"
@@ -23,7 +23,7 @@
     {
       "Icon": "static/icon/2.png",
       "Name": "耳机静音",
-      "DisableAutomaticStates": true,
+      "KeyboardSupport": true,
       "States": [
         {
           "Image": "static/icon/Image3.png",
@@ -34,8 +34,8 @@
           "Name": "Deafen"
         }
       ],
-      "UserTitleEnabled": false,
-      "SupportedInMultiActions": false,
+      "UserTitleEnabled": true,
+      "SupportedInMultiActions": true,
       "Tooltip": "discord operation",
       "UUID": "com.hotspot.streamdock.discord.deaf",
       "PropertyInspectorPath": "propertyInspector/deaf/index.html"
@@ -43,6 +43,7 @@
     {
       "Icon": "static/icon/3",
       "Name": "语音通道",
+      "KeyboardSupport": true,
       "States": [
         {
           "Image": "static/icon/Image5.png",
@@ -53,8 +54,8 @@
           "Name": "Leave"
         }
       ],
-      "UserTitleEnabled": false,
-      "SupportedInMultiActions": false,
+      "UserTitleEnabled": true,
+      "SupportedInMultiActions": true,
       "Tooltip": "discord operation",
       "UUID": "com.hotspot.streamdock.discord.voicechannel",
       "PropertyInspectorPath": "propertyInspector/voicechannel/index.html"
@@ -62,14 +63,15 @@
     {
       "Icon": "static/icon/4.png",
       "Name": "文本通道",
+      "KeyboardSupport": true,
       "States": [
         {
           "Image": "static/icon/Image7.png",
           "Name": "Enter"
         }
       ],
-      "UserTitleEnabled": false,
-      "SupportedInMultiActions": false,
+      "UserTitleEnabled": true,
+      "SupportedInMultiActions": true,
       "Tooltip": "discord operation",
       "UUID": "com.hotspot.streamdock.discord.textchannel",
       "PropertyInspectorPath": "propertyInspector/textchannel/index.html"
@@ -77,6 +79,7 @@
     {
       "Icon": "static/icon/5.png",
       "Name": "通知",
+      "KeyboardSupport": true,
       "States": [
         {
           "FontSize": "12",
@@ -84,8 +87,8 @@
           "Image": "static/icon/Image9.png"
         }
       ],
-      "UserTitleEnabled": false,
-      "SupportedInMultiActions": false,
+      "UserTitleEnabled": true,
+      "SupportedInMultiActions": true,
       "Tooltip": "discord operation",
       "UUID": "com.hotspot.streamdock.discord.notice",
       "PropertyInspectorPath": "propertyInspector/notice/index.html"
@@ -93,6 +96,7 @@
     {
       "Icon": "static/icon/6.png",
       "Name": "用户音量控制",
+      "KeyboardSupport": true,
       "States": [
         {
           "FontSize": "12",
@@ -100,22 +104,43 @@
           "Image": "static/icon/Image10.png"
         }
       ],
-      "UserTitleEnabled": false,
-      "SupportedInMultiActions": false,
+      "UserTitleEnabled": true,
+      "SupportedInMultiActions": true,
       "Tooltip": "discord operation",
       "UUID": "com.hotspot.streamdock.discord.userVolumeControl",
       "PropertyInspectorPath": "propertyInspector/userVolumeControl/index.html"
     },
     {
+      "Icon": "static/icon/6.png",
+      "Name": "用户音量控制",
+      "KeyboardSupport": true,
+      "States": [
+        {
+          "FontSize": "12",
+          "TitleAlignment": "bottom",
+          "Image": "static/icon/Image10.png"
+        }
+      ],
+      "Controllers": [
+        "Knob"
+      ],
+      "UserTitleEnabled": true,
+      "SupportedInMultiActions": true,
+      "Tooltip": "discord operation",
+      "UUID": "com.hotspot.streamdock.discord.userVolumeControlKnob",
+      "PropertyInspectorPath": "propertyInspector/userVolumeControl/indexKnob.html"
+    },
+    {
       "Icon": "static/icon/7.png",
       "Name": "音量控制",
+      "KeyboardSupport": true,
       "States": [
         {
           "Image": "static/icon/Image11.png"
         }
       ],
-      "UserTitleEnabled": false,
-      "SupportedInMultiActions": false,
+      "UserTitleEnabled": true,
+      "SupportedInMultiActions": true,
       "Tooltip": "discord operation",
       "UUID": "com.hotspot.streamdock.discord.volumeControl",
       "PropertyInspectorPath": "propertyInspector/volumeControl/index.html"
@@ -123,6 +148,7 @@
     {
       "Icon": "static/icon/8.png",
       "Name": "语音板",
+      "KeyboardSupport": true,
       "States": [
         {
           "FontSize": "9",
@@ -130,8 +156,8 @@
           "Image": "static/icon/Image12.png"
         }
       ],
-      "UserTitleEnabled": false,
-      "SupportedInMultiActions": false,
+      "UserTitleEnabled": true,
+      "SupportedInMultiActions": true,
       "Tooltip": "discord operation",
       "UUID": "com.hotspot.streamdock.discord.voiceboard",
       "PropertyInspectorPath": "propertyInspector/voiceboard/index.html"
@@ -139,6 +165,7 @@
     {
       "Icon": "static/icon/9.png",
       "Name": "设置音频设备",
+      "KeyboardSupport": true,
       "States": [
         {
           "FontSize": "12",
@@ -146,8 +173,8 @@
           "Image": "static/icon/Image13.png"
         }
       ],
-      "UserTitleEnabled": false,
-      "SupportedInMultiActions": false,
+      "UserTitleEnabled": true,
+      "SupportedInMultiActions": true,
       "Tooltip": "discord operation",
       "UUID": "com.hotspot.streamdock.discord.setDevices",
       "PropertyInspectorPath": "propertyInspector/setDevices/index.html"
@@ -155,7 +182,7 @@
     {
       "Icon": "static/icon/1.png",
       "Name": "麦克风控制",
-      "DisableAutomaticStates": true,
+      "KeyboardSupport": true,
       "States": [
         {
           "Image": "static/icon/Image1.png",
@@ -170,7 +197,7 @@
         "Knob"
       ],
       "UserTitleEnabled": true,
-      "SupportedInMultiActions": false,
+      "SupportedInMultiActions": true,
       "Tooltip": "discord operation",
       "UUID": "com.hotspot.streamdock.discord.mutecontrol",
       "PropertyInspectorPath": "propertyInspector/mutecontrol/index.html"
@@ -178,7 +205,7 @@
     {
       "Icon": "static/icon/2.png",
       "Name": "耳机控制",
-      "DisableAutomaticStates": true,
+      "KeyboardSupport": true,
       "States": [
         {
           "Image": "static/icon/Image3.png",
@@ -193,16 +220,46 @@
         "Knob"
       ],
       "UserTitleEnabled": true,
-      "SupportedInMultiActions": false,
+      "SupportedInMultiActions": true,
       "Tooltip": "discord operation",
       "UUID": "com.hotspot.streamdock.discord.deafcontrol",
       "PropertyInspectorPath": "propertyInspector/deafcontrol/index.html"
+    },
+    {
+      "Icon": "static/icon/10.png",
+      "Name": "打开/关闭摄像头",
+      "KeyboardSupport": true,
+      "States": [
+        {
+          "Image": "static/icon/Image15.png"
+        }
+      ],
+      "UserTitleEnabled": true,
+      "SupportedInMultiActions": true,
+      "Tooltip": "discord operation",
+      "UUID": "com.hotspot.streamdock.discord.toggleVideo",
+      "PropertyInspectorPath": "propertyInspector/mute/index.html"
+    },
+    {
+      "Icon": "static/icon/11.png",
+      "Name": "打开/关闭屏幕共享",
+      "KeyboardSupport": true,
+      "States": [
+        {
+          "Image": "static/icon/Image16.png"
+        }
+      ],
+      "UserTitleEnabled": true,
+      "SupportedInMultiActions": true,
+      "Tooltip": "discord operation",
+      "UUID": "com.hotspot.streamdock.discord.screenShare",
+      "PropertyInspectorPath": "propertyInspector/mute/index.html"
     }
   ],
   "SDKVersion": 1,
   "ApplicationsToMonitor": {
     "mac": [
-      "com.apple.mail"
+      "Discord"
     ],
     "windows": [
       "Discord.exe",
@@ -210,14 +267,14 @@
     ]
   },
   "Author": "MiraBox",
-  "Name": "discord",
+  "Name": "Discord",
   "Icon": "static/favicon",
   "CodePathWin": "plugin/index.mjs",
   "CodePathMac": "plugin/index.mjs",
   "Description": "discord operation",
-  "Category": "discord",
+  "Category": "Discord",
   "CategoryIcon": "static/favicon",
-  "Version": "25.11.04",
+  "Version": "1.0.auto",
   "URL": "https://mirabox.key123.vip/home",
   "OS": [
     {

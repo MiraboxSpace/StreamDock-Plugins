@@ -1,6 +1,6 @@
 {
   "Name": "Discord",
-  "Description": "Discord steuern",
+  "Description": "Discord-Betrieb",
   "com.hotspot.streamdock.discord.deaf": {
     "Name": "Kopfhörer stummschalten",
     "Tooltip": "Kopfhörer stummschalten / Stummschaltung aufheben"
@@ -41,6 +41,10 @@
     "Name": "Benutzerlautstärkeregler",
     "Tooltip": "Benutzerlautstärkeregler"
   },
+  "com.hotspot.streamdock.discord.userVolumeControlKnob": {
+    "Name": "Benutzerlautstärkeregler",
+    "Tooltip": "Benutzerlautstärkeregler"
+  },
   "com.hotspot.streamdock.discord.voiceboard": {
     "Name": "Sprachpanel",
     "Tooltip": "Sprachpanel"
@@ -53,8 +57,17 @@
     "Name": "Kopfhörersteuerung",
     "Tooltip": "Kopfhörersteuerung"
   },
+  "com.hotspot.streamdock.discord.screenShare": {
+    "Name": "Bildschirmfreigabe umschalten",
+    "Tooltip": "Bildschirmfreigabe umschalten"
+  },
+  "com.hotspot.streamdock.discord.toggleVideo": {
+    "Name": "Kamera umschalten",
+    "Tooltip": "Kamera umschalten"
+  },
   "Category": "Discord",
   "Localization": {
+    "5": "5",
     "请启动Discord": "Bitte starten Sie Discord",
     "请求授权": "Save",
     "Logout": "Abmelden",
@@ -91,6 +104,22 @@
     "连接次数过多请重新启动Discord": "Zu viele Verbindungsversuche, bitte starten Sie Discord neu",
     "CLIENT ID": "CLIENT ID",
     "info": "Der Serverport wurde von 3002 auf 26432 geändert. Bitte aktualisieren Sie die Weiterleitungs-URL im Admin-Panel der App. Wir entschuldigen uns für die Unannehmlichkeiten.",
-    "DEV网址": "https://discord.com/developers/applications"
+    "DEV网址": "https://discord.com/developers/applications",
+    "CLIENT SECRET": "CLIENT SECRET",
+    "刷新": "Aktualisieren",
+    "callbackpage": "callbackseite",
+    "授权成功(authorizationsuccessful)": "授权成功",
+    "模板-属性检查器": "Vorlage-Eigenschaftenprüfer",
+    "https://discord.com/developers/applications": "https://discord.com/developers/applications",
+    "tooltiptext": "tooltiptext",
+    "authorization": "autorisierung",
+    "discordauthorization": "Discord Autorisierung",
+    "authorizationsuccess": "autorisierungserfolg",
+    "authorizationcompletedsuccessfully!": "autorisierungerfolgreichabgeschlossen!",
+    "closingwindowin": "Fenster schließen in",
+    "seconds...": "Sekunden...",
+    "closewindow": "Fenster schließen",
+    "connectionfailed{0}time": "Verbindung fehlgeschlagen {0} Mal",
+    "unconnected": "nicht verbunden"
   }
 }

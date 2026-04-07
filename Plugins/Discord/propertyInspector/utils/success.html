@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>authorization success</title>
+    <link rel="stylesheet" href="bootstrap.min.css">
+    <link rel="stylesheet" href="bootstrap-icons.css">
+    <style>
+        html {
+            width: 100%;
+            height: 100%;
+        }
+
+        body {
+            background-color: #2c2f33;
+            color: white;
+            font-family: Arial, sans-serif;
+            overflow: hidden;
+            width: 100%;
+            height: 100%;
+        }
+
+        .card {
+            background-color: #23272a;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+        }
+
+        .btn-primary {
+            background-color: #7289da;
+            border-color: #7289da;
+        }
+
+        .btn-primary:hover {
+            background-color: #677bc4;
+            border-color: #677bc4;
+        }
+
+        .form-control {
+            background-color: #2c2f33;
+            border: 1px solid #40444b;
+            color: white;
+        }
+
+        .form-control:focus {
+            background-color: #2c2f33;
+            border-color: #7289da;
+            box-shadow: 0 0 0 0.2rem rgba(114, 137, 218, 0.25);
+            color: white;
+        }
+
+        .discord-link {
+            color: #7289da;
+            cursor: pointer;
+            text-decoration: underline;
+        }
+
+        .discord-link:hover {
+            color: #677bc4;
+        }
+
+        .tutorial-link {
+            color: #7289da;
+            cursor: pointer;
+            text-align: center;
+            display: block;
+            margin-top: 15px;
+        }
+
+        .tutorial-link:hover {
+            color: #677bc4;
+            text-decoration: underline;
+        }
+
+        .header-icon {
+            font-size: 2rem;
+            color: #7289da;
+            margin-bottom: 15px;
+        }
+        
+        .success-icon {
+            font-size: 3rem;
+            color: #43b581;
+            margin-bottom: 15px;
+        }
+        
+        .countdown-text {
+            font-size: 1.2rem;
+            color: #aaa;
+        }
+    </style>
+</head>
+
+<body class="d-flex align-items-center justify-content-center">
+    <div class="row justify-content-center" style="width: 100%;">
+        <div class="col-10">
+            <div class="card p-4">
+                <div class="d-flex align-items-center justify-content-center" style="flex-direction: column;">
+                    <i class="bi bi-check-circle success-icon" id="successIcon"></i>
+                    <h3 class="mb-4" id="title">Authorization success</h3>
+                    <p class="mb-4" id="message">Authorization completed successfully!</p>
+                    <p class="countdown-text" id="countdown" style="display: none;">Closing window in <span id="count">5</span> seconds...</p>
+                    <button type="button" class="btn btn-primary mt-3" id="closeBtn" style="display: none;">Close window</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+<script>
+    // Get URL parameters to determine state
+    const urlParams = new URLSearchParams(window.location.search);
+    const state = urlParams.get('state') || 'default';
+    const message = urlParams.get('message') || 'Authorization completed successfully!';
+    
+    // Set the message text
+    document.getElementById('message').textContent = message;
+    
+    // Set the title based on state
+    if (state === 'custom') {
+        // Custom message state - no auto close
+        document.getElementById('successIcon').className = 'bi bi-info-circle success-icon';
+        document.getElementById('title').textContent = 'Information';
+        document.getElementById('closeBtn').style.display = 'block';
+        
+        // Add close button event
+        document.getElementById('closeBtn').addEventListener('click', () => {
+            window.close();
+        });
+    } else {
+        // Default success state with countdown
+        document.getElementById('countdown').style.display = 'block';
+        
+        // Start countdown
+        let count = 5;
+        const countdownElement = document.getElementById('count');
+        const countdownInterval = setInterval(() => {
+            count--;
+            countdownElement.textContent = count;
+            
+            if (count <= 0) {
+                clearInterval(countdownInterval);
+                window.close();
+            }
+        }, 1000);
+    }
+</script>
+
+</html>

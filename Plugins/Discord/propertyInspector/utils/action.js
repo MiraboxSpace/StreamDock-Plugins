@@ -4,7 +4,8 @@ let $websocket,
   $context,
   $settings,
   $lang,
-  $FileID = '';
+  $FileID = '',
+  $subWindows;
 
 WebSocket.prototype.setGlobalSettings = function (payload) {
   this.send(
@@ -151,6 +152,12 @@ async function connectElgatoStreamDeckSocket(port, uuid, event, app, info) {
       });
       if (!$back) $dom.main.style.display = 'block';
     }
+    if (data.event == 'sendToPropertyInspector') {
+      if (data.payload.msg){
+        AddMsg(data.payload.msg)
+      }
+      sendToPropertyInspector(data);
+    }
     $propEvent[data.event]?.(data.payload);
   };
 
@@ -173,7 +180,11 @@ async function connectElgatoStreamDeckSocket(port, uuid, event, app, info) {
   });
   while (walker.nextNode()) {
     console.log(walker.currentNode.data);
-    walker.currentNode.data = $lang[walker.currentNode.data];
+    if (walker.currentNode.data.startsWith('@@@')) {
+      walker.currentNode.data = walker.currentNode.data.slice(3);
+    } else {
+      walker.currentNode.data = $lang[walker.currentNode.data];
+    }
   }
   // placeholder 特殊处理
   const translate = (item) => {
@@ -185,7 +196,34 @@ async function connectElgatoStreamDeckSocket(port, uuid, event, app, info) {
   $('input', true).forEach(translate);
   $('textarea', true).forEach(translate);
 }
+function sendToPropertyInspector(data) {
+  if (!window.subWindows) {
+    return;
+  }
+  if (data.payload.state == 0) {
+    window.subWindows.location = '../utils/success.html';
+  } else if (data.payload.state == 1) {
+    window.subWindows.location = '../utils/success.html?state=custom&message=Automatic+token+acquisition+failed%2c+attempting+manual+authorization,+please+open+Discord+for+authorization.';
+  }
+}
+function AddMsg(text) {
+  const div = document.createElement('div');
+  div.style.padding = '10px 0px 0px 20px';
+  div.style.textAlign = 'center';
+  div.style.display = 'flex';
+  div.style.justifyContent = 'center';
+  div.style.alignItems = 'center';
+  div.style.color = 'red';
+  div.style.fontWeight = 'bold';
+  div.textContent = text;
+  div.style.position = "fixed"
+  div.style.bottom = "20px"; 
+  document.body.appendChild(div);
+}
 function openAuthorization() {
+  if (window.subWindows) {
+    return;
+  }
   window.$websocket = $websocket;
   window.$lang = $lang;
   // 获取缩放比例
@@ -205,7 +243,7 @@ function openAuthorization() {
   // 计算居中位置（仍然用 CSS 像素）
   const left = (screenWidth - popupWidth) / 2;
   const top = (screenHeight - popupHeight) / 2;
-  window.open('../utils/authorization.html', '_blank', `width=${popupWidth},height=${popupHeight},top=${top},left=${left}`);
+  window.subWindows = window.open('../utils/authorization.html', '_blank', `width=${popupWidth},height=${popupHeight},top=${top},left=${left}`);
 }
 
 // StreamDock 文件路径回调

@@ -1,0 +1,125 @@
+{
+  "Localization": {
+    "5": "5",
+    "请启动Discord": "請啟動Discord",
+    "请求授权": "保存",
+    "Logout": "登出",
+    "授权": "授權",
+    "服务器": "伺服器",
+    "文本通道": "文本渠道",
+    "设备": "設備",
+    "输入": "輸入",
+    "输出": "輸出",
+    "音量": "音量",
+    "语音通道": "語音通道",
+    "获取ID": "獲取ID",
+    "用户": "用戶",
+    "理想音量": "理想音量",
+    "调整单位": "調整單位",
+    "图标样式": "圖標樣式",
+    "静音类型": "靜音類型",
+    "模式": "模式",
+    "设置": "設置",
+    "设置输入设备": "設置輸入設備",
+    "设置输出设备": "設置輸出設備",
+    "设置二者": "設置二者",
+    "调整": "調整",
+    "静音": "靜音",
+    "动态垂直": "動態垂直",
+    "动态水平": "動態水平",
+    "静态": "靜態",
+    "搜索": "搜索",
+    "25%": "25%",
+    "-25%": "-25%",
+    "取消静音": "取消靜音",
+    "info": "服務端口由3002變為26432，請大家前往APP後台更改重定向url，給大家造成不便非常抱歉",
+    "View the tutorial": "查看使用教程",
+    "静音/取消静音": "靜音/取消靜音",
+    "连接次数过多请重新启动Discord": "連接次數過多，請重新啟動Discord",
+    "CLIENT ID": "CLIENT ID",
+    "CLIENT SECRET": "CLIENT SECRET",
+    "刷新": "刷新",
+    "DEV网址": "https://discord.com/developers/applications",
+    "callbackpage": "callbackpage",
+    "授权成功(authorizationsuccessful)": "授權成功(authorizationsuccessful)",
+    "模板-属性检查器": "模板-屬性檢查器",
+    "https://discord.com/developers/applications": "https://discord.com/developers/applications",
+    "tooltiptext": "tooltiptext",
+    "authorization": "授權",
+    "discordauthorization": "Discord授權",
+    "authorizationsuccess": "授權成功",
+    "authorizationcompletedsuccessfully!": "授權已成功完成!",
+    "closingwindowin": "關閉視窗中",
+    "seconds...": "秒後...",
+    "closewindow": "關閉視窗",
+    "connectionfailed{0}time": "連線失敗 {0} 次",
+    "unconnected": "未連接"
+  },
+  "Name": "Discord",
+  "Description": "Discord 操作",
+  "Category": "Discord",
+  "com.hotspot.streamdock.discord.deaf": {
+    "Name": "耳機靜音",
+    "Tooltip": "耳機靜音/解除靜音"
+  },
+  "com.hotspot.streamdock.discord.mute": {
+    "Name": "麥克風靜音",
+    "Tooltip": "麥克風靜音/解除靜音"
+  },
+  "com.hotspot.streamdock.discord.voicechannel": {
+    "Name": "語音通道",
+    "Tooltip": "加入語音通道"
+  },
+  "com.hotspot.streamdock.discord.textchannel": {
+    "Name": "文本通道",
+    "Tooltip": "加入文本通道"
+  },
+  "com.hotspot.streamdock.discord.pushtotalk": {
+    "Name": "按住靜音",
+    "Tooltip": "按住靜音"
+  },
+  "com.hotspot.streamdock.discord.pushtomute": {
+    "Name": "按住講話",
+    "Tooltip": "按住講話"
+  },
+  "com.hotspot.streamdock.discord.volumeControl": {
+    "Name": "音量控制",
+    "Tooltip": "控制音頻設備音量"
+  },
+  "com.hotspot.streamdock.discord.notice": {
+    "Name": "通知",
+    "Tooltip": "獲取通知"
+  },
+  "com.hotspot.streamdock.discord.setDevices": {
+    "Name": "設置音頻設備",
+    "Tooltip": "設置音頻設備"
+  },
+  "com.hotspot.streamdock.discord.userVolumeControl": {
+    "Name": "用戶音量控制",
+    "Tooltip": "用戶音量控制"
+  },
+  "com.hotspot.streamdock.discord.userVolumeControlKnob": {
+    "Name": "用戶音量控制",
+    "Tooltip": "用戶音量控制"
+  },
+  "com.hotspot.streamdock.discord.voiceboard": {
+    "Name": "語音板",
+    "Tooltip": "語音板"
+  },
+  "com.hotspot.streamdock.discord.mutecontrol": {
+    "Name": "麥克風控制",
+    "Tooltip": "麥克風控制"
+  },
+  "com.hotspot.streamdock.discord.deafcontrol": {
+    "Name": "耳機控制",
+    "Tooltip": "耳機控制"
+  },
+  "com.hotspot.streamdock.discord.screenShare": {
+    "Name": "打開/關閉屏幕共享",
+    "Tooltip": "打開/關閉屏幕共享"
+  },
+  "com.hotspot.streamdock.discord.toggleVideo": {
+    "Name": "打開/關閉攝像頭",
+    "Tooltip": "打開/關閉攝像頭"
+  }
+}
