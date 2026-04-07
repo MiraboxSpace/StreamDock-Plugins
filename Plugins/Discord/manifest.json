@@ -205,7 +205,8 @@
       "com.apple.mail"
     ],
     "windows": [
-      "Discord.exe"
+      "Discord.exe",
+      "DiscordPTB.exe"
     ]
   },
   "Author": "MiraBox",
