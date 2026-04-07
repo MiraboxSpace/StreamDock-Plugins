@@ -18,15 +18,28 @@ const $local = false, $back = false, $dom = {
     PTPModeCheckID: $('#PTPModeCheckID'),
 };
 
-let isInit = false;
+let $allSounds = [];
+function populateSoundsByCategory(category) {
+    const filtered = category
+        ? $allSounds.filter(s => s.category === category)
+        : $allSounds;
+
+    $dom.SoundSelectID.innerHTML = '';
+    filtered.forEach(sound => {
+        const option = document.createElement('option');
+        option.value = sound.name;
+        option.textContent = sound.name;
+        option.dataset.index = sound.index;
+        $dom.SoundSelectID.appendChild(option);
+    });
+}
+
 const $propEvent = {
     didReceiveSettings(data) {
         console.log(data);
         $dom.CategorySelectID.value = $settings.CategorySelect || '';
         $dom.SoundSelectID.value = $settings.SoundSelect || '';
-        if ($settings.SoundIndexInput) {
-            $dom.SoundIndexInputID.value = $settings.SoundIndexInput;
-        }
+        $dom.SoundIndexInputID.value = $settings.SoundIndexInput || '';
         $dom.ShowTitleCheckID.checked = $settings.ShowTitleCheck || false;
         $dom.PTPModeCheckID.checked = $settings.PTPModeCheck || false;
     },
@@ -41,26 +54,50 @@ const $propEvent = {
             $dom.CategorySelectID.appendChild(option);
         });
 
-        $dom.SoundSelectID.innerHTML = '';
-        data.CategoryAndSounds.sounds.forEach(sound => {
-            const option = document.createElement('option');
-            option.value = sound;
-            option.textContent = sound;
-            $dom.SoundSelectID.appendChild(option);
-        });
-
+        $allSounds = data.CategoryAndSounds.sounds;
         $dom.CategorySelectID.value = $settings.CategorySelect || '';
+        populateSoundsByCategory($settings.CategorySelect || '');
         $dom.SoundSelectID.value = $settings.SoundSelect || '';
+
+        // Auto-restore index after dropdown repopulation (e.g. after Refresh)
+        const selectedOption = $dom.SoundSelectID.options[$dom.SoundSelectID.selectedIndex];
+        if (selectedOption && selectedOption.dataset.index) {
+            $dom.SoundIndexInputID.value = selectedOption.dataset.index;
+            $settings.SoundIndexInput = selectedOption.dataset.index;
+        } else {
+            $dom.SoundIndexInputID.value = $settings.SoundIndexInput || '';
+        }
     }
 };
 
 function CategorySelectChange(value) {
     console.log('CategorySelectChange:', value);
     $settings.CategorySelect = value;
+
+    populateSoundsByCategory(value);
+    $dom.SoundSelectID.value = $settings.SoundSelect || '';
+
+    const selectedOption = $dom.SoundSelectID.options[$dom.SoundSelectID.selectedIndex];
+    if (selectedOption && selectedOption.dataset.index) {
+        $dom.SoundIndexInputID.value = selectedOption.dataset.index;
+        $settings.SoundIndexInput = selectedOption.dataset.index;
+    } else {
+        $dom.SoundIndexInputID.value = '';
+        $settings.SoundIndexInput = '';
+    }
 }
 function SoundSelectChange(value) {
     console.log('SoundSelectChange:', value);
     $settings.SoundSelect = value;
+
+    // Auto-populate Sound Index from the selected option's data-index
+    const selectedOption = $dom.SoundSelectID.options[$dom.SoundSelectID.selectedIndex];
+    if (selectedOption && selectedOption.dataset.index) {
+        const index = selectedOption.dataset.index;
+        $dom.SoundIndexInputID.value = index;
+        $settings.SoundIndexInput = index;
+        console.log('Auto-populated SoundIndex:', index);
+    }
 }
 function SoundIndexInputChange(value) {
     console.log('SoundIndexInputChange:', value);
@@ -70,8 +107,9 @@ function ShowTitleCheckChange(checked) {
     console.log('ShowTitleCheckChange:', checked);
     $settings.ShowTitleCheck = checked;
 
+    const text = $dom.SoundSelectID.options[$dom.SoundSelectID.selectedIndex]?.textContent || $dom.SoundIndexInputID.value;
+
     if (checked) {
-        var text = $dom.SoundIndexInputID.value;
         var canvas = document.createElement("canvas");
         var ctx = canvas.getContext("2d");
         var img = new Image();

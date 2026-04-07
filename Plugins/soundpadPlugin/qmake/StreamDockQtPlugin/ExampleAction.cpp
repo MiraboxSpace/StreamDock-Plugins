@@ -383,8 +383,11 @@ QJsonObject  ExampleAction::ExecuteCommand(HANDLE hPipe, const std::string& cmd)
                     QDomNodeList soundNodes = category.elementsByTagName("Sound");
                     for (int j = 0; j < soundNodes.count(); ++j) {
                         QDomElement sound = soundNodes.at(j).toElement();
-                        QString soundTitle = sound.attribute("title");
-                        soundsArray.append(soundTitle);
+                        QJsonObject soundObj;
+                        soundObj["name"] = sound.attribute("title");
+                        soundObj["index"] = sound.attribute("index").toInt();
+                        soundObj["category"] = categoryName;
+                        soundsArray.append(soundObj);
                     }
                 }
             }
