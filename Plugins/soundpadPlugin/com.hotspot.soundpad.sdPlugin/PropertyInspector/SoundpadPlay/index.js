@@ -98,51 +98,61 @@ function SoundSelectChange(value) {
         $settings.SoundIndexInput = index;
         console.log('Auto-populated SoundIndex:', index);
     }
+
+    if ($settings.ShowTitleCheck) {
+        const text = selectedOption?.textContent || $dom.SoundIndexInputID.value;
+        setButtonImageWithTitle(text);
+    }
 }
 function SoundIndexInputChange(value) {
     console.log('SoundIndexInputChange:', value);
     $settings.SoundIndexInput = value;
 }
+function setButtonImageWithTitle(text) {
+    const img = new Image();
+    img.src = "../../Images/sound.png";
+    img.onload = function () {
+        const canvas = document.createElement("canvas");
+        const ctx = canvas.getContext("2d");
+        canvas.width = img.width;
+        canvas.height = img.height;
+        ctx.drawImage(img, 0, 0);
+
+        const padding = 4;
+        const maxWidth = canvas.width - padding * 2;
+
+        ctx.font = "bold 11px Arial";
+        ctx.fillStyle = "rgba(0, 0, 0, 0.55)";
+        ctx.fillRect(0, canvas.height - 18, canvas.width, 18);
+
+        ctx.fillStyle = "white";
+        ctx.textAlign = "center";
+        ctx.fillText(text, canvas.width / 2, canvas.height - 5, maxWidth);
+
+        $websocket.setImage(canvas.toDataURL());
+    };
+}
+function setButtonImage() {
+    const img = new Image();
+    img.src = "../../Images/sound.png";
+    img.onload = function () {
+        const canvas = document.createElement("canvas");
+        const ctx = canvas.getContext("2d");
+        canvas.width = img.width;
+        canvas.height = img.height;
+        ctx.drawImage(img, 0, 0);
+        $websocket.setImage(canvas.toDataURL("image/png"));
+    };
+}
 function ShowTitleCheckChange(checked) {
     console.log('ShowTitleCheckChange:', checked);
     $settings.ShowTitleCheck = checked;
 
-    const text = $dom.SoundSelectID.options[$dom.SoundSelectID.selectedIndex]?.textContent || $dom.SoundIndexInputID.value;
-
     if (checked) {
-        var canvas = document.createElement("canvas");
-        var ctx = canvas.getContext("2d");
-        var img = new Image();
-        img.src = "../../Images/sound.png";
-        img.onload = function () {
-            canvas.width = img.width;
-            canvas.height = img.height;
-            ctx.drawImage(img, 0, 0);
-
-            ctx.font = "17px Arial";
-            ctx.fillStyle = "white";
-
-            var textWidth = ctx.measureText(text).width;
-            var x = (canvas.width - textWidth) / 2;
-            var y = canvas.height - 10;
-
-            ctx.fillText(text, x, y);
-            var newImage = canvas.toDataURL();
-            console.log(newImage);
-            $websocket.setImage(newImage)
-        };
+        const text = $dom.SoundSelectID.options[$dom.SoundSelectID.selectedIndex]?.textContent || $dom.SoundIndexInputID.value;
+        setButtonImageWithTitle(text);
     } else {
-        const img = new Image();
-        img.src = "../../Images/sound.png";
-        img.onload = function () {
-            const canvas = document.createElement("canvas");
-            const ctx = canvas.getContext("2d");
-            canvas.width = img.width;
-            canvas.height = img.height;
-            ctx.drawImage(img, 0, 0);
-            const dataURL = canvas.toDataURL("image/png");
-            $websocket.setImage(dataURL)
-        };
+        setButtonImage();
     }
 }
 function PTPModeCheckChange(checked) {
