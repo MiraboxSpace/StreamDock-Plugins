@@ -1,0 +1,159 @@
+{
+  "Localization": {
+    "5": "5",
+    "请启动Discord": "Пожалуйста, запустите Discord",
+    "请求授权": "Запросить авторизацию",
+    "Logout": "Выйти",
+    "授权": "Авторизовать",
+    "服务器": "Сервер",
+    "文本通道": "Текстовый канал",
+    "设备": "Устройство",
+    "输入": "Ввод",
+    "输出": "Вывод",
+    "音量": "Громкость",
+    "语音通道": "Голосовой канал",
+    "获取ID": "Получить ID",
+    "用户": "Пользователь",
+    "理想音量": "Идеальная громкость",
+    "调整单位": "Единица регулировки",
+    "图标样式": "Стиль значка",
+    "静音类型": "Тип отключения звука",
+    "模式": "Режим",
+    "设置": "Настройки",
+    "设置输入设备": "Настройка устройства ввода",
+    "设置输出设备": "Настройка устройства вывода",
+    "设置二者": "Настройка обоих",
+    "调整": "Регулировка",
+    "静音": "Без звука",
+    "动态垂直": "Динамическая вертикаль",
+    "动态水平": "Динамическая горизонталь",
+    "静态": "Статический",
+    "搜索": "Поиск",
+    "25%": "25%",
+    "-25%": "-25%",
+    "取消静音": "Включить звук",
+    "info": "Порт сервиса изменился с 3002 на 26432. Пожалуйста, перейдите в настройки приложения и измените URL перенаправления. Приносим извинения за неудобства.",
+    "View the tutorial": "Посмотреть инструкцию",
+    "静音/取消静音": "Без звука / Включить звук",
+    "连接次数过多请重新启动Discord": "Слишком много попыток подключения. Пожалуйста, перезапустите Discord.",
+    "CLIENT ID": "Идентификатор клиента",
+    "CLIENT SECRET": "Секрет клиента",
+    "刷新": "Обновить",
+    "DEV网址": "https://discord.com/developers/applications",
+    "callbackpage": "Страница обратного вызова",
+    "授权成功(authorizationsuccessful)": "Авторизация успешна (authorizationsuccessful)",
+    "模板-属性检查器": "Шаблон - инспектор свойств",
+    "https://discord.com/developers/applications": "https://discord.com/developers/applications",
+    "tooltiptext": "Текст подсказки",
+    "authorization": "Авторизация",
+    "discordauthorization": "Авторизация Discord",
+    "authorizationsuccess": "Авторизация успешна",
+    "authorizationcompletedsuccessfully!": "Авторизация успешно завершена!",
+    "closingwindowin": "Закрыть окно",
+    "seconds...": "секунд...",
+    "closewindow": "Закрыть окно",
+    "connectionfailed{0}time": "Ошибка подключения {0} раз",
+    "unconnected": "Не подключено",
+    "Authorization completed successfully!": "Авторизация успешно завершена!",
+    "Authorization success": "Авторизация успешна",
+    "Automatic token acquisition failed, attempting manual authorization, please open Discord for authorization.": "Автоматическое получение токена не удалось, выполняется попытка ручной авторизации. Пожалуйста, откройте Discord для авторизации.",
+    "Close window": "Закрыть окно",
+    "Closing window in": "Окно будет",
+    "Information": "Информация",
+    "seconds": "секунда",
+    "动态": "динамика",
+    "图标显示": "отображение иконок",
+    "已授权": "авторизовано",
+    "当前语音频道没有用户": "В текущем голосовом канале нет пользователей",
+    "未授权": "не авторизовано",
+    "模板文本": "шаблонный текст",
+    "正在授权": "авторизуется",
+    "步长": "шаг",
+    "点击刷新以获取声音列表": "Нажмите «Обновить», чтобы получить список звуков",
+    "退出登录": "Выйти",
+    "快速授权": "Быстрая авторизация",
+    "手动配置": "Ручная настройка",
+    "使用 Discord 客户端一键授权": "Авторизация в один клик с помощью клиента Discord",
+    "请确保 Discord 桌面客户端正在运行": "Убедитесь, что клиент Discord для ПК запущен",
+    "连接 Discord": "Подключение к Discord",
+    "等待授权": "Ожидание авторизации",
+    "输入音量": "Входная громкость",
+    "输出音量": "Выходная громкость",
+    "用户音量": "Громкость пользователя"
+  },
+  "Name": "Discord",
+  "Description": "Операции в Discord",
+  "Category": "Discord",
+  "com.hotspot.streamdock.discord.deaf": {
+    "Tooltip": "Отключение/включение звука наушников",
+    "Name": "Отключение звука наушников"
+  },
+  "com.hotspot.streamdock.discord.mute": {
+    "Tooltip": "Отключение/включение микрофона",
+    "Name": "Отключение микрофона"
+  },
+  "com.hotspot.streamdock.discord.voicechannel": {
+    "Tooltip": "Присоединиться к голосовому каналу",
+    "Name": "Голосовой канал"
+  },
+  "com.hotspot.streamdock.discord.textchannel": {
+    "Tooltip": "Присоединиться к текстовому каналу",
+    "Name": "Текстовый канал"
+  },
+  "com.hotspot.streamdock.discord.pushtotalk": {
+    "Tooltip": "Зажать для разговора",
+    "Name": "Зажать для разговора"
+  },
+  "com.hotspot.streamdock.discord.pushtomute": {
+    "Tooltip": "Удерживание для отключения звука",
+    "Name": "Удерживание для отключения звука"
+  },
+  "com.hotspot.streamdock.discord.volumeControl": {
+    "Tooltip": "Управление громкостью аудиоустройства",
+    "Name": "Регулировка громкости"
+  },
+  "com.hotspot.streamdock.discord.notice": {
+    "Tooltip": "Получение уведомлений",
+    "Name": "Уведомления"
+  },
+  "com.hotspot.streamdock.discord.setDevices": {
+    "Tooltip": "Настройка аудиоустройства",
+    "Name": "Настройка аудиоустройства"
+  },
+  "com.hotspot.streamdock.discord.userVolumeControl": {
+    "Tooltip": "Управление громкостью пользователем",
+    "Name": "Управление громкостью пользователем"
+  },
+  "com.hotspot.streamdock.discord.userVolumeControlKnob": {
+    "Tooltip": "Управление громкостью пользователя",
+    "Name": "Управление громкостью пользователя"
+  },
+  "com.hotspot.streamdock.discord.voiceboard": {
+    "Tooltip": "Голосовая панель",
+    "Name": "Голосовая панель"
+  },
+  "com.hotspot.streamdock.discord.mutecontrol": {
+    "Tooltip": "Управление микрофоном",
+    "Name": "Управление микрофоном"
+  },
+  "com.hotspot.streamdock.discord.deafcontrol": {
+    "Tooltip": "Управление наушниками",
+    "Name": "Управление наушниками"
+  },
+  "com.hotspot.streamdock.discord.screenShare": {
+    "Tooltip": "Включить/Выключить демонстрацию экрана",
+    "Name": "Включить/Выключить демонстрацию экрана"
+  },
+  "com.hotspot.streamdock.discord.toggleVideo": {
+    "Tooltip": "Включение/выключение камеры",
+    "Name": "Включение/выключение камеры"
+  },
+  "com.hotspot.streamdock.discord.voiceActivationToggle": {
+    "Tooltip": "Переключение между голосовой активацией и нажатием для разговора",
+    "Name": "Переключение голосовой активации"
+  },
+  "com.hotspot.streamdock.discord.volumeControlKnob": {
+    "Tooltip": "Регулировка входной/выходной громкости с помощью ручки",
+    "Name": "Регулировка громкости"
+  }
+}

@@ -1,0 +1,12 @@
+{
+    "include": ["src/web/**/*"],
+    "compilerOptions": {
+        "composite": true,
+        "target": "ESNext",
+        "module": "ESNext",
+        "moduleResolution": "bundler",
+        "types": ["vite/client", "@mirabox/streamdock-sdk/types"],
+        "lib": ["ESNext", "DOM"],
+        "skipLibCheck": true
+    }
+}

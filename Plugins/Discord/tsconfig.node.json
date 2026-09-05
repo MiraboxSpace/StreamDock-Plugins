@@ -1,0 +1,13 @@
+{
+    "include": ["./src/node/**/*.ts"],
+    "compilerOptions": {
+        "composite": true,
+        "module": "nodenext",
+        "moduleDetection": "force",
+        "moduleResolution": "nodenext",
+        "target": "esnext",
+        "types": ["@mirabox/streamdock-sdk/types"],
+        "skipLibCheck": true,
+        "esModuleInterop": true
+    }
+}

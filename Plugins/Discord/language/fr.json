@@ -1,0 +1,159 @@
+{
+  "Localization": {
+    "5": "5",
+    "请启动Discord": "Veuillez lancer Discord",
+    "请求授权": "Demander l'autorisation",
+    "Logout": "Déconnexion",
+    "授权": "Autorisation",
+    "服务器": "Serveur",
+    "文本通道": "Canal textuel",
+    "设备": "Appareil",
+    "输入": "Entrée",
+    "输出": "Sortie",
+    "音量": "volume",
+    "语音通道": "canal vocal",
+    "获取ID": "Obtenir l'ID",
+    "用户": "utilisateur",
+    "理想音量": "volume idéal",
+    "调整单位": "unité d'ajustement",
+    "图标样式": "style d'icône",
+    "静音类型": "type de sourdine",
+    "模式": "mode",
+    "设置": "paramètres",
+    "设置输入设备": "Configurer le périphérique d'entrée",
+    "设置输出设备": "Configurer le périphérique de sortie",
+    "设置二者": "Configurer les deux",
+    "调整": "Ajuster",
+    "静音": "Muet",
+    "动态垂直": "Vertical dynamique",
+    "动态水平": "Horizontal dynamique",
+    "静态": "Statique",
+    "搜索": "Rechercher",
+    "25%": "25%",
+    "-25%": "-25%",
+    "取消静音": "Désactiver le muet",
+    "info": "Le port de service est passé de 3002 à 26432. Veuillez vous rendre dans les paramètres de l'application pour modifier l'URL de redirection. Nous sommes désolés pour la gêne occasionnée.",
+    "View the tutorial": "Voir le guide d'utilisation",
+    "静音/取消静音": "Muet / Désactiver le muet",
+    "连接次数过多请重新启动Discord": "Trop de tentatives de connexion, veuillez redémarrer Discord.",
+    "CLIENT ID": "ID CLIENT",
+    "CLIENT SECRET": "SECRET CLIENT",
+    "刷新": "Actualiser",
+    "DEV网址": "https://discord.com/developers/applications",
+    "callbackpage": "Page de rappel",
+    "授权成功(authorizationsuccessful)": "Autorisation réussie (authorizationsuccessful)",
+    "模板-属性检查器": "Modèle - Inspecteur de propriétés",
+    "https://discord.com/developers/applications": "https://discord.com/developers/applications",
+    "tooltiptext": "Texte d'invite",
+    "authorization": "Autorisation",
+    "discordauthorization": "Autorisation Discord",
+    "authorizationsuccess": "Autorisation réussie",
+    "authorizationcompletedsuccessfully!": "L'autorisation a été complétée avec succès !",
+    "closingwindowin": "Fermer la fenêtre",
+    "seconds...": "Secondes...",
+    "closewindow": "Fermer la fenêtre",
+    "connectionfailed{0}time": "Échec de connexion {0} fois",
+    "unconnected": "Non connecté",
+    "Authorization completed successfully!": "Autorisation réussie !",
+    "Authorization success": "Autorisation réussie",
+    "Automatic token acquisition failed, attempting manual authorization, please open Discord for authorization.": "Échec de l'obtention automatique du jeton, tentative d'autorisation manuelle, veuillez ouvrir Discord pour autoriser.",
+    "Close window": "Fermer la fenêtre",
+    "Closing window in": "La fenêtre sera",
+    "Information": "Information",
+    "seconds": "seconde",
+    "动态": "dynamique",
+    "图标显示": "affichage des icônes",
+    "已授权": "autorisé",
+    "当前语音频道没有用户": "aucun utilisateur dans le canal vocal actuel",
+    "未授权": "non autorisé",
+    "模板文本": "texte modèle",
+    "正在授权": "autorisation en cours",
+    "步长": "pas",
+    "点击刷新以获取声音列表": "cliquez sur Rafraîchir pour obtenir la liste des sons",
+    "退出登录": "Déconnexion",
+    "快速授权": "Autorisation rapide",
+    "手动配置": "Configuration manuelle",
+    "使用 Discord 客户端一键授权": "Autorisation en un clic avec le client Discord",
+    "请确保 Discord 桌面客户端正在运行": "Assurez-vous que le client de bureau Discord est en cours d'exécution",
+    "连接 Discord": "Connexion à Discord",
+    "等待授权": "En attente d'autorisation",
+    "输入音量": "Volume d'entrée",
+    "输出音量": "Volume de sortie",
+    "用户音量": "Volume utilisateur"
+  },
+  "Name": "Discord",
+  "Description": "Opérations Discord",
+  "Category": "Discord",
+  "com.hotspot.streamdock.discord.deaf": {
+    "Tooltip": "Muet du casque / Désactiver le muet du casque",
+    "Name": "Muet du casque"
+  },
+  "com.hotspot.streamdock.discord.mute": {
+    "Tooltip": "Muet du micro / Désactiver le muet du micro",
+    "Name": "Muet du micro"
+  },
+  "com.hotspot.streamdock.discord.voicechannel": {
+    "Tooltip": "Rejoindre le canal vocal",
+    "Name": "Canal vocal"
+  },
+  "com.hotspot.streamdock.discord.textchannel": {
+    "Tooltip": "Rejoindre le canal textuel",
+    "Name": "Canal textuel"
+  },
+  "com.hotspot.streamdock.discord.pushtotalk": {
+    "Tooltip": "Appuyer pour parler",
+    "Name": "Appuyer pour parler"
+  },
+  "com.hotspot.streamdock.discord.pushtomute": {
+    "Tooltip": "Appuyer longuement pour mettre en sourdine",
+    "Name": "Appuyer longuement pour mettre en sourdine"
+  },
+  "com.hotspot.streamdock.discord.volumeControl": {
+    "Tooltip": "Contrôle du volume du périphérique audio",
+    "Name": "Contrôle du volume"
+  },
+  "com.hotspot.streamdock.discord.notice": {
+    "Tooltip": "Recevoir les notifications",
+    "Name": "Notifications"
+  },
+  "com.hotspot.streamdock.discord.setDevices": {
+    "Tooltip": "Configurer le périphérique audio",
+    "Name": "Configurer le périphérique audio"
+  },
+  "com.hotspot.streamdock.discord.userVolumeControl": {
+    "Tooltip": "Contrôle du volume utilisateur",
+    "Name": "Contrôle du volume utilisateur"
+  },
+  "com.hotspot.streamdock.discord.userVolumeControlKnob": {
+    "Tooltip": "Contrôle du volume utilisateur",
+    "Name": "Contrôle du volume utilisateur"
+  },
+  "com.hotspot.streamdock.discord.voiceboard": {
+    "Tooltip": "Panneau vocal",
+    "Name": "Panneau vocal"
+  },
+  "com.hotspot.streamdock.discord.mutecontrol": {
+    "Tooltip": "Contrôle du microphone",
+    "Name": "Contrôle du microphone"
+  },
+  "com.hotspot.streamdock.discord.deafcontrol": {
+    "Tooltip": "Contrôle du casque",
+    "Name": "Contrôle du casque"
+  },
+  "com.hotspot.streamdock.discord.screenShare": {
+    "Tooltip": "Activer/Désactiver le partage d'écran",
+    "Name": "Activer/Désactiver le partage d'écran"
+  },
+  "com.hotspot.streamdock.discord.toggleVideo": {
+    "Tooltip": "Activer/désactiver la caméra",
+    "Name": "Activer/désactiver la caméra"
+  },
+  "com.hotspot.streamdock.discord.voiceActivationToggle": {
+    "Tooltip": "Basculer entre l'activation vocale et la parole par bouton",
+    "Name": "Commutation d'activation vocale"
+  },
+  "com.hotspot.streamdock.discord.volumeControlKnob": {
+    "Tooltip": "Utiliser le bouton rotatif pour contrôler le volume d'entrée/sortie",
+    "Name": "Contrôle du volume"
+  }
+}

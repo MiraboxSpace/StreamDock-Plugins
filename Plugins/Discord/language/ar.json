@@ -1,0 +1,159 @@
+{
+  "Localization": {
+    "5": "5",
+    "请启动Discord": "يرجى تشغيل Discord",
+    "请求授权": "طلب الإذن",
+    "Logout": "تسجيل الخروج",
+    "授权": "الإذن",
+    "服务器": "الخادم",
+    "文本通道": "قناة النصوص",
+    "设备": "الجهاز",
+    "输入": "الإدخال",
+    "输出": "الإخراج",
+    "音量": "حجم الصوت",
+    "语音通道": "قناة الصوت",
+    "获取ID": "الحصول على المعرف",
+    "用户": "المستخدم",
+    "理想音量": "حجم الصوت المثالي",
+    "调整单位": "وحدة التعديل",
+    "图标样式": "نمط الأيقونة",
+    "静音类型": "نوع كتم الصوت",
+    "模式": "الوضع",
+    "设置": "الإعدادات",
+    "设置输入设备": "إعداد جهاز الإدخال",
+    "设置输出设备": "إعداد جهاز الإخراج",
+    "设置二者": "إعداد كليهما",
+    "调整": "ضبط",
+    "静音": "كتم الصوت",
+    "动态垂直": "عمودي ديناميكي",
+    "动态水平": "أفقي ديناميكي",
+    "静态": "ثابت",
+    "搜索": "بحث",
+    "25%": "25%",
+    "-25%": "-25%",
+    "取消静音": "إلغاء كتم الصوت",
+    "info": "تم تغيير منفذ الخدمة من 3002 إلى 26432، يرجى التوجه إلى لوحة إدارة التطبيق لتعديل رابط إعادة التوجيه، نعتذر بشدة عن الإزعاج",
+    "View the tutorial": "عرض دليل الاستخدام",
+    "静音/取消静音": "كتم الصوت / إلغاء كتم الصوت",
+    "连接次数过多请重新启动Discord": "عدد الاتصالات كبير جدًا، يرجى إعادة تشغيل Discord",
+    "CLIENT ID": "معرف العميل",
+    "CLIENT SECRET": "سر العميل",
+    "刷新": "تحديث",
+    "DEV网址": "https://discord.com/developers/applications",
+    "callbackpage": "صفحة العودة",
+    "授权成功(authorizationsuccessful)": "نجاح الترخيص (authorizationsuccessful)",
+    "模板-属性检查器": "قالب - مفتش الخصائص",
+    "https://discord.com/developers/applications": "https://discord.com/developers/applications",
+    "tooltiptext": "نص التلميح",
+    "authorization": "ترخيص",
+    "discordauthorization": "ترخيص Discord",
+    "authorizationsuccess": "نجاح الترخيص",
+    "authorizationcompletedsuccessfully!": "تم الترخيص بنجاح!",
+    "closingwindowin": "إغلاق النافذة",
+    "seconds...": "ثوانٍ...",
+    "closewindow": "إغلاق النافذة",
+    "connectionfailed{0}time": "فشل الاتصال {0} مرة",
+    "unconnected": "غير متصل",
+    "Authorization completed successfully!": "تمت المصادقة بنجاح!",
+    "Authorization success": "المصادقة ناجحة",
+    "Automatic token acquisition failed, attempting manual authorization, please open Discord for authorization.": "فشل الحصول على الرمز تلقائياً، جارٍ محاولة المصادقة اليدوية، يرجى فتح Discord للمصادقة.",
+    "Close window": "إغلاق النافذة",
+    "Closing window in": "ستغلق النافذة",
+    "Information": "معلومات",
+    "seconds": "ثانية",
+    "动态": "ديناميكي",
+    "图标显示": "عرض الأيقونة",
+    "已授权": "مُصرح به",
+    "当前语音频道没有用户": "لا يوجد مستخدمون في قناة الصوت الحالية",
+    "未授权": "غير مصرح",
+    "模板文本": "نص القالب",
+    "正在授权": "جارٍ الترخيص",
+    "步长": "حجم الخطوة",
+    "点击刷新以获取声音列表": "انقر على التحديث للحصول على قائمة الأصوات",
+    "退出登录": "تسجيل الخروج",
+    "快速授权": "تفويض سريع",
+    "手动配置": "تكوين يدوي",
+    "使用 Discord 客户端一键授权": "التفويض بنقرة واحدة باستخدام عميل Discord",
+    "请确保 Discord 桌面客户端正在运行": "يرجى التأكد من أن عميل Discord لسطح المكتب قيد التشغيل",
+    "连接 Discord": "الاتصال بـ Discord",
+    "等待授权": "انتظار التفويض",
+    "输入音量": "حجم الإدخال",
+    "输出音量": "حجم الإخراج",
+    "用户音量": "حجم المستخدم"
+  },
+  "Name": "ديسكورد",
+  "Description": "تشغيل ديسكورد",
+  "Category": "ديسكورد",
+  "com.hotspot.streamdock.discord.deaf": {
+    "Tooltip": "كتم صوت سماعة الرأس / إلغاء كتمه",
+    "Name": "كتم صوت سماعة الرأس"
+  },
+  "com.hotspot.streamdock.discord.mute": {
+    "Tooltip": "كتم صوت الميكروفون / إلغاء كتمه",
+    "Name": "كتم صوت الميكروفون"
+  },
+  "com.hotspot.streamdock.discord.voicechannel": {
+    "Tooltip": "الانضمام إلى القناة الصوتية",
+    "Name": "القناة الصوتية"
+  },
+  "com.hotspot.streamdock.discord.textchannel": {
+    "Tooltip": "الانضمام إلى القناة النصية",
+    "Name": "القناة النصية"
+  },
+  "com.hotspot.streamdock.discord.pushtotalk": {
+    "Tooltip": "اضغط مع الاستمرار للتحدث",
+    "Name": "اضغط مع الاستمرار للتحدث"
+  },
+  "com.hotspot.streamdock.discord.pushtomute": {
+    "Tooltip": "اضغط مع الاستمرار لكتم الصوت",
+    "Name": "اضغط مع الاستمرار لكتم الصوت"
+  },
+  "com.hotspot.streamdock.discord.volumeControl": {
+    "Tooltip": "التحكم في مستوى صوت جهاز الصوت",
+    "Name": "التحكم في مستوى الصوت"
+  },
+  "com.hotspot.streamdock.discord.notice": {
+    "Tooltip": "الحصول على الإشعارات",
+    "Name": "الإشعارات"
+  },
+  "com.hotspot.streamdock.discord.setDevices": {
+    "Tooltip": "تعيين جهاز الصوت",
+    "Name": "تعيين جهاز الصوت"
+  },
+  "com.hotspot.streamdock.discord.userVolumeControl": {
+    "Tooltip": "التحكم في مستوى الصوت من قبل المستخدم",
+    "Name": "التحكم في مستوى الصوت من قبل المستخدم"
+  },
+  "com.hotspot.streamdock.discord.userVolumeControlKnob": {
+    "Tooltip": "التحكم في مستوى صوت المستخدم",
+    "Name": "التحكم في مستوى صوت المستخدم"
+  },
+  "com.hotspot.streamdock.discord.voiceboard": {
+    "Tooltip": "لوحة الصوت",
+    "Name": "لوحة الصوت"
+  },
+  "com.hotspot.streamdock.discord.mutecontrol": {
+    "Tooltip": "التحكم في الميكروفون",
+    "Name": "التحكم في الميكروفون"
+  },
+  "com.hotspot.streamdock.discord.deafcontrol": {
+    "Tooltip": "التحكم في سماعات الرأس",
+    "Name": "التحكم في سماعات الرأس"
+  },
+  "com.hotspot.streamdock.discord.screenShare": {
+    "Tooltip": "تشغيل/إيقاف مشاركة الشاشة",
+    "Name": "تشغيل/إيقاف مشاركة الشاشة"
+  },
+  "com.hotspot.streamdock.discord.toggleVideo": {
+    "Tooltip": "فتح/إغلاق الكاميرا",
+    "Name": "فتح/إغلاق الكاميرا"
+  },
+  "com.hotspot.streamdock.discord.voiceActivationToggle": {
+    "Tooltip": "التبديل بين التنشيط الصوتي والتحدث بالضغط على الزر",
+    "Name": "تبديل التنشيط الصوتي"
+  },
+  "com.hotspot.streamdock.discord.volumeControlKnob": {
+    "Tooltip": "استخدام المقبض للتحكم في مستوى الصوت المدخل/المخرج",
+    "Name": "التحكم في مستوى الصوت"
+  }
+}

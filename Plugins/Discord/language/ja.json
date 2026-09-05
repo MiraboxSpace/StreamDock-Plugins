@@ -1,0 +1,159 @@
+{
+  "Localization": {
+    "5": "5",
+    "请启动Discord": "Discordを起動してください",
+    "请求授权": "認証をリクエスト",
+    "Logout": "ログアウト",
+    "授权": "認証",
+    "服务器": "サーバー",
+    "文本通道": "テキストチャンネル",
+    "设备": "デバイス",
+    "输入": "入力",
+    "输出": "出力",
+    "音量": "音量",
+    "语音通道": "音声チャンネル",
+    "获取ID": "ID取得",
+    "用户": "ユーザー",
+    "理想音量": "理想音量",
+    "调整单位": "調整単位",
+    "图标样式": "アイコンスタイル",
+    "静音类型": "ミュートタイプ",
+    "模式": "モード",
+    "设置": "設定",
+    "设置输入设备": "入力デバイスの設定",
+    "设置输出设备": "出力デバイスの設定",
+    "设置二者": "両方の設定",
+    "调整": "調整",
+    "静音": "ミュート",
+    "动态垂直": "ダイナミック垂直",
+    "动态水平": "ダイナミック水平",
+    "静态": "静的",
+    "搜索": "検索",
+    "25%": "25%",
+    "-25%": "-25%",
+    "取消静音": "ミュート解除",
+    "info": "サービスポートが3002から26432に変更されました。アプリのバックエンドでリダイレクトURLを変更してください。ご不便をおかけして申し訳ございません。",
+    "View the tutorial": "使用チュートリアルを見る",
+    "静音/取消静音": "ミュート/ミュート解除",
+    "连接次数过多请重新启动Discord": "接続回数が多すぎます。Discordを再起動してください。",
+    "CLIENT ID": "クライアントID",
+    "CLIENT SECRET": "クライアントシークレット",
+    "刷新": "リフレッシュ",
+    "DEV网址": "https://discord.com/developers/applications",
+    "callbackpage": "回调ページ",
+    "授权成功(authorizationsuccessful)": "認証成功(authorizationsuccessful)",
+    "模板-属性检查器": "テンプレート-プロパティインスペクター",
+    "https://discord.com/developers/applications": "https://discord.com/developers/applications",
+    "tooltiptext": "ヒントテキスト",
+    "authorization": "認証",
+    "discordauthorization": "Discord認証",
+    "authorizationsuccess": "認証成功",
+    "authorizationcompletedsuccessfully!": "認証が正常に完了しました！",
+    "closingwindowin": "ウィンドウを閉じる",
+    "seconds...": "秒...",
+    "closewindow": "ウィンドウを閉じる",
+    "connectionfailed{0}time": "接続失敗{0}回",
+    "unconnected": "未接続",
+    "Authorization completed successfully!": "認証が正常に完了しました！",
+    "Authorization success": "認証成功",
+    "Automatic token acquisition failed, attempting manual authorization, please open Discord for authorization.": "自動トークン取得に失敗しました。手動認証を試みています。Discordを開いて認証してください。",
+    "Close window": "ウィンドウを閉じる",
+    "Closing window in": "ウィンドウは",
+    "Information": "情報",
+    "seconds": "秒",
+    "动态": "動的",
+    "图标显示": "アイコン表示",
+    "已授权": "認証済み",
+    "当前语音频道没有用户": "現在のボイスチャンネルにはユーザーがいません",
+    "未授权": "未認証",
+    "模板文本": "テンプレートテキスト",
+    "正在授权": "認証中",
+    "步长": "ステップ",
+    "点击刷新以获取声音列表": "クリックして更新し、サウンドリストを取得してください",
+    "退出登录": "ログアウト",
+    "快速授权": "クイック認証",
+    "手动配置": "手動設定",
+    "使用 Discord 客户端一键授权": "Discordクライアントを使用してワンクリック認証",
+    "请确保 Discord 桌面客户端正在运行": "Discordデスクトップクライアントが実行中であることを確認してください",
+    "连接 Discord": "Discordに接続",
+    "等待授权": "認証待ち",
+    "输入音量": "入力音量",
+    "输出音量": "出力音量",
+    "用户音量": "ユーザー音量"
+  },
+  "Name": "ディスコード",
+  "Description": "ディスコード操作",
+  "Category": "ディスコード",
+  "com.hotspot.streamdock.discord.deaf": {
+    "Tooltip": "ヘッドホンミュート/ミュート解除",
+    "Name": "ヘッドホンミュート"
+  },
+  "com.hotspot.streamdock.discord.mute": {
+    "Tooltip": "マイクミュート/ミュート解除",
+    "Name": "マイクミュート"
+  },
+  "com.hotspot.streamdock.discord.voicechannel": {
+    "Tooltip": "ボイスチャンネルに参加",
+    "Name": "ボイスチャンネル"
+  },
+  "com.hotspot.streamdock.discord.textchannel": {
+    "Tooltip": "テキストチャンネルに参加",
+    "Name": "テキストチャンネル"
+  },
+  "com.hotspot.streamdock.discord.pushtotalk": {
+    "Tooltip": "プッシュトーク",
+    "Name": "プッシュトーク"
+  },
+  "com.hotspot.streamdock.discord.pushtomute": {
+    "Tooltip": "長押しでミュート",
+    "Name": "長押しでミュート"
+  },
+  "com.hotspot.streamdock.discord.volumeControl": {
+    "Tooltip": "オーディオ機器の音量を制御",
+    "Name": "音量制御"
+  },
+  "com.hotspot.streamdock.discord.notice": {
+    "Tooltip": "通知を取得",
+    "Name": "通知"
+  },
+  "com.hotspot.streamdock.discord.setDevices": {
+    "Tooltip": "オーディオ機器の設定",
+    "Name": "オーディオ機器の設定"
+  },
+  "com.hotspot.streamdock.discord.userVolumeControl": {
+    "Tooltip": "ユーザー音量制御",
+    "Name": "ユーザー音量制御"
+  },
+  "com.hotspot.streamdock.discord.userVolumeControlKnob": {
+    "Tooltip": "ユーザー音量制御",
+    "Name": "ユーザー音量制御"
+  },
+  "com.hotspot.streamdock.discord.voiceboard": {
+    "Tooltip": "音声ボード",
+    "Name": "音声ボード"
+  },
+  "com.hotspot.streamdock.discord.mutecontrol": {
+    "Tooltip": "マイク制御",
+    "Name": "マイク制御"
+  },
+  "com.hotspot.streamdock.discord.deafcontrol": {
+    "Tooltip": "ヘッドホン制御",
+    "Name": "ヘッドホン制御"
+  },
+  "com.hotspot.streamdock.discord.screenShare": {
+    "Tooltip": "画面共有のオン/オフ",
+    "Name": "画面共有のオン/オフ"
+  },
+  "com.hotspot.streamdock.discord.toggleVideo": {
+    "Tooltip": "カメラのオン/オフ",
+    "Name": "カメラのオン/オフ"
+  },
+  "com.hotspot.streamdock.discord.voiceActivationToggle": {
+    "Tooltip": "音声アクティベーションとプッシュトークの切り替え",
+    "Name": "音声アクティベーション切替"
+  },
+  "com.hotspot.streamdock.discord.volumeControlKnob": {
+    "Tooltip": "ノブで入出力音量を調整",
+    "Name": "音量コントロール"
+  }
+}

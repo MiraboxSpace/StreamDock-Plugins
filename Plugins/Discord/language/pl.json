@@ -1,0 +1,159 @@
+{
+  "Localization": {
+    "5": "5",
+    "请启动Discord": "Uruchom Discorda",
+    "请求授权": "Poproś o autoryzację",
+    "Logout": "Wyloguj",
+    "授权": "Autoryzacja",
+    "服务器": "Serwer",
+    "文本通道": "Kanał tekstowy",
+    "设备": "Urządzenie",
+    "输入": "Wejście",
+    "输出": "Wyjście",
+    "音量": "głośność",
+    "语音通道": "kanał głosowy",
+    "获取ID": "pobierz ID",
+    "用户": "użytkownik",
+    "理想音量": "idealna głośność",
+    "调整单位": "jednostka regulacji",
+    "图标样式": "styl ikony",
+    "静音类型": "typ wyciszenia",
+    "模式": "tryb",
+    "设置": "ustawienia",
+    "设置输入设备": "Ustaw urządzenie wejściowe",
+    "设置输出设备": "Ustaw urządzenie wyjściowe",
+    "设置二者": "Ustaw oba",
+    "调整": "Dostosuj",
+    "静音": "Wycisz",
+    "动态垂直": "Dynamiczny pionowy",
+    "动态水平": "Dynamiczny poziomy",
+    "静态": "Statyczny",
+    "搜索": "Szukaj",
+    "25%": "25%",
+    "-25%": "-25%",
+    "取消静音": "Wyłącz wyciszenie",
+    "info": "Port usługi zmienił się z 3002 na 26432. Proszę przejść do panelu administracyjnego aplikacji i zmienić adres URL przekierowania. Przepraszamy za niedogodności.",
+    "View the tutorial": "Zobacz instrukcję",
+    "静音/取消静音": "Wycisz / Wyłącz wyciszenie",
+    "连接次数过多请重新启动Discord": "Zbyt wiele prób połączenia. Uruchom ponownie Discorda.",
+    "CLIENT ID": "ID KLIENTA",
+    "CLIENT SECRET": "SEKRET KLIENTA",
+    "刷新": "Odśwież",
+    "DEV网址": "https://discord.com/developers/applications",
+    "callbackpage": "Strona zwrotna",
+    "授权成功(authorizationsuccessful)": "Autoryzacja udana (authorizationsuccessful)",
+    "模板-属性检查器": "Szablon - inspektor właściwości",
+    "https://discord.com/developers/applications": "https://discord.com/developers/applications",
+    "tooltiptext": "Tekst podpowiedzi",
+    "authorization": "Autoryzacja",
+    "discordauthorization": "Autoryzacja Discord",
+    "authorizationsuccess": "Autoryzacja udana",
+    "authorizationcompletedsuccessfully!": "Autoryzacja została pomyślnie zakończona!",
+    "closingwindowin": "Zamknij okno",
+    "seconds...": "sekund...",
+    "closewindow": "Zamknij okno",
+    "connectionfailed{0}time": "Połączenie nieudane {0} razy",
+    "unconnected": "Nie połączono",
+    "Authorization completed successfully!": "Autoryzacja zakończona pomyślnie!",
+    "Authorization success": "Autoryzacja udana",
+    "Automatic token acquisition failed, attempting manual authorization, please open Discord for authorization.": "Automatyczne pobieranie tokena nie powiodło się, próbuję ręcznej autoryzacji. Otwórz Discorda, aby dokonać autoryzacji.",
+    "Close window": "Zamknij okno",
+    "Closing window in": "Okno zostanie",
+    "Information": "Informacja",
+    "seconds": "sekunda",
+    "动态": "dynamiczny",
+    "图标显示": "wyświetlanie ikon",
+    "已授权": "autoryzowany",
+    "当前语音频道没有用户": "Bieżący kanał głosowy nie ma użytkowników",
+    "未授权": "nieautoryzowany",
+    "模板文本": "tekst szablonu",
+    "正在授权": "autoryzowanie",
+    "步长": "krok",
+    "点击刷新以获取声音列表": "Kliknij Odśwież, aby pobrać listę dźwięków",
+    "退出登录": "Wyloguj się",
+    "快速授权": "Szybka autoryzacja",
+    "手动配置": "Ręczna konfiguracja",
+    "使用 Discord 客户端一键授权": "Autoryzuj jednym kliknięciem za pomocą klienta Discord",
+    "请确保 Discord 桌面客户端正在运行": "Upewnij się, że klient Discord działa na pulpicie",
+    "连接 Discord": "Połącz z Discord",
+    "等待授权": "Czekaj na autoryzację",
+    "输入音量": "Głośność wejściowa",
+    "输出音量": "Głośność wyjściowa",
+    "用户音量": "Głośność użytkownika"
+  },
+  "Name": "Discord",
+  "Description": "Operacje Discord",
+  "Category": "Discord",
+  "com.hotspot.streamdock.discord.deaf": {
+    "Tooltip": "Wyciszenie/odciszenie słuchawek",
+    "Name": "Wyciszenie słuchawek"
+  },
+  "com.hotspot.streamdock.discord.mute": {
+    "Tooltip": "Wyciszenie/odciszenie mikrofonu",
+    "Name": "Wyciszenie mikrofonu"
+  },
+  "com.hotspot.streamdock.discord.voicechannel": {
+    "Tooltip": "Dołącz do kanału głosowego",
+    "Name": "Kanał głosowy"
+  },
+  "com.hotspot.streamdock.discord.textchannel": {
+    "Tooltip": "Dołącz do kanału tekstowego",
+    "Name": "Kanał tekstowy"
+  },
+  "com.hotspot.streamdock.discord.pushtotalk": {
+    "Tooltip": "Przytrzymaj, aby mówić",
+    "Name": "Przytrzymaj, aby mówić"
+  },
+  "com.hotspot.streamdock.discord.pushtomute": {
+    "Tooltip": "Przytrzymaj, aby wyciszyć",
+    "Name": "Przytrzymaj, aby wyciszyć"
+  },
+  "com.hotspot.streamdock.discord.volumeControl": {
+    "Tooltip": "Kontroluj głośność urządzenia audio",
+    "Name": "Kontrola głośności"
+  },
+  "com.hotspot.streamdock.discord.notice": {
+    "Tooltip": "Pobierz powiadomienia",
+    "Name": "Powiadomienia"
+  },
+  "com.hotspot.streamdock.discord.setDevices": {
+    "Tooltip": "Ustawienia urządzenia audio",
+    "Name": "Ustawienia urządzenia audio"
+  },
+  "com.hotspot.streamdock.discord.userVolumeControl": {
+    "Tooltip": "Kontrola głośności użytkownika",
+    "Name": "Kontrola głośności użytkownika"
+  },
+  "com.hotspot.streamdock.discord.userVolumeControlKnob": {
+    "Tooltip": "Kontrola głośności użytkownika",
+    "Name": "Kontrola głośności użytkownika"
+  },
+  "com.hotspot.streamdock.discord.voiceboard": {
+    "Tooltip": "Panel głosowy",
+    "Name": "Panel głosowy"
+  },
+  "com.hotspot.streamdock.discord.mutecontrol": {
+    "Tooltip": "Kontrola mikrofonu",
+    "Name": "Kontrola mikrofonu"
+  },
+  "com.hotspot.streamdock.discord.deafcontrol": {
+    "Tooltip": "Kontrola słuchawek",
+    "Name": "Kontrola słuchawek"
+  },
+  "com.hotspot.streamdock.discord.screenShare": {
+    "Tooltip": "Włącz/wyłącz udostępnianie ekranu",
+    "Name": "Włącz/wyłącz udostępnianie ekranu"
+  },
+  "com.hotspot.streamdock.discord.toggleVideo": {
+    "Tooltip": "Włącz/wyłącz kamerę",
+    "Name": "Włącz/wyłącz kamerę"
+  },
+  "com.hotspot.streamdock.discord.voiceActivationToggle": {
+    "Tooltip": "Przełącz aktywację głosową i mówienie przyciskiem",
+    "Name": "Przełączanie aktywacji głosowej"
+  },
+  "com.hotspot.streamdock.discord.volumeControlKnob": {
+    "Tooltip": "Regulacja głośności wejścia/wyjścia pokrętłem",
+    "Name": "Regulacja głośności"
+  }
+}

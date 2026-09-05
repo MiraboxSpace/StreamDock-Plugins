@@ -1,0 +1,159 @@
+{
+  "Localization": {
+    "5": "5",
+    "请启动Discord": "Discord를 시작하세요",
+    "请求授权": "권한 요청",
+    "Logout": "로그아웃",
+    "授权": "권한 부여",
+    "服务器": "서버",
+    "文本通道": "텍스트 채널",
+    "设备": "장치",
+    "输入": "입력",
+    "输出": "출력",
+    "音量": "볼륨",
+    "语音通道": "음성 채널",
+    "获取ID": "ID 가져오기",
+    "用户": "사용자",
+    "理想音量": "이상 볼륨",
+    "调整单位": "조정 단위",
+    "图标样式": "아이콘 스타일",
+    "静音类型": "음소거 유형",
+    "模式": "모드",
+    "设置": "설정",
+    "设置输入设备": "입력 장치 설정",
+    "设置输出设备": "출력 장치 설정",
+    "设置二者": "둘 다 설정",
+    "调整": "조정",
+    "静音": "음소거",
+    "动态垂直": "동적 수직",
+    "动态水平": "동적 수평",
+    "静态": "정적",
+    "搜索": "검색",
+    "25%": "25%",
+    "-25%": "-25%",
+    "取消静音": "음소거 해제",
+    "info": "서비스 포트가 3002에서 26432로 변경되었습니다. 앱 관리자 페이지에서 리디렉션 URL을 변경해 주시기 바랍니다. 불편을 드려 죄송합니다.",
+    "View the tutorial": "사용 가이드 보기",
+    "静音/取消静音": "음소거/음소거 해제",
+    "连接次数过多请重新启动Discord": "연결 시도가 너무 많습니다. Discord를 다시 시작하세요.",
+    "CLIENT ID": "클라이언트 ID",
+    "CLIENT SECRET": "클라이언트 시크릿",
+    "刷新": "새로고침",
+    "DEV网址": "https://discord.com/developers/applications",
+    "callbackpage": "콜백 페이지",
+    "授权成功(authorizationsuccessful)": "인증 성공(authorizationsuccessful)",
+    "模板-属性检查器": "템플릿-속성 검사기",
+    "https://discord.com/developers/applications": "https://discord.com/developers/applications",
+    "tooltiptext": "알림 텍스트",
+    "authorization": "인증",
+    "discordauthorization": "Discord 인증",
+    "authorizationsuccess": "인증 성공",
+    "authorizationcompletedsuccessfully!": "인증이 성공적으로 완료되었습니다!",
+    "closingwindowin": "창 닫기",
+    "seconds...": "초...",
+    "closewindow": "창 닫기",
+    "connectionfailed{0}time": "연결 실패 {0}회",
+    "unconnected": "연결되지 않음",
+    "Authorization completed successfully!": "인증이 성공적으로 완료되었습니다!",
+    "Authorization success": "인증 성공",
+    "Automatic token acquisition failed, attempting manual authorization, please open Discord for authorization.": "자동 토큰 획득에 실패했습니다. 수동 인증을 시도 중입니다. Discord를 열어 인증해 주세요.",
+    "Close window": "창 닫기",
+    "Closing window in": "창이",
+    "Information": "정보",
+    "seconds": "초",
+    "动态": "동적",
+    "图标显示": "아이콘 표시",
+    "已授权": "승인됨",
+    "当前语音频道没有用户": "현재 음성 채널에 사용자가 없습니다",
+    "未授权": "미승인",
+    "模板文本": "템플릿 텍스트",
+    "正在授权": "승인 중",
+    "步长": "스텝 크기",
+    "点击刷新以获取声音列表": "소리 목록을 얻으려면 새로고침을 클릭하세요",
+    "退出登录": "로그아웃",
+    "快速授权": "빠른 인증",
+    "手动配置": "수동 설정",
+    "使用 Discord 客户端一键授权": "Discord 클라이언트로 원클릭 인증",
+    "请确保 Discord 桌面客户端正在运行": "Discord 데스크톱 클라이언트가 실행 중인지 확인하세요",
+    "连接 Discord": "Discord 연결",
+    "等待授权": "인증 대기 중",
+    "输入音量": "입력 음량",
+    "输出音量": "출력 음량",
+    "用户音量": "사용자 음량"
+  },
+  "Name": "Discord",
+  "Description": "Discord 조작",
+  "Category": "Discord",
+  "com.hotspot.streamdock.discord.deaf": {
+    "Tooltip": "헤드셋 음소거/음소거 해제",
+    "Name": "헤드셋 음소거"
+  },
+  "com.hotspot.streamdock.discord.mute": {
+    "Tooltip": "마이크 음소거/음소거 해제",
+    "Name": "마이크 음소거"
+  },
+  "com.hotspot.streamdock.discord.voicechannel": {
+    "Tooltip": "음성 채널 참가",
+    "Name": "음성 채널"
+  },
+  "com.hotspot.streamdock.discord.textchannel": {
+    "Tooltip": "텍스트 채널 참가",
+    "Name": "텍스트 채널"
+  },
+  "com.hotspot.streamdock.discord.pushtotalk": {
+    "Tooltip": "눌러서 말하기",
+    "Name": "눌러서 말하기"
+  },
+  "com.hotspot.streamdock.discord.pushtomute": {
+    "Tooltip": "길게 눌러 음소거",
+    "Name": "길게 눌러 음소거"
+  },
+  "com.hotspot.streamdock.discord.volumeControl": {
+    "Tooltip": "오디오 장치 볼륨 제어",
+    "Name": "볼륨 제어"
+  },
+  "com.hotspot.streamdock.discord.notice": {
+    "Tooltip": "알림 가져오기",
+    "Name": "알림"
+  },
+  "com.hotspot.streamdock.discord.setDevices": {
+    "Tooltip": "오디오 장치 설정",
+    "Name": "오디오 장치 설정"
+  },
+  "com.hotspot.streamdock.discord.userVolumeControl": {
+    "Tooltip": "사용자 볼륨 제어",
+    "Name": "사용자 볼륨 제어"
+  },
+  "com.hotspot.streamdock.discord.userVolumeControlKnob": {
+    "Tooltip": "사용자 음량 제어",
+    "Name": "사용자 음량 제어"
+  },
+  "com.hotspot.streamdock.discord.voiceboard": {
+    "Tooltip": "음성 보드",
+    "Name": "음성 보드"
+  },
+  "com.hotspot.streamdock.discord.mutecontrol": {
+    "Tooltip": "마이크 제어",
+    "Name": "마이크 제어"
+  },
+  "com.hotspot.streamdock.discord.deafcontrol": {
+    "Tooltip": "헤드폰 제어",
+    "Name": "헤드폰 제어"
+  },
+  "com.hotspot.streamdock.discord.screenShare": {
+    "Tooltip": "화면 공유 열기/닫기",
+    "Name": "화면 공유 열기/닫기"
+  },
+  "com.hotspot.streamdock.discord.toggleVideo": {
+    "Tooltip": "카메라 켜기/끄기",
+    "Name": "카메라 켜기/끄기"
+  },
+  "com.hotspot.streamdock.discord.voiceActivationToggle": {
+    "Tooltip": "음성 활성화 및 버튼 말하기 전환",
+    "Name": "음성 활성화 전환"
+  },
+  "com.hotspot.streamdock.discord.volumeControlKnob": {
+    "Tooltip": "노브로 입력/출력 볼륨 제어",
+    "Name": "볼륨 제어"
+  }
+}
