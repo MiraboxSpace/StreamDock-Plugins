@@ -1,0 +1,28 @@
+{
+  "Description": "Dies ist ein Systemleistungsmonitor", 
+  "Name": "宏录制", 
+  "Category": "宏录制",
+  "com.hotspot.stream.HotKey": {
+    "Name": "热键", 
+    "Tooltip": "简单的录制操作"
+  },
+  "com.hotspot.stream.Record_Replay": {
+    "Name": "录制并回放", 
+    "Tooltip": "一次录制后将成为回放操作"
+  },
+  "com.hotspot.stream.Record": {
+    "Name": "录制", 
+    "Tooltip": "始终保持录制操作"
+  },
+  "com.hotspot.stream.Replay": {
+    "Name": "回放", 
+    "Tooltip": "始终保持回放操作"
+  },
+  "com.hotspot.stream.Set_HotKey": {
+    "Name": "宏编辑", 
+    "Tooltip": "对宏录制进行编辑"
+  },
+  "Localization": {
+    "录制键": "录制键"
+  }
+}

@@ -1,0 +1,28 @@
+{
+    "Description": "Dies ist ein Systemleistungsmonitor",
+    "Name": "매크로 기록",
+    "Category": "매크로 기록",
+    "com.hotspot.stream.HotKey": {
+        "Name": "단축키",
+        "Tooltip": "간단한 녹음 조작"
+    },
+    "com.hotspot.stream.Record_Replay": {
+        "Name": "녹음 및 재생",
+        "Tooltip": "녹음되면 재생 작업이 됩니다."
+    },
+    "com.hotspot.stream.Record": {
+        "Name": "기록",
+        "Tooltip": "항상 녹음을 계속하세요"
+    },
+    "com.hotspot.stream.Replay": {
+        "Name": "재생",
+        "Tooltip": "항상 재생을 계속 진행하세요."
+    },
+    "com.hotspot.stream.Set_HotKey": {
+        "Name": "매크로 편집기",
+        "Tooltip": "매크로 기록 편집"
+    },
+    "Localization": {
+        "录制键": "녹음 버튼"
+    }
+}

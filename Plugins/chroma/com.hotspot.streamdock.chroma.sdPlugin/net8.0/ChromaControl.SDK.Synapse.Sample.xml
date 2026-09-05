@@ -1,0 +1,94 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>ChromaControl.SDK.Synapse.Sample</name>
+    </assembly>
+    <members>
+        <member name="T:ChromaControl.SDK.Synapse.Sample.SharedMemoryService">
+            <summary>
+            The SharedMemoryService.
+            </summary>
+        </member>
+        <member name="T:ChromaControl.SDK.Synapse.Sample.SharedMemoryService.ColorData">
+            <summary>
+            Represents a color in RGB format with a data-ready flag.
+            </summary>
+        </member>
+        <member name="F:ChromaControl.SDK.Synapse.Sample.SharedMemoryService.ColorData._r">
+            <summary>
+            Represents a color in RGB format with a data-ready flag.
+            </summary>
+        </member>
+        <member name="F:ChromaControl.SDK.Synapse.Sample.SharedMemoryService.ColorData._g">
+            <summary>
+            Represents a color in RGB format with a data-ready flag.
+            </summary>
+        </member>
+        <member name="F:ChromaControl.SDK.Synapse.Sample.SharedMemoryService.ColorData._b">
+            <summary>
+            Represents a color in RGB format with a data-ready flag.
+            </summary>
+        </member>
+        <member name="F:ChromaControl.SDK.Synapse.Sample.SharedMemoryService.ColorData._isDataReady">
+            <summary>
+            Represents a color in RGB format with a data-ready flag.
+            </summary>
+        </member>
+        <member name="M:ChromaControl.SDK.Synapse.Sample.SharedMemoryService.ColorData.CreateInitialized">
+            <summary>
+            Represents a color in RGB format with a data-ready flag.return new ColorData();
+            </summary>
+        </member>
+        <member name="M:ChromaControl.SDK.Synapse.Sample.SharedMemoryService.#ctor(Microsoft.Extensions.Logging.ILogger{ChromaControl.SDK.Synapse.Sample.SharedMemoryService})">
+            <summary>
+            Creates a <see cref="T:ChromaControl.SDK.Synapse.Sample.SharedMemoryService"/> instance.
+            </summary>
+        </member>
+        <member name="M:ChromaControl.SDK.Synapse.Sample.SharedMemoryService.StartAsync(System.Threading.CancellationToken)">
+            <summary>
+            Starts the service.
+            </summary>
+            <param name="cancellationToken">The <see cref="T:System.Threading.CancellationToken"/>.</param>
+            <returns>A <see cref="T:System.Threading.Tasks.Task"/> representing the worker starting.</returns>
+        </member>
+        <member name="M:ChromaControl.SDK.Synapse.Sample.SharedMemoryService.SendColor(System.Int32[],System.Int32[],System.Int32[])">
+            <summary>
+             Send Color to C++.
+            </summary>
+            <param name="r">The <see cref="T:ChromaControl.SDK.Synapse.Sample.SharedMemoryService.ColorData"/>.</param>
+            <param name="g">The <see cref="T:ChromaControl.SDK.Synapse.Sample.SharedMemoryService.ColorData"/>.</param>
+            <param name="b">The <see cref="T:ChromaControl.SDK.Synapse.Sample.SharedMemoryService.ColorData"/>.</param>
+        </member>
+        <member name="M:ChromaControl.SDK.Synapse.Sample.SharedMemoryService.StopAsync(System.Threading.CancellationToken)">
+            <summary>
+            Starts the service.
+            </summary>
+            <param name="cancellationToken">The <see cref="T:System.Threading.CancellationToken"/>.</param>
+            <returns>A <see cref="T:System.Threading.Tasks.Task"/> representing the worker starting.</returns>
+        </member>
+        <member name="M:ChromaControl.SDK.Synapse.Sample.SharedMemoryService.Dispose">
+            <summary>
+            Starts the service.
+            </summary>
+        </member>
+        <member name="M:ChromaControl.SDK.Synapse.Sample.SharedMemoryService.Dispose(System.Boolean)">
+            <summary>
+            Starts the service.
+            </summary>
+        </member>
+        <member name="T:ChromaControl.SDK.Synapse.Sample.Worker">
+            <summary>
+            The worker.
+            </summary>
+        </member>
+        <member name="M:ChromaControl.SDK.Synapse.Sample.Worker.#ctor(ChromaControl.SDK.Synapse.ISynapseService)">
+            <summary>
+            Creates a <see cref="T:ChromaControl.SDK.Synapse.Sample.Worker"/> instance.
+            </summary>
+            <param name="service">The <see cref="T:ChromaControl.SDK.Synapse.ISynapseService"/>.</param>
+        </member>
+        <member name="M:ChromaControl.SDK.Synapse.Sample.Worker.ExecuteAsync(System.Threading.CancellationToken)">
+            <inheritdoc/>
+        </member>
+    </members>
+</doc>

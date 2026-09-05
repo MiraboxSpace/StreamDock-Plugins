@@ -34,6 +34,7 @@ public:
     virtual void RotateClockwise(const QJsonObject &payload, const unsigned int ticks, const bool pressed);
     virtual void RotateCounterClockwise(const QJsonObject &payload, const unsigned int ticks, const bool pressed);
     virtual void PropertyInspectorDidAppear(const QJsonObject &payload);
+    virtual void PropertyInspectorDidDisappear(const QJsonObject &payload);
 
 protected:
     // Events Sent

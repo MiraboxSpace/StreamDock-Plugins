@@ -104,3 +104,8 @@ void Action::PropertyInspectorDidAppear(const QJsonObject &inPayload)
 {
 
 }
+
+void Action::PropertyInspectorDidDisappear(const QJsonObject &inPayload)
+{
+
+}

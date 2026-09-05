@@ -1,0 +1,21 @@
+{
+  "Description": "control your wave link", 
+  "Name": "Wave link", 
+  "Category": "Wave link",
+  "com.hotspot.stream.wavelinkInput": {
+    "Name": "Input",
+    "Tooltip": "Manage your mic and app volume"
+  },
+  "com.hotspot.stream.wavelinkOutput": {
+    "Name": "Output",
+    "Tooltip": "Manage your monitor and stream mix"
+  },
+    "com.hotspot.stream.wavelinkDeivce": {
+    "Name": "Deivce",
+    "Tooltip": "Manage your audio hardware and settings"
+  },
+    "com.hotspot.stream.wavelinkEffects": {
+    "Name": "Effects",
+    "Tooltip": "Manage eftects like EQ and noise removal"
+  }
+}

@@ -101,3 +101,10 @@ void BasePlugin::PropertyInspectorDidAppear(const QString &inAction,
                               const QString &inDeviceID)
 {
 }
+
+void BasePlugin::PropertyInspectorDidDisappear(const QString &inAction,
+                              const QString &inContext,
+                              const QJsonObject &inPayload,
+                              const QString &inDeviceID)
+{
+}

@@ -1,14 +1,18 @@
-#include <QCoreApplication>
+#include <QApplication>
 #include <CustomMain.h>
-#include "ExamplePlugin.h"
+#include "SoundpadPlugin.h"
+#include "LogManager.h"
 
 int main(int argc, const char **argv)
 {
-    QCoreApplication a(argc, (char **)argv);
+    QApplication a(argc, (char **)argv);
 
-    ExamplePlugin *myPlugin = new ExamplePlugin();
-    QObject::connect(&a, &QCoreApplication::destroyed, [myPlugin](){
+    LogManager::initialize(QApplication::applicationDirPath());
+
+    SoundpadPlugin *myPlugin = new SoundpadPlugin();
+    QObject::connect(&a, &QApplication::destroyed, [myPlugin](){
         delete myPlugin;
+        delete LogManager::instance();
     });
     if (CustomMain(argc, argv, myPlugin)) {
         return 1;

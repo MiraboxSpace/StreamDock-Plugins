@@ -74,6 +74,11 @@ public:
                                     const QString &inContext,
                                     const QJsonObject &inPayload,
                                     const QString &inDevice) override;
+
+    virtual void PropertyInspectorDidDisappear(const QString &inAction,
+                                    const QString &inContext,
+                                    const QJsonObject &inPayload,
+                                    const QString &inDevice) override;
 };
 
 #endif // PLUGIN_H

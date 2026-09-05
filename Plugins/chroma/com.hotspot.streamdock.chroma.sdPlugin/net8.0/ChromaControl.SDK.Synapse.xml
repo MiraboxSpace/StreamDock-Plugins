@@ -1,0 +1,222 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>ChromaControl.SDK.Synapse</name>
+    </assembly>
+    <members>
+        <member name="T:ChromaControl.SDK.Synapse.Enums.SynapseResult">
+            <summary>
+            Synapse return result.
+            </summary>
+        </member>
+        <member name="F:ChromaControl.SDK.Synapse.Enums.SynapseResult.Invalid">
+            <summary>
+            Invalid.
+            </summary>
+        </member>
+        <member name="F:ChromaControl.SDK.Synapse.Enums.SynapseResult.Success">
+            <summary>
+            Success.
+            </summary>
+        </member>
+        <member name="F:ChromaControl.SDK.Synapse.Enums.SynapseResult.AccessDenied">
+            <summary>
+            Access denied.
+            </summary>
+        </member>
+        <member name="F:ChromaControl.SDK.Synapse.Enums.SynapseResult.InvalidHandle">
+            <summary>
+            Invalid handle.
+            </summary>
+        </member>
+        <member name="F:ChromaControl.SDK.Synapse.Enums.SynapseResult.InvalidAccess">
+            <summary>
+            Invalid access.
+            </summary>
+        </member>
+        <member name="F:ChromaControl.SDK.Synapse.Enums.SynapseResult.NotSupported">
+            <summary>
+            Not supported.
+            </summary>
+        </member>
+        <member name="F:ChromaControl.SDK.Synapse.Enums.SynapseResult.InvalidParameter">
+            <summary>
+            Invalid parameter.
+            </summary>
+        </member>
+        <member name="F:ChromaControl.SDK.Synapse.Enums.SynapseResult.ServiceNotExist">
+            <summary>
+            The service does not exist.
+            </summary>
+        </member>
+        <member name="F:ChromaControl.SDK.Synapse.Enums.SynapseResult.ServiceNotActive">
+            <summary>
+            The service has not been started.
+            </summary>
+        </member>
+        <member name="F:ChromaControl.SDK.Synapse.Enums.SynapseResult.SingleInstanceApp">
+            <summary>
+            Cannot start more than one instance of the specified program.
+            </summary>
+        </member>
+        <member name="F:ChromaControl.SDK.Synapse.Enums.SynapseResult.DeviceNotConnected">
+            <summary>
+            Device not connected.
+            </summary>
+        </member>
+        <member name="F:ChromaControl.SDK.Synapse.Enums.SynapseResult.NotFound">
+            <summary>
+            Element not found.
+            </summary>
+        </member>
+        <member name="F:ChromaControl.SDK.Synapse.Enums.SynapseResult.RequestAborted">
+            <summary>
+            Request aborted.
+            </summary>
+        </member>
+        <member name="F:ChromaControl.SDK.Synapse.Enums.SynapseResult.NotAuthenticated">
+            <summary>
+            Requested operation is not performed because the user has not been authenticated.
+            </summary>
+        </member>
+        <member name="F:ChromaControl.SDK.Synapse.Enums.SynapseResult.AlreadyInitialized">
+            <summary>
+            An attempt was made to perform an initialization operation when initialization has already been completed.
+            </summary>
+        </member>
+        <member name="F:ChromaControl.SDK.Synapse.Enums.SynapseResult.ResourceDisabled">
+            <summary>
+            Resource not available or disabled.
+            </summary>
+        </member>
+        <member name="F:ChromaControl.SDK.Synapse.Enums.SynapseResult.DeviceNotAvailable">
+            <summary>
+            Device not available or supported.
+            </summary>
+        </member>
+        <member name="F:ChromaControl.SDK.Synapse.Enums.SynapseResult.NotValidState">
+            <summary>
+            The group or resource is not in the correct state to perform the requested operation.
+            </summary>
+        </member>
+        <member name="F:ChromaControl.SDK.Synapse.Enums.SynapseResult.InsufficientAccessRights">
+            <summary>
+            Insufficient access rights, administrator privilege required.
+            </summary>
+        </member>
+        <member name="F:ChromaControl.SDK.Synapse.Enums.SynapseResult.NoMoreItems">
+            <summary>
+            No more items.
+            </summary>
+        </member>
+        <member name="F:ChromaControl.SDK.Synapse.Enums.SynapseResult.Failed">
+            <summary>
+            General failure.
+            </summary>
+        </member>
+        <member name="T:ChromaControl.SDK.Synapse.Enums.SynapseStatus">
+            <summary>
+            Synapse status.
+            </summary>
+        </member>
+        <member name="F:ChromaControl.SDK.Synapse.Enums.SynapseStatus.Live">
+            <summary>
+            <see cref="F:ChromaControl.SDK.Synapse.Enums.SynapseStatus.Live"/> occurs when all expected conditions are met.
+            </summary>
+        </member>
+        <member name="F:ChromaControl.SDK.Synapse.Enums.SynapseStatus.NotLive">
+            <summary>
+            <see cref="F:ChromaControl.SDK.Synapse.Enums.SynapseStatus.NotLive"/> occurs when one of the expected conditions is not fulfilled.
+            </summary>
+        </member>
+        <member name="T:ChromaControl.SDK.Synapse.Extensions.ServiceCollectionSynapseExtensions">
+            <summary>
+            Extension methods for adding the Synapse SDK to an <see cref="T:Microsoft.Extensions.DependencyInjection.IServiceCollection" />.
+            </summary>
+        </member>
+        <member name="M:ChromaControl.SDK.Synapse.Extensions.ServiceCollectionSynapseExtensions.AddSynapseSDK(Microsoft.Extensions.DependencyInjection.IServiceCollection)">
+            <summary>
+            Registers the Synapse SDK in an <see cref="T:Microsoft.Extensions.DependencyInjection.IServiceCollection"/>.
+            </summary>
+            <param name="services">The <see cref="T:Microsoft.Extensions.DependencyInjection.IServiceCollection"/> to register with.</param>
+            <returns>The original <see cref="T:Microsoft.Extensions.DependencyInjection.IServiceCollection"/>.</returns>
+        </member>
+        <member name="T:ChromaControl.SDK.Synapse.Hosting.SynapseHostService">
+            <summary>
+            The host service for Synapse.
+            </summary>
+        </member>
+        <member name="M:ChromaControl.SDK.Synapse.Hosting.SynapseHostService.#ctor(Microsoft.Extensions.Logging.ILogger{ChromaControl.SDK.Synapse.Hosting.SynapseHostService},Microsoft.Extensions.Configuration.IConfiguration,ChromaControl.SDK.Synapse.ISynapseService)">
+            <summary>
+            Creates a <see cref="T:ChromaControl.SDK.Synapse.Hosting.SynapseHostService"/> instance.
+            </summary>
+            <param name="logger">The <see cref="T:Microsoft.Extensions.Logging.ILogger`1"/>.</param>
+            <param name="configuration">The <see cref="T:Microsoft.Extensions.Configuration.IConfiguration"/>.</param>
+            <param name="synapse">The <see cref="T:ChromaControl.SDK.Synapse.SynapseService"/>.</param>
+        </member>
+        <member name="M:ChromaControl.SDK.Synapse.Hosting.SynapseHostService.SomeMethod">
+            <summary>
+            Creates a <see cref="T:ChromaControl.SDK.Synapse.Hosting.SynapseHostService"/> instance.
+            </summary>
+        </member>
+        <member name="M:ChromaControl.SDK.Synapse.Hosting.SynapseHostService.StartAsync(System.Threading.CancellationToken)">
+            <summary>
+            Starts the service.
+            </summary>
+            <param name="cancellationToken">The <see cref="T:System.Threading.CancellationToken"/>.</param>
+            <returns>A <see cref="T:System.Threading.Tasks.Task"/> representing the worker starting.</returns>
+        </member>
+        <member name="M:ChromaControl.SDK.Synapse.Hosting.SynapseHostService.StopAsync(System.Threading.CancellationToken)">
+            <summary>
+            Stops the service.
+            </summary>
+            <param name="cancellationToken">The <see cref="T:System.Threading.CancellationToken"/>.</param>
+            <returns>A <see cref="T:System.Threading.Tasks.Task"/> representing the worker stopping.</returns>
+        </member>
+        <member name="T:ChromaControl.SDK.Synapse.ISynapseService">
+            <summary>
+            The Razer Synapse Service.
+            </summary>
+        </member>
+        <member name="P:ChromaControl.SDK.Synapse.ISynapseService.Started">
+            <summary>
+            If the Synapse service has started.
+            </summary>
+        </member>
+        <member name="P:ChromaControl.SDK.Synapse.ISynapseService.CurrentStatus">
+            <summary>
+            The current status.
+            </summary>
+        </member>
+        <member name="E:ChromaControl.SDK.Synapse.ISynapseService.StatusChanged">
+            <summary>
+            Occurs when the service status changes.
+            </summary>
+        </member>
+        <member name="E:ChromaControl.SDK.Synapse.ISynapseService.ColorsReceived">
+            <summary>
+            Occurs when color data is received.
+            </summary>
+        </member>
+        <member name="T:ChromaControl.SDK.Synapse.SynapseService">
+            <inheritdoc/>
+        </member>
+        <member name="P:ChromaControl.SDK.Synapse.SynapseService.Started">
+            <inheritdoc/>
+        </member>
+        <member name="P:ChromaControl.SDK.Synapse.SynapseService.CurrentStatus">
+            <inheritdoc/>
+        </member>
+        <member name="E:ChromaControl.SDK.Synapse.SynapseService.StatusChanged">
+            <inheritdoc/>
+        </member>
+        <member name="E:ChromaControl.SDK.Synapse.SynapseService.ColorsReceived">
+            <inheritdoc/>
+        </member>
+        <member name="M:ChromaControl.SDK.Synapse.SynapseService.#ctor">
+            <summary>
+            Creates a <see cref="T:ChromaControl.SDK.Synapse.SynapseService"/> instance.
+            </summary>
+        </member>
+    </members>
+</doc>

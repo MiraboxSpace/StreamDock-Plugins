@@ -1,0 +1,9 @@
+{
+  "Description": "Chroma灯效控制插件", 
+  "Name": "Chroma", 
+  "Category": "Chroma",
+  "com.hotspot.stream.chroma": {
+    "Name": "Chroma",
+    "Tooltip": "Chroma灯效控制插件"
+  }
+}

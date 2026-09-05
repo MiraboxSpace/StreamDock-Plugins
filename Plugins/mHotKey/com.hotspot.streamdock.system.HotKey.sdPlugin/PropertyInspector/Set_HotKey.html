@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <title>PhysicalDisk</title>
+    <link rel="stylesheet" href="./css/sdpi.css">
+    <script src="./js/action.js"></script>
+    <script src="./js/Enum.js"></script>
+    <style>
+        .sdpi-item-label.not_mark::after {
+            content: "";
+        }
+
+        #ChenShao {
+            width: 100%;
+            display: flex;
+            flex-wrap: wrap;
+            padding-right: 0;
+            justify-content: space-between;
+        }
+
+        #ChenShao button {
+            width: 48.5%;
+            /* box-sizing: border-box; */
+            flex: none;
+            margin: 0;
+            /* background-color: aquamarine; */
+        }
+
+
+        /* #ChenShao {
+            display: flex;
+            flex: 1;
+            flex-direction: column;
+
+        }
+
+        #ChenShao div,
+        #ChenShao button {
+            display: flex;
+            flex: 1;
+        } */
+
+        #Mouse_WheelButton_Operator {
+            display: none;
+        }
+
+        #Mouse_XButton_Num {
+            display: none;
+        }
+
+        #Name_Input {
+            display: none;
+        }
+
+        #Name_Button {
+            display: none;
+        }
+
+        /* #77f  #303030 */
+        input[type="checkbox"]:disabled+label span {
+            background-color: #303030;
+            /*!important*/
+        }
+
+        input[type="checkbox"]:disabled:active+label span {
+            background-color: #303030;
+            /*!important*/
+        }
+
+        #Select_KeyBoard {
+            display: none;
+        }
+
+        /* .Not_Delay {
+            display: none;
+        } */
+        .Delay {
+            /* display: flex; */
+            display: none;
+        }
+
+        #Delay_Number_MS {
+            display: none;
+        }
+
+        /* #Cancel_Button {
+            display: none;
+        }
+        #OK_Button {
+            display: none;
+        } */
+    </style>
+</head>
+
+<body>
+    <div class="sdpi-wrapper" style="display: none;">
+        <!-- <div class="sdpi-heading">硬盘剩余空间</div> -->
+
+
+        <!-- <div class="sdpi-item" id="selectBackground">
+            <div class="sdpi-item-label">背景(弃用中)</div>
+            <select class="sdpi-item-value select" id="beckgroundItem" onchange="updateState()" style="margin-right: 0">
+                <option value="0">简约彩色</option>
+                <option value="1">赛博朋克</option>
+            </select>
+        </div> -->
+
+        <!-- <div class="sdpi-item" id="selectMode">
+            <div class="sdpi-item-label">录制键</div>
+            <button class="sdpi-item-value select" id="RecordKey_Value" onclick="SetRecordKey()" style="margin-right: 0"></button>
+        </div> -->
+
+        <div class="sdpi-item">
+            <div class="sdpi-item-label">循环次数</div>
+            <input class="sdpi-item-value" id="circleinput" onchange="change_circle_input()" style="width: 150px;" type="number" min="1" value="1">
+        </div>
+
+        <div class="sdpi-item" id="select_single">
+            <div class="sdpi-item-label">选择菜单</div>
+            <select class="sdpi-item-value select" id="myselect" onchange="Change_Record_Log()"
+                style="margin-right: 0;text-align-last: center;">
+                <option value="宏录制1">宏录制1</option>
+                <option value="宏录制2">宏录制2</option>
+                <option value="宏录制3">宏录制3</option>
+                <!-- selected   -->
+            </select>
+        </div>
+
+        <div class="sdpi-item" id="config">
+            <div class="sdpi-item-label">宏录制文件</div>
+            <div id="ChenShao">
+                <button class="sdpi-item-value select" id="Add_Config" onclick="Add_Config()">新增</button>
+                <button class="sdpi-item-value select" id="Delete_Config" onclick="Delete_Config()">删除</button>
+                <button class="sdpi-item-value select" id="Delete_Config" onclick="Rename_Config()">重命名</button>
+                <button class="sdpi-item-value select" id="Load_Config"
+                    onclick="$('#Load_Config_input').click()">载入</button>
+                <input type="file" id="Load_Config_input" style="display: none;">
+            </div>
+        </div>
+
+        <div class="sdpi-item" id="Name_Input">
+            <div class="sdpi-item-label">宏录制名称</div>
+            <input class="sdpi-item-value select" id="This_Name_Input" style="margin-right: 0" placeholder="请输入宏录制名称">
+            </input>
+        </div>
+
+        <div class="sdpi-item" id="Name_Button">
+            <div class="sdpi-item-label">名称</div>
+            <button class="sdpi-item-value select" id="OK_Button" onclick="OK_Button_Click()"
+                style="margin-right: 0;">确认</button>
+            <button class="sdpi-item-value select" id="Cancel_Button" onclick="Cancel_Button_Click()"
+                style="margin-right: 0;">取消</button>
+        </div>
+
+        <!-- <div class="sdpi-item" id="config">
+            <div class="sdpi-item-label">宏操作</div>
+            <div id="ChenShao">
+                <div>
+                    <button class="sdpi-item-value select" id="Add_Config" onclick="Add_Config()"
+                        style="margin-right: 0;">新增</button>
+                    <button class="sdpi-item-value select" id="Delete_Config" onclick="Delete_Config()"
+                        style="margin-right: 0;">删除</button>
+                </div>
+                <div>
+                    <button class="sdpi-item-value select" id="Delete_Config" onclick="Delete_Config()"
+                        style="margin-right: 0;">重命名</button>
+                    <button class="sdpi-item-value select" id="Load_Config" onclick="$('#Load_Config_input').click()"
+                        style="margin-right: 0;">载入</button>
+                    <input type="file" id="Load_Config_input" style="display: none;">
+                </div>
+            </div>
+        </div> -->
+
+        <!--  <div class="sdpi-item" id="config2">
+            <div class="sdpi-item-label">宏操作</div>
+            <button class="sdpi-item-value select" id="Add_Config" onclick="Add_Config()"
+                style="margin-right: 0;">新增</button>
+            <button class="sdpi-item-value select" id="Delete_Config" onclick="Delete_Config()"
+                style="margin-right: 0;">删除</button>
+            <button class="sdpi-item-value select" id="Delete_Config" onclick="Delete_Config()"
+                style="margin-right: 0;">重命名</button>
+            <button class="sdpi-item-value select" id="Load_Config" onclick="$('#Load_Config_input').click()"
+                style="margin-right: 0;">载入</button>
+            <input type="file" id="Load_Config_input" style="display: none;">
+        </div> -->
+
+        <div class="sdpi-item" id="Edit_Record">
+            <div class="sdpi-item-label">编辑宏录制</div>
+
+            <select class="sdpi-item-value select" id="Select_Mouse_Keyboard_Delay"
+                onchange="Select_Mouse_Keyboard_Delay()"
+                style="margin-right: 0;text-align-last: center;min-width: 60px;flex: none;">
+                <option value="Mouse">鼠标</option>
+                <option value="KeyBoard">键盘</option>
+                <option value="Delay">延时</option>
+            </select>
+
+            <select class="sdpi-item-value select" id="Select_Mouse" onchange="Select_Mouse()"
+                style="margin-right: 0;text-align-last: center;min-width: 60px;flex: none;">
+                <option value="Mouse_LeftButton">左键</option>
+                <option value="Mouse_RightButton">右键</option>
+                <option value="Mouse_WheelButton">滚轮</option>
+                <option value="Mouse_XButton">侧键</option>
+            </select>
+
+            <select class="sdpi-item-value" id="Mouse_XButton_Num" onchange="Mouse_XButton_Num()"
+                style="margin-right: 0;text-align-last: center;min-width: 20px;flex: none;">
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6">6</option>
+                <option value="7">7</option>
+                <option value="8">8</option>
+                <option value="9">9</option>
+            </select>
+
+            <select class="sdpi-item-value" id="Mouse_WheelButton_Operator" onchange="Mouse_WheelButton_Operator()"
+                style="margin-right: 0;text-align-last: center;min-width: 40px;flex: none;">
+                <option value="前滚">前滚</option>
+                <option value="后滚">后滚</option>
+                <option value="点击">点击</option>
+            </select>
+
+            <select class="sdpi-item-value select" id="Select_KeyBoard" onchange="Select_KeyBoard()"
+                style="margin-right: 0;text-align-last: center;min-width: 88px;flex: none;">
+                <!-- <option value="65">A</option>
+                <option value="66">B</option>
+                <option value="67">C</option>
+                <option value="68">D</option> -->
+                <option value="0x8">BackSpace</option>
+                <option value="0x9">Tab</option>
+                <option value="0xd">Enter</option>
+                <option value="0x13">Pause Break</option>
+                <option value="0x14">Caps lock</option>
+                <option value="0x1b">ESC</option>
+                <option value="0x20">Space</option>
+                <option value="0x21">Page Up</option>
+                <option value="0x22">Page Down</option>
+                <option value="0x23">End</option>
+                <option value="0x24">Home</option>
+                <option value="0x25">Left</option>
+                <option value="0x26">Up</option>
+                <option value="0x27">Right</option>
+                <option value="0x28">Down</option>
+                <option value="0x2c">Print Screen</option>
+                <option value="0x2d">Insert</option>
+                <option value="0x2e">Delete</option>
+                <option value="0x30">0</option>
+                <option value="0x31">1</option>
+                <option value="0x32">2</option>
+                <option value="0x33">3</option>
+                <option value="0x34">4</option>
+                <option value="0x35">5</option>
+                <option value="0x36">6</option>
+                <option value="0x37">7</option>
+                <option value="0x38">8</option>
+                <option value="0x39">9</option>
+                <option value="0x41">A</option>
+                <option value="0x42">B</option>
+                <option value="0x43">C</option>
+                <option value="0x44">D</option>
+                <option value="0x45">E</option>
+                <option value="0x46">F</option>
+                <option value="0x47">G</option>
+                <option value="0x48">H</option>
+                <option value="0x49">I</option>
+                <option value="0x4a">J</option>
+                <option value="0x4b">K</option>
+                <option value="0x4c">L</option>
+                <option value="0x4d">M</option>
+                <option value="0x4e">N</option>
+                <option value="0x4f">O</option>
+                <option value="0x50">P</option>
+                <option value="0x51">Q</option>
+                <option value="0x52">R</option>
+                <option value="0x53">S</option>
+                <option value="0x54">T</option>
+                <option value="0x55">U</option>
+                <option value="0x56">V</option>
+                <option value="0x57">W</option>
+                <option value="0x58">X</option>
+                <option value="0x59">Y</option>
+                <option value="0x5a">Z</option>
+                <option value="0x5b">L-Win</option>
+                <option value="0x5c">R-Win</option>
+                <option value="0x5d">Application</option>
+                <option value="0x60">NumPad 0</option>
+                <option value="0x61">NumPad 1</option>
+                <option value="0x62">NumPad 2</option>
+                <option value="0x63">NumPad 3</option>
+                <option value="0x64">NumPad 4</option>
+                <option value="0x65">NumPad 5</option>
+                <option value="0x66">NumPad 6</option>
+                <option value="0x67">NumPad 7</option>
+                <option value="0x68">NumPad 8</option>
+                <option value="0x69">NumPad 9</option>
+                <option value="0x6a">NumPad *</option>
+                <option value="0x6b">NumPad +</option>
+                <option value="0x6c">NumPad %</option>
+                <option value="0x6d">NumPad -</option>
+                <option value="0x6e">NumPad .</option>
+                <option value="0x6f">NumPad /</option>
+                <option value="0x70">F1</option>
+                <option value="0x71">F2</option>
+                <option value="0x72">F3</option>
+                <option value="0x73">F4</option>
+                <option value="0x74">F5</option>
+                <option value="0x75">F6</option>
+                <option value="0x76">F7</option>
+                <option value="0x77">F8</option>
+                <option value="0x78">F9</option>
+                <option value="0x79">F10</option>
+                <option value="0x7a">F11</option>
+                <option value="0x7b">F12</option>
+                <option value="0x7c">F13</option>
+                <option value="0x7d">F14</option>
+                <option value="0x7e">F15</option>
+                <option value="0x7f">F16</option>
+                <option value="0x80">F17</option>
+                <option value="0x81">F18</option>
+                <option value="0x82">F19 </option>
+                <option value="0x83">F20</option>
+                <option value="0x84">F21</option>
+                <option value="0x85">F22</option>
+                <option value="0x86">F23</option>
+                <option value="0x87">F24</option>
+                <option value="0x90">Num Lock</option>
+                <option value="0x91">Scroll Lock</option>
+                <option value="0xa0">L-Shift</option>
+                <option value="0xa1">R-Shift</option>
+                <option value="0xa2">L-Ctrl</option>
+                <option value="0xa3">R-Ctrl</option>
+                <option value="0xa4">L-Alt</option>
+                <option value="0xa5">R-Alt</option>
+                <option value="0xba">;</option>
+                <option value="0xbb">=</option>
+                <option value="0xbc">,</option>
+                <option value="0xbd">-</option>
+                <option value="0xbe">.</option>
+                <option value="0xbf">/</option>
+                <option value="0xc0">`</option>
+                <option value="0xdb">[</option>
+                <option value="0xdc">\</option>
+                <option value="0xdd">]</option>
+                <option value="0xde">'</option>
+                <!-- <option value = "512">鼠标移动</option>
+                <option value = "513">左键按下</option>
+                <option value = "514">左键弹起</option>
+                <option value = "515">左键双击</option>
+                <option value = "516">右键按下</option>
+                <option value = "517">右键弹起</option>
+                <option value = "518">右键双击</option>
+                <option value = "519">滚轮按下</option>
+                <option value = "520">滚轮弹起</option>
+                <option value = "521">滚轮双击</option>
+                <option value = "522">滚轮滚动</option>
+                <option value = "523">侧键按下</option>
+                <option value = "524">侧键弹起</option>
+                <option value = "525">侧键双击</option>
+                <option value = "526">水平滚轮滚动</option> -->
+            </select>
+
+            <span class="Not_Delay" id="Execute" style="display: flex;align-items: center;">执行</span>
+
+            <select class="sdpi-item-value select Not_Delay" id="Select_Execute_Times" onchange="Select_Execute_Times()"
+                style="margin-right: 0;text-align-last: center;">
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6">6</option>
+                <option value="7">7</option>
+                <option value="8">8</option>
+                <option value="9">9</option>
+                <option value="10">10</option>
+                <option value="11">11</option>
+                <option value="12">12</option>
+                <option value="13">13</option>
+                <option value="14">14</option>
+                <option value="15">15</option>
+                <option value="16">16</option>
+                <option value="17">17</option>
+                <option value="18">18</option>
+                <option value="19">19</option>
+                <option value="20">20</option>
+            </select>
+
+            <span class="Not_Delay" style="display: flex;align-items: center;">次</span>
+
+            <input class="sdpi-item-value select" id="Delay_Number_MS" style="margin-right: 0;min-width: 30px;"
+                placeholder="请输入延迟毫秒数" onchange="Delay_Number_MS_Input()"> </input>
+
+            <span class="Delay" style="align-items: center;">ms</span>
+
+        </div>
+
+        <!-- <div class="sdpi-item" id="HotKey_Status">
+            <div class="sdpi-item-label">测试</div>
+            <input type="file" id="Load_Config_input2">
+        </div> -->
+
+        <div class="sdpi-item" id="Mouse_Position_All">
+            <div class="sdpi-item-label">确认鼠标坐标</div>
+            <input class="sdpi-item-value select" id="Mouse_X_Positon"
+                style="flex:none;margin-right: 0;min-width: 10px;width: 54px;" placeholder="输入X坐标"
+                onchange="Mouse_X_Positon_Input()"></input>
+            <input class="sdpi-item-value select" id="Mouse_Y_Positon"
+                style="flex:none;margin-right: 0;min-width: 10px;width: 54px;" placeholder="输入Y坐标"
+                onchange="Mouse_Y_Positon_Input()"></input>
+            <button class="sdpi-item-value" id="Mouse_Cursor_Position" onclick="Mouse_Cursor_Position_Click()"
+                style="margin-right: 0">光标坐标</button>
+        </div>
+
+        <div class="sdpi-item" id="HotKey_Status">
+            <div class="sdpi-item-label">新增操作</div>
+            <button class="sdpi-item-value select" id="Add_Set_Config" onclick="Add_Operation()"
+                style="margin-right: 0">确认新增</button>
+        </div>
+
+        <div class="sdpi-item" id="HotKey_Log">
+            <div class="sdpi-item-label">热键记录</div>
+            <textarea class="sdpi-item-value select" id="Record_Log"
+                style="margin-right: 0 ;height: 100px; font-size: 100%;" oninput="Record_Log_Input()" readonly>
+
+            </textarea>
+        </div>
+
+        <!-- <div class="sdpi-item" id="Name_Input">
+            <div class="sdpi-item-label">宏录制名称</div>
+            <input class="sdpi-item-value select" id="This_Name_Input" style="margin-right: 0" placeholder="请输入宏录制名称">
+            </input>
+        </div>
+
+        <div class="sdpi-item" id="Name_Button">
+            <div class="sdpi-item-label">名称</div>
+            <button class="sdpi-item-value select" id="OK_Button" onclick="OK_Button_Click()"
+                style="margin-right: 0;">确认</button>
+            <button class="sdpi-item-value select" id="Cancel_Button" onclick="Cancel_Button_Click()"
+                style="margin-right: 0;">取消</button>
+        </div> -->
+
+        <script src="./js/Set_HotKey.js"></script>
+</body>
+
+</html>

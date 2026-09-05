@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <title>PhysicalDisk</title>
+    <link rel="stylesheet" href="./css/sdpi.css">
+    <script src="./js/action.js"></script>
+    <script src="./js/Enum.js"></script>
+    <style>
+        .sdpi-item-label.not_mark::after {
+            content: "";
+        }
+
+        #ChenShao {
+            width: 100%;
+            display: flex;
+            flex-wrap: wrap;
+            padding-right: 0;
+            justify-content: space-between;
+        }
+
+        #ChenShao button {
+            width: 48.5%;
+            /* box-sizing: border-box; */
+            flex: none;
+            margin: 0;
+            /* background-color: aquamarine; */
+        }
+
+        #Name_Input {
+            display: none;
+        }
+
+        #Name_Button {
+            display: none;
+        }
+        /* #77f  #303030 */
+        input[type="checkbox"]:disabled+label span {
+            background-color: #303030 ;/*!important*/
+        }
+
+        input[type="checkbox"]:disabled:active+label span {
+            background-color: #303030 ;/*!important*/
+        }
+
+        /* #Cancel_Button {
+            display: none;
+        }
+        #OK_Button {
+            display: none;
+        } */
+    </style>
+</head>
+
+<body>
+    <div class="sdpi-wrapper" style="display: none;">
+        <!-- <div class="sdpi-heading">硬盘剩余空间</div> -->
+
+
+        <!-- <div class="sdpi-item" id="selectBackground">
+            <div class="sdpi-item-label">背景(弃用中)</div>
+            <select class="sdpi-item-value select" id="beckgroundItem" onchange="updateState()" style="margin-right: 0">
+                <option value="0">简约彩色</option>
+                <option value="1">赛博朋克</option>
+            </select>
+        </div> -->
+
+        <!-- <div class="sdpi-item" id="selectMode">
+            <div class="sdpi-item-label">录制键</div>
+            <button class="sdpi-item-value select" id="RecordKey_Value" onclick="SetRecordKey()" style="margin-right: 0"></button>
+        </div> -->
+
+
+        <div class="sdpi-item" id="select_single">
+            <div class="sdpi-item-label">选择菜单</div>
+            <select class="sdpi-item-value select" id="myselect" onchange="Change_Record_Log()"
+                style="margin-right: 0;text-align-last: center;">
+                <option value="宏录制1">宏录制1</option>
+                <option value="宏录制2">宏录制2</option>
+                <option value="宏录制3">宏录制3</option>
+                <!-- selected   -->
+            </select>
+        </div>
+
+        <!-- <div class="sdpi-item" id="config">
+            <div class="sdpi-item-label">宏操作</div>
+            <button class="sdpi-item-value select" id="Add_Config" onclick="Add_Config()"
+                style="margin-right: 0;">新增宏</button>
+            <button class="sdpi-item-value select" id="Delete_Config" onclick="Delete_Config()"
+                style="margin-right: 0;">删除宏</button>
+            <button class="sdpi-item-value select" id="Load_Config" onclick="$('#Load_Config_input').click()"
+                style="margin-right: 0;">载入宏</button>
+            <input type="file" id="Load_Config_input" style="display: none;">
+        </div> -->
+
+        <div class="sdpi-item" id="config">
+            <div class="sdpi-item-label">宏录制文件</div>
+            <div id="ChenShao">
+                <button class="sdpi-item-value select" id="Add_Config" onclick="Add_Config()">新增</button>
+                <button class="sdpi-item-value select" id="Delete_Config" onclick="Delete_Config()">删除</button>
+                <button class="sdpi-item-value select" id="Delete_Config" onclick="Rename_Config()">重命名</button>
+                <button class="sdpi-item-value select" id="Load_Config"
+                    onclick="$('#Load_Config_input').click()">载入</button>
+                <input type="file" id="Load_Config_input" style="display: none;">
+            </div>
+        </div>
+
+        <!-- <div class="sdpi-item" id="HotKey_Status">
+            <div class="sdpi-item-label">测试</div>
+            <input type="file" id="Load_Config_input2">
+        </div> -->
+
+        <div class="sdpi-item" id="HotKey_Status">
+            <div class="sdpi-item-label">热键状态</div>
+            <button class="sdpi-item-value select" id="HotKey" onclick="Restore_Hook()"
+                style="margin-right: 0"></button>
+        </div>
+
+        <div class="sdpi-item" id="HotKey_Log">
+            <div class="sdpi-item-label">热键记录</div>
+            <textarea class="sdpi-item-value select" id="Record_Log" style="margin-right: 0 ;height: 100px; font-size: 100%;" oninput="Record_Log_Input()">
+
+            </textarea>
+        </div>
+
+        <div class="sdpi-item" id="Name_Input">
+            <div class="sdpi-item-label">宏录制名称</div>
+            <input class="sdpi-item-value select" id="This_Name_Input" style="margin-right: 0" placeholder="请输入宏录制名称">
+            </input>
+        </div>
+
+        <div class="sdpi-item" id="Name_Button">
+            <div class="sdpi-item-label">名称</div>
+            <button class="sdpi-item-value select" id="OK_Button" onclick="OK_Button_Click()"
+                style="margin-right: 0;">确认</button>
+            <button class="sdpi-item-value select" id="Cancel_Button" onclick="Cancel_Button_Click()"
+                style="margin-right: 0;">取消</button>
+        </div>
+
+        <div type="checkbox" class="sdpi-item">
+            <div class="sdpi-item-label not_mark"></div>
+            <input class="sdpi-item-value" id="Delete_Delay" type="checkbox" onchange="Is_Delete_Delay()">
+            <label for="Delete_Delay" style="font-size: 100%;"><span></span>取消回放延迟</label>
+            <input class="sdpi-item-value" id="Still_Press" type="checkbox" onchange="Is_Still_Press()">
+            <label for="Still_Press" style="font-size: 100%;"><span></span>保留键盘长按</label>
+
+        </div>
+
+        <div type="checkbox" class="sdpi-item">
+            <div class="sdpi-item-label not_mark"></div>
+            <input class="sdpi-item-value" id="Mouse_track" type="checkbox" onchange="Is_Mouse_track()">
+            <label for="Mouse_track" style="font-size: 100%;"><span></span>鼠标移动轨迹</label>
+            <input class="sdpi-item-value" id="Relative_coordinates" type="checkbox" onchange="Is_Relative_coordinates()">
+            <label for="Relative_coordinates" style="font-size: 100%;"><span></span>鼠标相对坐标</label>
+        </div>
+
+        <script src="./js/Record_Replay.js"></script>
+</body>
+
+</html>

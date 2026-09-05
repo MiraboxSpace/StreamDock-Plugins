@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <link rel="stylesheet" href="../../static/css/sdpi.css">
+    <!-- <link rel="stylesheet" href="../../static/css/bootstrap-icons.css">
+    <link rel="stylesheet" href="../../static/css/bootstrap.min.css"> -->
+</head>
+
+<body>
+    <div class="sdpi-wrapper" style="display: none">
+        <!--  -->
+        <div type="radio" class="sdpi-item">
+            <div class="sdpi-item-label">Type</div>
+            <div class="sdpi-item-value">
+                <span class="sdpi-item-child">
+                    <input id="type-effect" type="radio" name="type" value="effect" checked>
+                    <label for="type-effect" class="sdpi-item-label"><span></span>Toggle Effect</label>
+                </span>
+                <span class="sdpi-item-child">
+                    <input id="type-chain" type="radio" value="chain" name="type">
+                    <label for="type-chain" class="sdpi-item-label"><span></span>Toggle Effect Chain</label>
+                </span>
+            </div>
+        </div>
+
+        <!--  -->
+        <div type="select" class="sdpi-item">
+            <div class="sdpi-item-label">Input</div>
+            <select class="sdpi-item-value" id="input-select">
+                <option value="" selected>Please select...</option>
+                <option disabled>────────────────────</option>
+            </select>
+        </div>
+
+        <!--  -->
+        <div type="select" class="sdpi-item" id="Effect-div" style="display: flex;">
+            <div class="sdpi-item-label">Effect</div>
+            <select class="sdpi-item-value" id="Effect-select">
+                <option value="" selected>Please select...</option>
+                <option disabled>────────────────────</option>
+            </select>
+        </div>
+
+        <!--  -->
+        <div type="select" class="sdpi-item" id="output-div" style="display: flex;">
+            <div class="sdpi-item-label">Output</div>
+            <select class="sdpi-item-value" id="output-select">
+                <option value="monitor-mix" selected>Monitor Mix</option>
+                <option value="stream-mix">Stream Mix</option>
+                <option value="all">All</option>
+            </select>
+        </div>
+    </div>
+    <script src="../utils/common.js"></script>
+    <script src="../utils/action.js"></script>
+    <script src="index.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,356 @@
+@font-face {
+  font-family: 'Kanit';
+  font-style: normal;
+  font-weight: 400;
+  src: url('../fonts/Kanit-Icons.ttf');
+}
+@font-face {
+	font-family: 'vivremotion';
+	font-style: normal;
+	font-weight: 400;
+	src: url('vivremotion.ttf');
+}
+
+details summary {
+	list-style-type: 'D ';
+	font-family: vivremotion, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  }
+  
+  details[open] summary {
+	list-style-type: 'C ';
+	font-family: vivremotion, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  }
+
+
+.my_font_style{
+  font-family: 'Kanit';
+  color:white !important;
+  line-height: 2;
+}
+.standard-font{
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+}
+
+.linkspan {
+    cursor: pointer;
+    color: #7397d2;
+    text-decoration: underline;
+}
+
+code{
+	font-family:Lucida Console, Courier New, Arial;
+	color: #DDC2FA;
+}
+.white_text{
+	color:white !important;
+}
+
+
+.mykey{
+	
+	border-radius:6px;
+	border: 2px solid white;
+	padding: 4px 6px 4px 6px;
+	display: inline-block;
+	font-weight: bold;
+	margin-right:6px;
+	margin-left:6px;
+	color:white !important;
+}
+
+.record_icon {
+	display: inline-block;
+ animation-name: recordicon;
+  animation-duration: 1s;
+  animation-iteration-count: infinite;
+  color:red;
+}
+
+@keyframes recordicon {
+  0% { opacity: 0;}
+  50% { opacity: 1;}
+  100% { opacity: 0;}
+}
+
+
+#active_window {
+	cursor:help;
+	font-family:Lucida Console, Courier New, Arial;
+	color: white;
+	width: 250px !important;
+	word-wrap: break-word !important;
+}
+
+#idblock {
+    padding: 2px 7px !important;
+    border-radius: 7px !important;
+	border:0px;	
+	font-size:10pt;
+	font-family:Lucida Console, Courier New, Arial;
+    background-color: #8B00F7;
+	color:white;
+	font-weight:600;
+	transition: all 0.3s;
+}
+
+.info_block{
+	margin-top:20px;
+	margin-bottom:20px;
+}
+:disabled {
+	color: #7a7a7a;
+  }
+  
+.color_button {
+	width:20px !important;
+	height:20px !important;
+	border:0px;
+	margin:4px;
+	cursor:pointer;
+	border-radius:6px;
+}
+
+.wc_grid_container {
+  display: grid;
+  grid-template-columns: 24px 24px;
+  background-color:#3D3D3D;
+  float:left;
+  pointer-events: none;
+  padding:4px;
+  margin-right:3px;
+  border-radius:4px;
+ }
+ .wc_grid_container_blank {
+  display: grid;
+  width: 54px;
+  height:44px;
+  background-color:#3D3D3D;
+  float:left;
+  pointer-events: none; 
+  margin-right:3px;
+  border-radius:4px;
+ }
+ .wc_grid_item_blank {   
+  margin:6px;
+  margin-top:6px;
+  width:30px;
+  height:22px;
+border: 2px dotted #47DEEA;
+color:white;
+}
+
+.wc_grid_item {  
+  width:24px;
+  height:18px;
+  text-align: center;
+  font-size:10pt;
+  vertical-align: middle;  
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  flex-direction: column;
+  pointer-events: none;
+}
+
+.wc_item_active {
+background-color:#47DEEA;
+color:white;
+}
+.wc_item_inactive {
+background-color:rgba(255, 255, 255, 0.3);
+}
+#wc_monitor_setup {
+	margin-top:20px;
+display:none;
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════════
+   Font Size Overrides — enlarge ~2pt from base
+   ═══════════════════════════════════════════════════════════════════════════════ */
+
+html, body {
+    font-size: 11pt !important; /* was 9pt */
+}
+
+.sdpi-heading {
+    font-size: 11pt !important; /* was 9pt */
+}
+
+.sdpi-item-value,
+option,
+input,
+select,
+button {
+    font-size: 11pt !important; /* was 10pt */
+}
+
+/* Windows platform overrides */
+.win .sdpi-item-value,
+.win option,
+.win input,
+.win select,
+.win button {
+    font-size: 13px !important; /* was 11px */
+}
+
+.win button {
+    font-size: 14px !important; /* was 12px */
+}
+
+/* Form elements */
+input:not([type="range"]),
+textarea {
+    font-size: 10pt !important; /* was 9pt */
+}
+
+input[type="radio"] + label,
+input[type="checkbox"] + label {
+    font-size: 10pt !important; /* was 9pt */
+}
+
+label.sdpi-file-label,
+input[type="button"],
+input[type="submit"],
+input[type="reset"],
+input[type="file"],
+input[type=file]::-webkit-file-upload-button,
+button,
+select {
+    font-size: 10pt !important; /* was 8pt */
+}
+
+details.message summary {
+    font-size: 11pt !important; /* was 10pt */
+}
+
+summary {
+    font-size: 10pt !important;
+}
+
+small {
+    font-size: 9pt !important;
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════════
+   Visual Polish — color, border-radius, shadows, transitions (layout unchanged)
+   ═══════════════════════════════════════════════════════════════════════════════ */
+
+/* ── CSS variable overrides (darker, higher contrast) ── */
+html {
+    --sdpi-bgcolor: #222222;
+    --sdpi-background: #333333;
+    --sdpi-color: #e0e0e0;
+    --sdpi-bordercolor: #444444;
+    --sdpi-buttonbordercolor: #777777;
+    --sdpi-borderradius: 4px; /* was 0px */
+}
+
+html, body {
+    color: #b0b0b0;
+}
+
+/* ── Headings ── */
+.sdpi-heading {
+    color: #c0c0c0;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+}
+
+.sdpi-heading::before,
+.sdpi-heading::after {
+    background: #444444;
+    height: 2px; /* was 1px */
+}
+
+/* ── Buttons ── */
+button {
+    border-radius: 4px !important;
+    transition: background-color 0.2s ease, border-color 0.2s ease;
+}
+
+button:hover {
+    border-color: #999999 !important;
+    background-color: #444444 !important;
+}
+
+button:active {
+    background-color: #555555 !important;
+}
+
+/* ── Inputs / Textareas / Selects ── */
+input:not([type="range"]),
+textarea,
+select {
+    border-radius: 3px !important;
+    border: 1px solid #444444 !important;
+    transition: border-color 0.2s ease;
+}
+
+input:not([type="range"]):focus,
+textarea:focus,
+select:focus {
+    border-color: #666688 !important;
+}
+
+textarea {
+    line-height: 1.6 !important;
+    padding: 6px !important;
+}
+
+/* ── Checkboxes / Radios ── */
+input[type="radio"] + label span,
+input[type="checkbox"] + label span {
+    border-radius: 4px;
+    border: 1px solid #555555;
+    transition: background-color 0.15s ease;
+}
+
+input[type="radio"]:checked + label span,
+input[type="checkbox"]:checked + label span {
+    background-color: #6677cc;
+}
+
+/* ── Labels ── */
+.sdpi-item-label {
+    color: #c0c0c0;
+}
+
+/* ── Scrollbar ── */
+::-webkit-scrollbar-thumb {
+    background-color: #666666;
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-track {
+    background-color: #2a2a2a;
+}
+
+/* ── Details / Summary ── */
+details {
+    border-left: 2px solid #444444;
+    margin-left: 2px;
+}
+
+details[open] {
+    border-left-color: #6677cc;
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════════
+   Record Button
+   ═══════════════════════════════════════════════════════════════════════════════ */
+
+#record_button {
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    border-radius: 4px;
+    transition: background-color 0.2s ease, border-color 0.2s ease;
+}
+
+#record_button:not(:disabled) {
+    border-color: #cc4444;
+}
+
+#record_button:not(:disabled):hover {
+    background-color: #553333;
+}

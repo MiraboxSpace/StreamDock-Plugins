@@ -1,0 +1,1772 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <meta charset="utf-8" />
+    <title>com.mousesimulator.setup</title>
+    <link rel="stylesheet" href="../utils/sdpi.css">
+    <link rel="stylesheet" href="../utils/custom.css">
+    <script language="javascript" src="../utils/common.js"></script>
+    <script language="javascript" src="../utils/lz-string.js"></script>
+	
+</head>
+
+<body>
+
+    <div class="sdpi-wrapper">
+
+        <input placeholder="my_clipboard_input_record" type="text" value="" id="my_clipboard_input_record" style="display:none">
+        <input placeholder="my_record_exe_helper" type="text" value="" id="my_record_exe_helper" style="display:none"> 
+       
+        <!-- //////////////////////////////////////// -->
+
+        <div class="sdpi-heading" data-i18n="RECORDING SETUP">RECORDING SETUP</div>
+        
+        <div id="record_start_assistent" style="display:block">
+
+            <div type="checkbox" class="sdpi-item" id="single-check" data-i18n-title="Activate Recording">		
+                <div class="sdpi-item-label" data-i18n="Mouse Record">Mouse Record</div>
+                <div class="sdpi-item-value">
+                    <div class="sdpi-item-child">
+                        <input id="record_checkbox" type="checkbox" value="" onclick="record_checkbox_switch();" data-i18n-title="Activate Recording">
+                        <label data-i18n-text="Activate Recording" for="record_checkbox" class="sdpi-item-label"><span></span>Activate Recording</label>		
+                    </div>
+                </div>           
+            </div>	
+
+            <div type="group" class="sdpi-item" id="recordkey">
+                <div class="sdpi-item-group" id="record_key_items">
+                    <div type="select" class="sdpi-item" id="record_key_account">
+                        <div class="sdpi-item-label" data-i18n-title="Hotkey to Save your Record" data-i18n="Save Key">Save Key</div>
+                        <select disabled onclick="SaveConfig()" onChange="SaveConfig()" id="my_record_key" class="sdpi-item-value select" data-i18n-title="Hotkey to Save your Record">  
+                            <option value="ESC" selected>ESC</option>
+                            <option disabled>━━━━━━━━━━━━</option>
+                            <option value="F1">F1</option>
+                            <option value="F2">F2</option>
+                            <option value="F3">F3</option>
+                            <option value="F4">F4</option>
+                            <option value="F5">F5</option>
+                            <option value="F6">F6</option>
+                            <option value="F7">F7</option>
+                            <option value="F8">F8</option>
+                            <option value="F9">F9</option>
+                            <option value="F10">F10</option>
+                            <option value="F11">F11</option>
+                            <option value="F12">F12</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+        
+            <div class="sdpi-item">
+                <div class="sdpi-item-label"></div><span></span>
+                <button onclick="start_record()" id="record_button" class="sdpi-item-value" value="Click Me only" disabled data-i18n-text="START RECORD"><span style="color:red">⬤</span> START RECORD</button>
+            </div>
+            
+            <div class="sdpi-item alignTop noInnerMargins">
+                <div class="sdpi-item-label info"></div>                
+                <summary data-i18n="Currently Record will by overwrite">Currently Record will by overwrite</summary>
+            </div> 
+        
+        </div>
+
+        <!-- //////////////////////////////////////// -->
+
+        <div id="record_assistent" style="display:none">
+
+            <div class="sdpi-item alignTop noInnerMargins">
+                <div class="sdpi-item-label"></div>                
+                <summary style="font-size:14pt"><div class="record_icon">⬤</div> <span style="color:red;font-weight:bold" data-i18n="MOUSE RECORDING ACTIVE">MOUSE RECORDING ACTIVE</span></summary>
+            </div>
+
+            <div class="sdpi-item alignTop noInnerMargins">
+                <div class="sdpi-item-label"></div>                
+                <summary style="color:white"><span data-i18n="Press">Press</span> <div class="mykey" id="save_key_info">F10</div> <span data-i18n="to Save and Stop Record">Save and Stop Record</span></summary>
+            </div>
+
+            <div class="sdpi-item alignTop noInnerMargins">
+                <div class="sdpi-item-label info"></div>                
+                <summary style="color:white" data-i18n="CHECK NEW RECORDING WINDOW">CHECK NEW RECORDING WINDOW</summary>
+            </div>
+
+            <div class="sdpi-item" id="record_button">
+                <div class="sdpi-item-label" data-i18n="Mouse Record">Mouse Record</div><span></span>
+                <button onclick="stop_record()" class="sdpi-item-value" value="Click Me only" data-i18n-text="◼ CANCEL RECORD">◼ CANCEL RECORD</button>
+            </div>
+            <br>
+
+        </div>
+
+        <!-- //////////////////////////////////////// -->
+
+      <div class="sdpi-heading" data-i18n="SIMULATION EVENTS">SIMULATION EVENTS</div>
+
+        <div type="textarea" class="sdpi-item" id="messagegroup_message">
+            <div class="sdpi-item-label up20"><mark data-i18n="Simulation">Simulation</mark><br><span data-i18n="Mouse">Mouse</span><br><span data-i18n="Keyboard">Keyboard</span></div>
+            <div class="sdpi-item-value textarea">
+            <textarea type="textarea" rows="6" disabled class="my_font_style" id="my_process_list"></textarea>
+            <label for="my_process_list" ><span>🕒</span> <strong style="color:white" id="process_time">0ms</strong>&nbsp;<span data-i18n="Process Time">Process Time</span></label>
+            </div>
+        </div>
+
+		<br>
+
+	    <div class="sdpi-item alignTop noInnerMargins">
+            <div class="sdpi-item-label question"></div>                
+            <summary id="multi_action_info">Add <strong style="color:white">0ms</strong> Wait-Time after Simulation on Multi-Action. Only necessary if a subsequent process is executed.</summary>            
+        </div>
+        <br>
+		
+        <!-- //////////////////////////////////////// -->        
+
+        <div class="sdpi-heading" id="infor_div" data-i18n="TIME SETUP">TIME SETUP</div>
+
+		<div type="checkbox" class="sdpi-item" id="single-check" data-i18n-title="🕒 Ignore Record Delay Time">		
+            <div class="sdpi-item-label" data-i18n="Record Delay">Record Delay</div>
+            <div class="sdpi-item-value">
+                <div class="sdpi-item-child">
+                    <input id="delay_checkbox" type="checkbox" value="" onclick="delay_checkbox_switch();" data-i18n-title="🕒 Ignore Record Delay Time">
+                    <label data-i18n-text="🕒 Ignore Record Delay Time" for="delay_checkbox" class="sdpi-item-label"><span></span>🕒 Ignore Record Delay Time</label>		
+                </div>
+            </div>
+			<input id="my_delay_status_helper" value="false" placeholder="true/false" style="display:none">
+		</div>		
+
+        <div class="sdpi-item alignTop noInnerMargins" >
+            <div class="sdpi-item-label"></div>                
+            <summary><small data-i18n="Ignore the Sleep Waiting Delay Time (Affects the Process Time)">Ignore the Sleep Waiting Delay Time<br>(Affects the Process Time)</small></summary>
+        </div> 
+        <br>
+
+        <!-- //////////////////////////////////////// -->  
+
+        <div class="sdpi-heading" data-i18n="MOUSE OPTIONS">MOUSE OPTIONS</div>
+
+        <div type="checkbox" class="sdpi-item" id="single-check" data-i18n-title="🚀 Skip Mouse Movement" >		
+            <div class="sdpi-item-label" data-i18n="｟WARP｠ Motion">｟WARP｠ Motion</div>
+            <div class="sdpi-item-value">
+                <div class="sdpi-item-child">
+                    <input id="warp_checkbox" type="checkbox" value="" onclick="warp_checkbox_switch();" data-i18n-title="🚀 Skip Mouse Movement">
+                    <label data-i18n-text="🚀 Skip Mouse Movement" for="warp_checkbox" class="sdpi-item-label"><span></span>🚀 Skip Mouse Movement</label>		
+                </div>
+                
+            </div>
+            
+            <input id="my_warp_status_helper" value="false" placeholder="true/false" style="display:none">
+        </div>	
+
+        <div class="sdpi-item alignTop noInnerMargins">
+            <div class="sdpi-item-label"></div>                
+            <summary><small data-i18n="Only Start and Stop Mouse-Position within a Section are executed (Affects the Process Time)">Only Start and Stop Mouse-Position within a Section are executed (Affects the Process Time)</small></summary>
+        </div>
+        <br>
+
+        <div type="checkbox" class="sdpi-item" id="single-check" data-i18n-title="🌫 Smoothly Start Mouse Movement">		
+            <div class="sdpi-item-label" data-i18n="Soft Start">Soft Start</div>
+            <div class="sdpi-item-value">
+                <div class="sdpi-item-child">
+                    <input id="softstart_checkbox" type="checkbox" value="" onclick="softstart_checkbox_switch();" data-i18n-title="Soft Start">
+                    <label data-i18n-text="🌫 Smoothly Start Mouse Movement" for="softstart_checkbox" class="sdpi-item-label"><span></span>🌫 Smoothly Start Mouse Movement</label>		
+                </div>
+                
+            </div>            
+            <input id="my_softstart_status_helper" value="false" placeholder="true/false" style="display:none">
+        </div>	        
+
+        <div class="sdpi-item alignTop noInnerMargins" >
+            <div class="sdpi-item-label"></div>                
+            <summary><small data-i18n="The Mouse Pointer slides soft to the start position of the recording before playback. Note the additional delay time with Multi-Action.">The Mouse Pointer slides soft to the start position of the recording before playback. Note the additional delay time with Multi-Action.</small></summary>
+        </div> 
+        <br>     
+
+        <div class="sdpi-heading" id="infor_div" data-i18n="TYPEWRITER GHOSTWRITER">TYPEWRITER GHOSTWRITER</div>
+
+        <div type="range" class="sdpi-item" id="range_with_datalist">
+            <div class="sdpi-item-label" id="typewriter_label" data-i18n-title="Typing Speed Milliseconds" data-i18n="Typewriter (10)">Typewriter (10)</div>
+            <div class="sdpi-item-value">			
+              <input onChange="UpdateTypewriter()" oninput="UpdateTypewriter()" type="range" min="0" max="100" step="5" value="10" id="my_typewriter">		
+            </div>
+        </div>
+
+        <div class="sdpi-item alignTop noInnerMargins" >
+            <div class="sdpi-item-label"></div>                
+            <summary><small data-i18n="Typing speed in milliseconds between keystrokes simulation. Default=10 for natural typing speed. (Affects the Process Time)">Typing speed in milliseconds between keystrokes simulation. Default=10 for natural typing speed.<br>(Affects the Process Time)</small></summary>
+        </div> 
+        <br>
+        <div type="textarea" class="sdpi-item" id="messagegroup_message">
+            <div class="sdpi-item-label up20" data-i18n="Keystrokes Text Info">Keystrokes<br>Text Info</div>
+            <div class="sdpi-item-value textarea">
+            <textarea type="textarea" disabled id="my_keystrokes" style="font-family:Lucida Console, Courier New, Arial;font-weight: 600;font-size:10pt;" data-i18n-title="⭡ DISPLAY VIRTUAL KEY CODES CONSTANT NAME"></textarea>            
+            </div>
+        </div>
+        <div class="sdpi-item alignTop noInnerMargins" >
+            <div class="sdpi-item-label"></div>                
+            <summary><small data-i18n="⭡ DISPLAY VIRTUAL KEY CODES CONSTANT NAME">⭡ DISPLAY VIRTUAL KEY CODES CONSTANT NAME</small></summary>
+        </div>
+        <br>    
+
+        <!-- //////////////////////////////////////// -->
+
+        <div class="sdpi-heading" id="infor_div" data-i18n="AUDIO">AUDIO</div>
+
+        <div type="checkbox" class="sdpi-item" id="single-check" data-i18n-title="Play after Completing Simulation">		
+            <div class="sdpi-item-label" data-i18n="Completed Audio">Completed Audio</div>
+            <div class="sdpi-item-value">
+                <div class="sdpi-item-child">
+                    <input id="audio_checkbox" type="checkbox" value="" onclick="audio_checkbox_switch();" data-i18n-title="Play after Completing Simulation">
+                    <label data-i18n-text="Play after Completing Simulation" for="audio_checkbox" class="sdpi-item-label"><span></span>Play after Completing Simulation</label>		
+                </div>
+            </div>
+            <input id="my_audio_status_helper" value="false" placeholder="true/false" style="display:none">
+        </div>		                
+		<br>
+
+        <!-- //////////////////////////////////////// -->
+
+        <div class="sdpi-heading" id="infor_div" data-i18n="RUNTIME REPLAY">RUNTIME REPLAY</div>
+
+        <div type="input" class="sdpi-item" id="repeatloop" data-i18n-title="-1 = for Infinity Loop, 0 = no Repeat">
+            <div class="sdpi-item-label" data-i18n-title="-1 = for Infinity Loop, 0 = no Repeat" data-i18n="Repeat Loops">Repeat Loops</div>
+            <input id="my_loop" type="number" oninput="UpdateLoop()" style="font-family:Lucida Console, Courier New, Arial;color:#e0e0e0;font-size:10pt;" class="sdpi-item-value" value="0" required placeholder="Repeat Loops Default=0">            
+        </div>  
+   
+        <div class="sdpi-item alignTop noInnerMargins">
+            <div class="sdpi-item-label question"></div>                
+            <summary id="repeat_info">Affects the Process Time</span></summary>   
+            <summary id="repeat_error" style="display:none;color:red">⚠ WRONG INPUT!<br>Default: 0<br>Max: 999999<br>Infinity: -1</span></summary>            
+        </div>
+        <br>
+
+        <!-- //////////////////////////////////////// -->
+
+        <div class="sdpi-heading" id="infor_div" data-i18n="RECORD STREAM">RECORD STREAM</div>
+
+        <div class="sdpi-item details">
+            <div class="sdpi-item-label" data-i18n="Backup">Backup</div>
+            <details>
+              <summary><span class="standard-font" data-i18n="Record Stream Code">Record Stream Code</span></summary>
+                <br>    
+                <textarea type="textarea" rows="3" placeholder="BASE64 STREAM INPUT CODE" style="font-family:Lucida Console, Courier New, Arial;font-size:9pt;"  value="" id="my_clipboard_input"></textarea>
+                <button onclick="UpdateStream()" id="stream_save_button" class="sdpi-item-value" data-i18n="UPDATE STREAM">UPDATE STREAM</button>
+                <summary><br><small class="standard-font" data-i18n="Additional Recording Stream Deck Backup">ℹ <strong>Additional Recording Stream Deck Backup:</strong> This optional area is for securing and initializing the record stream. You can copy your Base64 record and save it for yourself, and if necessary import it again during a system restore.</small></summary>
+            </details>
+        </div>
+
+
+        <br>      
+        <div class="sdpi-heading" id="infor_div" data-i18n="PRIVACY PROTECTION">PRIVACY PROTECTION</div>
+
+        <div class="sdpi-item alignTop noInnerMargins">
+            <div class="sdpi-item-label"></div>    
+            <div style="text-align: justify">   
+                <small>
+                    <strong data-i18n="YOUR PRIVACY MATTERS">YOUR PRIVACY MATTERS</strong>
+                    <br>
+                    <span data-i18n="We do not collect or store any private, personal, or sensitive data.">We do not collect or store any private, personal, or sensitive data. The telemetry mechanism is limited to anonymous, technical usage statistics.</span>
+                </small>
+            </div>
+        </div> 
+        <br>
+
+        <!-- //////////////////////////////////////// -->
+
+        <!-- <div class="sdpi-heading" id="infor_div">INFORMATION</div>
+
+        <div class="sdpi-item alignTop noInnerMargins">
+            <div class="sdpi-item-label info"></div>                
+            <summary>More Information<br><span class="linkspan" onclick="openWebsite()">VIVRE-MOTION.COM</span> </summary>
+        </div> -->
+		
+    </div>
+
+<script>
+		
+
+var websocket = null, uuid = null, pluginAction = null, actionInfo = {};
+var currentLang = 'en';
+
+// ═══════════ I18N Translation Database ═══════════
+var I18N = {
+    'en': {
+        'RECORDING SETUP': 'RECORDING SETUP',
+        'SIMULATION EVENTS': 'SIMULATION EVENTS',
+        'TIME SETUP': 'TIME SETUP',
+        'MOUSE OPTIONS': 'MOUSE OPTIONS',
+        'TYPEWRITER GHOSTWRITER': 'TYPEWRITER GHOSTWRITER',
+        'AUDIO': 'AUDIO',
+        'RUNTIME REPLAY': 'RUNTIME REPLAY',
+        'RECORD STREAM': 'RECORD STREAM',
+        'PRIVACY PROTECTION': 'PRIVACY PROTECTION',
+        'Mouse Record': 'Mouse Record',
+        'Save Key': 'Save Key',
+        'Activate Recording': 'Activate Recording',
+        'START RECORD': 'START RECORD',
+        '◼ CANCEL RECORD': '◼ CANCEL RECORD',
+        'MOUSE RECORDING ACTIVE': 'MOUSE RECORDING ACTIVE',
+        'Press': 'Press',
+        'to Save and Stop Record': 'to Save and Stop Record',
+        'Currently Record will by overwrite': 'Currently Record will by overwrite',
+        'CHECK NEW RECORDING WINDOW': 'CHECK NEW RECORDING WINDOW',
+        'Simulation': 'Simulation',
+        'Mouse': 'Mouse',
+        'Keyboard': 'Keyboard',
+        'Process Time': 'Process Time',
+        'Record Delay': 'Record Delay',
+        '｟WARP｠ Motion': '｟WARP｠ Motion',
+        'Soft Start': 'Soft Start',
+        'Completed Audio': 'Completed Audio',
+        'Repeat Loops': 'Repeat Loops',
+        'Backup': 'Backup',
+        'Record Stream Code': 'Record Stream Code',
+        'UPDATE STREAM': 'UPDATE STREAM',
+        'Keystrokes Text Info': 'Keystrokes Text Info',
+        '🕒 Ignore Record Delay Time': '🕒 Ignore Record Delay Time',
+        '🚀 Skip Mouse Movement': '🚀 Skip Mouse Movement',
+        '🌫 Smoothly Start Mouse Movement': '🌫 Smoothly Start Mouse Movement',
+        'Play after Completing Simulation': 'Play after Completing Simulation',
+        'Ignore the Sleep Waiting Delay Time (Affects the Process Time)': 'Ignore the Sleep Waiting Delay Time (Affects the Process Time)',
+        'Only Start and Stop Mouse-Position within a Section are executed (Affects the Process Time)': 'Only Start and Stop Mouse-Position within a Section are executed (Affects the Process Time)',
+        'The Mouse Pointer slides soft to the start position of the recording before playback. Note the additional delay time with Multi-Action.': 'The Mouse Pointer slides soft to the start position of the recording before playback. Note the additional delay time with Multi-Action.',
+        'Typing speed in milliseconds between keystrokes simulation. Default=10 for natural typing speed. (Affects the Process Time)': 'Typing speed in milliseconds between keystrokes simulation. Default=10 for natural typing speed. (Affects the Process Time)',
+        '⭡ DISPLAY VIRTUAL KEY CODES CONSTANT NAME': '⭡ DISPLAY VIRTUAL KEY CODES CONSTANT NAME',
+        'Additional Recording Stream Deck Backup': 'Additional Recording Stream Deck Backup',
+        'YOUR PRIVACY MATTERS': 'YOUR PRIVACY MATTERS',
+        'We do not collect or store any private, personal, or sensitive data.': 'We do not collect or store any private, personal, or sensitive data.',
+        'Typewriter (10)': 'Typewriter (10)',
+        'Typing Speed Milliseconds': 'Typing Speed Milliseconds',
+        'Hotkey to Save your Record': 'Hotkey to Save your Record',
+        '-1 = for Infinity Loop, 0 = no Repeat': '-1 = for Infinity Loop, 0 = no Repeat',
+        'Update Import Stream OK': 'Update Import Stream OK',
+        'Wrong Import Stream!': 'Wrong Import Stream!',
+        'NO RECORD DATA': 'NO RECORD DATA',
+        'TRY AGAIN WAIT FOR THE RECORD WINDOW AND PRESS F10 TO SAVE RECORD': 'TRY AGAIN WAIT FOR THE RECORD WINDOW AND PRESS F10 TO SAVE RECORD',
+        'Typewriter': 'Typewriter',
+        'Playbacks': 'Playbacks',
+        'Playback': 'Playback',
+        'INFINITY': 'INFINITY',
+        'INFINITY RUN': 'INFINITY RUN',
+        'Only necessary if a subsequent process is executed.': 'Only necessary if a subsequent process is executed.',
+        'Add': 'Add',
+        'Wait-Time after Mouse Simulation on Multi-Action. Only necessary if a subsequent process is executed.': 'Wait-Time after Mouse Simulation on Multi-Action. Only necessary if a subsequent process is executed.',
+        'Affects the Process Time': 'Affects the Process Time',
+        'Press Stream Deck Button again to Kill the Playback': 'Press Stream Deck Button again to Kill the Playback',
+    },
+    'zh_CN': {
+        'RECORDING SETUP': '录制设置',
+        'SIMULATION EVENTS': '模拟事件',
+        'TIME SETUP': '时间设置',
+        'MOUSE OPTIONS': '鼠标选项',
+        'TYPEWRITER GHOSTWRITER': '打字机速度',
+        'AUDIO': '音频',
+        'RUNTIME REPLAY': '运行时重播',
+        'RECORD STREAM': '录制流',
+        'PRIVACY PROTECTION': '隐私保护',
+        'Mouse Record': '鼠标录制',
+        'Save Key': '保存键',
+        'Activate Recording': '激活录制',
+        'START RECORD': '开始录制',
+        '◼ CANCEL RECORD': '◼ 取消录制',
+        'MOUSE RECORDING ACTIVE': '鼠标录制进行中',
+        'Press': '按下',
+        'to Save and Stop Record': '保存并停止录制',
+        'Currently Record will by overwrite': '当前录制将被覆盖',
+        'CHECK NEW RECORDING WINDOW': '请查看新的录制窗口',
+        'Simulation': '模拟',
+        'Mouse': '鼠标',
+        'Keyboard': '键盘',
+        'Process Time': '处理时间',
+        'Record Delay': '录制延迟',
+        '｟WARP｠ Motion': '｟WARP｠ 瞬移',
+        'Soft Start': '软启动',
+        'Completed Audio': '完成音频',
+        'Repeat Loops': '重复循环',
+        'Backup': '备份',
+        'Record Stream Code': '录制流代码',
+        'UPDATE STREAM': '更新流',
+        'Keystrokes Text Info': '按键文本信息',
+        '🕒 Ignore Record Delay Time': '🕒 忽略录制延迟时间',
+        '🚀 Skip Mouse Movement': '🚀 跳过鼠标移动',
+        '🌫 Smoothly Start Mouse Movement': '🌫 平滑启动鼠标移动',
+        'Play after Completing Simulation': '模拟完成后播放',
+        'Ignore the Sleep Waiting Delay Time (Affects the Process Time)': '忽略休眠等待延迟时间（影响处理时间）',
+        'Only Start and Stop Mouse-Position within a Section are executed (Affects the Process Time)': '仅执行段落内开始和结束的鼠标位置（影响处理时间）',
+        'The Mouse Pointer slides soft to the start position of the recording before playback. Note the additional delay time with Multi-Action.': '鼠标指针在回放前平滑滑动到录制起始位置。注意多操作中的额外延迟时间。',
+        'Typing speed in milliseconds between keystrokes simulation. Default=10 for natural typing speed. (Affects the Process Time)': '按键模拟之间的打字速度（毫秒）。默认=10为自然打字速度。（影响处理时间）',
+        '⭡ DISPLAY VIRTUAL KEY CODES CONSTANT NAME': '⭡ 显示虚拟键码常量名称',
+        'Additional Recording Stream Deck Backup': '额外的录制流备份：此可选区域用于保护和初始化录制流。',
+        'YOUR PRIVACY MATTERS': '您的隐私很重要',
+        'We do not collect or store any private, personal, or sensitive data.': '我们不收集或存储任何私人、个人或敏感数据。遥测机制仅限于匿名的技术使用统计。',
+        'Typewriter (10)': '打字机速度 (10)',
+        'Typing Speed Milliseconds': '打字速度（毫秒）',
+        'Hotkey to Save your Record': '保存录制的快捷键',
+        '-1 = for Infinity Loop, 0 = no Repeat': '-1 = 无限循环，0 = 不重复',
+        'Update Import Stream OK': '更新导入流成功',
+        'Wrong Import Stream!': '导入流错误！',
+        'NO RECORD DATA': '无录制数据',
+        'TRY AGAIN WAIT FOR THE RECORD WINDOW AND PRESS F10 TO SAVE RECORD': '请重试，等待录制窗口并按F10保存录制',
+        'Typewriter': '打字机速度',
+        'Playbacks': '回放',
+        'Playback': '回放',
+        'INFINITY': '无限',
+        'INFINITY RUN': '无限运行',
+        'Only necessary if a subsequent process is executed.': '仅在后续有进程执行时需要。',
+        'Add': '添加',
+        'Wait-Time after Mouse Simulation on Multi-Action. Only necessary if a subsequent process is executed.': '鼠标模拟后在多操作中等待时间。仅在后续有进程执行时需要。',
+        'Affects the Process Time': '影响处理时间',
+        'Press Stream Deck Button again to Kill the Playback': '再次按下 Stream Deck 按钮以终止回放',
+    },
+    'ja': {
+        'RECORDING SETUP': '録音設定',
+        'SIMULATION EVENTS': 'シミュレーションイベント',
+        'TIME SETUP': '時間設定',
+        'MOUSE OPTIONS': 'マウスオプション',
+        'TYPEWRITER GHOSTWRITER': 'タイプライター速度',
+        'AUDIO': 'オーディオ',
+        'RUNTIME REPLAY': 'ランタイム再生',
+        'RECORD STREAM': '記録ストリーム',
+        'PRIVACY PROTECTION': 'プライバシー保護',
+        'Mouse Record': 'マウス記録',
+        'Save Key': '保存キー',
+        'Activate Recording': '記録を有効化',
+        'START RECORD': '記録開始',
+        '◼ CANCEL RECORD': '◼ 記録キャンセル',
+        'MOUSE RECORDING ACTIVE': 'マウス記録中',
+        'Press': '押す',
+        'to Save and Stop Record': 'で保存して記録停止',
+        'Currently Record will by overwrite': '現在の記録は上書きされます',
+        'CHECK NEW RECORDING WINDOW': '新しい記録ウィンドウを確認',
+        'Simulation': 'シミュレーション',
+        'Mouse': 'マウス',
+        'Keyboard': 'キーボード',
+        'Process Time': '処理時間',
+        'Record Delay': '記録遅延',
+        '｟WARP｠ Motion': '｟WARP｠ モーション',
+        'Soft Start': 'ソフトスタート',
+        'Completed Audio': '完了オーディオ',
+        'Repeat Loops': '繰り返し回数',
+        'Backup': 'バックアップ',
+        'Record Stream Code': '記録ストリームコード',
+        'UPDATE STREAM': 'ストリーム更新',
+        'Keystrokes Text Info': 'キーストロークテキスト情報',
+        '🕒 Ignore Record Delay Time': '🕒 記録遅延時間を無視',
+        '🚀 Skip Mouse Movement': '🚀 マウス移動をスキップ',
+        '🌫 Smoothly Start Mouse Movement': '🌫 マウス移動をスムーズに開始',
+        'Play after Completing Simulation': 'シミュレーション完了後に再生',
+        'Ignore the Sleep Waiting Delay Time (Affects the Process Time)': 'スリープ待機遅延時間を無視（処理時間に影響）',
+        'Only Start and Stop Mouse-Position within a Section are executed (Affects the Process Time)': 'セクション内の開始位置と終了位置のみ実行（処理時間に影響）',
+        'The Mouse Pointer slides soft to the start position of the recording before playback. Note the additional delay time with Multi-Action.': '再生前にマウスポインターが録音の開始位置にスムーズに移動。マルチアクションでは追加の遅延時間に注意。',
+        'Typing speed in milliseconds between keystrokes simulation. Default=10 for natural typing speed. (Affects the Process Time)': 'キーストローク間のタイピング速度（ミリ秒）。デフォルト=10は自然な速度。（処理時間に影響）',
+        '⭡ DISPLAY VIRTUAL KEY CODES CONSTANT NAME': '⭡ 仮想キーコード定数名を表示',
+        'Additional Recording Stream Deck Backup': '追加の記録ストリームバックアップ：このオプション領域は記録ストリームの保護と初期化用です。',
+        'YOUR PRIVACY MATTERS': 'お客様のプライバシーは重要です',
+        'We do not collect or store any private, personal, or sensitive data.': '当社は個人情報や機密データを収集または保存しません。テレメトリは匿名の技術的使用統計に限定されています。',
+        'Typewriter (10)': 'タイプライター (10)',
+        'Typing Speed Milliseconds': 'タイピング速度（ミリ秒）',
+        'Hotkey to Save your Record': '記録を保存するホットキー',
+        '-1 = for Infinity Loop, 0 = no Repeat': '-1 = 無限ループ、0 = 繰り返しなし',
+        'Update Import Stream OK': 'ストリーム更新成功',
+        'Wrong Import Stream!': 'ストリームが無効',
+        'NO RECORD DATA': '記録データなし',
+        'TRY AGAIN WAIT FOR THE RECORD WINDOW AND PRESS F10 TO SAVE RECORD': '再試行して録音ウィンドウを待ち、F10で保存',
+        'Typewriter': 'タイプライター',
+        'Playbacks': '再生',
+        'Playback': '再生',
+        'INFINITY': '無限',
+        'INFINITY RUN': '無限実行',
+        'Only necessary if a subsequent process is executed.': '後続プロセスがある場合のみ必要。',
+        'Add': '追加',
+        'Wait-Time after Mouse Simulation on Multi-Action. Only necessary if a subsequent process is executed.': 'マウスシミュレーション後のマルチアクション待機時間。後続プロセスがある場合のみ必要。',
+        'Affects the Process Time': '処理時間に影響',
+        'Press Stream Deck Button again to Kill the Playback': '再生を停止するにはStream Deckボタンを押してください',
+    },
+    'ko': {
+        'RECORDING SETUP': '녹화 설정',
+        'SIMULATION EVENTS': '시뮬레이션 이벤트',
+        'TIME SETUP': '시간 설정',
+        'MOUSE OPTIONS': '마우스 옵션',
+        'TYPEWRITER GHOSTWRITER': '타자기 속도',
+        'AUDIO': '오디오',
+        'RUNTIME REPLAY': '런타임 재생',
+        'RECORD STREAM': '기록 스트림',
+        'PRIVACY PROTECTION': '개인정보 보호',
+        'Mouse Record': '마우스 기록',
+        'Save Key': '저장 키',
+        'Activate Recording': '기록 활성화',
+        'START RECORD': '기록 시작',
+        '◼ CANCEL RECORD': '◼ 기록 취소',
+        'MOUSE RECORDING ACTIVE': '마우스 기록 활성',
+        'Press': '누르기',
+        'to Save and Stop Record': '저장 및 기록 중지',
+        'Currently Record will by overwrite': '현재 기록을 덮어씁니다',
+        'CHECK NEW RECORDING WINDOW': '새 기록 창 확인',
+        'Simulation': '시뮬레이션',
+        'Mouse': '마우스',
+        'Keyboard': '키보드',
+        'Process Time': '처리 시간',
+        'Record Delay': '기록 지연',
+        '｟WARP｠ Motion': '｟WARP｠ 모션',
+        'Soft Start': '소프트 스타트',
+        'Completed Audio': '완료 오디오',
+        'Repeat Loops': '반복 횟수',
+        'Backup': '백업',
+        'Record Stream Code': '기록 스트림 코드',
+        'UPDATE STREAM': '스트림 업데이트',
+        'Keystrokes Text Info': '키 입력 텍스트 정보',
+        '🕒 Ignore Record Delay Time': '🕒 기록 지연 시간 무시',
+        '🚀 Skip Mouse Movement': '🚀 마우스 이동 건너뛰기',
+        '🌫 Smoothly Start Mouse Movement': '🌫 마우스 이동 부드럽게 시작',
+        'Play after Completing Simulation': '시뮬레이션 완료 후 재생',
+        'Ignore the Sleep Waiting Delay Time (Affects the Process Time)': '절전 대기 지연 시간 무시（처리 시간에 영향）',
+        'Only Start and Stop Mouse-Position within a Section are executed (Affects the Process Time)': '섹션 내 시작 및 종료 마우스 위치만 실행（처리 시간에 영향）',
+        'The Mouse Pointer slides soft to the start position of the recording before playback. Note the additional delay time with Multi-Action.': '재생 전 마우스 포인터가 기록 시작 위치로 부드럽게 이동합니다. 다중 작업 시 추가 지연 시간에 유의.',
+        'Typing speed in milliseconds between keystrokes simulation. Default=10 for natural typing speed. (Affects the Process Time)': '키 입력 간 타이핑 속도(밀리초). 기본값=10 자연스러운 속도.（처리 시간에 영향）',
+        '⭡ DISPLAY VIRTUAL KEY CODES CONSTANT NAME': '⭡ 가상 키 코드 상수 이름 표시',
+        'Additional Recording Stream Deck Backup': '추가 기록 스트림 백업: 이 선택 영역은 기록 스트림을 보호하고 초기화하기 위한 것입니다.',
+        'YOUR PRIVACY MATTERS': '개인정보는 중요합니다',
+        'We do not collect or store any private, personal, or sensitive data.': '당사는 개인정보나 민감한 데이터를 수집하거나 저장하지 않습니다. 원격 측정은 익명의 기술 사용 통계로 제한됩니다.',
+        'Typewriter (10)': '타자기 (10)',
+        'Typing Speed Milliseconds': '타이핑 속도(밀리초)',
+        'Hotkey to Save your Record': '기록 저장 단축키',
+        '-1 = for Infinity Loop, 0 = no Repeat': '-1 = 무한 반복, 0 = 반복 없음',
+        'Update Import Stream OK': '스트림 가져오기 업데이트 성공',
+        'Wrong Import Stream!': '잘못된 스트림',
+        'NO RECORD DATA': '기록 데이터 없음',
+        'TRY AGAIN WAIT FOR THE RECORD WINDOW AND PRESS F10 TO SAVE RECORD': '다시 시도하고 기록 창을 기다린 후 F10을 눌러 저장',
+        'Typewriter': '타자기',
+        'Playbacks': '재생',
+        'Playback': '재생',
+        'INFINITY': '무한',
+        'INFINITY RUN': '무한 실행',
+        'Only necessary if a subsequent process is executed.': '후속 프로세스가 있는 경우에만 필요합니다.',
+        'Add': '추가',
+        'Wait-Time after Mouse Simulation on Multi-Action. Only necessary if a subsequent process is executed.': '마우스 시뮤레이션 후 다중 작업 대기 시간.',
+        'Affects the Process Time': '처리 시간에 영향',
+        'Press Stream Deck Button again to Kill the Playback': '재생 중지하려면 Stream Deck 버튼을 다시 누르세요',
+    },
+    'fr': {
+        'RECORDING SETUP': 'CONFIG. ENREGISTREMENT',
+        'SIMULATION EVENTS': 'ÉVÉNEMENTS DE SIMULATION',
+        'TIME SETUP': 'CONFIG. DU TEMPS',
+        'MOUSE OPTIONS': 'OPTIONS DE LA SOURIS',
+        'TYPEWRITER GHOSTWRITER': 'VITESSE MACHINE À ÉCRIRE',
+        'AUDIO': 'AUDIO',
+        'RUNTIME REPLAY': 'RÉPÉTITION',
+        'RECORD STREAM': 'FLUX D\'ENREGISTREMENT',
+        'PRIVACY PROTECTION': 'PROTECTION DE LA VIE PRIVÉE',
+        'Mouse Record': 'Enregistrement souris',
+        'Save Key': 'Touche de sauvegarde',
+        'Activate Recording': 'Activer l\'enregistrement',
+        'START RECORD': 'DÉMARRER ENREG.',
+        '◼ CANCEL RECORD': '◼ ANNULER ENREG.',
+        'MOUSE RECORDING ACTIVE': 'ENREGISTREMENT SOURIS ACTIF',
+        'Press': 'Appuyez sur',
+        'to Save and Stop Record': 'pour sauvegarder et arrêter',
+        'Currently Record will by overwrite': 'L\'enregistrement actuel sera écrasé',
+        'CHECK NEW RECORDING WINDOW': 'VÉRIFIEZ LA NOUVELLE FENÊTRE',
+        'Simulation': 'Simulation',
+        'Mouse': 'Souris',
+        'Keyboard': 'Clavier',
+        'Process Time': 'Temps de traitement',
+        'Record Delay': 'Délai d\'enregistrement',
+        '｟WARP｠ Motion': '｟WARP｠ Mouvement',
+        'Soft Start': 'Démarrage progressif',
+        'Completed Audio': 'Audio terminé',
+        'Repeat Loops': 'Boucles',
+        'Backup': 'Sauvegarde',
+        'Record Stream Code': 'Code du flux d\'enregistrement',
+        'UPDATE STREAM': 'METTRE À JOUR',
+        'Keystrokes Text Info': 'Frappes Info texte',
+        '🕒 Ignore Record Delay Time': '🕒 Ignorer le délai d\'enregistrement',
+        '🚀 Skip Mouse Movement': '🚀 Sauter le mouvement de souris',
+        '🌫 Smoothly Start Mouse Movement': '🌫 Démarrer le mouvement en douceur',
+        'Play after Completing Simulation': 'Jouer après la simulation',
+        'Ignore the Sleep Waiting Delay Time (Affects the Process Time)': 'Ignorer le délai d\'attente (Affecte le temps de traitement)',
+        'Only Start and Stop Mouse-Position within a Section are executed (Affects the Process Time)': 'Seules les positions de début/fin sont exécutées (Affecte le temps de traitement)',
+        'The Mouse Pointer slides soft to the start position of the recording before playback. Note the additional delay time with Multi-Action.': 'Le pointeur glisse doucement vers la position de départ avant lecture. Délai supplémentaire avec Multi-Action.',
+        'Typing speed in milliseconds between keystrokes simulation. Default=10 for natural typing speed. (Affects the Process Time)': 'Vitesse de frappe en ms entre les touches. Défaut=10. (Affecte le temps de traitement)',
+        '⭡ DISPLAY VIRTUAL KEY CODES CONSTANT NAME': '⭡ AFFICHER LES NOMS DES CODES DE TOUCHES',
+        'Additional Recording Stream Deck Backup': 'Sauvegarde supplémentaire : Cette zone optionnelle permet de sécuriser le flux.',
+        'YOUR PRIVACY MATTERS': 'VOTRE VIE PRIVÉE COMPTE',
+        'We do not collect or store any private, personal, or sensitive data.': 'Nous ne collectons ni ne stockons aucune donnée privée. La télémétrie se limite à des statistiques anonymes.',
+        'Typewriter (10)': 'Machine à écrire (10)',
+        'Typing Speed Milliseconds': 'Vitesse de frappe (ms)',
+        'Hotkey to Save your Record': 'Raccourci pour sauvegarder',
+        '-1 = for Infinity Loop, 0 = no Repeat': '-1 = boucle infinie, 0 = pas de répétition',
+        'Update Import Stream OK': 'Mise à jour du flux OK',
+        'Wrong Import Stream!': 'Flux d\'importation incorrect',
+        'NO RECORD DATA': 'AUCUNE DONNÉE',
+        'TRY AGAIN WAIT FOR THE RECORD WINDOW AND PRESS F10 TO SAVE RECORD': 'RÉESSAYEZ, ATTENDEZ LA FENÊTRE D\'ENREGISTREMENT',
+        'Typewriter': 'Machine à écrire',
+        'Playbacks': 'Lectures',
+        'Playback': 'Lecture',
+        'INFINITY': 'INFINI',
+        'INFINITY RUN': 'EXÉCUTION INFINIE',
+        'Only necessary if a subsequent process is executed.': 'Nécessaire seulement si un processus suivant est exécuté.',
+        'Add': 'Ajouter',
+        'Wait-Time after Mouse Simulation on Multi-Action. Only necessary if a subsequent process is executed.': 'Temps d\'attente après simulation de souris sur Multi-Action.',
+        'Affects the Process Time': 'Affecte le temps de traitement',
+        'Press Stream Deck Button again to Kill the Playback': 'Appuyez à nouveau sur le bouton Stream Deck pour arrêter',
+    },
+    'de': {
+        'RECORDING SETUP': 'AUFNAHME-EINSTELLUNGEN',
+        'SIMULATION EVENTS': 'SIMULATIONSEREIGNISSE',
+        'TIME SETUP': 'ZEITEINSTELLUNGEN',
+        'MOUSE OPTIONS': 'MAUSOPTIONEN',
+        'TYPEWRITER GHOSTWRITER': 'SCHREIBMASCHINEN-GESCHWINDIGKEIT',
+        'AUDIO': 'AUDIO',
+        'RUNTIME REPLAY': 'WIEDERHOLUNG',
+        'RECORD STREAM': 'AUFNAHMESTREAM',
+        'PRIVACY PROTECTION': 'DATENSCHUTZ',
+        'Mouse Record': 'Mausaufzeichnung',
+        'Save Key': 'Speichertaste',
+        'Activate Recording': 'Aufzeichnung aktivieren',
+        'START RECORD': 'AUFNAHME STARTEN',
+        '◼ CANCEL RECORD': '◼ AUFNAHME ABBRECHEN',
+        'MOUSE RECORDING ACTIVE': 'MAUSAUFZEICHNUNG AKTIV',
+        'Press': 'Drücken Sie',
+        'to Save and Stop Record': 'zum Speichern und Stoppen',
+        'Currently Record will by overwrite': 'Aktuelle Aufnahme wird überschrieben',
+        'CHECK NEW RECORDING WINDOW': 'NEUES AUFNAHMEFENSTER PRÜFEN',
+        'Simulation': 'Simulation',
+        'Mouse': 'Maus',
+        'Keyboard': 'Tastatur',
+        'Process Time': 'Verarbeitungszeit',
+        'Record Delay': 'Aufnahmeverzögerung',
+        '｟WARP｠ Motion': '｟WARP｠ Bewegung',
+        'Soft Start': 'Sanfter Start',
+        'Completed Audio': 'Abschluss-Audio',
+        'Repeat Loops': 'Wiederholungen',
+        'Backup': 'Sicherung',
+        'Record Stream Code': 'Aufnahmestream-Code',
+        'UPDATE STREAM': 'STREAM AKTUALISIEREN',
+        'Keystrokes Text Info': 'Tastenanschläge Textinfo',
+        '🕒 Ignore Record Delay Time': '🕒 Aufnahmeverzögerung ignorieren',
+        '🚀 Skip Mouse Movement': '🚀 Mausbewegung überspringen',
+        '🌫 Smoothly Start Mouse Movement': '🌫 Mausbewegung sanft starten',
+        'Play after Completing Simulation': 'Nach Abschluss abspielen',
+        'Ignore the Sleep Waiting Delay Time (Affects the Process Time)': 'Wartezeit ignorieren (Beeinflusst die Verarbeitungszeit)',
+        'Only Start and Stop Mouse-Position within a Section are executed (Affects the Process Time)': 'Nur Start-/Endpositionen werden ausgeführt (Beeinflusst die Verarbeitungszeit)',
+        'The Mouse Pointer slides soft to the start position of the recording before playback. Note the additional delay time with Multi-Action.': 'Der Mauszeiger gleitet sanft zur Startposition. Zusätzliche Verzögerung bei Multi-Aktion.',
+        'Typing speed in milliseconds between keystrokes simulation. Default=10 for natural typing speed. (Affects the Process Time)': 'Tippgeschwindigkeit in ms. Standard=10. (Beeinflusst die Verarbeitungszeit)',
+        '⭡ DISPLAY VIRTUAL KEY CODES CONSTANT NAME': '⭡ VIRTUELLE TASTENCODES ANZEIGEN',
+        'Additional Recording Stream Deck Backup': 'Zusätzliche Sicherung: Dieser optionale Bereich dient zur Sicherung des Aufnahmestreams.',
+        'YOUR PRIVACY MATTERS': 'IHRE PRIVATSPHÄRE IST WICHTIG',
+        'We do not collect or store any private, personal, or sensitive data.': 'Wir erfassen keine privaten Daten. Die Telemetrie beschränkt sich auf anonyme, technische Nutzungsstatistiken.',
+        'Typewriter (10)': 'Schreibmaschine (10)',
+        'Typing Speed Milliseconds': 'Tippgeschwindigkeit (ms)',
+        'Hotkey to Save your Record': 'Hotkey zum Speichern',
+        '-1 = for Infinity Loop, 0 = no Repeat': '-1 = Endlosschleife, 0 = keine Wiederholung',
+        'Update Import Stream OK': 'Stream-Update erfolgreich',
+        'Wrong Import Stream!': 'Fehlerhafter Import-Stream',
+        'NO RECORD DATA': 'KEINE AUFNAHMEDATEN',
+        'TRY AGAIN WAIT FOR THE RECORD WINDOW AND PRESS F10 TO SAVE RECORD': 'ERNEUT VERSUCHEN, AUFNAHMEFENSTER ABWARTEN',
+        'Typewriter': 'Schreibmaschine',
+        'Playbacks': 'Wiedergaben',
+        'Playback': 'Wiedergabe',
+        'INFINITY': 'UNENDLICH',
+        'INFINITY RUN': 'ENDLOS-LAUF',
+        'Only necessary if a subsequent process is executed.': 'Nur nötig, wenn ein Folgeprozess ausgeführt wird.',
+        'Add': 'Hinzufügen',
+        'Wait-Time after Mouse Simulation on Multi-Action. Only necessary if a subsequent process is executed.': 'Wartezeit nach Maus-Simulation bei Multi-Aktion.',
+        'Affects the Process Time': 'Beeinflusst die Verarbeitungszeit',
+        'Press Stream Deck Button again to Kill the Playback': 'Drücken Sie die Stream Deck-Taste erneut',
+    },
+    'es': {
+        'RECORDING SETUP': 'CONFIG. GRABACIÓN',
+        'SIMULATION EVENTS': 'EVENTOS DE SIMULACIÓN',
+        'TIME SETUP': 'CONFIG. DE TIEMPO',
+        'MOUSE OPTIONS': 'OPCIONES DE RATÓN',
+        'TYPEWRITER GHOSTWRITER': 'VELOCIDAD MÁQUINA DE ESCRIBIR',
+        'AUDIO': 'AUDIO',
+        'RUNTIME REPLAY': 'REPETICIÓN',
+        'RECORD STREAM': 'FLUJO DE GRABACIÓN',
+        'PRIVACY PROTECTION': 'PROTECCIÓN DE PRIVACIDAD',
+        'Mouse Record': 'Grabación de ratón',
+        'Save Key': 'Tecla de guardado',
+        'Activate Recording': 'Activar grabación',
+        'START RECORD': 'INICIAR GRABACIÓN',
+        '◼ CANCEL RECORD': '◼ CANCELAR GRABACIÓN',
+        'MOUSE RECORDING ACTIVE': 'GRABACIÓN DE RATÓN ACTIVA',
+        'Press': 'Presione',
+        'to Save and Stop Record': 'para guardar y detener',
+        'Currently Record will by overwrite': 'La grabación actual se sobrescribirá',
+        'CHECK NEW RECORDING WINDOW': 'VERIFIQUE LA NUEVA VENTANA',
+        'Simulation': 'Simulación',
+        'Mouse': 'Ratón',
+        'Keyboard': 'Teclado',
+        'Process Time': 'Tiempo de proceso',
+        'Record Delay': 'Retraso de grabación',
+        '｟WARP｠ Motion': '｟WARP｠ Movimiento',
+        'Soft Start': 'Inicio suave',
+        'Completed Audio': 'Audio completado',
+        'Repeat Loops': 'Repeticiones',
+        'Backup': 'Copia de seguridad',
+        'Record Stream Code': 'Código de flujo',
+        'UPDATE STREAM': 'ACTUALIZAR FLUJO',
+        'Keystrokes Text Info': 'Pulsaciones Info texto',
+        '🕒 Ignore Record Delay Time': '🕒 Ignorar tiempo de retraso',
+        '🚀 Skip Mouse Movement': '🚀 Omitir movimiento del ratón',
+        '🌫 Smoothly Start Mouse Movement': '🌫 Iniciar movimiento suavemente',
+        'Play after Completing Simulation': 'Reproducir tras completar',
+        'Ignore the Sleep Waiting Delay Time (Affects the Process Time)': 'Ignorar el tiempo de espera (Afecta el tiempo de proceso)',
+        'Only Start and Stop Mouse-Position within a Section are executed (Affects the Process Time)': 'Solo posiciones de inicio/fin ejecutadas (Afecta el tiempo de proceso)',
+        'The Mouse Pointer slides soft to the start position of the recording before playback. Note the additional delay time with Multi-Action.': 'El puntero se desliza suavemente a la posición inicial. Retraso adicional con Multi-Acción.',
+        'Typing speed in milliseconds between keystrokes simulation. Default=10 for natural typing speed. (Affects the Process Time)': 'Velocidad en ms entre pulsaciones. Defecto=10. (Afecta el tiempo de proceso)',
+        '⭡ DISPLAY VIRTUAL KEY CODES CONSTANT NAME': '⭡ MOSTRAR NOMBRES DE CÓDIGOS DE TECLAS',
+        'Additional Recording Stream Deck Backup': 'Copia de seguridad adicional: Esta área opcional sirve para asegurar el flujo de grabación.',
+        'YOUR PRIVACY MATTERS': 'SU PRIVACIDAD IMPORTA',
+        'We do not collect or store any private, personal, or sensitive data.': 'No recopilamos ni almacenamos datos privados. La telemetría se limita a estadísticas de uso anónimas.',
+        'Typewriter (10)': 'Máquina de escribir (10)',
+        'Typing Speed Milliseconds': 'Velocidad de escritura (ms)',
+        'Hotkey to Save your Record': 'Atajo para guardar',
+        '-1 = for Infinity Loop, 0 = no Repeat': '-1 = bucle infinito, 0 = sin repetición',
+        'Update Import Stream OK': 'Actualización de flujo correcta',
+        'Wrong Import Stream!': 'Flujo de importación incorrecto',
+        'NO RECORD DATA': 'SIN DATOS DE GRABACIÓN',
+        'TRY AGAIN WAIT FOR THE RECORD WINDOW AND PRESS F10 TO SAVE RECORD': 'INTENTE DE NUEVO, ESPERE LA VENTANA DE GRABACIÓN',
+        'Typewriter': 'Máquina de escribir',
+        'Playbacks': 'Reproducciones',
+        'Playback': 'Reproducción',
+        'INFINITY': 'INFINITO',
+        'INFINITY RUN': 'EJECUCIÓN INFINITA',
+        'Only necessary if a subsequent process is executed.': 'Solo necesario si se ejecuta un proceso posterior.',
+        'Add': 'Añadir',
+        'Wait-Time after Mouse Simulation on Multi-Action. Only necessary if a subsequent process is executed.': 'Tiempo de espera tras simulación de ratón en Multi-Acción.',
+        'Affects the Process Time': 'Afecta el tiempo de proceso',
+        'Press Stream Deck Button again to Kill the Playback': 'Presione el botón Stream Deck nuevamente',
+    },
+    'ru': {
+        'RECORDING SETUP': 'НАСТРОЙКИ ЗАПИСИ',
+        'SIMULATION EVENTS': 'СОБЫТИЯ СИМУЛЯЦИИ',
+        'TIME SETUP': 'НАСТРОЙКИ ВРЕМЕНИ',
+        'MOUSE OPTIONS': 'НАСТРОЙКИ МЫШИ',
+        'TYPEWRITER GHOSTWRITER': 'СКОРОСТЬ ПЕЧАТИ',
+        'AUDIO': 'АУДИО',
+        'RUNTIME REPLAY': 'ПОВТОРЕНИЕ',
+        'RECORD STREAM': 'ПОТОК ЗАПИСИ',
+        'PRIVACY PROTECTION': 'ЗАЩИТА КОНФИДЕНЦИАЛЬНОСТИ',
+        'Mouse Record': 'Запись мыши',
+        'Save Key': 'Клавиша сохранения',
+        'Activate Recording': 'Активировать запись',
+        'START RECORD': 'НАЧАТЬ ЗАПИСЬ',
+        '◼ CANCEL RECORD': '◼ ОТМЕНИТЬ ЗАПИСЬ',
+        'MOUSE RECORDING ACTIVE': 'ЗАПИСЬ МЫШИ АКТИВНА',
+        'Press': 'Нажмите',
+        'to Save and Stop Record': 'для сохранения и остановки',
+        'Currently Record will by overwrite': 'Текущая запись будет перезаписана',
+        'CHECK NEW RECORDING WINDOW': 'ПРОВЕРЬТЕ НОВОЕ ОКНО ЗАПИСИ',
+        'Simulation': 'Симуляция',
+        'Mouse': 'Мышь',
+        'Keyboard': 'Клавиатура',
+        'Process Time': 'Время обработки',
+        'Record Delay': 'Задержка записи',
+        '｟WARP｠ Motion': '｟WARP｠ Движение',
+        'Soft Start': 'Плавный старт',
+        'Completed Audio': 'Звук завершения',
+        'Repeat Loops': 'Повторы',
+        'Backup': 'Резервная копия',
+        'Record Stream Code': 'Код потока записи',
+        'UPDATE STREAM': 'ОБНОВИТЬ ПОТОК',
+        'Keystrokes Text Info': 'Нажатия Инфо текста',
+        '🕒 Ignore Record Delay Time': '🕒 Игнорировать задержку',
+        '🚀 Skip Mouse Movement': '🚀 Пропустить движение мыши',
+        '🌫 Smoothly Start Mouse Movement': '🌫 Плавное начало движения',
+        'Play after Completing Simulation': 'Воспроизвести после симуляции',
+        'Ignore the Sleep Waiting Delay Time (Affects the Process Time)': 'Игнорировать время ожидания (Влияет на время обработки)',
+        'Only Start and Stop Mouse-Position within a Section are executed (Affects the Process Time)': 'Выполняются только начальная/конечная позиции (Влияет на время обработки)',
+        'The Mouse Pointer slides soft to the start position of the recording before playback. Note the additional delay time with Multi-Action.': 'Указатель плавно перемещается к начальной позиции. Доп. задержка при Multi-Action.',
+        'Typing speed in milliseconds between keystrokes simulation. Default=10 for natural typing speed. (Affects the Process Time)': 'Скорость печати в мс. По умолч.=10. (Влияет на время обработки)',
+        '⭡ DISPLAY VIRTUAL KEY CODES CONSTANT NAME': '⭡ ПОКАЗАТЬ ИМЕНА ВИРТУАЛЬНЫХ КОДОВ',
+        'Additional Recording Stream Deck Backup': 'Доп. резервное копирование: Эта опциональная область для сохранения потока записи.',
+        'YOUR PRIVACY MATTERS': 'ВАША КОНФИДЕНЦИАЛЬНОСТЬ ВАЖНА',
+        'We do not collect or store any private, personal, or sensitive data.': 'Мы не собираем личные данные. Телеметрия ограничена анонимной технической статистикой.',
+        'Typewriter (10)': 'Печатная машинка (10)',
+        'Typing Speed Milliseconds': 'Скорость печати (мс)',
+        'Hotkey to Save your Record': 'Горячая клавиша сохранения',
+        '-1 = for Infinity Loop, 0 = no Repeat': '-1 = бесконечный цикл, 0 = без повтора',
+        'Update Import Stream OK': 'Обновление потока успешно',
+        'Wrong Import Stream!': 'Неверный поток импорта',
+        'NO RECORD DATA': 'НЕТ ДАННЫХ ЗАПИСИ',
+        'TRY AGAIN WAIT FOR THE RECORD WINDOW AND PRESS F10 TO SAVE RECORD': 'ПОВТОРИТЕ, ДОЖДИТЕСЬ ОКНА ЗАПИСИ И НАЖМИТЕ F10',
+        'Typewriter': 'Печатная машинка',
+        'Playbacks': 'Воспроизведения',
+        'Playback': 'Воспроизведение',
+        'INFINITY': 'БЕСКОНЕЧНО',
+        'INFINITY RUN': 'БЕСКОНЕЧНЫЙ ЗАПУСК',
+        'Only necessary if a subsequent process is executed.': 'Только если выполняется последующий процесс.',
+        'Add': 'Добавить',
+        'Wait-Time after Mouse Simulation on Multi-Action. Only necessary if a subsequent process is executed.': 'Время ожидания после симуляции мыши в Multi-Action.',
+        'Affects the Process Time': 'Влияет на время обработки',
+        'Press Stream Deck Button again to Kill the Playback': 'Нажмите кнопку Stream Deck еще раз',
+    },
+    'pt_BR': {
+        'RECORDING SETUP': 'CONFIG. DE GRAVAÇÃO',
+        'SIMULATION EVENTS': 'EVENTOS DE SIMULAÇÃO',
+        'TIME SETUP': 'CONFIG. DE TEMPO',
+        'MOUSE OPTIONS': 'OPÇÕES DE MOUSE',
+        'TYPEWRITER GHOSTWRITER': 'VELOCIDADE DE DIGITAÇÃO',
+        'AUDIO': 'ÁUDIO',
+        'RUNTIME REPLAY': 'REPETIÇÃO',
+        'RECORD STREAM': 'FLUXO DE GRAVAÇÃO',
+        'PRIVACY PROTECTION': 'PROTEÇÃO DE PRIVACIDADE',
+        'Mouse Record': 'Gravação de mouse',
+        'Save Key': 'Tecla de salvamento',
+        'Activate Recording': 'Ativar gravação',
+        'START RECORD': 'INICIAR GRAVAÇÃO',
+        '◼ CANCEL RECORD': '◼ CANCELAR GRAVAÇÃO',
+        'MOUSE RECORDING ACTIVE': 'GRAVAÇÃO DE MOUSE ATIVA',
+        'Press': 'Pressione',
+        'to Save and Stop Record': 'para salvar e parar',
+        'Currently Record will by overwrite': 'Gravação atual será sobrescrita',
+        'CHECK NEW RECORDING WINDOW': 'VERIFIQUE A NOVA JANELA',
+        'Simulation': 'Simulação',
+        'Mouse': 'Mouse',
+        'Keyboard': 'Teclado',
+        'Process Time': 'Tempo de processo',
+        'Record Delay': 'Atraso de gravação',
+        '｟WARP｠ Motion': '｟WARP｠ Movimento',
+        'Soft Start': 'Início suave',
+        'Completed Audio': 'Áudio concluído',
+        'Repeat Loops': 'Repetições',
+        'Backup': 'Cópia de segurança',
+        'Record Stream Code': 'Código do fluxo',
+        'UPDATE STREAM': 'ATUALIZAR FLUXO',
+        'Keystrokes Text Info': 'Teclas Info texto',
+        '🕒 Ignore Record Delay Time': '🕒 Ignorar tempo de atraso',
+        '🚀 Skip Mouse Movement': '🚀 Pular movimento do mouse',
+        '🌫 Smoothly Start Mouse Movement': '🌫 Iniciar movimento suavemente',
+        'Play after Completing Simulation': 'Tocar após concluir',
+        'Ignore the Sleep Waiting Delay Time (Affects the Process Time)': 'Ignorar o tempo de espera (Afeta o tempo de processo)',
+        'Only Start and Stop Mouse-Position within a Section are executed (Affects the Process Time)': 'Apenas posições de início/fim executadas (Afeta o tempo de processo)',
+        'The Mouse Pointer slides soft to the start position of the recording before playback. Note the additional delay time with Multi-Action.': 'O ponteiro desliza suavemente para a posição inicial. Atraso adicional com Multi-Ação.',
+        'Typing speed in milliseconds between keystrokes simulation. Default=10 for natural typing speed. (Affects the Process Time)': 'Velocidade em ms entre teclas. Padrão=10. (Afeta o tempo de processo)',
+        '⭡ DISPLAY VIRTUAL KEY CODES CONSTANT NAME': '⭡ EXIBIR NOMES DOS CÓDIGOS DE TECLAS',
+        'Additional Recording Stream Deck Backup': 'Backup adicional: Esta área opcional serve para proteger o fluxo de gravação.',
+        'YOUR PRIVACY MATTERS': 'SUA PRIVACIDADE IMPORTA',
+        'We do not collect or store any private, personal, or sensitive data.': 'Não coletamos ou armazenamos dados privados. A telemetria limita-se a estatísticas de uso anônimas.',
+        'Typewriter (10)': 'Máquina de escrever (10)',
+        'Typing Speed Milliseconds': 'Velocidade de digitação (ms)',
+        'Hotkey to Save your Record': 'Atalho para salvar',
+        '-1 = for Infinity Loop, 0 = no Repeat': '-1 = loop infinito, 0 = sem repetição',
+        'Update Import Stream OK': 'Atualização do fluxo OK',
+        'Wrong Import Stream!': 'Fluxo de importação incorreto',
+        'NO RECORD DATA': 'SEM DADOS DE GRAVAÇÃO',
+        'TRY AGAIN WAIT FOR THE RECORD WINDOW AND PRESS F10 TO SAVE RECORD': 'TENTE NOVAMENTE, AGUARDE A JANELA DE GRAVAÇÃO',
+        'Typewriter': 'Máquina de escrever',
+        'Playbacks': 'Reproduções',
+        'Playback': 'Reprodução',
+        'INFINITY': 'INFINITO',
+        'INFINITY RUN': 'EXECUÇÃO INFINITA',
+        'Only necessary if a subsequent process is executed.': 'Necessário apenas se houver processo subsequente.',
+        'Add': 'Adicionar',
+        'Wait-Time after Mouse Simulation on Multi-Action. Only necessary if a subsequent process is executed.': 'Tempo de espera após simulação de mouse em Multi-Ação.',
+        'Affects the Process Time': 'Afeta o tempo de processo',
+        'Press Stream Deck Button again to Kill the Playback': 'Pressione o botão Stream Deck novamente',
+    }
+};
+
+/// Resolve a translation key for the current language (fallback to English, then raw key).
+function t(key) {
+    var langDict = I18N[currentLang] || I18N['en'];
+    return (langDict && langDict[key]) || (I18N['en'] && I18N['en'][key]) || key;
+}
+
+/// Detect StreamDeck language from inInfo, with navigator.language fallback.
+function detectLanguage(inInfoStr) {
+    try {
+        var info = JSON.parse(inInfoStr);
+        var lang = info.application && info.application.language;
+        if (lang && I18N[lang]) return lang;
+    } catch (e) { /* ignore */ }
+    var browserLang = (navigator.language || 'en').replace('-', '_');
+    if (I18N[browserLang]) return browserLang;
+    var base = browserLang.split('_')[0];
+    for (var k in I18N) { if (k.indexOf(base) === 0) return k; }
+    return 'en';
+}
+
+/// Walk the DOM and replace text in elements with data-i18n attributes.
+/// Supports:
+///   data-i18n           → sets textContent (for leaf elements)
+///   data-i18n-text      → replaces only trailing text node (preserves child elements)
+///   data-i18n-title     → sets title attribute
+///   data-i18n-placeholder → sets placeholder attribute
+function applyI18n() {
+    // data-i18n: replace entire textContent (leaf elements)
+    var textEls = document.querySelectorAll('[data-i18n]');
+    for (var i = 0; i < textEls.length; i++) {
+        var el = textEls[i];
+        var key = el.getAttribute('data-i18n').trim();
+        if (key) el.textContent = t(key);
+    }
+    // data-i18n-text: replace only trailing text node (preserves child elements)
+    var txtEls = document.querySelectorAll('[data-i18n-text]');
+    for (var ni = 0; ni < txtEls.length; ni++) {
+        var nel = txtEls[ni];
+        var nkey = nel.getAttribute('data-i18n-text').trim();
+        if (!nkey) continue;
+        for (var c = nel.childNodes.length - 1; c >= 0; c--) {
+            if (nel.childNodes[c].nodeType === 3) { // TEXT_NODE
+                nel.childNodes[c].textContent = t(nkey);
+                break;
+            }
+        }
+    }
+    // title attribute
+    var titleEls = document.querySelectorAll('[data-i18n-title]');
+    for (var j = 0; j < titleEls.length; j++) {
+        var tel = titleEls[j];
+        var tkey = tel.getAttribute('data-i18n-title').trim();
+        if (tkey) tel.setAttribute('title', t(tkey));
+    }
+    // placeholder attribute
+    var phEls = document.querySelectorAll('[data-i18n-placeholder]');
+    for (var k = 0; k < phEls.length; k++) {
+        var pel = phEls[k];
+        var pkey = pel.getAttribute('data-i18n-placeholder').trim();
+        if (pkey) pel.setAttribute('placeholder', t(pkey));
+    }
+}
+
+
+var my_clipboard_input = document.getElementById("my_clipboard_input");
+var my_clipboard_input_record = document.getElementById("my_clipboard_input_record");
+var record_start_assistent = document.getElementById("record_start_assistent");
+var record_assistent = document.getElementById("record_assistent");
+var process_time = document.getElementById("process_time");
+var my_process_list = document.getElementById("my_process_list");
+var my_delay_status_helper = document.getElementById("my_delay_status_helper");
+var delay_checkbox = document.getElementById("delay_checkbox");
+var my_audio_status_helper = document.getElementById("my_audio_status_helper");
+var audio_checkbox = document.getElementById("audio_checkbox");
+var my_warp_status_helper = document.getElementById("my_warp_status_helper");
+var warp_checkbox = document.getElementById("warp_checkbox");
+var my_softstart_status_helper = document.getElementById("my_softstart_status_helper");
+var softstart_checkbox = document.getElementById("softstart_checkbox");
+var my_record_exe_helper = document.getElementById("my_record_exe_helper");
+var multi_action_info = document.getElementById("multi_action_info");
+var record_checkbox = document.getElementById("record_checkbox");
+var record_button = document.getElementById("record_button");
+var my_loop = document.getElementById("my_loop");
+var my_record_key = document.getElementById("my_record_key");
+var save_key_info = document.getElementById("save_key_info");
+var typewriter_label  = document.getElementById("typewriter_label");
+var my_typewriter = document.getElementById("my_typewriter");
+var my_keystrokes = document.getElementById("my_keystrokes");
+
+
+var recording_state = false;
+my_record_exe_helper.value = "";
+my_record_key.value = "F10";
+my_typewriter.value = 10;
+
+UpdateLoop();
+
+////////////////////////////////////////////////
+
+function SaveConfig() {
+
+    // Safety: ensure my_clipboard_input is always raw before persisting.
+    // Recovers from stale Base64 that may be in persistent storage.
+    var rawInput = document.getElementById('my_clipboard_input').value;
+    if (rawInput && rawInput.indexOf("#START#") !== 0) {
+        var decompressed = LZString.decompressFromBase64(rawInput);
+        if (decompressed && decompressed.indexOf("#START#") === 0) {
+            document.getElementById('my_clipboard_input').value = decompressed;
+        }
+    }
+
+    payload = {
+        'my_clipboard_input': document.getElementById('my_clipboard_input').value,
+        'my_audio_status_helper': document.getElementById('my_audio_status_helper').value,
+        'my_delay_status_helper': document.getElementById('my_delay_status_helper').value,
+        'my_warp_status_helper': document.getElementById('my_warp_status_helper').value,
+        'my_softstart_status_helper': document.getElementById('my_softstart_status_helper').value,
+        'my_record_exe_helper': document.getElementById('my_record_exe_helper').value,
+        'my_record_key': document.getElementById('my_record_key').value,
+        'my_loop': document.getElementById('my_loop').value,
+        'my_typewriter': document.getElementById('my_typewriter').value,
+    };
+    updateSettingsToPlugin();
+    saveValues(payload);
+}
+
+////////////////////////////////////////////////
+
+function UpdateTypewriter() {
+
+    typewriter_label.innerHTML = t("Typewriter") + " (" + my_typewriter.value + ")";
+    SaveConfig();
+    import_clipboard_data();
+
+}
+
+////////////////////////////////////////////////
+
+function stop_record() {
+
+    recording_state = false;
+    record_start_assistent.style.display = "block";
+    record_assistent.style.display = "none";
+
+    record_trigger("STOP_RECORD"); // Exe Helper Try to kill process
+}
+		
+////////////////////////////////////////////////
+
+function start_record() {
+
+    recording_state = true;
+
+	my_clipboard_input.value = ""; // RESET CLIPBOARD INPUT
+	my_clipboard_input_record.value = ""; // RESET CLIPBOARD INPUT
+	my_record_exe_helper.value = ""; // RESET CLIPBOARD INPUT
+    my_process_list.value = "STANDBY...";  // RESET PROCESS LIST
+    process_time.innerHTML = "0ms";
+
+    save_key_info.innerHTML = my_record_key.value;
+
+    record_start_assistent.style.display = "none";
+    record_assistent.style.display = "inline-block";
+
+	my_process_list.value = "STANDBY..."; 
+
+    navigator.clipboard.writeText("BLANK");
+
+    record_trigger("START_RECORD"); // Exe Helper Try to start process
+
+	start_clipboard_watch();
+
+    SaveConfig();
+
+}
+
+////////////////////////////////////////////////
+
+function UpdateLoop() {
+
+    var rloop = 0;
+    var rloop = parseInt(document.getElementById("my_loop").value);
+    
+    document.getElementById("repeat_error").style.display = "block";
+    document.getElementById("repeat_info").style.display = "none";
+
+    if ( rloop == -1 || rloop == 0 || rloop <= 999999) {
+         document.getElementById("repeat_error").style.display = "none";
+         document.getElementById("repeat_info").style.display = "block";
+    }   
+
+    document.getElementById("repeat_info").innerHTML = "<strong style='color:white'>" + (rloop + 1) + "x</strong> <strong>Playback's</strong><br><small>(Affects the Process Time)<br>Press Stream Deck Button again to Kill the Playback</small>"
+
+    if ( rloop == -1 ) {
+        document.getElementById("repeat_info").innerHTML = "<strong style='color:white'>∞ INFINITY</strong> <strong>Playback</strong><br><small>(Affects the Process Time)<br>Press Stream Deck Button again to Kill the Playback</small>"
+    }
+
+    
+
+
+    import_clipboard_data();
+
+    SaveConfig();
+
+}
+
+////////////////////////////////////////////////
+
+function UpdateStream() {
+
+    import_clipboard_data();
+    SaveConfig();
+
+    if (my_process_list.value != "") { alert("✅ " + t("Update Import Stream OK")) }
+    if (my_process_list.value == "") { alert("⚠ " + t("Wrong Import Stream!")) }
+}
+
+////////////////////////////////////////////////
+
+function record_trigger(eventname) {
+
+    my_record_exe_helper.value = eventname;
+
+    SaveConfig();
+
+    my_record_exe_helper.value = "";
+
+    SaveConfig();
+
+}
+
+////////////////////////////////////////////////
+
+function import_clipboard_data() {
+
+    my_record_exe_helper.value = "";
+
+//     // SIMULATOR //
+//    var streamdeck = "#START#;-1421x671;-1420x672;-1419x673;-1417x676;-1415x678;-1413x680;-1411x683;-1408x686;-1405x689;-1403x692;-1399x695;-1396x699;-1392x702;-1389x705;-1386x708;-1382x710;-1378x713;-1375x716;-1371x720;-1368x722;-1363x726;-1360x729;-1356x732;-1352x734;-1349x736;-1345x738;-1342x741;-1339x743;-1336x746;-1330x749;-1326x753;-1320x755;-1314x758;-1309x762;-1302x765;-1295x768;-1287x771;-1279x774;-1271x776;-1264x778;-1256x780;-1249x783;-1242x784;-1235x786;-1230x787;-1224x789;-1218x790;-1211x792;-1205x794;-1198x796;-1190x797;-1184x799;-1176x800;-1168x801;-1160x803;-1153x804;-1147x805;-1141x805;-1136x805;-1131x805;-1128x805;-1124x804;-1122x803;-1119x801;-1116x799;-1114x797;-1112x794;-1110x792;-1108x789;-1106x787;-1104x784;-1102x781;-1101x778;-1100x776;-1098x773;-1097x771;-1095x768;-1094x764;-1092x762;-1090x759;-1089x755;-1087x752;-1086x748;-1084x744;-1083x740;-1082x735;-1081x730;-1081x724;-1080x718;-1080x712;-1079x706;-1078x700;-1078x693;-1077x688;-1076x680;-1074x674;-1073x667;-1071x660;-1069x655;-1067x649;-1065x643;-1062x636;-1058x631;-1055x625;-1052x619;-1047x614;-1041x609;-1036x604;-1029x599;-1021x596;-1015x593;-1006x591;-998x590;-987x590;-979x590;-968x590;-960x592;-954x594;-947x597;-939x601;-931x607;-923x614;-916x621;-910x627;-906x634;-902x640;-900x647;-899x654;-899x662;-899x670;-899x681;-898x693;-896x703;-892x712;-889x720;-883x729;-876x738;-866x746;-855x753;-841x760;-826x765;-814x768;-804x769;-793x771;-783x771;-776x771;-770x769;-766x766;-762x762;-758x758;-754x752;-751x745;-747x737;-744x728;-741x718;-738x710;-735x702;-733x693;-731x686;-727x679;-724x671;-720x664;-716x658;-712x651;-707x644;-701x638;-694x632;-686x626;-679x622;-670x617;-660x613;-650x611;-638x609;-628x607;-618x606;-609x605;-604x605;-600x605;-597x606;-596x607;-595x608;-593x610;M1P;-590x614;-588x617;-586x620;-582x625;-578x630;-574x635;-570x641;-565x646;-561x652;-556x657;-551x663;-545x670;-540x676;-533x682;-527x689;-520x695;-514x702;-507x707;-499x715;-491x720;-482x727;-473x733;-466x738;-458x742;-451x747;-444x752;-435x758;-427x762;-419x767;-411x771;-402x776;-394x780;-387x783;-380x787;-373x791;-366x794;-358x797;-351x800;-346x803;-338x807;-333x809;-327x812;-322x814;-318x817;-314x819;-310x821;-306x823;-301x826;-297x829;-293x831;-288x834;-284x837;-281x840;-278x841;-275x843;-273x845;-272x846;-270x847;-269x847;-268x848;-268x849;-267x849;-267x850;-266x850;D0,6;M1R;D1,7;;#STOP#";
+//     my_clipboard_input.value = LZString.compressToBase64(streamdeck);
+//     // SIMULATOR //
+
+
+    record_start_assistent.style.display = "block";
+    record_assistent.style.display = "none";
+
+    my_process_list.value = "";
+    var cliprecorddata = ""; 
+    var streamdeckdata = "";
+
+    var keystrokes = "";
+    
+    cliprecorddata = my_clipboard_input_record.value;    
+ 
+    if ( cliprecorddata == "" ) {
+        streamdeckdata = my_clipboard_input.value;
+        // Check if the data is already a raw stream (from plugin sendToPropertyInspector)
+        // vs Base64-encoded (from LZString.compressToBase64 via SaveConfig)
+        if (streamdeckdata.indexOf("#START#") === 0) {
+            cliprecorddata = streamdeckdata;  // Already raw, use directly
+        } else {
+            cliprecorddata = LZString.decompressFromBase64(streamdeckdata);
+        }
+    }
+
+    if (cliprecorddata == null) { return; }
+    if (cliprecorddata == "") { return; }
+    
+    const job_array = cliprecorddata.split(';');
+  
+    let delay_count = 0.0;
+    var myspace = "  ";
+    var typespeed = parseInt(my_typewriter.value);
+
+    for (let i = 0; i < job_array.length; i++) {
+ 
+        if ( job_array[i] == "#START#" || job_array[i] == "#STOP#" || job_array[i] == "" ) {
+            // DO NOTHING
+        } else {
+
+            var cc = job_array[i];
+
+            if (my_delay_status_helper.value == "false") {
+                if (cc.match(/D.*/)) { 
+                    var c1 = job_array[i].replace("D","");
+                    var c2 = parseFloat(c1.replace(",","."));
+                    delay_count += c2 * 1000; 
+                };            
+
+                if (cc.match(/D.*/)) { my_process_list.value += "Þ" + myspace + "Delay ... " + job_array[i].replace("D","") + "s" + "\r\n"; };
+            }
+
+            if (cc.match(/W.*/)) { my_process_list.value += "Ü" + myspace + "MouseWheel " + job_array[i].replace("W","") + "\r\n"; };
+            if (cc.match(/M1R.*/)) { my_process_list.value += "Ú" + myspace + "MouseButton Left Released" + job_array[i].replace("M1R","") + "\r\n"; };
+            if (cc.match(/M2R.*/)) { my_process_list.value += "Û" + myspace + "MouseButton Right Released" + job_array[i].replace("M2R","") + "\r\n"; };
+            if (cc.match(/M3R.*/)) { my_process_list.value += "ß" + myspace + "MouseButton Middle Released" + job_array[i].replace("M3R","") + "\r\n"; };
+            if (cc.match(/M4R.*/)) { my_process_list.value += "*" + myspace + "MouseButton 4 Released" + job_array[i].replace("M4R","") + "\r\n"; };
+            if (cc.match(/M5R.*/)) { my_process_list.value += "*" + myspace + "MouseButton 5 Released" + job_array[i].replace("M5R","") + "\r\n"; };
+
+            if (cc.match(/M1P.*/)) { my_process_list.value += "Ú" + myspace + "MouseButton Left Pressed" + job_array[i].replace("M1P","") + "\r\n"; };
+            if (cc.match(/M2P.*/)) { my_process_list.value += "Û" + myspace + "MouseButton Right Pressed" + job_array[i].replace("M2P","") + "\r\n"; };
+            if (cc.match(/M3P.*/)) { my_process_list.value += "ß" + myspace + "MouseButton Middle Pressed" + job_array[i].replace("M3P","") + "\r\n"; };
+            if (cc.match(/M4P.*/)) { my_process_list.value += "*" + myspace + "MouseButton 4 Pressed" + job_array[i].replace("M4P","") + "\r\n"; };
+            if (cc.match(/M5P.*/)) { my_process_list.value += "*" + myspace + "MouseButton 5 Pressed" + job_array[i].replace("M5P","") + "\r\n"; };
+
+            if (cc.match(/KP.*/)) { my_process_list.value += "á" + myspace + "KeyPress [" + get_key_name(parseInt(job_array[i].replace("KP",""))) + "]" + "\r\n"; };
+            if (cc.match(/KR.*/)) { my_process_list.value += "à" + myspace + "KeyRelease [" + get_key_name(parseInt(job_array[i].replace("KR",""))) + "]" + "\r\n"; };
+                 
+
+            if (cc.match(/KP.*/)) { delay_count += typespeed }; //GHOST WRITER TIME
+            if (cc.match(/KR.*/)) { delay_count += typespeed }; //GHOST WRITER TIME
+
+            // KEYSTROKES DISPLAY
+            if (cc.match(/KR.*/)) { 
+                keystrokes += get_key_name(parseInt(job_array[i].replace("KR",""))) + " ";
+                my_keystrokes.innerHTML = keystrokes.toUpperCase();
+            }
+
+
+            // POS GROUPE MERGE
+            
+                if (cc.match(/x.*/)) { 
+
+                    var start_pos = job_array[i];                
+                    var stop_pos = 0;
+
+                    for (let s = i; s < job_array.length; s++) {
+
+                        cc = job_array[s];
+
+                        if (cc.match(/x.*/)) { 
+                            stop_pos = job_array[s];  
+                            if ( my_warp_status_helper.value == "false" ) { delay_count += 1; };               
+                        } else {  
+                            i = s-1;                                             
+                            break;
+                        }      
+
+                    }
+                    
+                    if ( my_warp_status_helper.value == "false" ) { my_process_list.value += "Ý" + myspace + "Move " + start_pos + " 〜 " + stop_pos + "\r\n"; }
+                    if ( my_warp_status_helper.value == "true" ) { 
+                        delay_count += 200; //.NET CODE
+                        my_process_list.value += "Ý" + myspace + "Move " + start_pos + " ｟WARP｠ " + stop_pos + "\r\n"; 
+                    }
+
+                } 
+                     
+          
+            delay_count += 1; 
+
+        }
+
+        
+    }
+
+  
+    my_process_list.scrollTop = my_process_list.scrollHeight;
+
+    var rloop = parseInt(document.getElementById("my_loop").value);
+    
+    process_time.innerHTML = delay_count  + "ms (" + Math.ceil((delay_count/1000)) + "s)";
+
+    var delay_buffer = Math.ceil(((delay_count*(rloop+1))+2000)/1000)*1000; // SAVE BUFFER
+
+    if (rloop < 0) { 
+        multi_action_info.innerHTML = "<strong style='color:white'>∞ " + t("INFINITY RUN") + "</strong> " + t("Only necessary if a subsequent process is executed.");
+    } else {
+        multi_action_info.innerHTML = t("Add") + " <strong style='color:white'>" + delay_buffer + "ms</strong> " + t("Wait-Time after Mouse Simulation on Multi-Action. Only necessary if a subsequent process is executed.");
+    }
+
+    record_checkbox.checked = false;
+    record_button.disabled = true;
+
+}
+
+////////////////////////////////////////////////
+
+async function start_clipboard_watch() {
+
+    var clip_content = "";
+    var try_loop = 0;    
+
+    await waitforme(1000);
+
+    while (true) {       
+    
+        await waitforme(200);       
+
+        try {
+            clip_content = await navigator.clipboard.readText();
+        } catch (e) {
+            // Clipboard read failed (e.g., permissions) — rely on didReceiveSettings path
+            console.warn("Clipboard read failed:", e);
+        }
+    
+        if (clip_content.match(/#START#.*/) && clip_content.match(/#STOP#.*/))  {
+
+            my_clipboard_input_record.value = clip_content; 
+            my_clipboard_input.value = clip_content;
+            my_record_exe_helper.value = "";
+            SaveConfig();
+            import_clipboard_data();           
+            return;
+
+        }   
+
+        if ( recording_state == false ) { 
+            try_loop += 1;
+            if (try_loop == 6 ) {
+                if ( my_clipboard_input_record.value == "" ) {
+                    my_record_exe_helper.value = "";
+                    my_process_list.value = "⚠️ " + t("NO RECORD DATA") + " ⚠️\n" + t("TRY AGAIN WAIT FOR THE RECORD WINDOW AND PRESS F10 TO SAVE RECORD");
+                }
+                return;
+            }
+        };
+
+    }   
+
+}
+
+////////////////////////////////////////////////
+
+function waitforme(millisec) {
+    return new Promise(resolve => {
+        setTimeout(() => { resolve('') }, millisec);
+    })
+}
+
+////////////////////////////////////////////////
+
+function openWebsite() {
+
+    if (websocket && (websocket.readyState === 1)) {
+        const json = {
+            'event': 'openUrl',
+            'payload': {
+                'url': 'https://www.vivre-motion.com/mousesimulator'
+            }
+        };
+        websocket.send(JSON.stringify(json));
+    }
+
+}
+
+////////////////////////////////////////////////
+
+function delay_checkbox_switch() {
+
+    if (delay_checkbox.checked == true) {
+        my_delay_status_helper.value = "true";
+    } else {
+        my_delay_status_helper.value = "false";
+    }
+
+    SaveConfig();
+
+    import_clipboard_data();
+
+}
+
+////////////////////////////////////////////////
+
+function delay_status_checkbox_import() {
+
+    if (my_delay_status_helper.value == "true") {
+        delay_checkbox.checked = true;
+    } else {
+        delay_checkbox.checked = false;
+    }
+
+}
+
+////////////////////////////////////////////////
+
+function audio_checkbox_switch() {
+
+    if (audio_checkbox.checked == true) {
+        my_audio_status_helper.value = "true";
+    } else {
+        my_audio_status_helper.value = "false";
+    }
+
+    SaveConfig();
+
+}
+
+////////////////////////////////////////////////
+
+function audio_status_checkbox_import() {
+
+    if (my_audio_status_helper.value == "true") {
+        audio_checkbox.checked = true;
+    } else {
+        audio_checkbox.checked = false;
+    }
+
+}
+
+////////////////////////////////////////////////
+
+function warp_checkbox_switch() {
+
+    if (warp_checkbox.checked == true) {
+        my_warp_status_helper.value = "true";
+    } else {
+        my_warp_status_helper.value = "false";
+    }
+
+    import_clipboard_data();
+
+    SaveConfig();
+
+}
+
+////////////////////////////////////////////////
+
+function warp_status_checkbox_import() {
+
+    if (my_warp_status_helper.value == "true") {
+        warp_checkbox.checked = true;
+    } else {
+        warp_checkbox.checked = false;
+    }
+
+}
+
+////////////////////////////////////////////////
+
+function softstart_checkbox_switch() {
+
+    if (softstart_checkbox.checked == true) {
+        my_softstart_status_helper.value = "true";
+    } else {
+        my_softstart_status_helper.value = "false";
+    }
+
+    SaveConfig();
+
+}
+
+////////////////////////////////////////////////
+
+function softstart_status_checkbox_import() {
+
+    if (my_softstart_status_helper.value == "true") {
+        softstart_checkbox.checked = true;
+    } else {
+        softstart_checkbox.checked = false;
+    }
+
+}
+
+////////////////////////////////////////////////
+
+function record_checkbox_switch() {
+
+    if (record_checkbox.checked == true) {
+        record_button.disabled = false;
+        my_record_key.disabled = false;
+    } else {
+        record_button.disabled = true;
+        my_record_key.disabled = true;
+    }
+
+}
+
+////////////////////////////////////////////////
+
+function Sleep(milliseconds) {
+    
+  const date = Date.now();
+  let currentDate = null;
+  do { currentDate = Date.now(); } while (currentDate - date < milliseconds);
+
+}
+
+////////////////////////////////////////////////
+
+function connectElgatoStreamDeckSocket(inPort, inUUID, inRegisterEvent, inInfo, inActionInfo) {
+    
+	uuid = inUUID;
+    // please note: the incoming arguments are of type STRING, so
+    // in case of the inActionInfo, we must parse it into JSON first
+    actionInfo = JSON.parse(inActionInfo); // cache the info
+    currentLang = detectLanguage(inInfo);
+    applyI18n();
+    websocket = new WebSocket('ws://localhost:' + inPort);
+
+    // if connection was established, the websocket sends
+    // an 'onopen' event, where we need to register our PI
+    websocket.onopen = function() {
+        var json = {
+            event: inRegisterEvent,
+            uuid: inUUID
+        };
+        // register property inspector to Stream Deck
+        websocket.send(JSON.stringify(json));
+
+        json = {
+            "event": "getSettings",
+            "context": uuid,
+        };
+        websocket.send(JSON.stringify(json));
+    };
+
+    // retrieve saved settings if there are any
+    websocket.onmessage = function(evt) {
+
+        // Received message from Stream Deck
+        const jsonObj = JSON.parse(evt.data);
+
+        if (jsonObj.payload.state !== undefined) {
+            //  updateStatus(jsonObj.payload.state);
+        }
+
+        if (jsonObj.event === 'didReceiveSettings') {
+            const payload = jsonObj.payload.settings;
+
+            if (payload.my_clipboard_input !== undefined) {
+                document.getElementById('my_clipboard_input').value = payload.my_clipboard_input;
+            }
+
+			if (payload.my_audio_status_helper !== undefined) {
+                document.getElementById('my_audio_status_helper').value = payload.my_audio_status_helper;
+            }
+
+			if (payload.my_delay_status_helper !== undefined) {
+                document.getElementById('my_delay_status_helper').value = payload.my_delay_status_helper;
+            }
+
+            if (payload.my_record_exe_helper !== undefined) {
+                document.getElementById('my_record_exe_helper').value = payload.my_record_exe_helper;
+            }
+
+            if (payload.my_warp_status_helper !== undefined) {
+                document.getElementById('my_warp_status_helper').value = payload.my_warp_status_helper;
+            }
+
+            if (payload.my_softstart_status_helper !== undefined) {
+                document.getElementById('my_softstart_status_helper').value = payload.my_softstart_status_helper;
+            }
+
+            if (payload.my_loop !== undefined) {
+                document.getElementById('my_loop').value = payload.my_loop;
+            }
+
+            if (payload.my_record_key !== undefined) {
+                document.getElementById('my_record_key').value = payload.my_record_key;
+            }
+		
+            if (payload.my_typewriter !== undefined) {
+                document.getElementById('my_typewriter').value = payload.my_typewriter;
+            }		
+
+            
+
+
+			delay_status_checkbox_import();
+			audio_status_checkbox_import();
+			warp_status_checkbox_import();
+			softstart_status_checkbox_import();
+            UpdateTypewriter();
+
+            updateSettingsToPlugin();
+
+            import_clipboard_data();
+
+            UpdateLoop();
+
+        }
+    };
+}
+
+////////////////////////////////////////////////
+
+function updateSettingsToPlugin() {
+
+    payload = {
+        'my_clipboard_input': document.getElementById('my_clipboard_input').value,
+		'my_audio_status_helper': document.getElementById('my_audio_status_helper').value,
+		'my_delay_status_helper': document.getElementById('my_delay_status_helper').value,
+		'my_warp_status_helper': document.getElementById('my_warp_status_helper').value,
+		'my_softstart_status_helper': document.getElementById('my_softstart_status_helper').value,
+		'my_record_exe_helper': document.getElementById('my_record_exe_helper').value,
+		'my_record_key': document.getElementById('my_record_key').value,
+		'my_loop': document.getElementById('my_loop').value,
+		'my_typewriter': document.getElementById('my_typewriter').value,
+    };
+    sendValueToPlugin(payload);
+}
+
+////////////////////////////////////////////////
+
+function sendValueToPlugin(payload) {
+    if (websocket) {
+        const json = {
+            "action": actionInfo['action'],
+            "event": "sendToPlugin",
+            "context": uuid,
+            "payload": payload
+        };
+        websocket.send(JSON.stringify(json));
+    }
+}
+
+////////////////////////////////////////////////
+
+function saveValues(payload) {
+    if (websocket) {
+        const json = {
+            "event": "setSettings",
+            "context": uuid,
+            "payload": payload
+        };
+        websocket.send(JSON.stringify(json));
+    }
+}
+
+////////////////////////////////////////////////
+
+function get_key_name(keycode) {
+
+  switch (keycode) {
+    case 8: return "BACKSPACE";
+    case 9: return "TAB";
+    case 12: return "CLEAR";
+    case 13: return "ENTER";
+    case 16: return "SHIFT";
+    case 17: return "CTRL";
+    case 18: return "ALT";
+    case 19: return "PAUSE";
+    case 20: return "CAPS LOCK";
+    case 21: return "IME Kana mode";
+    case 23: return "IME Junja mode";
+    case 24: return "IME final mode";
+    case 25: return "IME Hanja mode";
+    case 27: return "ESC";
+    case 28: return "IME convert";
+    case 29: return "IME nonconvert";
+    case 30: return "IME accept";
+    case 31: return "IME mode change";
+    case 32: return "SPACEBAR";
+    case 33: return "PAGE UP";
+    case 34: return "PAGE DOWN";
+    case 35: return "END";
+    case 36: return "HOME";
+    case 37: return "LEFT ARROW";
+    case 38: return "UP ARROW";
+    case 39: return "RIGHT ARROW";
+    case 40: return "DOWN ARROW";
+    case 41: return "SELECT";
+    case 42: return "PRINT";
+    case 43: return "EXECUTE";
+    case 44: return "PRINT SCREEN";
+    case 45: return "INS";
+    case 46: return "DEL";
+    case 47: return "HELP";
+    case 48: return "0";
+    case 49: return "1";
+    case 50: return "2";
+    case 51: return "3";
+    case 52: return "4";
+    case 53: return "5";
+    case 54: return "6";
+    case 55: return "7";
+    case 56: return "8";
+    case 57: return "9";
+    case 65: return "A";
+    case 66: return "B";
+    case 67: return "C";
+    case 68: return "D";
+    case 69: return "E";
+    case 70: return "F";
+    case 71: return "G";
+    case 72: return "H";
+    case 73: return "I";
+    case 74: return "J";
+    case 75: return "K";
+    case 76: return "L";
+    case 77: return "M";
+    case 78: return "N";
+    case 79: return "O";
+    case 80: return "P";
+    case 81: return "Q";
+    case 82: return "R";
+    case 83: return "S";
+    case 84: return "T";
+    case 85: return "U";
+    case 86: return "V";
+    case 87: return "W";
+    case 88: return "X";
+    case 89: return "Y";
+    case 90: return "Z";
+    case 91: return "Left Windows";
+    case 92: return "Right Windows";
+    case 93: return "Applications";
+    case 95: return "Sleep";
+    case 96: return "Numpad 0";
+    case 97: return "Numpad 1";
+    case 98: return "Numpad 2";
+    case 99: return "Numpad 3";
+    case 100: return "Numpad 4";
+    case 101: return "Numpad 5";
+    case 102: return "Numpad 6";
+    case 103: return "Numpad 7";
+    case 104: return "Numpad 8";
+    case 105: return "Numpad 9";
+    case 106: return "Multiply";
+    case 107: return "Add";
+    case 108: return "Separator";
+    case 109: return "Subtract";
+    case 110: return "Decimal";
+    case 111: return "Divide";
+    case 112: return "F1";
+    case 113: return "F2";
+    case 114: return "F3";
+    case 115: return "F4";
+    case 116: return "F5";
+    case 117: return "F6";
+    case 118: return "F7";
+    case 119: return "F8";
+    case 120: return "F9";
+    case 121: return "F10";
+    case 122: return "F11";
+    case 123: return "F12";
+    case 124: return "F13";
+    case 125: return "F14";
+    case 126: return "F15";
+    case 127: return "F16";
+    case 128: return "F17";
+    case 129: return "F18";
+    case 130: return "F19";
+    case 131: return "F20";
+    case 132: return "F21";
+    case 133: return "F22";
+    case 134: return "F23";
+    case 135: return "F24";
+    case 144: return "NUM LOCK";
+    case 145: return "SCROLL LOCK";
+    case 160: return "Left SHIFT";
+    case 161: return "Right SHIFT";
+    case 162: return "Left CONTROL";
+    case 163: return "Right CONTROL";
+    case 164: return "Left MENU";
+    case 165: return "Right MENU";
+    case 166: return "Browser Back";
+    case 167: return "Browser Forward";
+    case 168: return "Browser Refresh";
+    case 169: return "Browser Stop";
+    case 170: return "Browser Search";
+    case 171: return "Browser Favorites";
+    case 172: return "Browser Home";
+    case 173: return "Volume Mute";
+    case 174: return "Volume Down";
+    case 175: return "Volume Up";
+    case 176: return "Next Track";
+    case 177: return "Previous Track";
+    case 178: return "Stop Media";
+    case 179: return "Play/Pause Media";
+    case 180: return "Start Mail";
+    case 181: return "Select Media";
+    case 182: return "Application 1";
+    case 183: return "Application 2";
+    case 186: return ";:";
+    case 187: return "+";
+    case 188: return ",";
+    case 189: return "-";
+    case 190: return ".";
+    case 191: return "/?";
+    case 192: return "`~";
+    case 219: return "[{";
+    case 220: return "\|";
+    case 221: return "]}";
+    case 222: return "single-double-quote";
+    case 223: return "?";
+    case 226: return "<>";
+    case 229: return "IME PROCESS";
+    case 231: return "PACKET";
+    case 246: return "Attn";
+    case 247: return "CrSel";
+    case 248: return "ExSel";
+    case 249: return "Erase EOF";
+    case 250: return "Play";
+    case 251: return "Zoom";
+    case 252: return "Noname";
+    case 253: return "PA1";
+    case 254: return "Clear";
+
+    default: return "";
+  }    
+}
+
+
+</script>
+
+
+	
+	
+
+</body>
+
+</html>

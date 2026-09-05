@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <title>PhysicalDisk</title>
+    <link rel="stylesheet" href="./css/sdpi.css">
+    <script src="./js/action.js"></script>
+    <script src="./js/Enum.js"></script>
+    <style>
+        /* #HotKey {
+            width: 80%;
+        } */
+        #myselect {
+            margin-right: 0;
+            text-align-last: center;
+            /* justify-content: center; */
+        }
+    </style>
+</head>
+
+<body>
+    <div class="sdpi-wrapper" style="display: none;">
+        <!-- <div class="sdpi-heading">硬盘剩余空间</div> -->
+
+
+        <!-- <div class="sdpi-item" id="selectBackground">
+            <div class="sdpi-item-label">背景(弃用中)</div>
+            <select class="sdpi-item-value select" id="beckgroundItem" onchange="updateState()" style="margin-right: 0;text-align-last: center;">
+                <option value="0">简约彩色</option>
+                <option value="1">赛博朋克</option>
+            </select>
+        </div> -->
+
+        <!-- <div class="sdpi-item" id="selectMode">
+            <div class="sdpi-item-label">录制键</div>
+            <button class="sdpi-item-value select" id="RecordKey_Value" onclick="SetRecordKey()" style="margin-right: 0"></button>
+        </div> -->
+
+        <!-- <div class="sdpi-item" id="selectMode">
+            <div class="sdpi-item-label">热键状态</div>
+            <button class="sdpi-item-value select" id="HotKey" onclick="Restore_Hook()" style="margin-right: 0"></button>
+        </div> -->
+
+        <div class="sdpi-item" id="select_single">
+            <div class="sdpi-item-label">选择菜单</div>
+            <select class="sdpi-item-value select" id="myselect">
+                <option value="配置1">宏录制一</option>
+                <option value="配置2">宏录制二</option>
+                <option value="配置3">宏录制三</option>
+                <!-- selected   -->
+            </select>
+            <!-- <button class="sdpi-item-value select" id="HotKey" onclick="Restore_Hook()" style="margin-right: 0;">新增配置</button>
+            <button class="sdpi-item-value select" id="HotKey" onclick="Restore_Hook()" style="margin-right: 0;">删除配置</button> -->
+        </div>
+
+        <div class="sdpi-item" id="config">
+            <div class="sdpi-item-label">配置操作</div>
+            <button class="sdpi-item-value select" id="Add_Config" onclick="Add_Config()"
+                style="margin-right: 0;">新增配置</button>
+            <button class="sdpi-item-value select" id="Delete_Config" onclick="Delete_Config()"
+                style="margin-right: 0;">删除配置</button>
+        </div>
+
+        <div class="sdpi-item" id="selectMode">
+            <div class="sdpi-item-label">热键记录</div>
+            <textarea class="sdpi-item-value select" id="Record_Log" style="margin-right: 0;">
+
+            </textarea>
+        </div>
+
+        <script src="./js/Record_Replay.js"></script>
+</body>
+
+</html>

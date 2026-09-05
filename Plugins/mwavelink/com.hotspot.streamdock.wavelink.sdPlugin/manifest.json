@@ -1,0 +1,83 @@
+{
+  "Actions": [
+    {
+      "Icon": "Images/input",
+      "Name": "Input",
+      "States": [
+        {
+          "Image": "Images/input",
+          "TitleAlignment": "bottom",
+          "FontSize": "9"
+        }
+      ],
+      "SupportedInMultiActions": true,
+      "Tooltip": "Manage your mic and app volume",
+      "UUID": "com.hotspot.stream.wavelinkInput",
+      "PropertyInspectorPath": "PropertyInspector/wavelinkInput/index.html"
+    },
+    {
+      "Icon": "Images/output",
+      "Name": "Output",
+      "States": [
+        {
+          "Image": "Images/output",
+          "TitleAlignment": "bottom",
+          "FontSize": "9"
+        }
+      ],
+      "SupportedInMultiActions": true,
+      "Tooltip": "Manage your monitor and stream mix",
+      "UUID": "com.hotspot.stream.wavelinkOutput",
+      "PropertyInspectorPath": "PropertyInspector/wavelinkOutput/index.html"
+    },
+    {
+      "Icon": "Images/deivce",
+      "Name": "Deivce",
+      "States": [
+        {
+          "Image": "Images/deivce",
+          "TitleAlignment": "bottom",
+          "FontSize": "9"
+        }
+      ],
+      "SupportedInMultiActions": true,
+      "Tooltip": "Manage your audio hardware and settings",
+      "UUID": "com.hotspot.stream.wavelinkDeivce",
+      "PropertyInspectorPath": "PropertyInspector/wavelinkDeivce/index.html"
+    },
+    {
+      "Icon": "Images/effect",
+      "Name": "Effects",
+      "States": [
+        {
+          "Image": "Images/effect",
+          "TitleAlignment": "bottom",
+          "FontSize": "9"
+        }
+      ],
+      "SupportedInMultiActions": true,
+      "Tooltip": "Manage eftects like EQ and noise removal",
+      "UUID": "com.hotspot.stream.wavelinkEffects",
+      "PropertyInspectorPath": "PropertyInspector/wavelinkEffects/index.html"
+    }
+  ],
+  "Author": "TAUTH",
+  "Description": "control your wave link",
+  "Name": "Wave link",
+  "Icon": "Images/waveLink",
+  "URL": "http://video.hotspotek.com.cn/",
+  "Version": "1.8",
+  "CodePath": "Wavelink",
+  "Category": "Wave link",
+  "CategoryIcon": "Images/waveLink",
+  "OS": [
+    {
+      "Platform": "windows",
+      "MinimumVersion": "10"
+    }
+  ],
+  "SDKVersion": 2,
+  "Software": {
+    "MinimumVersion": "6.8.1"
+  }
+}

@@ -181,3 +181,19 @@ void Plugin::PropertyInspectorDidAppear(const QString &inAction,
     }
     action->PropertyInspectorDidAppear(inPayload);
 }
+
+void Plugin::PropertyInspectorDidDisappear(const QString &inAction,
+                                const QString &inContext,
+                                const QJsonObject &inPayload,
+                                const QString &inDevice)
+{
+    auto action = GetOrCreateAction(inAction, inContext);
+    if (!action)
+    {
+        Logger::LogToFile(QString("No action for PropertyInspectorDidDisappear: %1 %2")
+                              .arg(inAction)
+                              .arg(inContext));
+        return;
+    }
+    action->PropertyInspectorDidDisappear(inPayload);
+}

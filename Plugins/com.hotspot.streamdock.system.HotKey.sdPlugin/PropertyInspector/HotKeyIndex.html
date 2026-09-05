@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <title>PhysicalDisk</title>
+    <link rel="stylesheet" href="./css/sdpi.css">
+    <script src="./js/action.js"></script>
+    <script src="./js/Enum.js"></script>
+    <style>
+
+    </style>
+</head>
+
+<body>
+    <div class="sdpi-wrapper" style="display: none;">
+        <!-- <div class="sdpi-heading">硬盘剩余空间</div> -->
+
+
+        <!-- <div class="sdpi-item" id="selectBackground">
+            <div class="sdpi-item-label">背景(弃用中)</div>
+            <select class="sdpi-item-value select" id="beckgroundItem" onchange="updateState()" style="margin-right: 0">
+                <option value="0">简约彩色</option>
+                <option value="1">赛博朋克</option>
+            </select>
+        </div> -->
+
+        <div class="sdpi-item" id="selectMode">
+            <div class="sdpi-item-label">录制键</div>
+            <button class="sdpi-item-value select" id="RecordKey_Value" onclick="SetRecordKey()" style="margin-right: 0"></button>
+        </div>
+
+        <div class="sdpi-item" id="selectMode">
+            <div class="sdpi-item-label">热键状态</div>
+            <button class="sdpi-item-value select" id="HotKey" onclick="Restore_Hook()" style="margin-right: 0"></button>
+        </div>
+
+        <div class="sdpi-item" id="selectMode">
+            <div class="sdpi-item-label">热键记录</div>
+            <textarea class="sdpi-item-value select" id="Record_Log" style="margin-right: 0" readonly
+
+            </textarea>
+        </div>
+
+
+
+
+        <script src="./js/HotKey.js"></script>
+</body>
+
+</html>

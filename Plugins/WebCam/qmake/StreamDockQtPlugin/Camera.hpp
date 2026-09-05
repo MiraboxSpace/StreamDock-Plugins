@@ -90,6 +90,8 @@ public:
         if (key == "Saturation") return VideoProcAmp_Saturation;
         if (key == "Sharpness") return VideoProcAmp_Sharpness;
         if (key == "White Balance") return VideoProcAmp_WhiteBalance;
+        Logger::LogToServer(QString("ERROR: Unknown VideoProcAmpProperty: %1").arg(key));
+        return VideoProcAmp_Brightness; // safe fallback
     }
 
     static CameraControlProperty getCameraControlProperty(const QString& key) {
@@ -100,6 +102,8 @@ public:
         if (key == "Exposure") return CameraControl_Exposure;
         if (key == "Iris") return CameraControl_Iris;
         if (key == "Focus") return CameraControl_Focus;
+        Logger::LogToServer(QString("ERROR: Unknown CameraControlProperty: %1").arg(key));
+        return CameraControl_Focus; // safe fallback
     }
 
 

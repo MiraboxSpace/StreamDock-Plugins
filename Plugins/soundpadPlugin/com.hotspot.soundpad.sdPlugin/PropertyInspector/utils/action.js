@@ -61,12 +61,23 @@ WebSocket.prototype.openUrl = function (url) {
 
 // 保存持久化数据
 WebSocket.prototype.saveData = $.debounce(function (payload) {
-    this.send(JSON.stringify({
-        event: "setSettings",
-        context: $uuid,
-        payload
-    }));
-});
+    try {
+        if (this.readyState !== WebSocket.OPEN) {
+            console.error('[saveData] WebSocket not OPEN, readyState=' + this.readyState);
+            return;
+        }
+        var msg = JSON.stringify({
+            event: "setSettings",
+            context: $uuid,
+            payload: payload
+        });
+        console.log('[saveData] sending setSettings, size=' + msg.length);
+        this.send(msg);
+        console.log('[saveData] setSettings sent OK');
+    } catch (e) {
+        console.error('[saveData] WebSocket send failed: ' + (e.message || e));
+    }
+}, 100);
 
 // StreamDock 软件入口函数
 async function connectElgatoStreamDeckSocket(port, uuid, event, app, info) {

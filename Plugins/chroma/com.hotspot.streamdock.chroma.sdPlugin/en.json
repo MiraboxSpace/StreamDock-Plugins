@@ -1,0 +1,9 @@
+{
+  "Description": "Chroma Light Effect Control Plugin", 
+  "Name": "Chroma", 
+  "Category": "Chroma",
+  "com.hotspot.stream.chroma": {
+    "Name": "Chroma",
+    "Tooltip": "Chroma Light Effect Control Plugin"
+  }
+}

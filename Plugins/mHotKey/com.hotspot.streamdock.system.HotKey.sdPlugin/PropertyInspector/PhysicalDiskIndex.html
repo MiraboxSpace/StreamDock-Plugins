@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <title>PhysicalDisk</title>
+    <link rel="stylesheet" href="./css/sdpi.css">
+    <script src="./js/action.js"></script>
+    <style>
+        .sdpi-item-label.not_mark::after {
+            content: "";
+        }
+
+        /* #selectVolumeName {
+              display: none;
+        } */
+
+        .sdpi-item {
+            max-width: 376px;
+        }
+
+        /*   #Frequency_Slider {
+            display: none;
+        }
+ */
+
+        #Frequency_Slider .sdpi-item-value {
+            margin: 0 -2px;
+            display: flex;
+            /* 垂直居中 */
+            align-items: center;
+            /* justify-content: center; 水平居中*/
+        }
+
+        #Frequency_Slider span {
+            min-height: 0;
+        }
+
+        #Frequency_Slider_Value {
+            min-height: 0;
+            display: flex;
+            align-items: center;
+            margin-top: -5px;
+            /* display: none; */
+        }
+
+        #Frequency_Slider_Value div:nth-child(2) {
+            display: flex;
+            width: 100%;
+            min-height: 0;
+            justify-content: center;
+        }
+
+        #ssss {
+            display: flex;
+            flex-direction: column;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="sdpi-wrapper" style="display: none;">
+        <div class="sdpi-heading">硬盘剩余空间</div>
+
+
+        <div class="sdpi-item" id="selectBackground">
+            <div class="sdpi-item-label">背景(弃用中)</div>
+            <select class="sdpi-item-value select" id="beckgroundItem" onchange="updateState()" style="margin-right: 0">
+                <option value="0">简约彩色</option>
+                <option value="1">赛博朋克</option>
+            </select>
+        </div>
+
+        <div class="sdpi-item" id="selectMode">
+            <div class="sdpi-item-label">模式</div>
+            <select class="sdpi-item-value select" id="ModeItem" onchange="Select_ModeItem_SaveData()"
+                style="margin-right: 0">
+                <option value="Single_Disk">单个磁盘</option>
+                <option value="Disk_Loop">磁盘循环</option>
+            </select>
+        </div>
+
+        <div class="sdpi-item" id="selectVolumeName">
+            <div class="sdpi-item-label">盘名</div>
+            <select class="sdpi-item-value select" id="VolumeNameItem" onchange="VolumeNameItem_SaveData()"
+                style="margin-right: 0">
+                <option value="0">C:\\</option>
+                <option value="1">D:\\</option>
+            </select>
+        </div>
+
+        <div id="ssss">
+            <div class="sdpi-item" id="Frequency_Slider">
+                <div class="sdpi-item-label">切换频率</div>
+                <span>1</span>
+                <div class="sdpi-item-value">
+                    <input type="range" min="1" max="120" class="sdpi-item-value select" id="Switch_Frequency"
+                        oninput="Switch_Frequency_SaveData()" style="margin-right: 0">
+                </div>
+                <span>120</span>
+            </div>
+            <div class="sdpi-item" id="Frequency_Slider_Value">
+                <div class="sdpi-item-label">(秒)</div>
+                <div><span id="Switch_Frequency_Value">5</span>秒</div>
+            </div>
+        </div>
+
+        <!-- <div class="sdpi-item" id="Frequency_Slider">
+            <div class="sdpi-item-label">切换频率</div>
+            <span>0</span>
+            <div class="sdpi-item-value">
+                <input type="range" min="0" max="120" class="sdpi-item-value select" id="Switch_Frequency"
+                    oninput="Switch_Frequency_SaveData()" style="margin-right: 0">
+            </div>
+            <span>120</span>
+        </div>
+        <div class="sdpi-item" id="Frequency_Slider_Value">
+            <div class="sdpi-item-label">(秒)</div>
+            <div><span id="Switch_Frequency_Value">5</span>秒</div>
+        </div> -->
+
+        <div class="sdpi-item" id="Parent_Low_ThresholdItem">
+            <!-- <p> -->
+            <div class="sdpi-item-label">低阈值</div>
+            <input class="color_Low_Threshold" type="color" id="Palette_LowThreshold"
+                onchange="palette_LowThreshold_Select_LowThreshold_Color()">
+            <input class="sdpi-item-value select " id="Low_ThresholdItem" oninput="Low_ThresholdItem_saveData()"
+                style="margin-right: 0">
+            <!-- </p> -->
+        </div>
+
+        <div class="sdpi-item" id="Parent_Critical_ThresholdItem">
+            <!-- <div> -->
+            <div class="sdpi-item-label">危险阈值</div>
+            <input type="color" id="Palette_CriticalThreshold"
+                onchange="palette_CriticalThreshold_Select_CriticalThreshold_Color()">
+            <input class="sdpi-item-value select " id="Critical_ThresholdItem"
+                oninput="Critical_ThresholdItem_saveData()" style="margin-right: 0">
+            <!-- </div> -->
+        </div>
+
+        <div class="sdpi-item" id="abc123">
+            <div class="sdpi-item-label">背景切换</div>
+            <div class="sdpi-item-group file" id="filepickergroup">
+                <input class="sdpi-item-value sdProperty sdFile" type="file" id="backgroundImage"
+                    accept=".jpg, .jpeg, .png, .ico, .gif, .bmp, .tiff" onchange="GetImage(event)"><label
+                    class="sdpi-file-info " for="backgroundImage" id="backgroundImageFilename">仅限126*126像素图片</label>
+                <label class="sdpi-file-label" for="backgroundImage">选择文件...</label>
+            </div>
+        </div>
+
+        <div type="checkbox" class="sdpi-item">
+            <div class="sdpi-item-label not_mark"></div>
+            <input class="sdpi-item-value" id="ShowVolumeName" type="checkbox" onchange="Is_ShowVolumeName(event)">
+            <label for="ShowVolumeName"><span></span>显示盘符名</label>
+        </div>
+
+        <div type="checkbox" class="sdpi-item">
+            <div class="sdpi-item-label not_mark"></div>
+            <input class="sdpi-item-value" id="Invert_PrograssBar" type="checkbox" onchange="Is_Invert_PrograssBar()">
+            <label for="Invert_PrograssBar"><span></span>进度条倒置</label>
+        </div>
+    </div>
+
+    <!-- </div> 双进度条-->
+    <script src="./js/origin.js"></script>
+</body>
+
+</html>
+
+<!-- 全实例化改后 -->
+<!-- let settings = {}
+//也是软件发过来的事件 /* 插件触发的事件 */  
+$SD.on('sendToPropertyInspector', e => {
+    let { event, payload } = e
+    /* 插件设置数据后触发 */
+    if (event === 'didReceiveSettings') {
+        settings = payload.settings
+        let {
+            choice_VolumeNameItem,
+            text_Low_Threshold,
+            text_Critical_Threshold,
+            color_Low_Threshold,
+            color_Critical_Threshold
+        } = settings    // 解构赋值
+
+        $('#VolumeNameItem').value = choice_VolumeNameItem || 0
+
+
+        $('#Low_ThresholdItem').value = text_Low_Threshold || '20' //覆盖 引用持久化的数据覆盖原本内容  //设置初始值
+        $('#palette_LowThreshold').value = color_Low_Threshold || '#FFFF00'  //设置调色板初始颜色
+        $('#Low_ThresholdItem').style.color = $('#palette_LowThreshold').value  //设置文本初始颜色
+
+        $('#Critical_ThresholdItem').value = text_Critical_Threshold || '10' //覆盖 引用持久化的数据覆盖原本内容
+        $('#palette_CriticalThreshold').value = color_Critical_Threshold || '#FF0000'
+        $('#Critical_ThresholdItem').style.color = $('#palette_CriticalThreshold').value
+
+        // console.log($('#Critical_ThresholdItem').value);
+    }
+}) -->
+
+
+<!-- 全实例化改前 -->
+<!-- let settings = {
+
+    choice_VolumeNameItem:"",
+    text_Low_Threshold:"" ,
+    text_Critical_Threshold:"" ,
+    color_Low_Threshold:"" ,
+    color_Critical_Threshold:"" ,
+}
+
+//也是软件发过来的事件 /* 插件触发的事件 */  
+$SD.on('sendToPropertyInspector', e => {
+    let { event, payload } = e
+    /* 插件设置数据后触发 */
+    if (event === 'didReceiveSettings') {
+        let {
+            choice_VolumeNameItem,
+            text_Low_Threshold,
+            text_Critical_Threshold,
+            color_Low_Threshold,
+            color_Critical_Threshold
+        } = payload.settings    //   choice_VolumeNameItem  =   payload.settings.content.choice_VolumeNameItem 解构赋值
+
+        $('#VolumeNameItem').value = choice_VolumeNameItem || 0
+
+
+        $('#Low_ThresholdItem').value = text_Low_Threshold || '20' //覆盖 引用持久化的数据覆盖原本内容  //设置初始值
+        $('#palette_LowThreshold').value = color_Low_Threshold || '#FFFF00'  //设置调色板初始颜色
+        $('#Low_ThresholdItem').style.color = $('#palette_LowThreshold').value  //设置文本初始颜色
+
+        $('#Critical_ThresholdItem').value = text_Critical_Threshold || '10' //覆盖 引用持久化的数据覆盖原本内容
+        $('#palette_CriticalThreshold').value = color_Critical_Threshold || '#FF0000'
+        $('#Critical_ThresholdItem').style.color = $('#palette_CriticalThreshold').value
+
+        // console.log($('#Critical_ThresholdItem').value);
+    }
+}) -->

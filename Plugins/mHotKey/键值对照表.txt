@@ -1,0 +1,646 @@
+	//if ((ks->flags == 0 || (ks->flags != 128 && ks->flags != 129)) && (start_recording || ks->vkCode == 0x71))
+	if (ks->flags == 0 || ks->flags == 1)
+	{
+		// 监控键盘
+		switch (ks->vkCode) {
+		case 0x8:
+			cout << "按下0x8-回档键 " << endl;
+			break;
+		case 0x9:
+			cout << "按下0x9-左Tab键 " << endl;
+			break;
+		case 0xd:
+			cout << "按下0xd-回车键 " << endl;
+			break;
+		case 0x13:
+			cout << "按下0x13-Pause Break键 " << endl;
+			break;
+		case 0x14:
+			cout << "按下0x14-Caps lock键 " << endl;
+			break;
+		case 0x1b:
+			cout << "按下0x1b-ESC键 " << endl;
+			break;
+		case 0x20:
+			cout << "按下了0x20-空格键 " << endl;
+			break;
+		case 0x21:
+			cout << "按下0x21-Page Up键 " << endl;
+			break;
+		case 0x22:
+			cout << "按下0x22-Page Down键 " << endl;
+			break;
+		case 0x23:
+			cout << "按下0x23-End键 " << endl;
+			break;
+		case 0x24:
+			cout << "按下0x24-Home键 " << endl;
+			break;
+		case 0x25:
+			cout << "按下0x25-Left方向左键 " << endl;
+			break;
+		case 0x26:
+			cout << "按下0x26-Up方向上键 " << endl;
+			break;
+		case 0x27:
+			cout << "按下0x27-Right方向右键 " << endl;
+			break;
+		case 0x28:
+			cout << "按下0x28-Down方向下键 " << endl;
+			break;
+		case 0x2c:
+			cout << "按下0x2c-Print Screen键 " << endl;
+			break;
+		case 0x2d:
+			cout << "按下0x2d-Insert键 " << endl;
+			break;
+		case 0x2e:
+			cout << "按下0x2e-Delete键 " << endl;
+			break;
+		case 0x30:
+			cout << "按下0x30-大键盘0 " << endl;
+			break;
+		case 0x31:
+			cout << "按下0x31-大键盘1 " << endl;
+			break;
+		case 0x32:
+			cout << "按下0x32-大键盘2 " << endl;
+			break;
+		case 0x33:
+			cout << "按下0x33-大键盘3 " << endl;
+			break;
+		case 0x34:
+			cout << "按下0x34-大键盘4 " << endl;
+			break;
+		case 0x35:
+			cout << "按下0x35-大键盘5 " << endl;
+			break;
+		case 0x36:
+			cout << "按下0x36-大键盘6 " << endl;
+			break;
+		case 0x37:
+			cout << "按下0x37-大键盘7 " << endl;
+			break;
+		case 0x38:
+			cout << "按下0x38-大键盘8 " << endl;
+			break;
+		case 0x39:
+			cout << "按下0x39-大键盘9 " << endl;
+			break;
+		case 0x41:
+			cout << "按下0x41-A键 " << endl;
+			break;
+		case 0x42:
+			cout << "按下0x42-B键 " << endl;
+			break;
+		case 0x43:
+			cout << "按下0x43-C键 " << endl;
+			break;
+		case 0x44:
+			cout << "按下0x44-D键 " << endl;
+			break;
+		case 0x45:
+			cout << "按下0x45-E键 " << endl;
+			break;
+		case 0x46:
+			cout << "按下0x46-F键 " << endl;
+			break;
+		case 0x47:
+			cout << "按下0x47-G键 " << endl;
+			break;
+		case 0x48:
+			cout << "按下0x48-H键 " << endl;
+			break;
+		case 0x49:
+			cout << "按下0x49-I键 " << endl;
+			break;
+		case 0x4a:
+			cout << "按下0x4a-J键 " << endl;
+			break;
+		case 0x4b:
+			cout << "按下0x4b-K键 " << endl;
+			break;
+		case 0x4c:
+			cout << "按下0x4c-L键 " << endl;
+			break;
+		case 0x4d:
+			cout << "按下0x4d-M键 " << endl;
+			break;
+		case 0x4e:
+			cout << "按下0x4e-N键 " << endl;
+			break;
+		case 0x4f:
+			cout << "按下0x4f-O键 " << endl;
+			break;
+		case 0x50:
+			cout << "按下0x50-P键 " << endl;
+			break;
+		case 0x51:
+			cout << "按下0x51-Q键 " << endl;
+			break;
+		case 0x52:
+			cout << "按下0x52-R键 " << endl;
+			break;
+		case 0x53:
+			cout << "按下0x53-S键 " << endl;
+			break;
+		case 0x54:
+			cout << "按下0x54-T键 " << endl;
+			break;
+		case 0x55:
+			cout << "按下0x55-U键 " << endl;
+			break;
+		case 0x56:
+			cout << "按下0x56-V键 " << endl;
+			break;
+		case 0x57:
+			cout << "按下0x57-W键 " << endl;
+			break;
+		case 0x58:
+			cout << "按下0x58-X键 " << endl;
+			break;
+		case 0x59:
+			cout << "按下0x59-Y键 " << endl;
+			break;
+		case 0x5a:
+			cout << "按下0x5a-Z键 " << endl;
+			break;
+		case 0x5b:
+			cout << "按下0x5b-左边Win键 " << endl;
+			break;
+		case 0x5c:
+			cout << "按下0x5c-右边Win键 " << endl;
+			break;
+		case 0x5d:
+			cout << "按下0x5d-菜单键 " << endl;
+			break;
+		case 0x60:
+			cout << "按下0x60-小键盘0 " << endl;
+			break;
+		case 0x61:
+			cout << "按下0x61-小键盘1 " << endl;
+			break;
+		case 0x62:
+			cout << "按下0x62-小键盘2 " << endl;
+			break;
+		case 0x63:
+			cout << "按下0x63-小键盘3 " << endl;
+			break;
+		case 0x64:
+			cout << "按下0x64-小键盘4 " << endl;
+			break;
+		case 0x65:
+			cout << "按下0x65-小键盘5 " << endl;
+			break;
+		case 0x66:
+			cout << "按下0x66-小键盘6 " << endl;
+			break;
+		case 0x67:
+			cout << "按下0x67-小键盘7 " << endl;
+			break;
+		case 0x68:
+			cout << "按下0x68-小键盘8 " << endl;
+			break;
+		case 0x69:
+			cout << "按下0x69-小键盘9 " << endl;
+			break;
+		case 0x6a:
+			cout << "按下0x6a-乘号 " << endl;
+			break;
+		case 0x6b:
+			cout << "按下0x6b-加号+ " << endl;
+			break;
+		case 0x6c:
+			cout << "按下0x6c-疑似取余号 " << endl;
+			break;
+		case 0x6d:
+			cout << "按下0x6d-减号- " << endl;
+			break;
+		case 0x6e:
+			cout << "按下0x6e-小数点. " << endl;
+			break;
+		case 0x6f:
+			cout << "按下0x6f-除号/ " << endl;
+			break;
+		case 0x70:
+			cout << "按下0x70-F1键 " << endl;
+			break;
+		case 0x71:
+			cout << "按下0x71-F2键 " << endl;
+			break;
+		case 0x72:
+			cout << "按下0x72-F3键 " << endl;
+			break;
+		case 0x73:
+			cout << "按下0x73-F4键 " << endl;
+			break;
+		case 0x74:
+			cout << "按下0x74-F5键 " << endl;
+			break;
+		case 0x75:
+			cout << "按下0x75-F6键 " << endl;
+			break;
+		case 0x76:
+			cout << "按下0x76-F7键 " << endl;
+			break;
+		case 0x77:
+			cout << "按下0x77-F8键 " << endl;
+			break;
+		case 0x78:
+			cout << "按下0x78-F9键 " << endl;
+			break;
+		case 0x79:
+			cout << "按下0x79-F10键 " << endl;
+			break;
+		case 0x7a:
+			cout << "按下0x7a-F11键 " << endl;
+			break;
+		case 0x7b:
+			cout << "按下0x7b-F12键 " << endl;
+			break;
+		case 0x90:
+			cout << "按下0x90-Num Lock键 " << endl;
+			break;
+		case 0x91:
+			cout << "按下0x91-Scroll Lock键 " << endl;
+			break;
+		case 0xa0:
+			cout << "按下0xa0-左Shift键 " << endl;
+			break;
+		case 0xa1:
+			cout << "按下0xa1-右Shift键 " << endl;
+			break;
+		case 0xa2:
+			cout << "按下0xa2-左Ctrl键 " << endl;
+			break;
+		case 0xa3:
+			cout << "按下0xa3-右Ctrl键 " << endl;
+			break;
+		case 0xa4:
+			cout << "按下0xa4-左Alt键 " << endl;
+			break;
+		case 0xa5:
+			cout << "按下0xa5-右Alt键 " << endl;
+			break;
+		case 0xba:
+			cout << "按下0xba-大键盘；：分号、冒号 " << endl;
+			break;
+		case 0xbb:
+			cout << "按下0xbb-大键盘=+等于号、加号 " << endl;
+			break;
+		case 0xbc:
+			cout << "按下0xbc-大键盘,<逗号、小于号 " << endl;
+			break;
+		case 0xbd:
+			cout << "按下0xbd-大键盘-——减号、破折号 " << endl;
+			break;
+		case 0xbe:
+			cout << "按下0xbe大键盘.>句号、大于号 " << endl;
+			break;
+		case 0xbf:
+			cout << "按下0xbf大键盘/?斜杠、问号 " << endl;
+			break;
+		case 0xc0:
+			cout << "按下0xc0-`~键 " << endl;
+			break;
+		case 0xdb:
+			cout << "按下0xdb-大键盘[{ " << endl;
+			break;
+		case 0xdc:
+			cout << "按下0xdc-大键盘\| " << endl;
+			break;
+		case 0xdd:
+			cout << "按下0xdd-大键盘]} " << endl;
+			break;
+		case 0xde:
+			cout << "按下0xde-大键盘‘“引号、单引号 " << endl;
+			break;
+		}
+	}
+	else if (ks->flags == 128 || ks->flags == 129)
+	{
+		// 监控键盘             //315
+		switch (ks->vkCode) {
+		case 0x8:
+			cout << "释放0x8-回档键 " << endl;
+			break;
+		case 0x9:
+			cout << "释放0x9-左Tab键 " << endl;
+			break;
+		case 0xd:
+			cout << "释放0xd-回车键 " << endl;
+			break;
+		case 0x13:
+			cout << "释放0x13-Pause Break键 " << endl;
+			break;
+		case 0x14:
+			cout << "释放0x14-Caps lock键 " << endl;
+			break;
+		case 0x1b:
+			cout << "释放0x1b-ESC键 " << endl;
+			PostQuitMessage(0);
+			break;
+		case 0x20:
+			cout << "释放了0x20-空格键 " << endl;
+			break;
+		case 0x21:
+			cout << "释放0x21-Page Up键 " << endl;
+			break;
+		case 0x22:
+			cout << "释放0x22-Page Down键 " << endl;
+			break;
+		case 0x23:
+			cout << "释放0x23-End键 " << endl;
+			break;
+		case 0x24:
+			cout << "释放0x24-Home键 " << endl;
+			break;
+		case 0x25:
+			cout << "释放0x25-Left方向左键 " << endl;
+			break;
+		case 0x26:
+			cout << "释放0x26-Up方向上键 " << endl;
+			break;
+		case 0x27:
+			cout << "释放0x27-Right方向右键 " << endl;
+			break;
+		case 0x28:
+			cout << "释放0x28-Down方向下键 " << endl;
+			break;
+		case 0x2c:
+			cout << "释放0x2c-Print Screen键 " << endl;
+			break;
+		case 0x2d:
+			cout << "释放0x2d-Insert键 " << endl;
+			break;
+		case 0x2e:
+			cout << "释放0x2e-Delete键 " << endl;
+			break;
+		case 0x30:
+			cout << "释放0x30-大键盘0 " << endl;
+			break;
+		case 0x31:
+			cout << "释放0x31-大键盘1 " << endl;
+			break;
+		case 0x32:
+			cout << "释放0x32-大键盘2 " << endl;
+			break;
+		case 0x33:
+			cout << "释放0x33-大键盘3 " << endl;
+			break;
+		case 0x34:
+			cout << "释放0x34-大键盘4 " << endl;
+			break;
+		case 0x35:
+			cout << "释放0x35-大键盘5 " << endl;
+			break;
+		case 0x36:
+			cout << "释放0x36-大键盘6 " << endl;
+			break;
+		case 0x37:
+			cout << "释放0x37-大键盘7 " << endl;
+			break;
+		case 0x38:
+			cout << "释放0x38-大键盘8 " << endl;
+			break;
+		case 0x39:
+			cout << "释放0x39-大键盘9 " << endl;
+			break;
+		case 0x41:
+			cout << "释放0x41-A键 " << endl;
+			break;
+		case 0x42:
+			cout << "释放0x42-B键 " << endl;
+			break;
+		case 0x43:
+			cout << "释放0x43-C键 " << endl;
+			break;
+		case 0x44:
+			cout << "释放0x44-D键 " << endl;
+			break;
+		case 0x45:
+			cout << "释放0x45-E键 " << endl;
+			break;
+		case 0x46:
+			cout << "释放0x46-F键 " << endl;
+			break;
+		case 0x47:
+			cout << "释放0x47-G键 " << endl;
+			break;
+		case 0x48:
+			cout << "释放0x48-H键 " << endl;
+			break;
+		case 0x49:
+			cout << "释放0x49-I键 " << endl;
+			break;
+		case 0x4a:
+			cout << "释放0x4a-J键 " << endl;
+			break;
+		case 0x4b:
+			cout << "释放0x4b-K键 " << endl;
+			break;
+		case 0x4c:
+			cout << "释放0x4c-L键 " << endl;
+			break;
+		case 0x4d:
+			cout << "释放0x4d-M键 " << endl;
+			break;
+		case 0x4e:
+			cout << "释放0x4e-N键 " << endl;
+			break;
+		case 0x4f:
+			cout << "释放0x4f-O键 " << endl;
+			break;
+		case 0x50:
+			cout << "释放0x50-P键 " << endl;
+			break;
+		case 0x51:
+			cout << "释放0x51-Q键 " << endl;
+			break;
+		case 0x52:
+			cout << "释放0x52-R键 " << endl;
+			break;
+		case 0x53:
+			cout << "释放0x53-S键 " << endl;
+			break;
+		case 0x54:
+			cout << "释放0x54-T键 " << endl;
+			break;
+		case 0x55:
+			cout << "释放0x55-U键 " << endl;
+			break;
+		case 0x56:
+			cout << "释放0x56-V键 " << endl;
+			break;
+		case 0x57:
+			cout << "释放0x57-W键 " << endl;
+			break;
+		case 0x58:
+			cout << "释放0x58-X键 " << endl;
+			break;
+		case 0x59:
+			cout << "释放0x59-Y键 " << endl;
+			break;
+		case 0x5a:
+			cout << "释放0x5a-Z键 " << endl;
+			break;
+		case 0x5b:
+			cout << "释放0x5b-左边Win键 " << endl;
+			break;
+		case 0x5c:
+			cout << "释放0x5c-右边Win键 " << endl;
+			break;
+		case 0x5d:
+			cout << "释放0x5d-菜单键 " << endl;
+			break;
+		case 0x5e:
+			cout << "释放0x5e " << endl;
+			break;
+		case 0x5f:
+			cout << "释放0x5f " << endl;
+			break;
+		case 0x60:
+			cout << "释放0x60-小键盘0 " << endl;
+			break;
+		case 0x61:
+			cout << "释放0x61-小键盘1 " << endl;
+			break;
+		case 0x62:
+			cout << "释放0x62-小键盘2 " << endl;
+			break;
+		case 0x63:
+			cout << "释放0x63-小键盘3 " << endl;
+			break;
+		case 0x64:
+			cout << "释放0x64-小键盘4 " << endl;
+			break;
+		case 0x65:
+			cout << "释放0x65-小键盘5 " << endl;
+			break;
+		case 0x66:
+			cout << "释放0x66-小键盘6 " << endl;
+			break;
+		case 0x67:
+			cout << "释放0x67-小键盘7 " << endl;
+			break;
+		case 0x68:
+			cout << "释放0x68-小键盘8 " << endl;
+			break;
+		case 0x69:
+			cout << "释放0x69-小键盘9 " << endl;
+			break;
+		case 0x6a:
+			cout << "释放0x6a-乘号 " << endl;
+			break;
+		case 0x6b:
+			cout << "释放0x6b-加号+ " << endl;
+			break;
+		case 0x6c:
+			cout << "释放0x6c-疑似取余号 " << endl;
+			break;
+		case 0x6d:
+			cout << "释放0x6d-减号- " << endl;
+			break;
+		case 0x6e:
+			cout << "释放0x6e-小数点. " << endl;
+			break;
+		case 0x6f:
+			cout << "释放0x6f-除号/ " << endl;
+			break;
+		case 0x70:
+			cout << "释放0x70-F1键 " << endl;
+			break;
+		case 0x71:
+			cout << "释放0x71-F2键 " << endl;
+			break;
+		case 0x72:
+			cout << "释放0x72-F3键 " << endl;
+			break;
+		case 0x73:
+			cout << "释放0x73-F4键 " << endl;
+			break;
+		case 0x74:
+			cout << "释放0x74-F5键 " << endl;
+			break;
+		case 0x75:
+			cout << "释放0x75-F6键 " << endl;
+			break;
+		case 0x76:
+			cout << "释放0x76-F7键 " << endl;
+			break;
+		case 0x77:
+			cout << "释放0x77-F8键 " << endl;
+			break;
+		case 0x78:
+			cout << "释放0x78-F9键 " << endl;
+			break;
+		case 0x79:
+			cout << "释放0x79-F10键 " << endl;
+			break;
+		case 0x7a:
+			cout << "释放0x7a-F11键 " << endl;
+			break;
+		case 0x7b:
+			cout << "释放0x7b-F12键 " << endl;
+			break;
+		case 0x90:
+			cout << "释放0x90-Num Lock键 " << endl;
+			break;
+		case 0x91:
+			cout << "释放0x91-Scroll Lock键 " << endl;
+			break;
+		case 0xa0:
+			cout << "释放0xa0-左Shift键 " << endl;
+			break;
+		case 0xa1:
+			cout << "释放0xa1-右Shift键 " << endl;
+			break;
+		case 0xa2:
+			cout << "释放0xa2-左Ctrl键 " << endl;
+			break;
+		case 0xa3:
+			cout << "释放0xa3-右Ctrl键 " << endl;
+			break;
+		case 0xa4:
+			cout << "释放0xa4-左Alt键 " << endl;
+			break;
+		case 0xa5:
+			cout << "释放0xa5-右Alt键 " << endl;
+			break;
+		case 0xba:
+			cout << "释放0xba-大键盘；：分号、冒号 " << endl;
+			break;
+		case 0xbb:
+			cout << "释放0xbb-大键盘=+等于号、加号 " << endl;
+			break;
+		case 0xbc:
+			cout << "释放0xbc-大键盘,<逗号、小于号 " << endl;
+			break;
+		case 0xbd:
+			cout << "释放0xbd-大键盘-——减号、破折号 " << endl;
+			break;
+		case 0xbe:
+			cout << "释放0xbe大键盘.>句号、大于号 " << endl;
+			break;
+		case 0xbf:
+			cout << "释放0xbf大键盘/?斜杠、问号 " << endl;
+			break;
+		case 0xc0:
+			cout << "释放0xc0-`~键 " << endl;
+			break;
+		case 0xdb:
+			cout << "释放0xdb-大键盘[{ " << endl;
+			break;
+		case 0xdc:
+			cout << "释放0xdc-大键盘\| " << endl;
+			break;
+		case 0xdd:
+			cout << "释放0xdd-大键盘]} " << endl;
+			break;
+		case 0xde:
+			cout << "释放0xde-大键盘‘“引号、单引号 " << endl;
+			break;
+		}
+
+		//return 1;		// 使按键失效
+	}

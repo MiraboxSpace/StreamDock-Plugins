@@ -1,0 +1,110 @@
+{
+  "Actions": [
+    {
+      "Icon": "images/HotKey/hhotkey40.png",
+      "Name": "HotKey",
+      "States": [
+        {
+          "Image": "images/HotKey/hhotkey.png",
+          "TitleAlignment": "middle",
+          "FSize": "13",
+          "FFamily": "HarmonyOS Sans"
+        }
+      ],
+      "IsK1Pro": true,
+      "Controllers": [
+        "Keypad"
+      ],
+      "SupportedInMultiActions": false,
+      "Tooltip": "Replay the HotKey",
+      "UUID": "com.hotspot.stream.HotKey",
+      "PropertyInspectorPath": "PropertyInspector/HotKeyIndex.html"
+    },
+    {
+      "Icon": "images/HotKey/circleRecord40.png",
+      "Name": "Record",
+      "States": [
+        {
+          "Image": "images/HotKey/circleRecord.png",
+          "TitleAlignment": "middle",
+          "FSize": "13",
+          "FFamily": "HarmonyOS Sans"
+        }
+      ],
+      "IsK1Pro": true,
+      "Controllers": [
+        "Keypad"
+      ],
+      "SupportedInMultiActions": false,
+      "Tooltip": "Replay the HotKey",
+      "UUID": "com.hotspot.stream.Record",
+      "PropertyInspectorPath": "PropertyInspector/Record.html"
+    },
+    {
+      "Icon": "images/HotKey/circleReplay40.png",
+      "Name": "Replay",
+      "States": [
+        {
+          "Image": "images/HotKey/circleReplay.png",
+          "TitleAlignment": "middle",
+          "FSize": "13",
+          "FFamily": "HarmonyOS Sans"
+        }
+      ],
+      "IsK1Pro": true,
+      "Controllers": [
+        "Keypad"
+      ],
+      "SupportedInMultiActions": false,
+      "Tooltip": "Replay the HotKey",
+      "UUID": "com.hotspot.stream.Replay",
+      "PropertyInspectorPath": "PropertyInspector/Replay.html"
+    },
+    {
+      "Icon": "images/HotKey/setMacroRecord40.png",
+      "Name": "Replay",
+      "States": [
+        {
+          "Image": "images/HotKey/setMacroRecord.png",
+          "TitleAlignment": "middle",
+          "FSize": "13",
+          "FFamily": "HarmonyOS Sans"
+        }
+      ],
+      "IsK1Pro": true,
+      "Controllers": [
+        "Keypad"
+      ],
+      "SupportedInMultiActions": false,
+      "Tooltip": "Replay the HotKey",
+      "UUID": "com.hotspot.stream.Set_HotKey",
+      "PropertyInspectorPath": "PropertyInspector/Set_HotKey.html"
+    }
+
+  ],
+  "SDKVersion": 1,
+  "Author": "HotSpot",
+  "Category": "HotKey",
+  "CategoryIcon": "images/category/HotKey.png",
+  "CodePathWin": "HotKey.exe" ,
+  "CodePathMac": "HotKey",
+  "Description": "Replay the HotKey",
+  "Name": "Macro Record",
+  "Icon": "images/category/pluginIcon",
+  "URL": "http://video.hotspotek.com.cn/",
+"Version": "0.0.260318",
+  "RunAsAdministrator": true,
+  "OS": [
+    {
+      "Platform": "mac",
+      "MinimumVersion": "10.13"
+    },
+    {
+      "Platform": "windows",
+      "MinimumVersion": "7"
+    }
+  ],
+  "Software": {
+    "MinimumVersion": "2.9.121"
+  }
+}

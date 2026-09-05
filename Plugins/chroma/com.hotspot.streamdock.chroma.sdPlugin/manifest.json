@@ -1,0 +1,38 @@
+{
+  "Actions": [
+    {
+      "Icon": "Images/category",
+      "Name": "Chroma",
+      "States": [
+        {
+          "Image": "Images/chroma",
+          "TitleAlignment": "bottom",
+          "FontSize": "9"
+        }
+      ],
+      "SupportedInMultiActions": true,
+      "Tooltip": "Chroma Light Effect Control Plugin",
+      "UUID": "com.hotspot.stream.chroma",
+      "PropertyInspectorPath": "PropertyInspector/chroma/index.html"
+    }
+  ],
+  "Author": "TAUTH",
+  "Description": "Chroma Light Effect Control Plugin",
+  "Name": "Chroma",
+  "Icon": "Images/category",
+  "URL": "http://video.hotspotek.com.cn/",
+  "Version": "1.8",
+  "CodePath": "chromaLight",
+  "Category": "Chroma",
+  "CategoryIcon": "Images/category",
+  "OS": [
+    {
+      "Platform": "windows",
+      "MinimumVersion": "10"
+    }
+  ],
+  "SDKVersion": 2,
+  "Software": {
+    "MinimumVersion": "6.8.1"
+  }
+}

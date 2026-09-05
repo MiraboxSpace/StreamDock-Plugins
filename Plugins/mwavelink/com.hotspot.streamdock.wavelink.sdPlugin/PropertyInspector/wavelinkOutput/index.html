@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <link rel="stylesheet" href="../../static/css/sdpi.css">
+    <!-- <link rel="stylesheet" href="../../static/css/bootstrap-icons.css">
+    <link rel="stylesheet" href="../../static/css/bootstrap.min.css"> -->
+</head>
+
+<body>
+    <div class="sdpi-wrapper" style="display: none">
+    <!--  -->
+    <div type="radio" class="sdpi-item">
+        <div class="sdpi-item-label">Type</div>
+        <div class="sdpi-item-value">
+            <span class="sdpi-item-child">
+                <input id="type-set" type="radio" name="type" value="set" checked>
+                <label for="type-set" class="sdpi-item-label"><span></span>Set</label>
+            </span>
+            <span class="sdpi-item-child">
+                <input id="type-adjust" type="radio" value="adjust" name="type">
+                <label for="type-adjust" class="sdpi-item-label"><span></span>Adjust</label>
+            </span>
+            <span class="sdpi-item-child">
+                <input id="type-mute" type="radio" value="mute" name="type">
+                <label for="type-mute" class="sdpi-item-label"><span></span>Mute</label>
+            </span>
+            <span class="sdpi-item-child">
+                <input id="type-toggle" type="radio" value="toggle" name="type">
+                <label for="type-toggle" class="sdpi-item-label"><span></span>Toggle Output Monitoring</label>
+            </span>
+        </div>
+    </div>
+
+    <!--  -->
+    <div type="select" class="sdpi-item" id="output-div" style="display: flex;">
+        <div class="sdpi-item-label">Output</div>
+        <select class="sdpi-item-value" id="output-select">
+            <option value="monitor-mix">Monitor Mix</option>
+            <option value="stream-mix">Stream Mix</option>
+            <option value="all">All</option>
+        </select>
+    </div>
+
+    <!--  -->
+    <div type="select" class="sdpi-item" id="fading-div" style="display: none;">
+        <div class="sdpi-item-label">Fading</div>
+        <select class="sdpi-item-value" id="fading-select">
+            <option value="off" selected>Off</option>
+            <option value="0.5">0.5 sec</option>
+            <option value="1">1 sec</option>
+            <option value="1.5">1.5 sec</option>
+            <option value="2">2 sec</option>
+            <option value="2.5">2.5 sec</option>
+            <option value="3">3 sec</option>
+        </select>
+    </div>
+
+    <!--  -->
+    <div type="range" class="sdpi-item" id="volume-slider" style="display: none;">
+        <div class="sdpi-item-label">Volume</div>
+        <div class="sdpi-range-wrapper" style="display: flex; align-items: center; gap: 8px;">
+            <span class="range-min">0</span>
+            <input type="range" class="sdpi-item-value" min="0" max="100" value="37" title="37 %" id="volume-range">
+            <span class="range-max">100</span>
+        </div>
+    </div>
+
+    <!--  -->
+    <div type="range" class="sdpi-item" id="step-slider" style="display: none;">
+        <div class="sdpi-item-label">Step Size</div>
+        <div class="sdpi-range-wrapper" style="display: flex; align-items: center; gap: 8px;">
+            <span class="range-min">-25</span>
+            <input type="range" class="sdpi-item-value" min="-25" max="25" value="5" title="5 %" id="step-range">
+            <span class="range-max">+25</span>
+        </div>
+    </div>
+
+    </div>
+    <script src="../utils/common.js"></script>
+    <script src="../utils/action.js"></script>
+    <script src="index.js"></script>
+
+</body>
+
+</html>

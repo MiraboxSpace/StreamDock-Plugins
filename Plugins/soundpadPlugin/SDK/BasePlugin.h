@@ -74,6 +74,12 @@ public:
                  const QJsonObject &inPayload,
                  const QString &inDeviceID);
 
+    virtual void PropertyInspectorDidDisappear(
+                 const QString &inAction,
+                 const QString &inContext,
+                 const QJsonObject &inPayload,
+                 const QString &inDeviceID);
+
 protected:
     ConnectionManager *mConnectionManager = nullptr;
 };

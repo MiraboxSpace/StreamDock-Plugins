@@ -1,0 +1,21 @@
+{
+  "Description": "控制你的wave link", 
+  "Name": "Wave link", 
+  "Category": "Wave link",
+  "com.hotspot.stream.wavelinkInput": {
+    "Name": "输入",
+    "Tooltip": "管理您的麦克风和应用程序音量"
+  },
+  "com.hotspot.stream.wavelinkOutput": {
+    "Name": "输出",
+    "Tooltip": "管理您的显示器和流混合"
+  },
+    "com.hotspot.stream.wavelinkDeivce": {
+    "Name": "设备",
+    "Tooltip": "管理您的音频硬件和设置"
+  },
+    "com.hotspot.stream.wavelinkEffects": {
+    "Name": "效果",
+    "Tooltip": "管理EQ和降噪等功能"
+  }
+}

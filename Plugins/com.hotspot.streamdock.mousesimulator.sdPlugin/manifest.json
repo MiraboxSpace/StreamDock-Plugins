@@ -1,0 +1,49 @@
+{
+  "Actions": [
+    {
+      "Icon": "static/icon",
+      "Name": "Mouse Simulator",
+      "States": [
+        {
+          "Image": "static/defaultImage",
+          "TitleAlignment": "middle"
+        }
+      ],
+      "SupportedInMultiActions": true,
+      "Tooltip": "Mouse Simulator — Record and replay mouse/keyboard events",
+      "UUID": "com.hotspot.streamdock.mousesimulator.action"
+    }
+  ],
+  "SDKVersion": 2,
+  "Author": "VIVRE-MOTION",
+  "Localization": {
+    "en": "en.json",
+    "zh_CN": "zh_CN.json",
+    "ja": "ja.json",
+    "ko": "ko.json",
+    "fr": "fr.json",
+    "de": "de.json",
+    "es": "es.json",
+    "ru": "ru.json",
+    "pt_BR": "pt_BR.json"
+  },
+  "Category": "Mouse Simulator",
+  "CategoryIcon": "static/category",
+  "CodePath": "index.html",
+  "CodePathWin": "mousesimulator_plugin.exe",
+  "PropertyInspectorPath": "propertyInspector/mousesimulator/index.html",
+  "Description": "Mouse Simulator Records your Mouse Events and plays them back. Supported: Left/Right/Middle MouseButton, X-MouseButton 4/5, MouseWheel, Multi-Screen Coordinates, Auto-Delay, VirtualKeys. WARP Motion, Soft Start, Typewriter Speed, Infinity Loop.",
+  "Name": "Mouse Simulator",
+  "Icon": "static/pluginIcon",
+  "URL": "https://www.vivre-motion.com/mousesimulator",
+  "Version": "1.0.260624",
+  "OS": [
+    {
+      "Platform": "windows",
+      "MinimumVersion": "10"
+    }
+  ],
+  "Software": {
+    "MinimumVersion": "5.0"
+  }
+}

@@ -40,7 +40,7 @@ void ExampleAction::DidReceiveSettings(const QJsonObject &payload)
         propStr = settings["propStr"].toString();
     }
     // 回传摄像头数据
-    {
+    try {
         {
             hr = CameraHelper::EnumerateDevices(CLSID_VideoInputDeviceCategory, &pEnum);
             if (SUCCEEDED(hr))
@@ -88,6 +88,10 @@ void ExampleAction::DidReceiveSettings(const QJsonObject &payload)
                 Logger::LogToServer("回传摄像头数据");
             }
         }
+    } catch (const std::exception &e) {
+        Logger::LogToServer(QString("ERROR in DidReceiveSettings: %1").arg(e.what()));
+    } catch (...) {
+        Logger::LogToServer("ERROR in DidReceiveSettings: unknown exception");
     }
 }
 
@@ -160,61 +164,66 @@ void ExampleAction::KeyDown(const QJsonObject &payload)
     }
     if(camera)
     {
-        if(CameraHelper::isVideoProcAmpProperty(propStr))
-        {
-            Logger::LogToServer(QString("=========================2 %1 %2").arg(CameraHelper::getVideoProcAmpProperty(propStr)).arg(propStr));
-            QThread::msleep(selectedFadeValue);
-            if(propValue == 1)// auto
-            {
-                oldValue = CameraHelper::changeVideoProperty(camera->pInputFilter,CameraHelper::getVideoProcAmpProperty(propStr), -100086, VideoProcAmp_Flags_Auto);
-            }else if(propValue == 2)// default
-            {
-                oldValue = CameraHelper::changeVideoProperty(camera->pInputFilter,CameraHelper::getVideoProcAmpProperty(propStr), selectedDefaultValue, VideoProcAmp_Flags_Manual);
-            }else if(propValue == 3)// manual set
-            {
-                oldValue = CameraHelper::changeVideoProperty(camera->pInputFilter,CameraHelper::getVideoProcAmpProperty(propStr), selectedSliderValue, VideoProcAmp_Flags_Manual);
-            }else// manual step
-            {
-                oldValue = CameraHelper::changeVideoProperty(camera->pInputFilter,CameraHelper::getVideoProcAmpProperty(propStr), -100086, VideoProcAmp_Flags_Manual,selectedStepValue);
-            }
-        }else if(CameraHelper::isCameraControlProperty(propStr))
-        {
-            Logger::LogToServer(QString("=========================3 %1 %2").arg(CameraHelper::getCameraControlProperty(propStr)).arg(propStr));
-            QThread::msleep(selectedFadeValue);
-            if(propValue == 1)  // auto
-            {
-                oldValue = CameraHelper::changeVideoControl(camera->pCameraControl,CameraHelper::getCameraControlProperty(propStr), -100086, CameraControl_Flags_Auto);
-            }else if(propValue == 2)// default
-            {
-                int tmpValue = (selectedMinValue+selectedMaxValue)/2;
-                oldValue = CameraHelper::changeVideoControl(camera->pCameraControl,CameraHelper::getCameraControlProperty(propStr), tmpValue, CameraControl_Flags_Manual);
-            }else if(propValue == 3)// manual set
-            {
-                oldValue = CameraHelper::changeVideoControl(camera->pCameraControl,CameraHelper::getCameraControlProperty(propStr), selectedSliderValue, CameraControl_Flags_Manual);
-            }else// manual step
-            {
-                oldValue = CameraHelper::changeVideoControl(camera->pCameraControl,CameraHelper::getCameraControlProperty(propStr), -100086, CameraControl_Flags_Manual, selectedStepValue);
-            }
-        }else if(propStr == "Low Light Compensation"){
-
-        }else if(propStr == "Powerline Frequency (50/60)"){
-
-        }
-        // 对PTT进行额外处理
-        if("com.mirabox.webcamptt.settings" == action)
-        {
-            QThread::msleep(selectedPTT);
+        try {
             if(CameraHelper::isVideoProcAmpProperty(propStr))
             {
-                CameraHelper::changeVideoProperty(camera->pInputFilter,CameraHelper::getVideoProcAmpProperty(propStr), oldValue, VideoProcAmp_Flags_Manual);
+                Logger::LogToServer(QString("=========================2 %1 %2").arg(CameraHelper::getVideoProcAmpProperty(propStr)).arg(propStr));
+                QThread::msleep(selectedFadeValue);
+                if(propValue == 1)// auto
+                {
+                    oldValue = CameraHelper::changeVideoProperty(camera->pInputFilter,CameraHelper::getVideoProcAmpProperty(propStr), -100086, VideoProcAmp_Flags_Auto);
+                }else if(propValue == 2)// default
+                {
+                    oldValue = CameraHelper::changeVideoProperty(camera->pInputFilter,CameraHelper::getVideoProcAmpProperty(propStr), selectedDefaultValue, VideoProcAmp_Flags_Manual);
+                }else if(propValue == 3)// manual set
+                {
+                    oldValue = CameraHelper::changeVideoProperty(camera->pInputFilter,CameraHelper::getVideoProcAmpProperty(propStr), selectedSliderValue, VideoProcAmp_Flags_Manual);
+                }else// manual step
+                {
+                    oldValue = CameraHelper::changeVideoProperty(camera->pInputFilter,CameraHelper::getVideoProcAmpProperty(propStr), -100086, VideoProcAmp_Flags_Manual,selectedStepValue);
+                }
             }else if(CameraHelper::isCameraControlProperty(propStr))
             {
-                CameraHelper::changeVideoControl(camera->pCameraControl,CameraHelper::getCameraControlProperty(propStr), oldValue, CameraControl_Flags_Manual);
+                Logger::LogToServer(QString("=========================3 %1 %2").arg(CameraHelper::getCameraControlProperty(propStr)).arg(propStr));
+                QThread::msleep(selectedFadeValue);
+                if(propValue == 1)  // auto
+                {
+                    oldValue = CameraHelper::changeVideoControl(camera->pCameraControl,CameraHelper::getCameraControlProperty(propStr), -100086, CameraControl_Flags_Auto);
+                }else if(propValue == 2)// default
+                {
+                    int tmpValue = (selectedMinValue+selectedMaxValue)/2;
+                    oldValue = CameraHelper::changeVideoControl(camera->pCameraControl,CameraHelper::getCameraControlProperty(propStr), tmpValue, CameraControl_Flags_Manual);
+                }else if(propValue == 3)// manual set
+                {
+                    oldValue = CameraHelper::changeVideoControl(camera->pCameraControl,CameraHelper::getCameraControlProperty(propStr), selectedSliderValue, CameraControl_Flags_Manual);
+                }else// manual step
+                {
+                    oldValue = CameraHelper::changeVideoControl(camera->pCameraControl,CameraHelper::getCameraControlProperty(propStr), -100086, CameraControl_Flags_Manual, selectedStepValue);
+                }
             }else if(propStr == "Low Light Compensation"){
-            }else if(propStr == "Powerline Frequency (50/60)"){
-            }
-        }
 
+            }else if(propStr == "Powerline Frequency (50/60)"){
+
+            }
+            // 对PTT进行额外处理
+            if("com.mirabox.webcamptt.settings" == action)
+            {
+                QThread::msleep(selectedPTT);
+                if(CameraHelper::isVideoProcAmpProperty(propStr))
+                {
+                    CameraHelper::changeVideoProperty(camera->pInputFilter,CameraHelper::getVideoProcAmpProperty(propStr), oldValue, VideoProcAmp_Flags_Manual);
+                }else if(CameraHelper::isCameraControlProperty(propStr))
+                {
+                    CameraHelper::changeVideoControl(camera->pCameraControl,CameraHelper::getCameraControlProperty(propStr), oldValue, CameraControl_Flags_Manual);
+                }else if(propStr == "Low Light Compensation"){
+                }else if(propStr == "Powerline Frequency (50/60)"){
+                }
+            }
+        } catch (const std::exception &e) {
+            Logger::LogToServer(QString("ERROR in KeyDown: %1").arg(e.what()));
+        } catch (...) {
+            Logger::LogToServer("ERROR in KeyDown: unknown exception");
+        }
     }else
     {
         Logger::LogToServer("======================-1 失效");
@@ -288,19 +297,23 @@ void ExampleAction::DialDown(const QJsonObject &payload)
     }
     if(camera)
     {
-        QThread::msleep(selectedFadeValue);
-        if(CameraHelper::isVideoProcAmpProperty(propStr))
-        {
-            CameraHelper::changeVideoProperty(camera->pInputFilter,CameraHelper::getVideoProcAmpProperty(propStr), selectedSliderValue, VideoProcAmp_Flags_Manual);
-        }else if(CameraHelper::isCameraControlProperty(propStr))
-        {
-            CameraHelper::changeVideoControl(camera->pCameraControl,CameraHelper::getCameraControlProperty(propStr), selectedSliderValue, CameraControl_Flags_Manual);
-        }else if(propStr == "Low Light Compensation"){
-        }else if(propStr == "Powerline Frequency (50/60)"){
+        try {
+            QThread::msleep(selectedFadeValue);
+            if(CameraHelper::isVideoProcAmpProperty(propStr))
+            {
+                CameraHelper::changeVideoProperty(camera->pInputFilter,CameraHelper::getVideoProcAmpProperty(propStr), selectedSliderValue, VideoProcAmp_Flags_Manual);
+            }else if(CameraHelper::isCameraControlProperty(propStr))
+            {
+                CameraHelper::changeVideoControl(camera->pCameraControl,CameraHelper::getCameraControlProperty(propStr), selectedSliderValue, CameraControl_Flags_Manual);
+            }else if(propStr == "Low Light Compensation"){
+            }else if(propStr == "Powerline Frequency (50/60)"){
+            }
+        } catch (const std::exception &e) {
+            Logger::LogToServer(QString("ERROR in DialDown: %1").arg(e.what()));
+        } catch (...) {
+            Logger::LogToServer("ERROR in DialDown: unknown exception");
         }
-        delete camera;
     }
-    CoUninitialize();
 }
 
 void ExampleAction::RotateClockwise(const QJsonObject &payload, const unsigned int ticks, const bool pressed)
@@ -358,21 +371,25 @@ void ExampleAction::dialSpecialAction(bool isClockwise, const QJsonObject &paylo
     }
     if(camera)
     {
-        QThread::msleep(selectedFadeValue);
-        if(CameraHelper::isVideoProcAmpProperty(propStr))
-        {
-            Logger::LogToServer("changeVideoProperty");
-            CameraHelper::changeVideoProperty(camera->pInputFilter,CameraHelper::getVideoProcAmpProperty(propStr), -100086, VideoProcAmp_Flags_Manual,rotationStep);
-        }else if(CameraHelper::isCameraControlProperty(propStr))
-        {
-            Logger::LogToServer("changeVideoControl");
-            CameraHelper::changeVideoControl(camera->pCameraControl,CameraHelper::getCameraControlProperty(propStr), -100086, CameraControl_Flags_Manual,rotationStep);
-        }else if(propStr == "Low Light Compensation"){
-        }else if(propStr == "Powerline Frequency (50/60)"){
+        try {
+            QThread::msleep(selectedFadeValue);
+            if(CameraHelper::isVideoProcAmpProperty(propStr))
+            {
+                Logger::LogToServer("changeVideoProperty");
+                CameraHelper::changeVideoProperty(camera->pInputFilter,CameraHelper::getVideoProcAmpProperty(propStr), -100086, VideoProcAmp_Flags_Manual,rotationStep);
+            }else if(CameraHelper::isCameraControlProperty(propStr))
+            {
+                Logger::LogToServer("changeVideoControl");
+                CameraHelper::changeVideoControl(camera->pCameraControl,CameraHelper::getCameraControlProperty(propStr), -100086, CameraControl_Flags_Manual,rotationStep);
+            }else if(propStr == "Low Light Compensation"){
+            }else if(propStr == "Powerline Frequency (50/60)"){
+            }
+        } catch (const std::exception &e) {
+            Logger::LogToServer(QString("ERROR in dialSpecialAction: %1").arg(e.what()));
+        } catch (...) {
+            Logger::LogToServer("ERROR in dialSpecialAction: unknown exception");
         }
-        delete camera;
     }
-    CoUninitialize();
 }
 
 void ExampleAction::SendToPlugin(const QJsonObject &payload)

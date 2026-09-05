@@ -198,6 +198,7 @@ void ConnectionManager::OnError(QAbstractSocket::SocketError error)
     Logger::LogToFile(errorString);
 }
 
+#include "LogManager.h"
 void ConnectionManager::OnMessage(const QString &message)
 {
     Logger::LogToServer("OnMessage: " + message);
@@ -238,8 +239,11 @@ void ConnectionManager::OnMessage(const QString &message)
             mPlugin->DialRotateForAction(action, context, payload, deviceID);
         } else if (event == mSDKEventPropertyInspectorDidAppear) {
             mPlugin->PropertyInspectorDidAppear(action, context, payload, deviceID);
+        } else if (event == mSDKEventPropertyInspectorDidDisappear) {
+            mPlugin->PropertyInspectorDidDisappear(action, context, payload, deviceID);
         }
     } catch (...) {
+        LogManager::instance()->log("OnMessage: ERROR - exception while handling event");
     }
 }
 
