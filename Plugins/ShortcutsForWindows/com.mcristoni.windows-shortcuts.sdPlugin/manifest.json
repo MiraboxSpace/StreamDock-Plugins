@@ -1,0 +1,52 @@
+{
+  "$schema": "https://schemas.elgato.com/streamdeck/plugins/manifest.json",
+  "Name": "Shortcuts for Windows",
+  "Version": "1.0.0.0",
+  "Author": "Matheus Cristoni",
+  "Description": "Shortcuts for Windows OS like Toggle Focus / Do not Disturb modes, etc",
+  "Category": "Shortcuts for Windows",
+  "CategoryIcon": "imgs/plugin/category-icon",
+  "CodePath": "bin/plugin.js",
+  "Icon": "imgs/plugin/marketplace",
+  "SDKVersion": 3,
+  "Software": {
+    "MinimumVersion": "7.1"
+  },
+  "OS": [
+    {
+      "Platform": "windows",
+      "MinimumVersion": "10"
+    }
+  ],
+  "Nodejs": {
+    "Version": "20"
+  },
+  "UUID": "com.mcristoni.windows-shortcuts",
+  "Actions": [
+    {
+      "Name": "Do Not Disturb Toggle",
+      "UUID": "com.mcristoni.windows-shortcuts.dnd",
+      "Icon": "imgs/actions/dnd/action",
+      "Tooltip": "Toggles Windows Do Not Disturb",
+      "DisableAutomaticStates": true,
+      "States": [
+        {
+          "Image": "imgs/actions/dnd/dnd-off",
+          "Title": "\nDo Not Disturb\n\n\n\nOff\n",
+          "ShowTitle": true,
+          "FontSize": 10,
+          "FontStyle": "Bold",
+          "TitleAlignment": "middle"
+        },
+        {
+          "Image": "imgs/actions/dnd/dnd-on",
+          "Title": "\nDo Not Disturb\n\n\n\nOn\n",
+          "ShowTitle": true,
+          "FontSize": 10,
+          "FontStyle": "Bold",
+          "TitleAlignment": "middle"
+        }
+      ]
+    }
+  ]
+}
