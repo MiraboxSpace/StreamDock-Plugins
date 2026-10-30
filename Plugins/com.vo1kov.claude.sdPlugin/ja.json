@@ -1,0 +1,22 @@
+{
+  "Name": "VO1KOV Claude Usage",
+  "Description": "Claude の利用上限をキーにリアルタイム表示：5 時間セッションと週間上限、リセットまでのカウントダウン付き。 非公式。Anthropic とは無関係です。",
+  "Category": "Claude 利用状況",
+  "com.vo1kov.claude.session": {
+    "Name": "5 時間セッション",
+    "Tooltip": "Claude の 5 時間上限。押すと更新。"
+  },
+  "com.vo1kov.claude.weekly": {
+    "Name": "週間上限",
+    "Tooltip": "Claude の週間上限。押すと更新。"
+  },
+  "com.vo1kov.claude.model": {
+    "Name": "モデル別週間上限",
+    "Tooltip": "プランにある場合のモデル別週間上限。"
+  },
+  "com.vo1kov.claude.cycle": {
+    "Name": "1 キーで全表示",
+    "Tooltip": "押して切替：セッション → 週間 → モデル。"
+  },
+  "Localization": {}
+}

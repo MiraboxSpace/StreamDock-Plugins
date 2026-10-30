@@ -1,0 +1,22 @@
+{
+  "Name": "VO1KOV Claude 用量",
+  "Description": "在按键上实时显示 Claude 用量限制：5 小时会话和每周限额，并显示重置倒计时。 非官方插件，与 Anthropic 无关。",
+  "Category": "Claude 用量",
+  "com.vo1kov.claude.session": {
+    "Name": "5 小时会话",
+    "Tooltip": "Claude 5 小时会话限额。按下刷新。"
+  },
+  "com.vo1kov.claude.weekly": {
+    "Name": "每周限额",
+    "Tooltip": "Claude 每周限额。按下刷新。"
+  },
+  "com.vo1kov.claude.model": {
+    "Name": "模型每周限额",
+    "Tooltip": "单个模型的每周限额（如果您的套餐有）。"
+  },
+  "com.vo1kov.claude.cycle": {
+    "Name": "一键显示全部",
+    "Tooltip": "按下切换：会话 → 每周 → 模型。"
+  },
+  "Localization": {}
+}
