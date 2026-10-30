@@ -1,0 +1,22 @@
+{
+  "Name": "VO1KOV Claude Usage",
+  "Description": "키에 Claude 사용 한도를 실시간 표시: 5시간 세션과 주간 한도, 초기화까지 남은 시간. 비공식 플러그인이며 Anthropic과 무관합니다.",
+  "Category": "Claude 사용량",
+  "com.vo1kov.claude.session": {
+    "Name": "5시간 세션",
+    "Tooltip": "Claude 5시간 세션 한도. 누르면 새로고침."
+  },
+  "com.vo1kov.claude.weekly": {
+    "Name": "주간 한도",
+    "Tooltip": "Claude 주간 한도. 누르면 새로고침."
+  },
+  "com.vo1kov.claude.model": {
+    "Name": "모델 주간 한도",
+    "Tooltip": "요금제에 있는 경우 모델별 주간 한도."
+  },
+  "com.vo1kov.claude.cycle": {
+    "Name": "한 키로 모두",
+    "Tooltip": "눌러서 전환: 세션 → 주간 → 모델."
+  },
+  "Localization": {}
+}

@@ -1,0 +1,22 @@
+{
+  "Name": "VO1KOV Claude Usage",
+  "Description": "Лимиты Claude на кнопках: сессия 5ч и неделя, с отсчётом до сброса. Неофициальный, не связан с Anthropic.",
+  "Category": "Лимиты Claude",
+  "com.vo1kov.claude.session": {
+    "Name": "Сессия 5ч",
+    "Tooltip": "Лимит Claude за 5 часов. Нажатие обновляет."
+  },
+  "com.vo1kov.claude.weekly": {
+    "Name": "Неделя",
+    "Tooltip": "Недельный лимит Claude. Нажатие обновляет."
+  },
+  "com.vo1kov.claude.model": {
+    "Name": "Модель (неделя)",
+    "Tooltip": "Недельный лимит отдельной модели, если он есть у плана."
+  },
+  "com.vo1kov.claude.cycle": {
+    "Name": "Всё на одной кнопке",
+    "Tooltip": "Нажатие переключает: сессия → неделя → модель."
+  },
+  "Localization": {}
+}

@@ -1,0 +1,22 @@
+{
+  "Name": "VO1KOV Claude Usage",
+  "Description": "Live Claude usage limits on your keys: 5-hour session and weekly limit with reset countdown. Unofficial, not affiliated with Anthropic.",
+  "Category": "Claude Usage",
+  "com.vo1kov.claude.session": {
+    "Name": "5-hour session",
+    "Tooltip": "Claude 5-hour session limit. Press to refresh."
+  },
+  "com.vo1kov.claude.weekly": {
+    "Name": "Weekly limit",
+    "Tooltip": "Claude weekly limit. Press to refresh."
+  },
+  "com.vo1kov.claude.model": {
+    "Name": "Model weekly limit",
+    "Tooltip": "Per-model weekly limit, if your plan has one."
+  },
+  "com.vo1kov.claude.cycle": {
+    "Name": "All in one key",
+    "Tooltip": "Press to switch: session → week → model."
+  },
+  "Localization": {}
+}

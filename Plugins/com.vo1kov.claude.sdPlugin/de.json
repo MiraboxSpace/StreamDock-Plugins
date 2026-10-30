@@ -1,0 +1,22 @@
+{
+  "Name": "VO1KOV Claude Usage",
+  "Description": "Claude-Nutzungslimits live auf deinen Tasten: 5-Stunden-Sitzung und Wochenlimit mit Countdown bis zum Reset. Inoffiziell, nicht mit Anthropic verbunden.",
+  "Category": "Claude-Nutzung",
+  "com.vo1kov.claude.session": {
+    "Name": "5-Stunden-Sitzung",
+    "Tooltip": "Claude 5-Stunden-Limit. Drücken zum Aktualisieren."
+  },
+  "com.vo1kov.claude.weekly": {
+    "Name": "Wochenlimit",
+    "Tooltip": "Claude Wochenlimit. Drücken zum Aktualisieren."
+  },
+  "com.vo1kov.claude.model": {
+    "Name": "Modell-Wochenlimit",
+    "Tooltip": "Wochenlimit pro Modell, falls dein Tarif eins hat."
+  },
+  "com.vo1kov.claude.cycle": {
+    "Name": "Alles auf einer Taste",
+    "Tooltip": "Drücken zum Wechseln: Sitzung → Woche → Modell."
+  },
+  "Localization": {}
+}

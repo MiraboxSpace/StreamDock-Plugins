@@ -1,0 +1,22 @@
+{
+  "Name": "VO1KOV Claude Usage",
+  "Description": "Límites de uso de Claude en vivo en tus teclas: sesión de 5 horas y límite semanal con cuenta atrás. No oficial, sin relación con Anthropic.",
+  "Category": "Uso de Claude",
+  "com.vo1kov.claude.session": {
+    "Name": "Sesión de 5 h",
+    "Tooltip": "Límite de sesión de Claude de 5 horas. Pulsa para actualizar."
+  },
+  "com.vo1kov.claude.weekly": {
+    "Name": "Límite semanal",
+    "Tooltip": "Límite semanal de Claude. Pulsa para actualizar."
+  },
+  "com.vo1kov.claude.model": {
+    "Name": "Límite semanal del modelo",
+    "Tooltip": "Límite semanal por modelo, si tu plan lo tiene."
+  },
+  "com.vo1kov.claude.cycle": {
+    "Name": "Todo en una tecla",
+    "Tooltip": "Pulsa para cambiar: sesión → semana → modelo."
+  },
+  "Localization": {}
+}

@@ -1,0 +1,103 @@
+{
+  "Actions": [
+    {
+      "UUID": "com.vo1kov.claude.session",
+      "Name": "5-hour session",
+      "Tooltip": "Claude 5-hour session limit. Press to refresh.",
+      "Icon": "static/action-session.png",
+      "States": [
+        {
+          "Image": "static/key-session.png",
+          "TitleAlignment": "bottom",
+          "FontSize": "10"
+        }
+      ],
+      "Controllers": [
+        "Keypad"
+      ],
+      "UserTitleEnabled": false,
+      "SupportedInMultiActions": false,
+      "DisableAutomaticStates": true
+    },
+    {
+      "UUID": "com.vo1kov.claude.weekly",
+      "Name": "Weekly limit",
+      "Tooltip": "Claude weekly limit. Press to refresh.",
+      "Icon": "static/action-weekly.png",
+      "States": [
+        {
+          "Image": "static/key-weekly.png",
+          "TitleAlignment": "bottom",
+          "FontSize": "10"
+        }
+      ],
+      "Controllers": [
+        "Keypad"
+      ],
+      "UserTitleEnabled": false,
+      "SupportedInMultiActions": false,
+      "DisableAutomaticStates": true
+    },
+    {
+      "UUID": "com.vo1kov.claude.model",
+      "Name": "Model weekly limit",
+      "Tooltip": "Per-model weekly limit, if your plan has one.",
+      "Icon": "static/action-model.png",
+      "States": [
+        {
+          "Image": "static/key-model.png",
+          "TitleAlignment": "bottom",
+          "FontSize": "10"
+        }
+      ],
+      "Controllers": [
+        "Keypad"
+      ],
+      "UserTitleEnabled": false,
+      "SupportedInMultiActions": false,
+      "DisableAutomaticStates": true
+    },
+    {
+      "UUID": "com.vo1kov.claude.cycle",
+      "Name": "All in one key",
+      "Tooltip": "Press to switch: session → week → model.",
+      "Icon": "static/action-cycle.png",
+      "States": [
+        {
+          "Image": "static/key-session.png",
+          "TitleAlignment": "bottom",
+          "FontSize": "10"
+        }
+      ],
+      "Controllers": [
+        "Keypad"
+      ],
+      "UserTitleEnabled": false,
+      "SupportedInMultiActions": false,
+      "DisableAutomaticStates": true
+    }
+  ],
+  "SDKVersion": 1,
+  "Author": "VO1KOV",
+  "Name": "VO1KOV Claude Usage",
+  "Description": "Live Claude usage limits on your keys: 5-hour session and weekly limit with reset countdown. Reads the local Claude Code sign-in, nothing else leaves your PC. Unofficial, not affiliated with Anthropic.",
+  "Category": "Claude Usage",
+  "CategoryIcon": "static/category.png",
+  "Icon": "static/plugin.png",
+  "Version": "1.2.0",
+  "CodePathWin": "plugin/index.js",
+  "OS": [
+    {
+      "Platform": "windows",
+      "MinimumVersion": "10"
+    }
+  ],
+  "Software": {
+    "MinimumVersion": "3.10.188.226"
+  },
+  "Nodejs": {
+    "Version": "20"
+  },
+  "URL": "https://github.com/sergvo1kov",
+  "CodePath": "plugin/index.js"
+}
