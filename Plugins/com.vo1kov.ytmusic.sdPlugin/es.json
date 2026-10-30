@@ -1,0 +1,30 @@
+{
+  "Name": "VO1KOV YT Music",
+  "Description": "Me gusta, no me gusta, añadir la canción actual a tus playlists (con portadas, se recorren con una perilla), radio de la canción y «Mi Supermix» en YouTube Music para Chrome. Requiere la extensión puente gratuita para Chrome (incluida). No oficial, sin relación con Google ni YouTube.",
+  "Category": "YT Music",
+  "com.vo1kov.ytmusic.like": {
+    "Name": "Me gusta",
+    "Tooltip": "Marcar / quitar Me gusta a la canción actual"
+  },
+  "com.vo1kov.ytmusic.dislike": {
+    "Name": "No me gusta",
+    "Tooltip": "Marcar / quitar No me gusta a la canción actual"
+  },
+  "com.vo1kov.ytmusic.playlist": {
+    "Name": "Añadir a playlist",
+    "Tooltip": "Pulsa: elegir playlist (gira una perilla para recorrer), pulsa otra vez: añadir"
+  },
+  "com.vo1kov.ytmusic.playlistknob": {
+    "Name": "Recorrer playlists",
+    "Tooltip": "Perilla: recorrer playlists, pulsar: añadir la canción"
+  },
+  "com.vo1kov.ytmusic.radio": {
+    "Name": "Radio de la canción",
+    "Tooltip": "Iniciar radio basada en la canción actual"
+  },
+  "com.vo1kov.ytmusic.supermix": {
+    "Name": "Mi Supermix",
+    "Tooltip": "Reproducir «Mi Supermix»"
+  },
+  "Localization": {}
+}

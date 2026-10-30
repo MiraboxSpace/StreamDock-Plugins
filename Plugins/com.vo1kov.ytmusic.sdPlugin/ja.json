@@ -1,0 +1,30 @@
+{
+  "Name": "VO1KOV YT Music",
+  "Description": "Chrome の YouTube Music で、高評価・低評価、再生中の曲をプレイリストに追加（ジャケット表示、ノブで切替）、曲のラジオ、「マイ スーパーミックス」を操作。Chrome 用の無料ブリッジ拡張機能（同梱）が必要です。非公式で、Google および YouTube とは無関係です。",
+  "Category": "YT Music",
+  "com.vo1kov.ytmusic.like": {
+    "Name": "高評価",
+    "Tooltip": "再生中の曲を高評価 / 解除"
+  },
+  "com.vo1kov.ytmusic.dislike": {
+    "Name": "低評価",
+    "Tooltip": "再生中の曲を低評価 / 解除"
+  },
+  "com.vo1kov.ytmusic.playlist": {
+    "Name": "プレイリストに追加",
+    "Tooltip": "押してプレイリストを選択（ノブで切替）、もう一度押して追加"
+  },
+  "com.vo1kov.ytmusic.playlistknob": {
+    "Name": "プレイリストを切替",
+    "Tooltip": "ノブ：プレイリスト切替、押す：曲を追加"
+  },
+  "com.vo1kov.ytmusic.radio": {
+    "Name": "曲のラジオ",
+    "Tooltip": "再生中の曲をもとにラジオを開始"
+  },
+  "com.vo1kov.ytmusic.supermix": {
+    "Name": "マイ スーパーミックス",
+    "Tooltip": "「マイ スーパーミックス」を再生"
+  },
+  "Localization": {}
+}

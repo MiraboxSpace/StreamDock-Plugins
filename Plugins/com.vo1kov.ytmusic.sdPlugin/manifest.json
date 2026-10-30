@@ -1,0 +1,141 @@
+{
+  "SDKVersion": 1,
+  "Author": "VO1KOV",
+  "Name": "VO1KOV YT Music",
+  "Description": "Like, dislike, add the current track to your playlists (with covers, browse with a knob), start track radio and My Supermix in YouTube Music for Chrome. Needs the free bridge extension for Chrome, included with the plugin. Unofficial, not affiliated with Google or YouTube.",
+  "Category": "YT Music",
+  "CategoryIcon": "static/category.png",
+  "Icon": "static/plugin.png",
+  "Version": "1.2.0",
+  "URL": "https://github.com/sergvo1kov",
+  "CodePathWin": "plugin/index.js",
+  "OS": [
+    {
+      "Platform": "windows",
+      "MinimumVersion": "10"
+    }
+  ],
+  "Software": {
+    "MinimumVersion": "3.10.188.226"
+  },
+  "Nodejs": {
+    "Version": "20"
+  },
+  "Actions": [
+    {
+      "UUID": "com.vo1kov.ytmusic.like",
+      "Name": "Like",
+      "Tooltip": "Like / remove like for the current track",
+      "Icon": "static/action-like.png",
+      "Controllers": [
+        "Keypad"
+      ],
+      "UserTitleEnabled": false,
+      "SupportedInMultiActions": true,
+      "States": [
+        {
+          "Image": "static/key-like.png",
+          "TitleAlignment": "bottom",
+          "FontSize": "10"
+        }
+      ],
+      "DisableAutomaticStates": true
+    },
+    {
+      "UUID": "com.vo1kov.ytmusic.dislike",
+      "Name": "Dislike",
+      "Tooltip": "Dislike / remove dislike for the current track",
+      "Icon": "static/action-dislike.png",
+      "Controllers": [
+        "Keypad"
+      ],
+      "UserTitleEnabled": false,
+      "SupportedInMultiActions": true,
+      "States": [
+        {
+          "Image": "static/key-dislike.png",
+          "TitleAlignment": "bottom",
+          "FontSize": "10"
+        }
+      ],
+      "DisableAutomaticStates": true
+    },
+    {
+      "UUID": "com.vo1kov.ytmusic.playlist",
+      "Name": "Add to playlist",
+      "Tooltip": "Press to pick a playlist (turn a knob to browse), press again to add",
+      "Icon": "static/action-playlist.png",
+      "Controllers": [
+        "Keypad"
+      ],
+      "UserTitleEnabled": false,
+      "SupportedInMultiActions": false,
+      "States": [
+        {
+          "Image": "static/key-playlist.png",
+          "TitleAlignment": "bottom",
+          "FontSize": "10"
+        }
+      ],
+      "DisableAutomaticStates": true
+    },
+    {
+      "UUID": "com.vo1kov.ytmusic.playlistknob",
+      "Name": "Browse playlists",
+      "Tooltip": "Knob: browse your playlists, press: add the track",
+      "Icon": "static/action-playlist.png",
+      "Controllers": [
+        "Knob"
+      ],
+      "UserTitleEnabled": false,
+      "SupportedInMultiActions": false,
+      "States": [
+        {
+          "Image": "static/key-playlist.png",
+          "TitleAlignment": "bottom",
+          "FontSize": "10"
+        }
+      ],
+      "DisableAutomaticStates": true
+    },
+    {
+      "UUID": "com.vo1kov.ytmusic.radio",
+      "Name": "Track radio",
+      "Tooltip": "Start radio based on the current track",
+      "Icon": "static/action-radio.png",
+      "Controllers": [
+        "Keypad"
+      ],
+      "UserTitleEnabled": false,
+      "SupportedInMultiActions": true,
+      "States": [
+        {
+          "Image": "static/key-radio.png",
+          "TitleAlignment": "bottom",
+          "FontSize": "10"
+        }
+      ],
+      "DisableAutomaticStates": true
+    },
+    {
+      "UUID": "com.vo1kov.ytmusic.supermix",
+      "Name": "My Supermix",
+      "Tooltip": "Play My Supermix",
+      "Icon": "static/action-mix.png",
+      "Controllers": [
+        "Keypad"
+      ],
+      "UserTitleEnabled": false,
+      "SupportedInMultiActions": true,
+      "States": [
+        {
+          "Image": "static/key-mix.png",
+          "TitleAlignment": "bottom",
+          "FontSize": "10"
+        }
+      ],
+      "DisableAutomaticStates": true
+    }
+  ],
+  "CodePath": "plugin/index.js"
+}

@@ -1,0 +1,30 @@
+{
+  "Name": "VO1KOV YT Music",
+  "Description": "在 Chrome 版 YouTube Music 中：喜欢/不喜欢、把当前歌曲加入你的歌单（显示封面，用旋钮翻页）、基于歌曲的电台以及“我的超级合辑”。需要配套的免费 Chrome 桥接扩展（已随插件提供）。非官方，与 Google 和 YouTube 无关。",
+  "Category": "YT Music",
+  "com.vo1kov.ytmusic.like": {
+    "Name": "喜欢",
+    "Tooltip": "为当前歌曲点喜欢 / 取消"
+  },
+  "com.vo1kov.ytmusic.dislike": {
+    "Name": "不喜欢",
+    "Tooltip": "为当前歌曲点不喜欢 / 取消"
+  },
+  "com.vo1kov.ytmusic.playlist": {
+    "Name": "加入歌单",
+    "Tooltip": "按下选择歌单（转动旋钮翻页），再按一次添加"
+  },
+  "com.vo1kov.ytmusic.playlistknob": {
+    "Name": "浏览歌单",
+    "Tooltip": "旋钮：浏览歌单，按下：添加歌曲"
+  },
+  "com.vo1kov.ytmusic.radio": {
+    "Name": "歌曲电台",
+    "Tooltip": "基于当前歌曲开始电台"
+  },
+  "com.vo1kov.ytmusic.supermix": {
+    "Name": "我的超级合辑",
+    "Tooltip": "播放“我的超级合辑”"
+  },
+  "Localization": {}
+}

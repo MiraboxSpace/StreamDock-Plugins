@@ -1,0 +1,30 @@
+{
+  "Name": "VO1KOV YT Music",
+  "Description": "Лайк, дизлайк, добавление трека в твои плейлисты (с обложками, листаются крутилкой), радио по треку и «Мой супермикс» для YouTube Music в Chrome. Нужно бесплатное расширение-мост для Chrome, оно лежит в папке плагина. Неофициальный, не связан с Google и YouTube.",
+  "Category": "YT Music",
+  "com.vo1kov.ytmusic.like": {
+    "Name": "Лайк",
+    "Tooltip": "Поставить/снять лайк текущему треку"
+  },
+  "com.vo1kov.ytmusic.dislike": {
+    "Name": "Дизлайк",
+    "Tooltip": "Поставить/снять дизлайк текущему треку"
+  },
+  "com.vo1kov.ytmusic.playlist": {
+    "Name": "В плейлист",
+    "Tooltip": "Нажми — выбор плейлиста (листай крутилкой), нажми ещё раз — добавить"
+  },
+  "com.vo1kov.ytmusic.playlistknob": {
+    "Name": "Листать плейлисты",
+    "Tooltip": "Крутилка: листать плейлисты, нажатие: добавить трек"
+  },
+  "com.vo1kov.ytmusic.radio": {
+    "Name": "Радио по треку",
+    "Tooltip": "Запустить радио на основе текущего трека"
+  },
+  "com.vo1kov.ytmusic.supermix": {
+    "Name": "Мой супермикс",
+    "Tooltip": "Включить «Мой супермикс»"
+  },
+  "Localization": {}
+}

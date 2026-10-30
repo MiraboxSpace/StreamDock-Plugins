@@ -1,0 +1,30 @@
+{
+  "Name": "VO1KOV YT Music",
+  "Description": "Liken, disliken, den aktuellen Titel zu deinen Playlists hinzufügen (mit Covern, per Drehregler blättern), Titel-Radio und „Mein Supermix“ in YouTube Music für Chrome. Benötigt die kostenlose Bridge-Erweiterung für Chrome (im Plugin enthalten). Inoffiziell, nicht mit Google oder YouTube verbunden.",
+  "Category": "YT Music",
+  "com.vo1kov.ytmusic.like": {
+    "Name": "Like",
+    "Tooltip": "Aktuellen Titel liken / Like entfernen"
+  },
+  "com.vo1kov.ytmusic.dislike": {
+    "Name": "Dislike",
+    "Tooltip": "Aktuellen Titel disliken / Dislike entfernen"
+  },
+  "com.vo1kov.ytmusic.playlist": {
+    "Name": "Zur Playlist",
+    "Tooltip": "Drücken: Playlist wählen (mit Drehregler blättern), erneut drücken: hinzufügen"
+  },
+  "com.vo1kov.ytmusic.playlistknob": {
+    "Name": "Playlists blättern",
+    "Tooltip": "Drehregler: Playlists blättern, Drücken: Titel hinzufügen"
+  },
+  "com.vo1kov.ytmusic.radio": {
+    "Name": "Titel-Radio",
+    "Tooltip": "Radio auf Basis des aktuellen Titels starten"
+  },
+  "com.vo1kov.ytmusic.supermix": {
+    "Name": "Mein Supermix",
+    "Tooltip": "„Mein Supermix“ abspielen"
+  },
+  "Localization": {}
+}
