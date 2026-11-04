@@ -1,0 +1,30 @@
+{
+  "Name": "VO1KOV YT Music",
+  "Description": "Like, dislike, add the current track to your playlists (with covers, browse with a knob), start track radio and My Supermix in YouTube Music for Chrome. Needs the free bridge extension for Chrome, included with the plugin. Unofficial, not affiliated with Google or YouTube.",
+  "Category": "YT Music",
+  "com.vo1kov.ytmusic.like": {
+    "Name": "Like",
+    "Tooltip": "Like / remove like for the current track"
+  },
+  "com.vo1kov.ytmusic.dislike": {
+    "Name": "Dislike",
+    "Tooltip": "Dislike / remove dislike for the current track"
+  },
+  "com.vo1kov.ytmusic.playlist": {
+    "Name": "Add to playlist",
+    "Tooltip": "Press to pick a playlist (turn a knob to browse), press again to add"
+  },
+  "com.vo1kov.ytmusic.playlistknob": {
+    "Name": "Browse playlists",
+    "Tooltip": "Knob: browse your playlists, press: add the track"
+  },
+  "com.vo1kov.ytmusic.radio": {
+    "Name": "Track radio",
+    "Tooltip": "Start radio based on the current track"
+  },
+  "com.vo1kov.ytmusic.supermix": {
+    "Name": "My Supermix",
+    "Tooltip": "Play My Supermix"
+  },
+  "Localization": {}
+}

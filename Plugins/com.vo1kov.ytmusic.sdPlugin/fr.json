@@ -1,0 +1,30 @@
+{
+  "Name": "VO1KOV YT Music",
+  "Description": "J’aime, je n’aime pas, ajout du titre en cours à vos playlists (avec pochettes, navigation au bouton rotatif), radio du titre et « Mon Supermix » dans YouTube Music pour Chrome. Nécessite l’extension passerelle gratuite pour Chrome (incluse). Non officiel, sans lien avec Google ni YouTube.",
+  "Category": "YT Music",
+  "com.vo1kov.ytmusic.like": {
+    "Name": "J’aime",
+    "Tooltip": "Aimer / retirer le J’aime du titre en cours"
+  },
+  "com.vo1kov.ytmusic.dislike": {
+    "Name": "Je n’aime pas",
+    "Tooltip": "Ne pas aimer / retirer pour le titre en cours"
+  },
+  "com.vo1kov.ytmusic.playlist": {
+    "Name": "Ajouter à une playlist",
+    "Tooltip": "Appuyer : choisir une playlist (tourner un bouton pour naviguer), appuyer à nouveau : ajouter"
+  },
+  "com.vo1kov.ytmusic.playlistknob": {
+    "Name": "Parcourir les playlists",
+    "Tooltip": "Bouton : parcourir les playlists, appui : ajouter le titre"
+  },
+  "com.vo1kov.ytmusic.radio": {
+    "Name": "Radio du titre",
+    "Tooltip": "Lancer une radio basée sur le titre en cours"
+  },
+  "com.vo1kov.ytmusic.supermix": {
+    "Name": "Mon Supermix",
+    "Tooltip": "Lire « Mon Supermix »"
+  },
+  "Localization": {}
+}

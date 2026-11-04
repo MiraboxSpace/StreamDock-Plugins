@@ -1,0 +1,30 @@
+{
+  "Name": "VO1KOV YT Music",
+  "Description": "Chrome의 YouTube Music에서 좋아요/싫어요, 현재 곡을 내 재생목록에 추가(커버 표시, 노브로 넘기기), 곡 기반 라디오, '내 슈퍼믹스' 재생. Chrome용 무료 브리지 확장 프로그램(포함)이 필요합니다. 비공식이며 Google 및 YouTube와 관련이 없습니다.",
+  "Category": "YT Music",
+  "com.vo1kov.ytmusic.like": {
+    "Name": "좋아요",
+    "Tooltip": "현재 곡 좋아요 / 취소"
+  },
+  "com.vo1kov.ytmusic.dislike": {
+    "Name": "싫어요",
+    "Tooltip": "현재 곡 싫어요 / 취소"
+  },
+  "com.vo1kov.ytmusic.playlist": {
+    "Name": "재생목록에 추가",
+    "Tooltip": "눌러서 재생목록 선택(노브로 넘기기), 다시 눌러 추가"
+  },
+  "com.vo1kov.ytmusic.playlistknob": {
+    "Name": "재생목록 넘기기",
+    "Tooltip": "노브: 재생목록 넘기기, 누르기: 곡 추가"
+  },
+  "com.vo1kov.ytmusic.radio": {
+    "Name": "곡 라디오",
+    "Tooltip": "현재 곡 기반 라디오 시작"
+  },
+  "com.vo1kov.ytmusic.supermix": {
+    "Name": "내 슈퍼믹스",
+    "Tooltip": "'내 슈퍼믹스' 재생"
+  },
+  "Localization": {}
+}

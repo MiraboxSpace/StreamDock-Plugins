@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>VO1KOV YT Music — setup</title>
+<style>
+  :root { --bg:#0f0c18; --card:#1a1528; --text:#f3f0fa; --dim:#a39cb8; --accent:#b26bff; }
+  * { box-sizing:border-box; }
+  body { margin:0; background:var(--bg); color:var(--text); font:16px/1.55 "Segoe UI", system-ui, sans-serif; }
+  main { max-width:680px; margin:0 auto; padding:40px 20px 60px; }
+  h1 { font-size:26px; margin:0 0 6px; }
+  .sub { color:var(--dim); margin:0 0 28px; }
+  ol { list-style:none; padding:0; margin:0; counter-reset:s; }
+  li { counter-increment:s; background:var(--card); border-radius:14px; padding:16px 18px 16px 60px; margin:0 0 12px; position:relative; }
+  li::before { content:counter(s); position:absolute; left:18px; top:15px; width:28px; height:28px; border-radius:50%; background:var(--accent); color:#fff; font-weight:700; display:grid; place-items:center; font-size:15px; }
+  code { background:#0f0c18; border:1px solid #2e2645; border-radius:8px; padding:6px 10px; display:block; margin:8px 0 0; word-break:break-all; font:14px Consolas, monospace; }
+  button { margin-top:8px; background:var(--accent); color:#fff; border:0; border-radius:8px; padding:7px 14px; font:600 14px "Segoe UI", sans-serif; cursor:pointer; }
+  .note { color:var(--dim); font-size:14px; margin-top:24px; }
+  .langs { margin:0 0 20px; display:flex; flex-wrap:wrap; gap:6px; }
+  .langs a { color:var(--dim); text-decoration:none; font-size:13px; border:1px solid #2e2645; border-radius:20px; padding:3px 10px; cursor:pointer; }
+  .langs a.on { color:#fff; border-color:var(--accent); }
+</style>
+</head>
+<body>
+<main>
+  <div class="langs" id="langs"></div>
+  <h1 id="h"></h1>
+  <p class="sub" id="sub"></p>
+  <ol>
+    <li><span id="s1"></span><code>chrome://extensions</code><button data-copy="chrome://extensions"></button></li>
+    <li id="s2"></li>
+    <li><span id="s3"></span><code id="path">%APPDATA%\HotSpot\StreamDock\plugins\com.vo1kov.ytmusic.sdPlugin\chrome-extension</code><button data-copy-el="path"></button></li>
+    <li id="s4"></li>
+  </ol>
+  <p class="note" id="note"></p>
+</main>
+<script>
+const L = {
+  en: { name:'English', h:'Connect YouTube Music', sub:'The plugin talks to YouTube Music through a small Chrome extension. Install it once:',
+    s1:'Open this address in Chrome (paste it into the address bar):', s2:'Turn on <b>Developer mode</b> in the top-right corner.',
+    s3:'Click <b>Load unpacked</b> and select this folder (paste the path into the folder dialog):', s4:'Reload YouTube Music (tab or installed app). The keys update within a few seconds.',
+    copy:'Copy', copied:'Copied', note:'Works with music.youtube.com in Chrome, Edge and other Chromium browsers, including the installed YouTube Music app. Unofficial, not affiliated with Google or YouTube.' },
+  ru: { name:'Русский', h:'Подключи YouTube Music', sub:'Плагин общается с YouTube Music через маленькое расширение для Chrome. Поставь его один раз:',
+    s1:'Открой этот адрес в Chrome (вставь в адресную строку):', s2:'Включи <b>Режим разработчика</b> в правом верхнем углу.',
+    s3:'Нажми <b>Загрузить распакованное</b> и выбери эту папку (вставь путь в окно выбора папки):', s4:'Перезагрузи YouTube Music (вкладку или установленное приложение). Клавиши обновятся за пару секунд.',
+    copy:'Копировать', copied:'Скопировано', note:'Работает с music.youtube.com в Chrome, Edge и других браузерах на Chromium, включая установленное приложение YouTube Music. Неофициальное, не связано с Google и YouTube.' },
+  de: { name:'Deutsch', h:'YouTube Music verbinden', sub:'Das Plugin spricht über eine kleine Chrome-Erweiterung mit YouTube Music. Einmal installieren:',
+    s1:'Diese Adresse in Chrome öffnen (in die Adressleiste einfügen):', s2:'Oben rechts den <b>Entwicklermodus</b> einschalten.',
+    s3:'<b>Entpackte Erweiterung laden</b> klicken und diesen Ordner wählen (Pfad in den Ordnerdialog einfügen):', s4:'YouTube Music neu laden (Tab oder installierte App). Die Tasten aktualisieren sich in wenigen Sekunden.',
+    copy:'Kopieren', copied:'Kopiert', note:'Funktioniert mit music.youtube.com in Chrome, Edge und anderen Chromium-Browsern, auch mit der installierten YouTube-Music-App. Inoffiziell, nicht mit Google oder YouTube verbunden.' },
+  fr: { name:'Français', h:'Connecter YouTube Music', sub:'Le plugin communique avec YouTube Music via une petite extension Chrome. À installer une fois :',
+    s1:'Ouvrez cette adresse dans Chrome (collez-la dans la barre d’adresse) :', s2:'Activez le <b>Mode développeur</b> en haut à droite.',
+    s3:'Cliquez sur <b>Charger l’extension non empaquetée</b> et choisissez ce dossier (collez le chemin dans la fenêtre) :', s4:'Rechargez YouTube Music (onglet ou application installée). Les touches se mettent à jour en quelques secondes.',
+    copy:'Copier', copied:'Copié', note:'Fonctionne avec music.youtube.com dans Chrome, Edge et les autres navigateurs Chromium, y compris l’application YouTube Music installée. Non officiel, sans lien avec Google ni YouTube.' },
+  es: { name:'Español', h:'Conecta YouTube Music', sub:'El plugin se comunica con YouTube Music mediante una pequeña extensión de Chrome. Instálala una vez:',
+    s1:'Abre esta dirección en Chrome (pégala en la barra de direcciones):', s2:'Activa el <b>Modo de desarrollador</b> arriba a la derecha.',
+    s3:'Pulsa <b>Cargar descomprimida</b> y elige esta carpeta (pega la ruta en el diálogo):', s4:'Recarga YouTube Music (pestaña o app instalada). Las teclas se actualizan en unos segundos.',
+    copy:'Copiar', copied:'Copiado', note:'Funciona con music.youtube.com en Chrome, Edge y otros navegadores Chromium, incluida la app instalada de YouTube Music. No oficial, sin relación con Google ni YouTube.' },
+  zh: { name:'中文', h:'连接 YouTube Music', sub:'插件通过一个小型 Chrome 扩展与 YouTube Music 通信。只需安装一次：',
+    s1:'在 Chrome 中打开此地址（粘贴到地址栏）：', s2:'打开右上角的<b>开发者模式</b>。',
+    s3:'点击<b>加载已解压的扩展程序</b>，选择此文件夹（把路径粘贴到选择框）：', s4:'刷新 YouTube Music（标签页或已安装的应用）。按键会在几秒内更新。',
+    copy:'复制', copied:'已复制', note:'适用于 Chrome、Edge 等 Chromium 浏览器中的 music.youtube.com，包括已安装的 YouTube Music 应用。非官方，与 Google 和 YouTube 无关。' },
+  ja: { name:'日本語', h:'YouTube Music を接続', sub:'プラグインは小さな Chrome 拡張機能を通じて YouTube Music とやり取りします。一度だけインストールしてください：',
+    s1:'Chrome でこのアドレスを開きます（アドレスバーに貼り付け）：', s2:'右上の<b>デベロッパー モード</b>をオンにします。',
+    s3:'<b>パッケージ化されていない拡張機能を読み込む</b>をクリックし、このフォルダを選択します（パスを貼り付け）：', s4:'YouTube Music（タブまたはインストール済みアプリ）を再読み込みします。数秒でキーが更新されます。',
+    copy:'コピー', copied:'コピーしました', note:'Chrome、Edge などの Chromium 系ブラウザの music.youtube.com（インストール済みアプリを含む）で動作します。非公式で、Google および YouTube とは無関係です。' },
+  ko: { name:'한국어', h:'YouTube Music 연결', sub:'플러그인은 작은 Chrome 확장 프로그램을 통해 YouTube Music과 통신합니다. 한 번만 설치하세요:',
+    s1:'Chrome에서 이 주소를 엽니다(주소창에 붙여넣기):', s2:'오른쪽 위의 <b>개발자 모드</b>를 켭니다.',
+    s3:'<b>압축해제된 확장 프로그램을 로드합니다</b>를 누르고 이 폴더를 선택합니다(경로 붙여넣기):', s4:'YouTube Music(탭 또는 설치된 앱)을 새로고침합니다. 몇 초 안에 키가 업데이트됩니다.',
+    copy:'복사', copied:'복사됨', note:'Chrome, Edge 등 Chromium 브라우저의 music.youtube.com(설치된 YouTube Music 앱 포함)에서 작동합니다. 비공식이며 Google 및 YouTube와 관련이 없습니다.' },
+};
+function pick() {
+  const c = (navigator.language || 'en').toLowerCase();
+  if (/^(ru|uk|be)/.test(c)) return 'ru';
+  for (const k of ['zh','ja','ko','de','fr','es']) if (c.startsWith(k)) return k;
+  return 'en';
+}
+// Путь к папке расширения: рядом с этой страницей
+const dir = decodeURIComponent(location.pathname.replace(/^\/([A-Za-z]:)/, '$1').replace(/\/[^/]*$/, '')).replace(/\//g, '\\') + '\\chrome-extension';
+if (location.protocol === 'file:') document.getElementById('path').textContent = dir;
+let cur;
+function render(k) {
+  cur = L[k];
+  document.documentElement.lang = k;
+  for (const id of ['h','sub','s1','s2','s3','s4','note']) document.getElementById(id).innerHTML = cur[id];
+  document.querySelectorAll('button').forEach((b) => b.textContent = cur.copy);
+  document.getElementById('langs').innerHTML = Object.entries(L).map(([key, v]) => `<a data-l="${key}" class="${key === k ? 'on' : ''}">${v.name}</a>`).join('');
+}
+document.addEventListener('click', (e) => {
+  const l = e.target.closest('[data-l]');
+  if (l) { render(l.dataset.l); return; }
+  const b = e.target.closest('button');
+  if (!b) return;
+  const text = b.dataset.copy || document.getElementById(b.dataset.copyEl).textContent;
+  navigator.clipboard.writeText(text).then(() => { b.textContent = cur.copied; setTimeout(() => b.textContent = cur.copy, 1500); }).catch(() => {});
+});
+render(pick());
+</script>
+</body>
+</html>
